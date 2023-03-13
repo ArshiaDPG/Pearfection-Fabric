@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "pearfection",
+  "version": "${version}",
+
+  "name": "Pearfection",
+  "description": "Pears and pear related things.",
+  "authors": [
+    "DigitalPear",
+    "_humanoid",
+    "GLaDOS Edition",
+    "Haunted Chest"
+  ],
+  "contact": {},
+
+  "license": "MIT",
+  "icon": "assets/pearfection/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+      "fabric-datagen": [
+        "net.digitalpear.pearfection.PearfectionDatagens"
+      ],
+    "client": [
+      "net.digitalpear.pearfection.client.PearfectionClient"
+    ],
+    "main": [
+      "net.digitalpear.pearfection.Pearfection"
+    ]
+  },
+
+          "mixins": [
+        "pearfection.mixins.json"
+      ],
+    
+  "depends": {
+    "fabricloader": ">=0.14.12",
+              "fabric": "*",
+          "minecraft": "~1.19"
+  }
+}

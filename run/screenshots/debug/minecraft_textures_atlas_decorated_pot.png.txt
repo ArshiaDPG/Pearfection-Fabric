@@ -1,0 +1,7 @@
+minecraft:entity/decorated_pot/decorated_pot_base	x=0	y=0	w=32	h=32
+minecraft:entity/decorated_pot/decorated_pot_side	x=32	y=0	w=16	h=16
+minecraft:entity/decorated_pot/pottery_pattern_archer	x=32	y=16	w=16	h=16
+minecraft:entity/decorated_pot/pottery_pattern_arms_up	x=48	y=0	w=16	h=16
+minecraft:entity/decorated_pot/pottery_pattern_prize	x=48	y=16	w=16	h=16
+minecraft:entity/decorated_pot/pottery_pattern_skull	x=0	y=32	w=16	h=16
+minecraft:missingno	x=16	y=32	w=16	h=16

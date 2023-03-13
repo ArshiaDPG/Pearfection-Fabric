@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "pearfection:block/callery_slab"
+    },
+    "type=double": {
+      "model": "pearfection:block/callery_planks"
+    },
+    "type=top": {
+      "model": "pearfection:block/callery_slab_top"
+    }
+  }
+}

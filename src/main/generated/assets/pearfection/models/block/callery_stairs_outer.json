@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "pearfection:block/callery_planks",
+    "side": "pearfection:block/callery_planks",
+    "top": "pearfection:block/callery_planks"
+  }
+}

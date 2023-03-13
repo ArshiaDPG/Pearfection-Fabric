@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "pearfection:callery_twig"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "minecraft:stick"
+  }
+}

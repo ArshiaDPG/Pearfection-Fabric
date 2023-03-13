@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "pearfection:callery_planks"
+    }
+  ],
+  "result": {
+    "item": "pearfection:callery_button"
+  }
+}

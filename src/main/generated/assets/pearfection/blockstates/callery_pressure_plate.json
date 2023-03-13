@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "pearfection:block/callery_pressure_plate"
+    },
+    "powered=true": {
+      "model": "pearfection:block/callery_pressure_plate_down"
+    }
+  }
+}

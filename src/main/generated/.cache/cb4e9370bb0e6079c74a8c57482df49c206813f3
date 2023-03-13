@@ -1,0 +1,16 @@
+// 1.19.4 Pre-release 3	2023-03-06T15:49:21.668225	Pearfection/Tags for minecraft:item
+d1ba86d171b2e83682211e4823a0ff9943eefdaa data\minecraft\tags\items\planks.json
+9707d0a29c98adf376432fdc832fb4573dc3aeca data\minecraft\tags\items\wooden_doors.json
+2b04b49981d8712d193adeb167070a9c19bea38c data\minecraft\tags\items\saplings.json
+6579dc0473268c3b10761f17eb1f8fa24ac38117 data\minecraft\tags\items\fence_gates.json
+c5a7f503b257feded71879dc06612399a3767d1c data\minecraft\tags\items\leaves.json
+418c664abc427ac03b681aca7d7585a9bed531c5 data\minecraft\tags\items\hanging_signs.json
+23501ff170d277b1fdf977ca5b825c76e99613f9 data\minecraft\tags\items\wooden_fences.json
+cb399a5e274b7f8ab84bf4ea16504d75e71928a7 data\minecraft\tags\items\wooden_pressure_plates.json
+d2707eccc4923887df1b9dee98a2bef7287441f7 data\minecraft\tags\items\wooden_trapdoors.json
+1959c42f00b6ae675c1ba454a1fae333dc708509 data\minecraft\tags\items\wooden_slabs.json
+3c50cf52d48ae068de113146a3b863f642c4f50b data\minecraft\tags\items\wooden_stairs.json
+3b659293da7fde5c72f12ed433930fe6e8af545e data\minecraft\tags\items\logs_that_burn.json
+5931f2414a4da5dbaf4bdc6f29373e9ddd0d8e68 data\minecraft\tags\items\signs.json
+41da77b8492941a97767a3aab232375ccb60b246 data\minecraft\tags\items\wooden_buttons.json
+73a291e04feb6134cd35d2944f877a59dfb95bfb data\pearfection\tags\items\callery_stems.json

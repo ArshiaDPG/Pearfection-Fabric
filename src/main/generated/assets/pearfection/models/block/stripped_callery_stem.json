@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "pearfection:block/stripped_callery_stem_top",
+    "side": "pearfection:block/stripped_callery_stem"
+  }
+}

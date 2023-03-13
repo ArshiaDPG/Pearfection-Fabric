@@ -1,0 +1,8 @@
+{
+  "parent": "wilderwild:block/template_hollowed_log",
+  "textures": {
+	"top": "pearfection:block/hollowed_callery_stem_top",
+	"inner": "pearfection:block/stripped_callery_stem",
+	"outer": "pearfection:block/callery_stem"
+  }
+}

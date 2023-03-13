@@ -1,0 +1,159 @@
+{
+  "pearfection:recipes/food/pear_tart": {
+    "criteria": {
+      "has_lampear": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/bookshelf": {
+    "criteria": {
+      "has_book": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "pearfection:recipes/food/copper_lampear": {
+    "criteria": {
+      "has_lampear": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/white_dye": {
+    "criteria": {
+      "has_bone_meal": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "pearfection:recipes/redstone/callery_trapdoor": {
+    "criteria": {
+      "has_callery_planks": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2023-03-12 21:33:15 -0700"
+    },
+    "done": true
+  },
+  "pearfection:recipes/decorations/callery_fence": {
+    "criteria": {
+      "has_callery_planks": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/stick": {
+    "criteria": {
+      "has_planks": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/lectern": {
+    "criteria": {
+      "has_book": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "pearfection:recipes/redstone/callery_button": {
+    "criteria": {
+      "has_callery_planks": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/chiseled_bookshelf": {
+    "criteria": {
+      "has_book": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/blue_dye_from_cornflower": {
+    "criteria": {
+      "has_cornflower": "2023-03-12 21:35:55 -0700"
+    },
+    "done": true
+  },
+  "pearfection:recipes/redstone/callery_pressure_plate": {
+    "criteria": {
+      "has_callery_planks": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:meadow": "2023-03-12 21:33:16 -0700"
+    },
+    "done": false
+  },
+  "pearfection:recipes/misc/stick_from_callery_twig": {
+    "criteria": {
+      "has_callery_twig": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/barrel": {
+    "criteria": {
+      "has_planks": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "pearfection:recipes/building_blocks/callery_slab": {
+    "criteria": {
+      "has_callery_planks": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "pearfection:recipes/redstone/callery_fence_gate": {
+    "criteria": {
+      "has_callery_planks": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/writable_book": {
+    "criteria": {
+      "has_book": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "pearfection:recipes/decorations/callery_bookshelf": {
+    "criteria": {
+      "has_book": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "pearfection:recipes/decorations/callery_sign": {
+    "criteria": {
+      "has_callery_planks": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "pearfection:recipes/redstone/callery_door": {
+    "criteria": {
+      "has_callery_planks": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "minecraft:story/root": {
+    "criteria": {
+      "crafting_table": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "pearfection:recipes/building_blocks/callery_stairs": {
+    "criteria": {
+      "has_callery_planks": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/bone_block": {
+    "criteria": {
+      "has_bone_meal": "2023-03-12 21:33:14 -0700"
+    },
+    "done": true
+  },
+  "DataVersion": 3332
+}

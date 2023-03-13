@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "pearfection:block/callery_vine_bottom"
+    },
+    "half=upper": {
+      "model": "pearfection:block/callery_vine_top"
+    }
+  }
+}

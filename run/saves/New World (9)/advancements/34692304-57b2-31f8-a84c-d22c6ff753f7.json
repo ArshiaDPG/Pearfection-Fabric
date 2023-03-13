@@ -1,0 +1,207 @@
+{
+  "minecraft:recipes/decorations/ladder": {
+    "criteria": {
+      "has_stick": "2023-03-06 15:56:48 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/mangrove_pressure_plate": {
+    "criteria": {
+      "has_planks": "2023-03-06 15:58:16 -0800"
+    },
+    "done": true
+  },
+  "pearfection:recipes/food/pear_tart": {
+    "criteria": {
+      "has_lampear": "2023-03-06 15:56:48 -0800"
+    },
+    "done": true
+  },
+  "pearfection:recipes/food/copper_lampear": {
+    "criteria": {
+      "has_lampear": "2023-03-06 15:56:48 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/mangrove_fence": {
+    "criteria": {
+      "has_planks": "2023-03-06 15:58:16 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/campfire": {
+    "criteria": {
+      "has_stick": "2023-03-06 15:56:48 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/white_dye": {
+    "criteria": {
+      "has_bone_meal": "2023-03-06 15:56:48 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/wooden_hoe": {
+    "criteria": {
+      "has_stick": "2023-03-06 15:56:48 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/wooden_pickaxe": {
+    "criteria": {
+      "has_stick": "2023-03-06 15:56:48 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/mangrove_stairs": {
+    "criteria": {
+      "has_planks": "2023-03-06 15:58:16 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/wooden_axe": {
+    "criteria": {
+      "has_stick": "2023-03-06 15:56:48 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/mangrove_trapdoor": {
+    "criteria": {
+      "has_planks": "2023-03-06 15:58:16 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/mangrove_fence_gate": {
+    "criteria": {
+      "has_planks": "2023-03-06 15:58:16 -0800"
+    },
+    "done": true
+  },
+  "pearfection:recipes/redstone/callery_trapdoor": {
+    "criteria": {
+      "has_callery_planks": "2023-03-06 15:58:15 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2023-03-06 15:56:48 -0800"
+    },
+    "done": true
+  },
+  "pearfection:recipes/decorations/callery_fence": {
+    "criteria": {
+      "has_callery_planks": "2023-03-06 15:58:15 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/mangrove_sign": {
+    "criteria": {
+      "has_planks": "2023-03-06 15:58:16 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/wooden_shovel": {
+    "criteria": {
+      "has_stick": "2023-03-06 15:56:48 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/stick": {
+    "criteria": {
+      "has_planks": "2023-03-06 15:58:15 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/mangrove_button": {
+    "criteria": {
+      "has_planks": "2023-03-06 15:58:16 -0800"
+    },
+    "done": true
+  },
+  "pearfection:recipes/redstone/callery_button": {
+    "criteria": {
+      "has_callery_planks": "2023-03-06 15:58:15 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/mangrove_door": {
+    "criteria": {
+      "has_planks": "2023-03-06 15:58:16 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/wooden_sword": {
+    "criteria": {
+      "has_stick": "2023-03-06 15:56:48 -0800"
+    },
+    "done": true
+  },
+  "pearfection:recipes/redstone/callery_pressure_plate": {
+    "criteria": {
+      "has_callery_planks": "2023-03-06 15:58:15 -0800"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:meadow": "2023-03-06 15:56:50 -0800"
+    },
+    "done": false
+  },
+  "pearfection:recipes/misc/stick_from_callery_twig": {
+    "criteria": {
+      "has_callery_twig": "2023-03-06 15:56:48 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/barrel": {
+    "criteria": {
+      "has_planks": "2023-03-06 15:58:15 -0800"
+    },
+    "done": true
+  },
+  "pearfection:recipes/building_blocks/callery_slab": {
+    "criteria": {
+      "has_callery_planks": "2023-03-06 15:58:15 -0800"
+    },
+    "done": true
+  },
+  "pearfection:recipes/redstone/callery_fence_gate": {
+    "criteria": {
+      "has_callery_planks": "2023-03-06 15:58:15 -0800"
+    },
+    "done": true
+  },
+  "pearfection:recipes/decorations/callery_sign": {
+    "criteria": {
+      "has_callery_planks": "2023-03-06 15:58:15 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/mangrove_slab": {
+    "criteria": {
+      "has_planks": "2023-03-06 15:58:16 -0800"
+    },
+    "done": true
+  },
+  "pearfection:recipes/redstone/callery_door": {
+    "criteria": {
+      "has_callery_planks": "2023-03-06 15:58:15 -0800"
+    },
+    "done": true
+  },
+  "pearfection:recipes/building_blocks/callery_stairs": {
+    "criteria": {
+      "has_callery_planks": "2023-03-06 15:58:15 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/bone_block": {
+    "criteria": {
+      "has_bone_meal": "2023-03-06 15:56:48 -0800"
+    },
+    "done": true
+  },
+  "DataVersion": 3332
+}

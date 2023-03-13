@@ -1,0 +1,6 @@
+{
+  "parent": "pearfection:block/lampear_hanging_base",
+  "textures": {
+    "all": "pearfection:block/lampear"
+  }
+}

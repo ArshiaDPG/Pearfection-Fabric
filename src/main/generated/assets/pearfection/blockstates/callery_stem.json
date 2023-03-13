@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "pearfection:block/callery_stem",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "pearfection:block/callery_stem"
+    },
+    "axis=z": {
+      "model": "pearfection:block/callery_stem",
+      "x": 90
+    }
+  }
+}

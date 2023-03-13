@@ -1,0 +1,33 @@
+{
+  "pearfection:recipes/building_blocks/callery_wood": {
+    "criteria": {
+      "has_callery_stem": "2023-01-09 22:12:57 -0800"
+    },
+    "done": true
+  },
+  "pearfection:recipes/building_blocks/callery_planks": {
+    "criteria": {
+      "has_log": "2023-01-09 22:12:56 -0800"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/root": {
+    "criteria": {
+      "consumed_item": "2023-01-09 22:13:58 -0800"
+    },
+    "done": true
+  },
+  "pearfection:recipes/decorations/callery_hanging_sign": {
+    "criteria": {
+      "has_stripped_logs": "2023-01-09 22:12:56 -0800"
+    },
+    "done": true
+  },
+  "pearfection:recipes/building_blocks/stripped_callery_wood": {
+    "criteria": {
+      "has_stripped_callery_stem": "2023-01-09 22:12:56 -0800"
+    },
+    "done": true
+  },
+  "DataVersion": 3218
+}

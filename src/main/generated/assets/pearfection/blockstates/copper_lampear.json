@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "pearfection:block/copper_lampear"
+    },
+    "hanging=true": {
+      "model": "pearfection:block/copper_lampear_hanging"
+    }
+  }
+}

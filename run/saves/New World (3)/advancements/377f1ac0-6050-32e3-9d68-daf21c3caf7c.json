@@ -1,0 +1,15 @@
+{
+  "minecraft:recipes/building_blocks/bamboo_planks": {
+    "criteria": {
+      "has_logs": "2023-01-09 21:24:45 -0800"
+    },
+    "done": true
+  },
+  "pearfection:recipes/building_blocks/callery_wood": {
+    "criteria": {
+      "has_callery_stem": "2023-01-09 21:23:39 -0800"
+    },
+    "done": true
+  },
+  "DataVersion": 3218
+}
