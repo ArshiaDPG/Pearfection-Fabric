@@ -67,8 +67,8 @@ public class PearfectionBlockLootTableGen extends SimpleFabricLootTableProvider 
         makeDoor(biConsumer, PearBlocks.CALLERY_DOOR);
         simpleDrop(biConsumer, PearBlocks.CALLERY_TRAPDOOR);
 
-        biConsumer.accept(getPearfectionNamespacedBlock(PearBlocks.CALLERY_LEAVES), BLTG.leavesDrops(PearBlocks.CALLERY_LEAVES, PearBlocks.CALLERY_TWIG, 0.2f, 0.022222223f, 0.025f, 0.033333335f, 0.1f));
-        biConsumer.accept(getPearfectionNamespacedBlock(PearBlocks.FLOWERING_CALLERY_LEAVES), BLTG.leavesDrops(PearBlocks.FLOWERING_CALLERY_LEAVES, PearBlocks.CALLERY_TWIG, 0.2f, 0.022222223f, 0.025f, 0.033333335f, 0.1f));
+        biConsumer.accept(getPearfectionNamespacedBlock(PearBlocks.CALLERY_LEAVES), BLTG.leavesDrops(PearBlocks.CALLERY_LEAVES, PearBlocks.CALLERY_TWIG, 0.05f, 0.0625f, 0.025f, 0.083333336f, 0.1f));
+        biConsumer.accept(getPearfectionNamespacedBlock(PearBlocks.FLOWERING_CALLERY_LEAVES), BLTG.leavesDrops(PearBlocks.FLOWERING_CALLERY_LEAVES, PearBlocks.CALLERY_SPROUT, 0.05f, 0.0625f, 0.025f, 0.083333336f, 0.1f));
 
         simpleDrop(biConsumer, PearBlocks.CALLERY_SIGN, PearItems.CALLERY_SIGN);
         simpleDrop(biConsumer, PearBlocks.CALLERY_HANGING_SIGN, PearItems.CALLERY_HANGING_SIGN);

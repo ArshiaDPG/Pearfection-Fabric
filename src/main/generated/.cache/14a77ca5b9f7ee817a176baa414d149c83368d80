@@ -1,4 +1,4 @@
-// 1.19.4 Pre-release 3	2023-03-06T15:49:21.678198	Pearfection/Tags for minecraft:block
+// 1.19.4 Release Candidate 3	2023-03-13T19:01:12.2755087	Pearfection/Tags for minecraft:block
 4c339ac460be2fb28f0ceac13ec8fd25dc3f21cf data\pearfection\tags\blocks\huge_pear_cannot_replace.json
 d2707eccc4923887df1b9dee98a2bef7287441f7 data\minecraft\tags\blocks\wooden_trapdoors.json
 06270a7af87cde27767fc29e356e7b4fc45be622 data\c\tags\blocks\bookshelves.json
@@ -8,8 +8,8 @@ c31c08d9a7fdbff0134680ad85536c8a584aeffe data\minecraft\tags\blocks\all_hanging_
 23501ff170d277b1fdf977ca5b825c76e99613f9 data\minecraft\tags\blocks\wooden_fences.json
 5931f2414a4da5dbaf4bdc6f29373e9ddd0d8e68 data\minecraft\tags\blocks\standing_signs.json
 c65d743b2082f319e5ab56e0da331d61e88f17ff data\minecraft\tags\blocks\mineable\hoe.json
-e91a6083e2c9a3f4340253ae3a86e094e5a8eb4d data\minecraft\tags\blocks\wall_signs.json
 c5a7f503b257feded71879dc06612399a3767d1c data\minecraft\tags\blocks\leaves.json
+e91a6083e2c9a3f4340253ae3a86e094e5a8eb4d data\minecraft\tags\blocks\wall_signs.json
 7b7c19d883bb5bb3ca42e3c5a56e63b6d46037ad data\wilderwild\tags\blocks\hollowed_logs.json
 3b659293da7fde5c72f12ed433930fe6e8af545e data\minecraft\tags\blocks\logs_that_burn.json
 41da77b8492941a97767a3aab232375ccb60b246 data\minecraft\tags\blocks\buttons.json
@@ -20,6 +20,7 @@ b8a7432e7898abbd12988ad2ef53d4a4b8d02f27 data\minecraft\tags\blocks\flower_pots.
 5392d5663de602f76fefd960426d8fe6b0de967b data\pearfection\tags\blocks\pear_growable_on.json
 38a2329d28dcca31ba706ee125b1893c86c444fa data\minecraft\tags\blocks\wall_hanging_signs.json
 5048f908d739843dc4d15b3ffb575a1836c699e8 data\minecraft\tags\blocks\tall_flowers.json
+06270a7af87cde27767fc29e356e7b4fc45be622 data\minecraft\tags\blocks\mineable\axe.json
 d1ba86d171b2e83682211e4823a0ff9943eefdaa data\minecraft\tags\blocks\planks.json
 73a291e04feb6134cd35d2944f877a59dfb95bfb data\pearfection\tags\blocks\callery_stems.json
 7b7c19d883bb5bb3ca42e3c5a56e63b6d46037ad data\wilderwild\tags\blocks\termite_breakable.json
