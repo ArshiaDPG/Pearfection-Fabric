@@ -1,9 +1,0 @@
-{
-  "minecraft:adventure/adventuring_time": {
-    "criteria": {
-      "minecraft:desert": "2023-01-17 19:45:54 -0800"
-    },
-    "done": false
-  },
-  "DataVersion": 3218
-}
