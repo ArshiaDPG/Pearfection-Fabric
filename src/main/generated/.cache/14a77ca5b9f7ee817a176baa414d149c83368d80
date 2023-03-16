@@ -1,7 +1,7 @@
-// 1.19.4 Release Candidate 3	2023-03-13T19:01:12.2755087	Pearfection/Tags for minecraft:block
+// 1.19.4	2023-03-15T20:50:52.0103852	Pearfection/Tags for minecraft:block
 4c339ac460be2fb28f0ceac13ec8fd25dc3f21cf data\pearfection\tags\blocks\huge_pear_cannot_replace.json
 d2707eccc4923887df1b9dee98a2bef7287441f7 data\minecraft\tags\blocks\wooden_trapdoors.json
-06270a7af87cde27767fc29e356e7b4fc45be622 data\c\tags\blocks\bookshelves.json
+5da946c1cc5d82b62a3451012dae88dfc473155e data\minecraft\tags\blocks\dampens_vibrations.json
 c31c08d9a7fdbff0134680ad85536c8a584aeffe data\minecraft\tags\blocks\all_hanging_signs.json
 6579dc0473268c3b10761f17eb1f8fa24ac38117 data\minecraft\tags\blocks\fence_gates.json
 3c50cf52d48ae068de113146a3b863f642c4f50b data\minecraft\tags\blocks\wooden_stairs.json
@@ -15,14 +15,14 @@ e91a6083e2c9a3f4340253ae3a86e094e5a8eb4d data\minecraft\tags\blocks\wall_signs.j
 41da77b8492941a97767a3aab232375ccb60b246 data\minecraft\tags\blocks\buttons.json
 6bb9f67f3b323894052691ea877d5adfb405842a data\minecraft\tags\blocks\small_flowers.json
 b8a7432e7898abbd12988ad2ef53d4a4b8d02f27 data\minecraft\tags\blocks\flower_pots.json
-9707d0a29c98adf376432fdc832fb4573dc3aeca data\minecraft\tags\blocks\wooden_doors.json
 1959c42f00b6ae675c1ba454a1fae333dc708509 data\minecraft\tags\blocks\wooden_slabs.json
+9707d0a29c98adf376432fdc832fb4573dc3aeca data\minecraft\tags\blocks\wooden_doors.json
 5392d5663de602f76fefd960426d8fe6b0de967b data\pearfection\tags\blocks\pear_growable_on.json
 38a2329d28dcca31ba706ee125b1893c86c444fa data\minecraft\tags\blocks\wall_hanging_signs.json
 5048f908d739843dc4d15b3ffb575a1836c699e8 data\minecraft\tags\blocks\tall_flowers.json
-06270a7af87cde27767fc29e356e7b4fc45be622 data\minecraft\tags\blocks\mineable\axe.json
 d1ba86d171b2e83682211e4823a0ff9943eefdaa data\minecraft\tags\blocks\planks.json
 73a291e04feb6134cd35d2944f877a59dfb95bfb data\pearfection\tags\blocks\callery_stems.json
+5da946c1cc5d82b62a3451012dae88dfc473155e data\minecraft\tags\blocks\occludes_vibration_signals.json
 7b7c19d883bb5bb3ca42e3c5a56e63b6d46037ad data\wilderwild\tags\blocks\termite_breakable.json
 cb399a5e274b7f8ab84bf4ea16504d75e71928a7 data\minecraft\tags\blocks\wooden_pressure_plates.json
 6bb9f67f3b323894052691ea877d5adfb405842a data\minecraft\tags\blocks\saplings.json

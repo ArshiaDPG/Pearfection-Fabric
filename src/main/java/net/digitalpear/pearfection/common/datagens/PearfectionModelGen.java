@@ -54,7 +54,6 @@ public class PearfectionModelGen extends FabricModelProvider {
 
         makeParticles(blockStateModelGenerator, PearBlocks.CALLERY_PLANKS, PearBlocks.CALLERY_SIGN, PearBlocks.CALLERY_WALL_SIGN);
 
-        registerBookshelf(blockStateModelGenerator);
 
         blockStateModelGenerator.registerDoubleBlock(PearBlocks.CALLERY_VINE, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(PearBlocks.CALLERY_SPROUT, PearBlocks.POTTED_CALLERY_SPROUT, BlockStateModelGenerator.TintType.NOT_TINTED);
@@ -66,11 +65,11 @@ public class PearfectionModelGen extends FabricModelProvider {
         makeHollowLogs(blockStateModelGenerator, PearBlocks.HOLLOWED_CALLERY_STEM);
     }
 
-    private void registerBookshelf(BlockStateModelGenerator blockStateModelGenerator) {
-        TextureMap textureMap = TextureMap.sideEnd(getId(PearBlocks.CALLERY_BOOKSHELF), getId(PearBlocks.CALLERY_PLANKS));
-        Identifier identifier = Models.CUBE_COLUMN.upload(PearBlocks.CALLERY_BOOKSHELF, textureMap, blockStateModelGenerator.modelCollector);
-        blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(PearBlocks.CALLERY_BOOKSHELF, identifier));
-    }
+//    private void registerBookshelf(BlockStateModelGenerator blockStateModelGenerator) {
+//        TextureMap textureMap = TextureMap.sideEnd(getId(PearBlocks.CALLERY_BOOKSHELF), getId(PearBlocks.CALLERY_PLANKS));
+//        Identifier identifier = Models.CUBE_COLUMN.upload(PearBlocks.CALLERY_BOOKSHELF, textureMap, blockStateModelGenerator.modelCollector);
+//        blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(PearBlocks.CALLERY_BOOKSHELF, identifier));
+//    }
 
     public static void makeStuff(BlockStateModelGenerator blockStateModelGenerator, Block planks, Block stairs, Block slab, Block fence, Block fenceGate, Block button, Block pressurePlate){
         blockStateModelGenerator.registerSimpleCubeAll(planks);

@@ -95,9 +95,9 @@ public class PearItems {
             entries.addAfter(Items.MANGROVE_HANGING_SIGN, CALLERY_HANGING_SIGN);
             entries.addAfter(Items.MANGROVE_HANGING_SIGN, CALLERY_SIGN);
 
-            if (FabricLoader.getInstance().isModLoaded("charm")){
-                entries.addAfter(Blocks.BOOKSHELF, PearBlocks.CALLERY_BOOKSHELF);
-            }
+//            if (FabricLoader.getInstance().isModLoaded("charm")){
+//                entries.addAfter(Blocks.BOOKSHELF, PearBlocks.CALLERY_BOOKSHELF);
+//            }
         });
     }
 }

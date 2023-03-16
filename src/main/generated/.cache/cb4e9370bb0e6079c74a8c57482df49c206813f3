@@ -1,10 +1,10 @@
-// 1.19.4 Release Candidate 3	2023-03-13T19:01:12.2675312	Pearfection/Tags for minecraft:item
+// 1.19.4	2023-03-15T20:50:52.0024056	Pearfection/Tags for minecraft:item
 d1ba86d171b2e83682211e4823a0ff9943eefdaa data\minecraft\tags\items\planks.json
 9707d0a29c98adf376432fdc832fb4573dc3aeca data\minecraft\tags\items\wooden_doors.json
 2b04b49981d8712d193adeb167070a9c19bea38c data\minecraft\tags\items\saplings.json
 6579dc0473268c3b10761f17eb1f8fa24ac38117 data\minecraft\tags\items\fence_gates.json
-418c664abc427ac03b681aca7d7585a9bed531c5 data\minecraft\tags\items\hanging_signs.json
 c5a7f503b257feded71879dc06612399a3767d1c data\minecraft\tags\items\leaves.json
+418c664abc427ac03b681aca7d7585a9bed531c5 data\minecraft\tags\items\hanging_signs.json
 23501ff170d277b1fdf977ca5b825c76e99613f9 data\minecraft\tags\items\wooden_fences.json
 cb399a5e274b7f8ab84bf4ea16504d75e71928a7 data\minecraft\tags\items\wooden_pressure_plates.json
 d2707eccc4923887df1b9dee98a2bef7287441f7 data\minecraft\tags\items\wooden_trapdoors.json

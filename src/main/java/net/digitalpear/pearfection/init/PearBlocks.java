@@ -103,8 +103,6 @@ public class PearBlocks {
     public static final Block CALLERY_HANGING_SIGN = CALLERY.createHangingSign();
     public static final Block CALLERY_WALL_HANGING_SIGN = CALLERY.createWallHangingSign();
 
-    public static final Block CALLERY_BOOKSHELF = createBlockWithItem("callery_bookshelf",
-            new Block(AbstractBlock.Settings.copy(Blocks.BOOKSHELF).mapColor(CALLERY.getTopColor())));
 
 
 

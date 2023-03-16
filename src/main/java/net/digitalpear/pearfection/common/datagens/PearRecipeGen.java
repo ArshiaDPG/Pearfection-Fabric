@@ -41,14 +41,6 @@ public class PearRecipeGen extends FabricRecipeProvider {
         wood(exporter, RecipeCategory.BUILDING_BLOCKS, PearBlocks.CALLERY_WOOD, PearBlocks.CALLERY_STEM);
         wood(exporter, RecipeCategory.BUILDING_BLOCKS, PearBlocks.STRIPPED_CALLERY_WOOD, PearBlocks.STRIPPED_CALLERY_STEM);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, PearBlocks.CALLERY_BOOKSHELF)
-                .input('B', Items.BOOK)
-                .input('P', PearBlocks.CALLERY_PLANKS)
-                .pattern("PPP")
-                .pattern("BBB")
-                .pattern("PPP")
-                .criterion(hasItem(Items.BOOK), conditionsFromItem(Items.BOOK)).offerTo(exporter);
-
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, PearItems.PEAR_TART)
                 .input(PearBlocks.LAMPEAR)
                 .input(Items.SUGAR)

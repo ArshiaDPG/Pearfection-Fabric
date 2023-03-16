@@ -77,7 +77,7 @@ public class PearfectionBlockLootTableGen extends SimpleFabricLootTableProvider 
             Compat
          */
         simpleDrop(biConsumer, PearBlocks.HOLLOWED_CALLERY_STEM);
-        biConsumer.accept(getPearfectionNamespacedBlock(PearBlocks.CALLERY_BOOKSHELF), bookshelfDrop(PearBlocks.CALLERY_BOOKSHELF));
+//        biConsumer.accept(getPearfectionNamespacedBlock(PearBlocks.CALLERY_BOOKSHELF), bookshelfDrop(PearBlocks.CALLERY_BOOKSHELF));
 
     }
 

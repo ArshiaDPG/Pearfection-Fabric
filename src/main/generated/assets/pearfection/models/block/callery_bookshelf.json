@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "pearfection:block/callery_planks",
-    "side": "pearfection:block/callery_bookshelf"
-  }
-}

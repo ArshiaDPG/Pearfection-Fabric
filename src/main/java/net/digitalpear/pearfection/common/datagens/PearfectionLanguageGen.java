@@ -68,7 +68,7 @@ public class PearfectionLanguageGen extends FabricLanguageProvider {
         /*
             Compat blocks
          */
-        translationBuilder.add(PearBlocks.CALLERY_BOOKSHELF, "Callery Bookshelf");
+//        translationBuilder.add(PearBlocks.CALLERY_BOOKSHELF, "Callery Bookshelf");
         translationBuilder.add(PearBlocks.HOLLOWED_CALLERY_STEM, "Hollowed Callery Stem");
 
 

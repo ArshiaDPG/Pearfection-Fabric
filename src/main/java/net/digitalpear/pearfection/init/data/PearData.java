@@ -1,7 +1,7 @@
 package net.digitalpear.pearfection.init.data;
 
 import net.digitalpear.pearfection.init.PearBlocks;
-import net.digitalpear.snifferiety.SnifferSeedRegistry;
+import net.digitalpear.snifferiety.mapcollection.SnifferSeedRegistry;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
