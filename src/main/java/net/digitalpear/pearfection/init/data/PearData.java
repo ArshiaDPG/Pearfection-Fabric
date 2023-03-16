@@ -1,7 +1,8 @@
 package net.digitalpear.pearfection.init.data;
 
 import net.digitalpear.pearfection.init.PearBlocks;
-import net.digitalpear.snifferiety.mapcollection.SnifferSeedRegistry;
+import net.digitalpear.snifferiety.registry.SeedProperties;
+import net.digitalpear.snifferiety.registry.SnifferSeedRegistry;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
@@ -34,6 +35,9 @@ public class PearData {
         FuelRegistry registry = FuelRegistry.INSTANCE;
 
         registry.add(PearBlocks.LAMPEAR_BLOCK, 10 * 200);
+        registry.add(PearBlocks.CALLERY_VINE, 200);
+        registry.add(PearBlocks.CALLERY_SPROUT, 150);
+        registry.add(PearBlocks.CALLERY_TWIG, 100);
     }
     public static void registerComposting(){
         CompostingChanceRegistry.INSTANCE.add(PearBlocks.CALLERY_LEAVES, 0.3F);
@@ -58,6 +62,6 @@ public class PearData {
         registerComposting();
 
 
-        SnifferSeedRegistry.register(PearBlocks.CALLERY_TWIG.asItem(), 10);
+        SnifferSeedRegistry.register(PearBlocks.CALLERY_TWIG.asItem(), new SeedProperties(10));
     }
 }

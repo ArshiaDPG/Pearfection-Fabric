@@ -1,7 +1,7 @@
-// 1.19.4	2023-03-15T20:50:52.0043983	Pearfection/minecraft:block Loot Table
+// 1.19.4	2023-03-16T16:27:15.2440509	Pearfection/minecraft:block Loot Table
 503b9daca8be62914785404e1bd779f142ddd2fb data\pearfection\loot_tables\blocks\callery_fence_gate.json
-2c6e7e2b5a02eafb6b32d8e1aca1529d65f13010 data\pearfection\loot_tables\blocks\potted_callery_sprout.json
 5f15f965cde58dcc50aa5571280366565bb0eb4e data\pearfection\loot_tables\blocks\callery_wood.json
+2c6e7e2b5a02eafb6b32d8e1aca1529d65f13010 data\pearfection\loot_tables\blocks\potted_callery_sprout.json
 2d75ac63c57c0ff017ba436a912b436577db2bef data\pearfection\loot_tables\blocks\callery_stem.json
 997052af72216cfa4cbbd6a591e438e57d459cbb data\pearfection\loot_tables\blocks\callery_stairs.json
 5b5369bc27d3874de2794e247b3fefb149142de2 data\pearfection\loot_tables\blocks\callery_button.json
@@ -17,8 +17,8 @@ b9054f8b5e296106433e2aedc3e3e0c85bb61aa5 data\pearfection\loot_tables\blocks\cal
 a8c1003f62eb208d3cb9b9406757ce3866a7134b data\pearfection\loot_tables\blocks\callery_sprout.json
 a56b39eac61939ce258bfe162eac449238a88edf data\pearfection\loot_tables\blocks\callery_slab.json
 ef358635baf30fd28e82826f81d04a0ee075c25c data\pearfection\loot_tables\blocks\callery_sign.json
-55fc51849bc92ed34c10ae913f53fe01906b5978 data\pearfection\loot_tables\blocks\callery_leaves.json
 a6c003bd1b9fbe6a0a958c85fab4f08f6d1db9a7 data\pearfection\loot_tables\blocks\stripped_callery_wood.json
+55fc51849bc92ed34c10ae913f53fe01906b5978 data\pearfection\loot_tables\blocks\callery_leaves.json
 4cc63cef33698021f608e7aa3ccf86ffd789ed9b data\pearfection\loot_tables\blocks\callery_door.json
 83733ed5aeef2ef8c3c3890c03fdb5b1bdf2636e data\pearfection\loot_tables\blocks\callery_vine.json
 1feaf156907279dbc2824637b2351dbd83575d32 data\pearfection\loot_tables\blocks\callery_fence.json
