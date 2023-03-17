@@ -34,11 +34,12 @@ public class PearData {
     public static void registerFuels(){
         FuelRegistry registry = FuelRegistry.INSTANCE;
 
-        registry.add(PearBlocks.LAMPEAR_BLOCK, 10 * 200);
+        registry.add(PearBlocks.LAMPEAR_BLOCK, 2000);
         registry.add(PearBlocks.CALLERY_VINE, 200);
         registry.add(PearBlocks.CALLERY_SPROUT, 150);
         registry.add(PearBlocks.CALLERY_TWIG, 100);
     }
+
     public static void registerComposting(){
         CompostingChanceRegistry.INSTANCE.add(PearBlocks.CALLERY_LEAVES, 0.3F);
         CompostingChanceRegistry.INSTANCE.add(PearBlocks.FLOWERING_CALLERY_LEAVES, 0.3F);
