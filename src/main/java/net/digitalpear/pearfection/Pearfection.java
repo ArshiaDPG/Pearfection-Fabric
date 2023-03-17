@@ -28,6 +28,6 @@ public class Pearfection implements ModInitializer {
         PearBoatTypes.init();
         PearData.init();
 
-        LOGGER.info("Pearfection has been initialized.");
+        LOGGER.info(MOD_ID + " has been initialized.");
     }
 }

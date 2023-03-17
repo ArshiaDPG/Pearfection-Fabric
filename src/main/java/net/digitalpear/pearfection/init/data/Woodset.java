@@ -22,6 +22,8 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
 
 public record Woodset(String name, MapColor topColor, MapColor sideColor, WoodType woodType) {
@@ -56,21 +58,13 @@ public record Woodset(String name, MapColor topColor, MapColor sideColor, WoodTy
     public static Block createBlockWithoutItem(String blockID, Block block){
         return Registry.register(Registries.BLOCK, new Identifier(MOD_ID, blockID), block);
     }
+
     private static PillarBlock createLogBlock(MapColor topMapColor, MapColor sideMapColor) {
         return new PillarBlock(AbstractBlock.Settings.of(Material.WOOD, (state) -> state.get(PillarBlock.AXIS) == Direction.Axis.Y ? topMapColor : sideMapColor).strength(2.0F).sounds(BlockSoundGroup.WOOD));
     }
 
-
     private ButtonBlock createWoodenButtonBlock() {
         return new ButtonBlock(AbstractBlock.Settings.copy(Blocks.OAK_BUTTON), this.woodType().setType(), 30, true);
-    }
-
-
-    public MapColor getTopColor(){
-        return topColor();
-    }
-    public MapColor getSideColor(){
-        return sideColor();
     }
 
     public Block createPlanks(){

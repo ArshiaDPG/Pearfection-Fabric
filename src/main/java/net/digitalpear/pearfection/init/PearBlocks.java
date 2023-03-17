@@ -20,6 +20,20 @@ import net.minecraft.util.Rarity;
 
 public class PearBlocks {
     public static MapColor calleryColor = MapColor.YELLOW;
+    public static MapColor callerySideColor = MapColor.BROWN;
+
+    public static final WoodType CALLERY_WOOD_TYPE = WoodTypeRegistry.register(Pearfection.id("callery"),
+            BlockSetTypeRegistry.register(Pearfection.id("callery"),
+                    BlockSoundGroup.CHERRY_WOOD,
+                    SoundEvents.BLOCK_CHERRY_WOOD_DOOR_CLOSE,
+                    SoundEvents.BLOCK_CHERRY_WOOD_DOOR_OPEN,
+                    SoundEvents.BLOCK_CHERRY_WOOD_TRAPDOOR_CLOSE,
+                    SoundEvents.BLOCK_CHERRY_WOOD_TRAPDOOR_OPEN,
+                    SoundEvents.BLOCK_CHERRY_WOOD_PRESSURE_PLATE_CLICK_OFF,
+                    SoundEvents.BLOCK_CHERRY_WOOD_PRESSURE_PLATE_CLICK_ON,
+                    SoundEvents.BLOCK_CHERRY_WOOD_BUTTON_CLICK_OFF,
+                    SoundEvents.BLOCK_CHERRY_WOOD_BUTTON_CLICK_ON));
+
 
     public static BlockItem createBlockItem(String blockID, Block block){
         return Registry.register(Registries.ITEM, new Identifier(Pearfection.MOD_ID, blockID), new BlockItem(block, new Item.Settings()));
@@ -66,12 +80,7 @@ public class PearBlocks {
             .strength(0.75f).luminance(state -> 10)));
 
 
-
-    public static final BlockSetType CALLERY_BLOCK_SET_TYPE = BlockSetTypeRegistry.register(Pearfection.id("callery"), BlockSoundGroup.CHERRY_WOOD, SoundEvents.BLOCK_CHERRY_WOOD_DOOR_CLOSE, SoundEvents.BLOCK_CHERRY_WOOD_DOOR_OPEN, SoundEvents.BLOCK_CHERRY_WOOD_TRAPDOOR_CLOSE, SoundEvents.BLOCK_CHERRY_WOOD_TRAPDOOR_OPEN, SoundEvents.BLOCK_CHERRY_WOOD_PRESSURE_PLATE_CLICK_OFF, SoundEvents.BLOCK_CHERRY_WOOD_PRESSURE_PLATE_CLICK_ON, SoundEvents.BLOCK_CHERRY_WOOD_BUTTON_CLICK_OFF, SoundEvents.BLOCK_CHERRY_WOOD_BUTTON_CLICK_ON);
-    public static final WoodType CALLERY_WOOD_TYPE = WoodTypeRegistry.register(Pearfection.id("callery"), CALLERY_BLOCK_SET_TYPE);
-
-
-    public static final Woodset CALLERY = new Woodset("callery", MapColor.YELLOW, MapColor.BROWN, CALLERY_WOOD_TYPE);
+    public static final Woodset CALLERY = new Woodset("callery", calleryColor, callerySideColor, CALLERY_WOOD_TYPE);
 
     public static final Block CALLERY_STEM = CALLERY.createLog(true, false, false);
     public static final Block STRIPPED_CALLERY_STEM = CALLERY.createLog(true, true, false);
@@ -102,6 +111,7 @@ public class PearBlocks {
 
     public static final Block CALLERY_HANGING_SIGN = CALLERY.createHangingSign();
     public static final Block CALLERY_WALL_HANGING_SIGN = CALLERY.createWallHangingSign();
+
 
 
 
