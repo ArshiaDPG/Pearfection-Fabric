@@ -64,14 +64,10 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
                 blockPos.add(radius + 1, -(height * 4), radius + 1)), baseBlock.get(random, blockPos));
 
         /*
-            Collect stem
+            Collect stems and place foliage
          */
         PLACEMENTS.put(BlockPos.iterate(blockPos, blockPos.offset(Direction.UP, 2)),
                 stem.get(random, blockPos).with(PillarBlock.AXIS, Direction.Axis.Y));
-
-        /*
-            Collect stems
-         */
 
         placeFoliage(world, blockPos.offset(Direction.UP, 2 + stemLengthMultiplier).offset(turnDirection), config);
         PLACEMENTS.put(BlockPos.iterate(blockPos.offset(Direction.UP, 2).offset(turnDirection), blockPos.offset(Direction.UP, 2 + stemLengthMultiplier).offset(turnDirection)),

@@ -59,8 +59,8 @@ public record Woodset(String name, MapColor topColor, MapColor sideColor, WoodTy
         return Registry.register(Registries.BLOCK, new Identifier(MOD_ID, blockID), block);
     }
 
-    private static PillarBlock createLogBlock(MapColor topMapColor, MapColor sideMapColor) {
-        return new PillarBlock(AbstractBlock.Settings.of(Material.WOOD, (state) -> state.get(PillarBlock.AXIS) == Direction.Axis.Y ? topMapColor : sideMapColor).strength(2.0F).sounds(BlockSoundGroup.WOOD));
+    private PillarBlock createLogBlock(MapColor topMapColor, MapColor sideMapColor) {
+        return new PillarBlock(AbstractBlock.Settings.of(Material.WOOD, (state) -> state.get(PillarBlock.AXIS) == Direction.Axis.Y ? topMapColor : sideMapColor).strength(2.0F).sounds(this.woodType().soundType()));
     }
 
     private ButtonBlock createWoodenButtonBlock() {
@@ -68,23 +68,23 @@ public record Woodset(String name, MapColor topColor, MapColor sideColor, WoodTy
     }
 
     public Block createPlanks(){
-        return createBlockWithItem(this.name() + "_planks", new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).mapColor(this.topColor())));
+        return createBlockWithItem(this.name() + "_planks", new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).mapColor(this.topColor()).sounds(this.woodType().soundType())));
     }
 
     public Block createStairs(){
-        return createBlockWithItem(this.name() + "_stairs", new StairsBlock(Blocks.CHERRY_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.OAK_STAIRS).mapColor(this.topColor())));
+        return createBlockWithItem(this.name() + "_stairs", new StairsBlock(Blocks.CHERRY_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.OAK_STAIRS).sounds(this.woodType().soundType()).mapColor(this.topColor())));
     }
     public Block createSlab(){
-        return createBlockWithItem(this.name() + "_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.OAK_SLAB).mapColor(this.topColor())));
+        return createBlockWithItem(this.name() + "_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.OAK_SLAB).mapColor(this.topColor()).sounds(this.woodType().soundType())));
     }
     public Block createFence(){
-        return createBlockWithItem(this.name() + "_fence", new FenceBlock(AbstractBlock.Settings.copy(Blocks.OAK_FENCE).mapColor(this.topColor())));
+        return createBlockWithItem(this.name() + "_fence", new FenceBlock(AbstractBlock.Settings.copy(Blocks.OAK_FENCE).mapColor(this.topColor()).sounds(this.woodType().soundType())));
     }
     public Block createFenceGate(){
-        return createBlockWithItem(this.name() + "_fence_gate", new FenceGateBlock(AbstractBlock.Settings.copy(Blocks.OAK_FENCE_GATE).mapColor(this.topColor()), this.woodType()));
+        return createBlockWithItem(this.name() + "_fence_gate", new FenceGateBlock(AbstractBlock.Settings.copy(Blocks.OAK_FENCE_GATE).sounds(this.woodType().soundType()).mapColor(this.topColor()), this.woodType()));
     }
     public Block createPressurePlate(){
-        return createBlockWithItem(this.name() + "_pressure_plate", new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, AbstractBlock.Settings.copy(Blocks.OAK_PRESSURE_PLATE).mapColor(this.topColor()), this.woodType().setType()));
+        return createBlockWithItem(this.name() + "_pressure_plate", new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, AbstractBlock.Settings.copy(Blocks.OAK_PRESSURE_PLATE).sounds(this.woodType().soundType()).mapColor(this.topColor()), this.woodType().setType()));
     }
     public Block createButton(){
         return createBlockWithItem(this.name() + "_button", createWoodenButtonBlock());

@@ -14,9 +14,6 @@ public class PearBlockTags {
     public static final TagKey<Block> HOLLOWED_LOGS = of("wilderwild","hollowed_logs");
     public static final TagKey<Block> TERMITE_BREAKABLE = of("wilderwild","termite_breakable");
 
-//    public static final TagKey<Block> BOOKSHELVES_C = of("c","bookshelves");
-
-
     private static TagKey<Block> of(String id) {
         return TagKey.of(RegistryKeys.BLOCK, new Identifier(Pearfection.MOD_ID, id));
     }
