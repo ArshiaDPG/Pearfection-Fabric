@@ -109,7 +109,11 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
         int z = world.random.nextBetween(1, 2);
         float radius = (float)(x + y + z) * 0.333F + 0.5F;
 
+
         for (BlockPos currentBlockPos : BlockPos.iterate(blockPos.add(-x, -y, -z), blockPos.add(x, y, z))) {
+            /*
+                Place leaves
+            */
             if (currentBlockPos.getSquaredDistance(blockPos) <= (double) (radius * radius) && world.getBlockState(currentBlockPos).isAir()) {
                 BlockStateProvider leaves = world.random.nextBoolean() ? config.floweringFoliageProvider : config.foliageProvider;
                 world.setBlockState(currentBlockPos, leaves.get(world.random, currentBlockPos), 2);
@@ -126,7 +130,7 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
                 /*
                     Place fruit
                  */
-                if (world.getBlockState(currentBlockPos.down()).isAir() && world.random.nextFloat() < 0.1){
+                if (world.getBlockState(currentBlockPos.down()).isAir() && world.random.nextFloat() < 0.2){
                     world.setBlockState(currentBlockPos.down(), config.fruitProvider.get(world.random, currentBlockPos.down()), 2);
                 }
             }

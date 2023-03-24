@@ -61,7 +61,7 @@ public class PearBlocks {
 
     public static final Block CALLERY_VINE = createBlockWithItem("callery_vine", new CalleryVineBlock(AbstractBlock.Settings.copy(Blocks.OAK_SAPLING).sounds(BlockSoundGroup.CHERRY_SAPLING).offset(AbstractBlock.OffsetType.XZ).mapColor(MapColor.EMERALD_GREEN)));
 
-    public static final Block CALLERY_SPROUT = createBlockWithItem("callery_sprout", new CallerySrpoutBlock(StatusEffects.GLOWING, 5, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING).sounds(BlockSoundGroup.CHERRY_SAPLING).offset(AbstractBlock.OffsetType.XZ).mapColor(MapColor.EMERALD_GREEN)));
+    public static final Block CALLERY_SPROUT = createBlockWithItem("callery_sprout", new CallerySrpoutBlock(AbstractBlock.Settings.copy(Blocks.OAK_SAPLING).sounds(BlockSoundGroup.CHERRY_SAPLING).offset(AbstractBlock.OffsetType.XZ).mapColor(MapColor.EMERALD_GREEN)));
     public static final Block POTTED_CALLERY_SPROUT = createBlockWithoutItem("potted_callery_sprout", new FlowerPotBlock(CALLERY_SPROUT, AbstractBlock.Settings.copy(Blocks.POTTED_ACACIA_SAPLING)));
 
     public static final Block CALLERY_TWIG = createBlockWithItem("callery_twig", new CalleryTwigBlock(AbstractBlock.Settings.copy(Blocks.DEAD_BUSH).offset(AbstractBlock.OffsetType.XZ).mapColor(MapColor.BROWN)));
