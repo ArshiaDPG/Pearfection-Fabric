@@ -1,24 +1,20 @@
 package net.digitalpear.pearfection.common.datagens;
 
 import net.digitalpear.pearfection.Pearfection;
-import net.digitalpear.pearfection.common.datagens.misc.PearBlockLootTables;
 import net.digitalpear.pearfection.init.PearBlocks;
 import net.digitalpear.pearfection.init.PearItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.SimpleFabricLootTableProvider;
 import net.minecraft.block.Block;
 import net.minecraft.data.server.loottable.BlockLootTableGenerator;
-import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
-import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.registry.Registries;
 import net.minecraft.resource.featuretoggle.FeatureFlags;
 import net.minecraft.util.Identifier;
@@ -31,7 +27,11 @@ public class PearfectionBlockLootTableGen extends SimpleFabricLootTableProvider 
         super(output, LootContextTypes.BLOCK);
     }
 
-    public static final BlockLootTableGenerator BLTG = new PearBlockLootTables(Set.of(Items.NETHER_STAR), FeatureFlags.VANILLA_FEATURES);
+    public static final BlockLootTableGenerator BLTG = new BlockLootTableGenerator(Set.of(), FeatureFlags.VANILLA_FEATURES) {
+        @Override
+        public void generate() {
+        }
+    };
 
     @Override
     public void accept(BiConsumer<Identifier, LootTable.Builder> biConsumer) {

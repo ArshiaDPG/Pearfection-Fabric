@@ -33,7 +33,7 @@ public class PearItems {
         return new SignItem(new FabricItemSettings().maxCount(16), sign, wallSign);
     }
     public static Item createHangingSignItem(Block sign, Block wallSign) {
-        return new HangingSignItem(sign, wallSign, new FabricItemSettings().maxCount(16).requires(FeatureFlags.UPDATE_1_20));
+        return new HangingSignItem(sign, wallSign, new FabricItemSettings().maxCount(16));
     }
 
     public static final Item CALLERY_BOAT = createItem("callery_boat", createBoatItem(PearBoatTypes.CALLERY));
@@ -90,14 +90,12 @@ public class PearItems {
             entries.addAfter(Items.PUMPKIN_PIE, PEAR_TART);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> {
-            entries.addAfter(Items.SOUL_LANTERN, PearBlocks.COPPER_LAMPEAR);
             entries.addAfter(Items.SOUL_LANTERN, PearBlocks.LAMPEAR);
-            entries.addAfter(Items.MANGROVE_HANGING_SIGN, CALLERY_HANGING_SIGN);
-            entries.addAfter(Items.MANGROVE_HANGING_SIGN, CALLERY_SIGN);
+            entries.addAfter(PearBlocks.LAMPEAR, PearBlocks.COPPER_LAMPEAR);
 
-//            if (FabricLoader.getInstance().isModLoaded("charm")){
-//                entries.addAfter(Blocks.BOOKSHELF, PearBlocks.CALLERY_BOOKSHELF);
-//            }
+            entries.addAfter(Items.MANGROVE_HANGING_SIGN, CALLERY_SIGN);
+            entries.addAfter(CALLERY_SIGN, CALLERY_HANGING_SIGN);
+
         });
     }
 }

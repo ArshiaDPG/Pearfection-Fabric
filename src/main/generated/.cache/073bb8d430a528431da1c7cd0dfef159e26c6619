@@ -1,4 +1,4 @@
-// 1.19.4	2023-03-16T16:27:15.2510316	Pearfection/Recipes
+// 1.19.4	2023-03-22T10:02:43.7834065	Pearfection/Recipes
 7275e9a157ee9ba3254782f1537fcfe9c7ec4d46 data\pearfection\recipes\callery_wood.json
 ee1b03fb850ede7ce7b29a56c48819a5a27d5aa5 data\pearfection\recipes\callery_fence_gate.json
 029c7ae70d6ce00c351eaa5f6822fe1448c72341 data\pearfection\advancements\recipes\decorations\callery_sign.json
@@ -16,8 +16,8 @@ d7b4580238a0ceabe0b64223689aeebc200cea42 data\pearfection\recipes\callery_button
 4283537c3e5aee9a09c0c59f5638551e4d771284 data\pearfection\advancements\recipes\redstone\callery_door.json
 df116488efe355ec96e42f3d6de78c376dd0f391 data\pearfection\advancements\recipes\redstone\callery_button.json
 2c3f106d0d51019728b79db3c40b53f564458ffe data\pearfection\recipes\callery_planks.json
-1d2640e571af000e567e6f19ffa0d57f7a7bbcd5 data\pearfection\advancements\recipes\building_blocks\callery_planks.json
 8db693c64c4eac3afd04842f6fbe777b872e7e07 data\pearfection\advancements\recipes\building_blocks\callery_wood.json
+1d2640e571af000e567e6f19ffa0d57f7a7bbcd5 data\pearfection\advancements\recipes\building_blocks\callery_planks.json
 171efb94c3612876c7a8b052be81b2114ffa5102 data\pearfection\advancements\recipes\redstone\callery_pressure_plate.json
 25c91e36aa36665936fda0e60fca821d2ea8f6d8 data\pearfection\advancements\recipes\decorations\callery_fence.json
 b45bab88a570be5b73edaa50064260dabe833cb9 data\pearfection\recipes\callery_pressure_plate.json

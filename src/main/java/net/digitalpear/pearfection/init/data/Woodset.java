@@ -129,9 +129,9 @@ public record Woodset(String name, MapColor topColor, MapColor sideColor, WoodTy
         return createBlockWithoutItem(this.name() + "_wall_sign", new TerraformWallSignBlock(new Identifier(Pearfection.MOD_ID, "entity/signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_WALL_SIGN).mapColor(this.topColor())));
     }
     public Block createHangingSign(){
-        return createBlockWithoutItem(this.name() + "_hanging_sign", new TerraformHangingSignBlock(new Identifier(Pearfection.MOD_ID, "entity/signs/hanging/" + this.name()), new Identifier(Pearfection.MOD_ID, "textures/gui/hanging_signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_HANGING_SIGN).mapColor(this.topColor()).requires(FeatureFlags.UPDATE_1_20)));
+        return createBlockWithoutItem(this.name() + "_hanging_sign", new TerraformHangingSignBlock(new Identifier(Pearfection.MOD_ID, "entity/signs/hanging/" + this.name()), new Identifier(Pearfection.MOD_ID, "textures/gui/hanging_signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_HANGING_SIGN).mapColor(this.topColor())));
     }
     public Block createWallHangingSign(){
-        return createBlockWithoutItem(this.name() + "_wall_hanging_sign", new TerraformWallHangingSignBlock(new Identifier(Pearfection.MOD_ID, "entity/signs/hanging/" + this.name()), new Identifier(Pearfection.MOD_ID, "textures/gui/hanging_signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_WALL_HANGING_SIGN).mapColor(this.topColor()).requires(FeatureFlags.UPDATE_1_20)));
+        return createBlockWithoutItem(this.name() + "_wall_hanging_sign", new TerraformWallHangingSignBlock(new Identifier(Pearfection.MOD_ID, "entity/signs/hanging/" + this.name()), new Identifier(Pearfection.MOD_ID, "textures/gui/hanging_signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_WALL_HANGING_SIGN).mapColor(this.topColor())));
     }
 }

@@ -38,7 +38,7 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
         BlockStateProvider stem = context.getConfig().trunkProvider;
         BlockStateProvider baseBlock = context.getConfig().baseBlockProvider;
 
-        int stemLengthMultiplier = world.random.nextBetween(1, 3);
+        int stemLengthMultiplier = random.nextBetween(3, 4);
         int radius = 1;
         int height = random.nextBetween(2, 3);
 
@@ -47,7 +47,7 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
         Map<Iterable<BlockPos>, BlockState> PLACEMENTS = new HashMap<>();
 
 
-        if (blockPos.getY() <= world.getBottomY() + 1 && blockPos.getY() + height + 1 < world.getTopY()) {
+        if (blockPos.getY() <= world.getBottomY() + 1 && blockPos.getY() + height + stemLengthMultiplier + 1 > world.getTopY()) {
             return false;
         }
 
@@ -89,7 +89,6 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
                 }
             }
         });
-
         world.setBlockState(newPos.offset(turnDirection, 2 + stemLengthMultiplier).down(), stem.get(random, blockPos).with(PillarBlock.AXIS, Direction.Axis.Y), 2);
         placeFoliage(world, newPos.offset(turnDirection, 2 + stemLengthMultiplier), config);
 
@@ -105,35 +104,30 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
     }
 
     public static void placeFoliage(World world, BlockPos blockPos, HugePearFeatureConfig config){
-        int x = world.random.nextBetween(1, 3);
-        int y = 0;
-        int z = world.random.nextBetween(1, 3);
+        int x = world.random.nextBetween(1, 2);
+        int y = 1;
+        int z = world.random.nextBetween(1, 2);
         float radius = (float)(x + y + z) * 0.333F + 0.5F;
 
         for (BlockPos currentBlockPos : BlockPos.iterate(blockPos.add(-x, -y, -z), blockPos.add(x, y, z))) {
             if (currentBlockPos.getSquaredDistance(blockPos) <= (double) (radius * radius) && world.getBlockState(currentBlockPos).isAir()) {
-                    world.setBlockState(currentBlockPos, config.foliageProvider.get(world.random, currentBlockPos).with(Properties.WATERLOGGED, world.getBlockState(currentBlockPos).getFluidState().isIn(FluidTags.WATER)), 2);
+                BlockStateProvider leaves = world.random.nextBoolean() ? config.floweringFoliageProvider : config.foliageProvider;
+                world.setBlockState(currentBlockPos, leaves.get(world.random, currentBlockPos), 2);
             }
         }
-        x += 1;
-        y += 1;
-        z += 1;
-        for (BlockPos currentBlockPos : BlockPos.iterate(blockPos.add(-x, -y, -z).down(2), blockPos.add(x, y, z).down(2))) {
-            if (currentBlockPos.getSquaredDistance(blockPos) <= (double) (radius * radius) && world.getBlockState(currentBlockPos).isAir()) {
-                if (world.random.nextFloat() < 0.6f) {
-                    /*
-                        Place leaves
-                     */
-                    BlockStateProvider leaves = world.random.nextFloat() > 0.5 ? config.floweringFoliageProvider : config.foliageProvider;
-                    world.setBlockState(currentBlockPos, leaves.get(world.random, currentBlockPos)
-                            .with(Properties.WATERLOGGED, world.getBlockState(currentBlockPos).getFluidState().isIn(FluidTags.WATER)), 2);
+        for (BlockPos currentBlockPos : BlockPos.iterate(blockPos.add(-x, -y, -z).down(), blockPos.add(x, y, z).down())) {
+            if (world.getBlockState(currentBlockPos).isAir() && world.random.nextFloat() < 0.6f) {
+                /*
+                    Place leaves
+                 */
+                BlockStateProvider leaves = world.random.nextBoolean() ? config.floweringFoliageProvider : config.foliageProvider;
+                world.setBlockState(currentBlockPos, leaves.get(world.random, currentBlockPos), 2);
 
-                    /*
-                        Place fruit
-                     */
-                    if (world.getBlockState(currentBlockPos.down()).isAir() && world.random.nextFloat() > 0.8){
-                        world.setBlockState(currentBlockPos.down(), config.fruitProvider.get(world.random, currentBlockPos.down()), 2);
-                    }
+                /*
+                    Place fruit
+                 */
+                if (world.getBlockState(currentBlockPos.down()).isAir() && world.random.nextFloat() < 0.1){
+                    world.setBlockState(currentBlockPos.down(), config.fruitProvider.get(world.random, currentBlockPos.down()), 2);
                 }
             }
         }
