@@ -1,12 +1,9 @@
 package net.digitalpear.pearfection.common.features;
 
 import com.mojang.serialization.Codec;
-import net.digitalpear.pearfection.common.blocks.CalleryLeavesBlock;
 import net.digitalpear.pearfection.init.tags.PearBlockTags;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.PillarBlock;
-import net.minecraft.registry.tag.FluidTags;
-import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
@@ -37,6 +34,7 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
         HugePearFeatureConfig config = context.getConfig();
         BlockStateProvider stem = context.getConfig().trunkProvider;
         BlockStateProvider baseBlock = context.getConfig().baseBlockProvider;
+
 
         int stemLengthMultiplier = random.nextBetween(3, 4);
         int radius = 1;

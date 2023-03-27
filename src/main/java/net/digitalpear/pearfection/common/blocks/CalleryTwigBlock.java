@@ -55,6 +55,11 @@ public class CalleryTwigBlock extends PlantBlock implements Fertilizable {
     }
 
     @Override
+    public boolean hasRandomTicks(BlockState state) {
+        return state.get(AGE) < MAX_AGE;
+    }
+
+    @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         if (random.nextFloat() > 0.4) {
             grow(world, random, pos, state);

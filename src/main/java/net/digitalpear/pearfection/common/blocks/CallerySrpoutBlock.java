@@ -2,8 +2,6 @@ package net.digitalpear.pearfection.common.blocks;
 
 import net.digitalpear.pearfection.init.PearBlocks;
 import net.minecraft.block.*;
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -13,13 +11,13 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 
+
 public class CallerySrpoutBlock extends PlantBlock implements Fertilizable {
     protected static final VoxelShape SHAPE = Block.createCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 12.0D, 14.0D);
 
     public CallerySrpoutBlock(Settings settings) {
         super(settings);
     }
-
 
     @Override
     public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
@@ -28,7 +26,7 @@ public class CallerySrpoutBlock extends PlantBlock implements Fertilizable {
 
     @Override
     public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
-        return true;
+        return world.getBlockState(pos.up()).isAir();
     }
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -39,6 +37,6 @@ public class CallerySrpoutBlock extends PlantBlock implements Fertilizable {
     @Override
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
         TallPlantBlock.placeAt(world, PearBlocks.CALLERY_VINE.getDefaultState(), pos, 2);
-        world.setBlockState(pos, Blocks.ROOTED_DIRT.getDefaultState(), 2);
+        world.setBlockState(pos.down(), Blocks.ROOTED_DIRT.getDefaultState(), 2);
     }
 }
