@@ -42,10 +42,10 @@ public class PearRecipeGen extends FabricRecipeProvider {
         wood(exporter, RecipeCategory.BUILDING_BLOCKS, PearBlocks.CALLERY_WOOD, PearBlocks.CALLERY_STEM);
         wood(exporter, RecipeCategory.BUILDING_BLOCKS, PearBlocks.STRIPPED_CALLERY_WOOD, PearBlocks.STRIPPED_CALLERY_STEM);
 
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, PearItems.PEAR_TART)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, PearItems.PEAR_TART, 2)
                 .input(PearBlocks.LAMPEAR)
                 .input(Items.SUGAR)
-                .input(Items.EGG)
+                .input(Items.SNIFFER_EGG)
                 .input(Items.BREAD)
                 .criterion(hasItem(PearBlocks.LAMPEAR), conditionsFromItem(PearBlocks.LAMPEAR)).offerTo(exporter);
 

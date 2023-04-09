@@ -15,6 +15,6 @@ public class PearFoodComponents {
             .statusEffect(new StatusEffectInstance(StatusEffects.LUCK, 600 * 20), 1)
             .alwaysEdible().build();
 
-    public static final FoodComponent PEAR_TART = new FoodComponent.Builder().hunger(6).saturationModifier(0.5F)
+    public static final FoodComponent PEAR_TART = new FoodComponent.Builder().hunger(8).saturationModifier(1.0F)
             .statusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 5 * 20), 0.4f).build();
 }

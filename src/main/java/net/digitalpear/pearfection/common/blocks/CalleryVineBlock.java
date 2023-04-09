@@ -4,6 +4,7 @@ import net.digitalpear.pearfection.init.PearConfiguredFeatures;
 import net.digitalpear.pearfection.init.tags.PearBlockTags;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.DoubleBlockHalf;
+import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.server.world.ServerWorld;
@@ -45,6 +46,10 @@ public class CalleryVineBlock extends TallPlantBlock implements Fertilizable {
         VoxelShape SHAPE = state.get(HALF) == DoubleBlockHalf.UPPER ? TOP : BOTTOM;
         Vec3d vec3d = state.getModelOffset(world, pos);
         return SHAPE.offset(vec3d.x, vec3d.y, vec3d.z);
+    }
+    @Override
+    public boolean canReplace(BlockState state, ItemPlacementContext context) {
+        return false;
     }
 
     @Override

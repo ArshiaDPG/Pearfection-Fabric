@@ -37,7 +37,7 @@
                   ]
                 }
               ],
-              "name": "pearfection:flowering_callery_leaves"
+              "name": "pearfection:callery_leaves"
             },
             {
               "type": "minecraft:item",
@@ -57,7 +57,7 @@
                   "enchantment": "minecraft:fortune"
                 }
               ],
-              "name": "pearfection:callery_sprout"
+              "name": "pearfection:callery_twig"
             }
           ]
         }

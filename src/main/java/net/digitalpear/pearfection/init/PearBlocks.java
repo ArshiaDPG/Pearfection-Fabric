@@ -1,13 +1,15 @@
 package net.digitalpear.pearfection.init;
 
 import net.digitalpear.pearfection.Pearfection;
-import net.digitalpear.pearfection.common.blocks.*;
+import net.digitalpear.pearfection.common.blocks.CallerySrpoutBlock;
+import net.digitalpear.pearfection.common.blocks.CalleryTwigBlock;
+import net.digitalpear.pearfection.common.blocks.CalleryVineBlock;
+import net.digitalpear.pearfection.common.blocks.LampearBlock;
 import net.digitalpear.pearfection.init.data.PearFoodComponents;
 import net.digitalpear.pearfection.init.data.Woodset;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeRegistry;
 import net.minecraft.block.*;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
@@ -22,17 +24,12 @@ public class PearBlocks {
     public static MapColor calleryColor = MapColor.YELLOW;
     public static MapColor callerySideColor = MapColor.BROWN;
 
+
     public static final WoodType CALLERY_WOOD_TYPE = WoodTypeRegistry.register(Pearfection.id("callery"),
-            BlockSetTypeRegistry.register(Pearfection.id("callery"),
-                    BlockSoundGroup.CHERRY_WOOD,
-                    SoundEvents.BLOCK_CHERRY_WOOD_DOOR_CLOSE,
-                    SoundEvents.BLOCK_CHERRY_WOOD_DOOR_OPEN,
-                    SoundEvents.BLOCK_CHERRY_WOOD_TRAPDOOR_CLOSE,
-                    SoundEvents.BLOCK_CHERRY_WOOD_TRAPDOOR_OPEN,
-                    SoundEvents.BLOCK_CHERRY_WOOD_PRESSURE_PLATE_CLICK_OFF,
-                    SoundEvents.BLOCK_CHERRY_WOOD_PRESSURE_PLATE_CLICK_ON,
-                    SoundEvents.BLOCK_CHERRY_WOOD_BUTTON_CLICK_OFF,
-                    SoundEvents.BLOCK_CHERRY_WOOD_BUTTON_CLICK_ON));
+            BlockSetTypeRegistry.registerWood(Pearfection.id("callery")), BlockSoundGroup.CHERRY_WOOD,
+            BlockSoundGroup.CHERRY_WOOD_HANGING_SIGN,
+            SoundEvents.BLOCK_CHERRY_WOOD_FENCE_GATE_CLOSE,
+            SoundEvents.BLOCK_CHERRY_WOOD_FENCE_GATE_OPEN);
 
 
     public static BlockItem createBlockItem(String blockID, Block block){
@@ -67,16 +64,18 @@ public class PearBlocks {
     public static final Block CALLERY_TWIG = createBlockWithItem("callery_twig", new CalleryTwigBlock(AbstractBlock.Settings.copy(Blocks.DEAD_BUSH).offset(AbstractBlock.OffsetType.XZ).mapColor(MapColor.BROWN)));
     public static final Block POTTED_CALLERY_TWIG = createBlockWithoutItem("potted_callery_twig", new FlowerPotBlock(CALLERY_TWIG, AbstractBlock.Settings.copy(Blocks.POTTED_ACACIA_SAPLING)));
 
-    public static final Block LAMPEAR = createLampear("lampear", new LampearBlock(AbstractBlock.Settings.of(Material.REPLACEABLE_PLANT)
+    public static final Block LAMPEAR = createLampear("lampear", new LampearBlock(AbstractBlock.Settings.of(Material.PLANT)
             .luminance((state) -> 8).nonOpaque().strength(0.5f, 0.1f).mapColor(calleryColor).sounds(PearSoundEvents.BLOCK_SOUND_PEAR)),
             PearFoodComponents.LAMPEAR);
 
-    public static final Block COPPER_LAMPEAR = createLampear("copper_lampear", new LampearBlock(AbstractBlock.Settings.of(Material.REPLACEABLE_PLANT)
+    public static final Block COPPER_LAMPEAR = createLampear("copper_lampear", new LampearBlock(AbstractBlock.Settings.of(Material.PLANT)
             .luminance((state) -> 14).nonOpaque().strength(0.7f, 0.3f).mapColor(Blocks.COPPER_BLOCK.getDefaultMapColor())
                     .sounds(PearSoundEvents.BLOCK_SOUND_PEAR)), PearFoodComponents.COPPER_LAMPEAR, Rarity.RARE);
 
 
-    public static final Block LAMPEAR_BLOCK = createBlockWithItem("lampear_block", new MushroomBlock(AbstractBlock.Settings.of(Material.MOSS_BLOCK, state -> state.get(MushroomBlock.UP) ? calleryColor : MapColor.WHITE).sounds(PearSoundEvents.BLOCK_SOUND_PEAR)
+    public static final Block LAMPEAR_BLOCK = createBlockWithItem("lampear_block", new MushroomBlock(AbstractBlock.Settings.of(Material.GENERIC,
+                    state -> state.get(MushroomBlock.UP) ? calleryColor : MapColor.WHITE)
+            .sounds(PearSoundEvents.BLOCK_SOUND_PEAR)
             .strength(0.75f).luminance(state -> 10)));
 
 
@@ -85,7 +84,7 @@ public class PearBlocks {
     public static final Block CALLERY_STEM = CALLERY.createLog(true, false, false);
     public static final Block STRIPPED_CALLERY_STEM = CALLERY.createLog(true, true, false);
 
-    public static Block HOLLOWED_CALLERY_STEM = CALLERY.createHollowedLog(CALLERY_STEM);
+    public static final Block HOLLOWED_CALLERY_STEM = CALLERY.createHollowedLog(CALLERY_STEM);
 
     public static final Block CALLERY_LEAVES = CALLERY.createLeaves();
     public static final Block FLOWERING_CALLERY_LEAVES = CALLERY.createFloweringLeaves(MapColor.PALE_GREEN);
@@ -111,9 +110,6 @@ public class PearBlocks {
 
     public static final Block CALLERY_HANGING_SIGN = CALLERY.createHangingSign();
     public static final Block CALLERY_WALL_HANGING_SIGN = CALLERY.createWallHangingSign();
-
-
-
 
 
     public static void init() {

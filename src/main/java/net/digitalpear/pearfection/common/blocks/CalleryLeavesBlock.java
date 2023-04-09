@@ -34,5 +34,4 @@ public class CalleryLeavesBlock extends LeavesBlock implements Fertilizable {
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
         world.setBlockState(pos.down(), PearBlocks.LAMPEAR.getDefaultState().with(LampearBlock.HANGING, true), 2);
     }
-
 }

@@ -2,6 +2,7 @@ package net.digitalpear.pearfection.common.blocks;
 
 import net.digitalpear.pearfection.init.PearBlocks;
 import net.minecraft.block.*;
+import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -32,6 +33,11 @@ public class CallerySrpoutBlock extends PlantBlock implements Fertilizable {
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         Vec3d vec3d = state.getModelOffset(world, pos);
         return SHAPE.offset(vec3d.x, vec3d.y, vec3d.z);
+    }
+
+    @Override
+    public boolean canReplace(BlockState state, ItemPlacementContext context) {
+        return false;
     }
 
     @Override

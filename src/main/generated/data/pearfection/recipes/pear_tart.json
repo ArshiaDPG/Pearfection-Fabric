@@ -9,13 +9,14 @@
       "item": "minecraft:sugar"
     },
     {
-      "item": "minecraft:egg"
+      "item": "minecraft:sniffer_egg"
     },
     {
       "item": "minecraft:bread"
     }
   ],
   "result": {
+    "count": 2,
     "item": "pearfection:pear_tart"
   }
 }

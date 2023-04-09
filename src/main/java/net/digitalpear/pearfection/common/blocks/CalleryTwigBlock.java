@@ -2,6 +2,7 @@ package net.digitalpear.pearfection.common.blocks;
 
 import net.digitalpear.pearfection.init.PearBlocks;
 import net.minecraft.block.*;
+import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
@@ -42,6 +43,7 @@ public class CalleryTwigBlock extends PlantBlock implements Fertilizable {
         Vec3d vec3d = state.getModelOffset(world, pos);
         return SHAPE.offset(vec3d.x, vec3d.y, vec3d.z);
     }
+
     protected int getGrowthAmount(World world) {
         return world.random.nextBetween(1, 3);
     }
@@ -56,7 +58,7 @@ public class CalleryTwigBlock extends PlantBlock implements Fertilizable {
 
     @Override
     public boolean hasRandomTicks(BlockState state) {
-        return state.get(AGE) < MAX_AGE;
+        return state.get(AGE) <= MAX_AGE;
     }
 
     @Override
@@ -64,6 +66,11 @@ public class CalleryTwigBlock extends PlantBlock implements Fertilizable {
         if (random.nextFloat() > 0.4) {
             grow(world, random, pos, state);
         }
+    }
+
+    @Override
+    public boolean canReplace(BlockState state, ItemPlacementContext context) {
+        return false;
     }
 
     @Override

@@ -45,7 +45,7 @@ public class PearData {
         CompostingChanceRegistry.INSTANCE.add(PearBlocks.FLOWERING_CALLERY_LEAVES, 0.3F);
 
         CompostingChanceRegistry.INSTANCE.add(PearBlocks.CALLERY_TWIG, 0.3F);
-        CompostingChanceRegistry.INSTANCE.add(PearBlocks.CALLERY_SPROUT, 0.3F);
+        CompostingChanceRegistry.INSTANCE.add(PearBlocks.CALLERY_SPROUT, 0.4F);
         CompostingChanceRegistry.INSTANCE.add(PearBlocks.CALLERY_VINE, 0.7F);
 
         CompostingChanceRegistry.INSTANCE.add(PearBlocks.LAMPEAR_BLOCK, 0.85F);
