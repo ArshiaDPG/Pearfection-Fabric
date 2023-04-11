@@ -28,7 +28,6 @@
       "net.digitalpear.pearfection.Pearfection"
     ]
   },
-
           "mixins": [
         "pearfection.mixins.json"
       ],

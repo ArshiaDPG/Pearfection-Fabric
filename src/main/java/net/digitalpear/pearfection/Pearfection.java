@@ -14,6 +14,7 @@ import org.apache.logging.log4j.Logger;
 public class Pearfection implements ModInitializer {
     public static final String MOD_ID = "pearfection";
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
+
     public static Identifier id(String name){
         return new Identifier(MOD_ID, name);
     }

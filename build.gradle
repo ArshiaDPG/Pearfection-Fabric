@@ -140,6 +140,7 @@ unifiedPublishing {
         curseforge {
             token = System.getenv("CF_TOKEN")
             id = "837277" // Required, must be a string, ID of CurseForge project
+            gameVersions = ["1.20-Snapshot"]
         }
 
         modrinth {

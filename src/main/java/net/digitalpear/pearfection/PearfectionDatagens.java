@@ -11,7 +11,6 @@ public class PearfectionDatagens implements DataGeneratorEntrypoint {
 
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
-
         fabricDataGenerator.createPack().addProvider(PearfectionModelGen::new);
         fabricDataGenerator.createPack().addProvider(PearfectionLanguageGen::new);
         fabricDataGenerator.createPack().addProvider(PearfectionBlockLootTableGen::new);
