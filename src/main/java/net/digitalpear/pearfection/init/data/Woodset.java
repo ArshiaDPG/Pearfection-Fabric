@@ -8,22 +8,16 @@ import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.digitalpear.pearfection.Pearfection;
 import net.digitalpear.pearfection.common.blocks.CalleryLeavesBlock;
 import net.digitalpear.pearfection.common.blocks.compat.HollowedLogBlock;
-import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeRegistry;
-import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeRegistry;
 import net.minecraft.block.*;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.resource.featuretoggle.FeatureFlags;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
 
 
 public record Woodset(String name, MapColor topColor, MapColor sideColor, WoodType woodType) {
@@ -60,7 +54,7 @@ public record Woodset(String name, MapColor topColor, MapColor sideColor, WoodTy
     }
 
     private PillarBlock createLogBlock(MapColor topMapColor, MapColor sideMapColor) {
-        return new PillarBlock(AbstractBlock.Settings.of(Material.WOOD, (state) -> state.get(PillarBlock.AXIS) == Direction.Axis.Y ? topMapColor : sideMapColor).strength(2.0F).sounds(this.woodType().soundType()));
+        return new PillarBlock(AbstractBlock.Settings.of(Material.GENERIC, (state) -> state.get(PillarBlock.AXIS) == Direction.Axis.Y ? topMapColor : sideMapColor).strength(2.0F).sounds(this.woodType().soundType()));
     }
 
     private ButtonBlock createWoodenButtonBlock() {
@@ -114,7 +108,7 @@ public record Woodset(String name, MapColor topColor, MapColor sideColor, WoodTy
     }
     public Block createHollowedLog(Block log){
         String name = Registries.BLOCK.getId(log).getPath();
-        return createBlockWithItem("hollowed_" + name, new HollowedLogBlock(AbstractBlock.Settings.of(Material.WOOD, (state) -> state.get(HollowedLogBlock.AXIS) == Direction.Axis.Y ? topColor() : sideColor()).strength(log.getHardness(), log.getBlastResistance()).sounds(log.getSoundGroup(log.getDefaultState()))));
+        return createBlockWithItem("hollowed_" + name, new HollowedLogBlock(AbstractBlock.Settings.of(Material.GENERIC, (state) -> state.get(HollowedLogBlock.AXIS) == Direction.Axis.Y ? topColor() : sideColor()).strength(log.getHardness(), log.getBlastResistance()).sounds(log.getSoundGroup(log.getDefaultState()))));
     }
     public Block createLeaves(){
         return createBlockWithItem(this.name() + "_leaves", createLeavesBlock(BlockSoundGroup.AZALEA_LEAVES));

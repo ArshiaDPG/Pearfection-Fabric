@@ -13,7 +13,7 @@ public class HugePearFeatureConfig implements FeatureConfig {
                     BlockStateProvider.TYPE_CODEC.fieldOf("foliage_provider").forGetter((config) -> config.foliageProvider),
                     BlockStateProvider.TYPE_CODEC.fieldOf("flowering_foliage_provider").forGetter((config) -> config.foliageProvider),
                     BlockStateProvider.TYPE_CODEC.fieldOf("base_block_provider").forGetter((config) -> config.baseBlockProvider),
-                    BlockStateProvider.TYPE_CODEC.fieldOf("fruit_provider").forGetter((config) -> config.baseBlockProvider))
+                    BlockStateProvider.TYPE_CODEC.fieldOf("fruit_provider").forGetter((config) -> config.fruitProvider))
                     .apply(instance, HugePearFeatureConfig::new));
     public final BlockStateProvider trunkProvider;
     public final BlockStateProvider foliageProvider;
@@ -23,7 +23,11 @@ public class HugePearFeatureConfig implements FeatureConfig {
 
 
 
-    protected HugePearFeatureConfig(BlockStateProvider stemProvider, BlockStateProvider foliageProvider, BlockStateProvider floweringFoliageProvider, BlockStateProvider baseBlockProvider, BlockStateProvider fruitProvider) {
+    public HugePearFeatureConfig(BlockStateProvider stemProvider,
+                                 BlockStateProvider foliageProvider,
+                                 BlockStateProvider floweringFoliageProvider,
+                                 BlockStateProvider baseBlockProvider,
+                                 BlockStateProvider fruitProvider) {
         this.trunkProvider = stemProvider;
         this.foliageProvider = foliageProvider;
         this.floweringFoliageProvider = floweringFoliageProvider;

@@ -32,7 +32,6 @@ public class PearfectionBlockTagGen extends FabricTagProvider<Block> {
             VANILLA
          */
         getOrCreateTagBuilder(BlockTags.HOE_MINEABLE).add(PearBlocks.LAMPEAR).add(PearBlocks.LAMPEAR_BLOCK).add(PearBlocks.CALLERY_LEAVES);
-//        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE).add(PearBlocks.CALLERY_BOOKSHELF);
 
         getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN).forceAddTag(PearBlockTags.CALLERY_STEMS);
         getOrCreateTagBuilder(BlockTags.PLANKS).add(PearBlocks.CALLERY_PLANKS);
@@ -85,7 +84,6 @@ public class PearfectionBlockTagGen extends FabricTagProvider<Block> {
                 .add(Blocks.SCULK)
                 .add(Blocks.FARMLAND);
 
-//        getOrCreateTagBuilder(PearBlockTags.BOOKSHELVES_C).add(PearBlocks.CALLERY_BOOKSHELF);
 
 
         /*
