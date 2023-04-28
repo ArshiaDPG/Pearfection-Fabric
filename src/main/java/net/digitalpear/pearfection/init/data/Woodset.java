@@ -24,10 +24,13 @@ public record Woodset(String name, MapColor topColor, MapColor sideColor, WoodTy
     public static final String MOD_ID = Pearfection.MOD_ID;
 
     public static LeavesBlock createLeavesBlock(BlockSoundGroup soundGroup) {
-        return new LeavesBlock(AbstractBlock.Settings.of(Material.PLANT).strength(0.2f).ticksRandomly().sounds(soundGroup).nonOpaque().allowsSpawning(Woodset::canSpawnOnLeaves).suffocates(Woodset::never).blockVision(Woodset::never));
+        return new LeavesBlock(AbstractBlock.Settings.of().mapColor(MapColor.DARK_GREEN).strength(0.2f).ticksRandomly().sounds(soundGroup).nonOpaque().allowsSpawning(Woodset::canSpawnOnLeaves).suffocates(Woodset::never).blockVision(Woodset::never));
     }
     public static LeavesBlock createFloweringLeavesBlock(BlockSoundGroup soundGroup, MapColor color) {
-        return new CalleryLeavesBlock(AbstractBlock.Settings.of(Material.PLANT, color).strength(0.2f).ticksRandomly().sounds(soundGroup).nonOpaque().allowsSpawning(Woodset::canSpawnOnLeaves).suffocates(Woodset::never).blockVision(Woodset::never));
+        return new CalleryLeavesBlock(AbstractBlock.Settings.of().mapColor(color).strength(0.2f).ticksRandomly().sounds(soundGroup).nonOpaque().allowsSpawning(Woodset::canSpawnOnLeaves).suffocates(Woodset::never).blockVision(Woodset::never));
+    }
+    public static LeavesBlock createFloweringLeavesBlock(BlockSoundGroup soundGroup) {
+        return new CalleryLeavesBlock(AbstractBlock.Settings.of().mapColor(MapColor.DARK_GREEN).strength(0.2f).ticksRandomly().sounds(soundGroup).nonOpaque().allowsSpawning(Woodset::canSpawnOnLeaves).suffocates(Woodset::never).blockVision(Woodset::never));
     }
 
 
@@ -54,7 +57,7 @@ public record Woodset(String name, MapColor topColor, MapColor sideColor, WoodTy
     }
 
     private PillarBlock createLogBlock(MapColor topMapColor, MapColor sideMapColor) {
-        return new PillarBlock(AbstractBlock.Settings.of(Material.GENERIC, (state) -> state.get(PillarBlock.AXIS) == Direction.Axis.Y ? topMapColor : sideMapColor).strength(2.0F).sounds(this.woodType().soundType()));
+        return new PillarBlock(AbstractBlock.Settings.of().mapColor((state) -> state.get(PillarBlock.AXIS) == Direction.Axis.Y ? topMapColor : sideMapColor).strength(2.0F).sounds(this.woodType().soundType()));
     }
 
     private ButtonBlock createWoodenButtonBlock() {
@@ -108,7 +111,7 @@ public record Woodset(String name, MapColor topColor, MapColor sideColor, WoodTy
     }
     public Block createHollowedLog(Block log){
         String name = Registries.BLOCK.getId(log).getPath();
-        return createBlockWithItem("hollowed_" + name, new HollowedLogBlock(AbstractBlock.Settings.of(Material.GENERIC, (state) -> state.get(HollowedLogBlock.AXIS) == Direction.Axis.Y ? topColor() : sideColor()).strength(log.getHardness(), log.getBlastResistance()).sounds(log.getSoundGroup(log.getDefaultState()))));
+        return createBlockWithItem("hollowed_" + name, new HollowedLogBlock(AbstractBlock.Settings.of().mapColor((state) -> state.get(HollowedLogBlock.AXIS) == Direction.Axis.Y ? topColor() : sideColor()).strength(log.getHardness(), log.getBlastResistance()).sounds(log.getSoundGroup(log.getDefaultState()))));
     }
     public Block createLeaves(){
         return createBlockWithItem(this.name() + "_leaves", createLeavesBlock(BlockSoundGroup.AZALEA_LEAVES));
@@ -117,15 +120,15 @@ public record Woodset(String name, MapColor topColor, MapColor sideColor, WoodTy
         return createBlockWithItem("flowering_" + this.name() + "_leaves", createFloweringLeavesBlock(BlockSoundGroup.AZALEA_LEAVES, flowerColor));
     }
     public Block createSign(){
-        return createBlockWithoutItem(this.name() + "_sign", new TerraformSignBlock(new Identifier(Pearfection.MOD_ID, "entity/signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_SIGN).mapColor(this.topColor())));
+        return createBlockWithoutItem(this.name() + "_sign", new TerraformSignBlock(new Identifier(MOD_ID, "entity/signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_SIGN).mapColor(this.topColor())));
     }
     public Block createWallSign(){
-        return createBlockWithoutItem(this.name() + "_wall_sign", new TerraformWallSignBlock(new Identifier(Pearfection.MOD_ID, "entity/signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_WALL_SIGN).mapColor(this.topColor())));
+        return createBlockWithoutItem(this.name() + "_wall_sign", new TerraformWallSignBlock(new Identifier(MOD_ID, "entity/signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_WALL_SIGN).mapColor(this.topColor())));
     }
     public Block createHangingSign(){
-        return createBlockWithoutItem(this.name() + "_hanging_sign", new TerraformHangingSignBlock(new Identifier(Pearfection.MOD_ID, "entity/signs/hanging/" + this.name()), new Identifier(Pearfection.MOD_ID, "textures/gui/hanging_signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_HANGING_SIGN).mapColor(this.topColor())));
+        return createBlockWithoutItem(this.name() + "_hanging_sign", new TerraformHangingSignBlock(new Identifier(MOD_ID, "entity/signs/hanging/" + this.name()), new Identifier(Pearfection.MOD_ID, "textures/gui/hanging_signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_HANGING_SIGN).mapColor(this.topColor())));
     }
     public Block createWallHangingSign(){
-        return createBlockWithoutItem(this.name() + "_wall_hanging_sign", new TerraformWallHangingSignBlock(new Identifier(Pearfection.MOD_ID, "entity/signs/hanging/" + this.name()), new Identifier(Pearfection.MOD_ID, "textures/gui/hanging_signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_WALL_HANGING_SIGN).mapColor(this.topColor())));
+        return createBlockWithoutItem(this.name() + "_wall_hanging_sign", new TerraformWallHangingSignBlock(new Identifier(MOD_ID, "entity/signs/hanging/" + this.name()), new Identifier(Pearfection.MOD_ID, "textures/gui/hanging_signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_WALL_HANGING_SIGN).mapColor(this.topColor())));
     }
 }

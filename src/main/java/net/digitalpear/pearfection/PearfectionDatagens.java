@@ -19,6 +19,7 @@ public class PearfectionDatagens implements DataGeneratorEntrypoint {
         fabricDataGenerator.createPack().addProvider(PearfectionLanguageGen::new);
         fabricDataGenerator.createPack().addProvider(PearfectionBlockLootTableGen::new);
         fabricDataGenerator.createPack().addProvider(PearRecipeGen::new);
+
         fabricDataGenerator.createPack().addProvider(PearConfiguredFeatureProvider::new);
 
         fabricDataGenerator.createPack().addProvider(PearfectionBlockTagGen::new);

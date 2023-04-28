@@ -1,12 +1,13 @@
 package net.digitalpear.pearfection.init.data;
 
 import net.digitalpear.pearfection.init.PearBlocks;
-import net.digitalpear.snifferiety.registry.SeedProperties;
-import net.digitalpear.snifferiety.registry.SnifferSeedRegistry;
+import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.minecraft.loot.LootTables;
+import net.minecraft.loot.entry.ItemEntry;
 
 public class PearData {
     public static void registerFlammableBlock(){
@@ -63,6 +64,16 @@ public class PearData {
         registerComposting();
 
 
-        SnifferSeedRegistry.register(PearBlocks.CALLERY_TWIG.asItem(), new SeedProperties(10));
+        /*
+            Adds the callery twig to the sniffers loot table (Adds to the existing pool instead of creating a new pool).
+            I'd recommend using this method if you want to add new drops quickly.
+         */
+        LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
+            if (source.isBuiltin() && LootTables.SNIFFER_DIGGING_GAMEPLAY.equals(id)) {
+                tableBuilder.modifyPools(builder -> {
+                    builder.with(ItemEntry.builder(PearBlocks.CALLERY_TWIG));
+                });
+            }
+        });
     }
 }

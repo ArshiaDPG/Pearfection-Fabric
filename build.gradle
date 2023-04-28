@@ -13,7 +13,6 @@ repositories {
         name = 'TerraformersMC'
         url = 'https://maven.terraformersmc.com/'
     }
-    maven { url "https://www.cursemaven.com" }
 }
 
 dependencies {
@@ -25,8 +24,6 @@ dependencies {
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     modImplementation include("com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}")
-
-    modApi include ("curse.maven:snifferiety-830243:${project.snifferiety_version}")
 }
 
 processResources {
@@ -55,7 +52,7 @@ java {
     if (JavaVersion.current() < javaVersion) {
         toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
     }
-    archivesBaseName = project.archives_base_name + "-" + project.minecraft_version
+    archivesBaseName = project.modid + "-" + project.minecraft_version
     // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
     // if it is present.
     // If you remove this line, sources will not be generated.
@@ -116,7 +113,10 @@ unifiedPublishing {
     project {
         displayName = "${project.minecraft_version}-${project.mod_version}" // Optional, name of the file
         changelog = '''<ul>
-  <li>Initial Release</li>
+  <li>Updated to 23w17a</li>
+  <li>Snifferiety is no longer built into the mod, as the sniffer using a loot table for seed drops makes the mod useless.</li>
+  <li>Callery twigs now have the same chance of dropping as all other seed items.</li>
+  <li>Huge Pears will now place correctly when placed with commands.</li>
 </ul> '''
         releaseType = "release" // Optional, use "release", "beta" or "alpha"
         gameVersions = ["${project.minecraft_version}"]
@@ -129,10 +129,7 @@ unifiedPublishing {
                 curseforge = "fabric-api" // Optional, project slug
                 modrinth = "fabric-api" // Optional, project slug or id
             }
-            includes {
-                curseforge = "snifferiety" // Optional, project slug
-                modrinth = "snifferiety"
-            } // Mark as an included dependency
+            includes {} // Mark as an included dependency
             optional {} // Mark as an optional dependency
             conflicts {} // Mark as a conflicted dependency
         }

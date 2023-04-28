@@ -57,15 +57,13 @@ public class CalleryVineBlock extends TallPlantBlock implements Fertilizable {
         if (pos.getY() <= world.getBottomY() + 1 && pos.getY() + 4 < world.getTopY()) {
             return;
         }
-        else{
-            BlockPos startingPos = state.get(HALF) == DoubleBlockHalf.UPPER ? pos : pos.up();
-            world.setBlockState(startingPos.down(), Blocks.AIR.getDefaultState(), 1);
-            world.setBlockState(startingPos, Blocks.AIR.getDefaultState(), 1);
+        BlockPos startingPos = state.get(HALF) == DoubleBlockHalf.UPPER ? pos.down() : pos;
+        world.setBlockState(startingPos, Blocks.AIR.getDefaultState(), 1);
+        world.setBlockState(startingPos.up(), Blocks.AIR.getDefaultState(), 1);
 
-            world.getRegistryManager().getOptional(RegistryKeys.CONFIGURED_FEATURE).flatMap((registry) ->
-                    registry.getEntry(tree)).ifPresent((reference) ->
-                    reference.value().generate(world, world.getChunkManager().getChunkGenerator(),
-                            random, startingPos));
-        }
+        world.getRegistryManager().getOptional(RegistryKeys.CONFIGURED_FEATURE).flatMap((registry) ->
+                registry.getEntry(tree)).ifPresent((reference) ->
+                reference.value().generate(world, world.getChunkManager().getChunkGenerator(),
+                        random, startingPos));
     }
 }

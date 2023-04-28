@@ -28,7 +28,7 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
     @Override
     public boolean generate(FeatureContext<HugePearFeatureConfig> context) {
 
-        BlockPos blockPos = context.getOrigin();
+        BlockPos blockPos = context.getOrigin().up();
         World world = context.getWorld().toServerWorld();
         Random random = context.getRandom();
         HugePearFeatureConfig config = context.getConfig();
