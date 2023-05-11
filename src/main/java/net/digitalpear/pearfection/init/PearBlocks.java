@@ -64,16 +64,16 @@ public class PearBlocks {
     public static final Block CALLERY_TWIG = createBlockWithItem("callery_twig", new CalleryTwigBlock(AbstractBlock.Settings.copy(Blocks.DEAD_BUSH).offset(AbstractBlock.OffsetType.XZ).mapColor(MapColor.BROWN)));
     public static final Block POTTED_CALLERY_TWIG = createBlockWithoutItem("potted_callery_twig", new FlowerPotBlock(CALLERY_TWIG, AbstractBlock.Settings.copy(Blocks.POTTED_ACACIA_SAPLING)));
 
-    public static final Block LAMPEAR = createLampear("lampear", new LampearBlock(AbstractBlock.Settings.of()
+    public static final Block LAMPEAR = createLampear("lampear", new LampearBlock(AbstractBlock.Settings.create()
             .luminance((state) -> 8).nonOpaque().strength(0.5f, 0.1f).mapColor(calleryColor).sounds(PearSoundEvents.BLOCK_SOUND_PEAR)),
             PearFoodComponents.LAMPEAR);
 
-    public static final Block COPPER_LAMPEAR = createLampear("copper_lampear", new LampearBlock(AbstractBlock.Settings.of()
+    public static final Block COPPER_LAMPEAR = createLampear("copper_lampear", new LampearBlock(AbstractBlock.Settings.create()
             .luminance((state) -> 14).nonOpaque().strength(0.7f, 0.3f).mapColor(Blocks.COPPER_BLOCK.getDefaultMapColor())
                     .sounds(PearSoundEvents.BLOCK_SOUND_PEAR)), PearFoodComponents.COPPER_LAMPEAR, Rarity.RARE);
 
 
-    public static final Block LAMPEAR_BLOCK = createBlockWithItem("lampear_block", new MushroomBlock(AbstractBlock.Settings.of()
+    public static final Block LAMPEAR_BLOCK = createBlockWithItem("lampear_block", new MushroomBlock(AbstractBlock.Settings.create()
             .mapColor(state -> state.get(MushroomBlock.UP) ? calleryColor : MapColor.WHITE)
             .sounds(PearSoundEvents.BLOCK_SOUND_PEAR)
             .strength(0.75f).luminance(state -> 10)));

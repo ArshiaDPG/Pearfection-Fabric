@@ -24,13 +24,13 @@ public record Woodset(String name, MapColor topColor, MapColor sideColor, WoodTy
     public static final String MOD_ID = Pearfection.MOD_ID;
 
     public static LeavesBlock createLeavesBlock(BlockSoundGroup soundGroup) {
-        return new LeavesBlock(AbstractBlock.Settings.of().mapColor(MapColor.DARK_GREEN).strength(0.2f).ticksRandomly().sounds(soundGroup).nonOpaque().allowsSpawning(Woodset::canSpawnOnLeaves).suffocates(Woodset::never).blockVision(Woodset::never));
+        return new LeavesBlock(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).strength(0.2f).ticksRandomly().sounds(soundGroup).nonOpaque().allowsSpawning(Woodset::canSpawnOnLeaves).suffocates(Woodset::never).blockVision(Woodset::never));
     }
     public static LeavesBlock createFloweringLeavesBlock(BlockSoundGroup soundGroup, MapColor color) {
-        return new CalleryLeavesBlock(AbstractBlock.Settings.of().mapColor(color).strength(0.2f).ticksRandomly().sounds(soundGroup).nonOpaque().allowsSpawning(Woodset::canSpawnOnLeaves).suffocates(Woodset::never).blockVision(Woodset::never));
+        return new CalleryLeavesBlock(AbstractBlock.Settings.create().mapColor(color).strength(0.2f).ticksRandomly().sounds(soundGroup).nonOpaque().allowsSpawning(Woodset::canSpawnOnLeaves).suffocates(Woodset::never).blockVision(Woodset::never));
     }
     public static LeavesBlock createFloweringLeavesBlock(BlockSoundGroup soundGroup) {
-        return new CalleryLeavesBlock(AbstractBlock.Settings.of().mapColor(MapColor.DARK_GREEN).strength(0.2f).ticksRandomly().sounds(soundGroup).nonOpaque().allowsSpawning(Woodset::canSpawnOnLeaves).suffocates(Woodset::never).blockVision(Woodset::never));
+        return new CalleryLeavesBlock(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).strength(0.2f).ticksRandomly().sounds(soundGroup).nonOpaque().allowsSpawning(Woodset::canSpawnOnLeaves).suffocates(Woodset::never).blockVision(Woodset::never));
     }
 
 
@@ -57,7 +57,7 @@ public record Woodset(String name, MapColor topColor, MapColor sideColor, WoodTy
     }
 
     private PillarBlock createLogBlock(MapColor topMapColor, MapColor sideMapColor) {
-        return new PillarBlock(AbstractBlock.Settings.of().mapColor((state) -> state.get(PillarBlock.AXIS) == Direction.Axis.Y ? topMapColor : sideMapColor).strength(2.0F).sounds(this.woodType().soundType()));
+        return new PillarBlock(AbstractBlock.Settings.create().mapColor((state) -> state.get(PillarBlock.AXIS) == Direction.Axis.Y ? topMapColor : sideMapColor).strength(2.0F).sounds(this.woodType().soundType()));
     }
 
     private ButtonBlock createWoodenButtonBlock() {
@@ -111,7 +111,7 @@ public record Woodset(String name, MapColor topColor, MapColor sideColor, WoodTy
     }
     public Block createHollowedLog(Block log){
         String name = Registries.BLOCK.getId(log).getPath();
-        return createBlockWithItem("hollowed_" + name, new HollowedLogBlock(AbstractBlock.Settings.of().mapColor((state) -> state.get(HollowedLogBlock.AXIS) == Direction.Axis.Y ? topColor() : sideColor()).strength(log.getHardness(), log.getBlastResistance()).sounds(log.getSoundGroup(log.getDefaultState()))));
+        return createBlockWithItem("hollowed_" + name, new HollowedLogBlock(AbstractBlock.Settings.create().mapColor((state) -> state.get(HollowedLogBlock.AXIS) == Direction.Axis.Y ? topColor() : sideColor()).strength(log.getHardness(), log.getBlastResistance()).sounds(log.getSoundGroup(log.getDefaultState()))));
     }
     public Block createLeaves(){
         return createBlockWithItem(this.name() + "_leaves", createLeavesBlock(BlockSoundGroup.AZALEA_LEAVES));

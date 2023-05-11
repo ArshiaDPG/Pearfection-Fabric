@@ -24,5 +24,6 @@
     "recipes": [
       "pearfection:callery_boat"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

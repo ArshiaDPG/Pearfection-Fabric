@@ -8,6 +8,8 @@ import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.loot.LootTables;
 import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 
 public class PearData {
     public static void registerFlammableBlock(){
@@ -74,6 +76,7 @@ public class PearData {
                     builder.with(ItemEntry.builder(PearBlocks.CALLERY_TWIG));
                 });
             }
+
         });
     }
 }

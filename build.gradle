@@ -113,10 +113,8 @@ unifiedPublishing {
     project {
         displayName = "${project.minecraft_version}-${project.mod_version}" // Optional, name of the file
         changelog = '''<ul>
-  <li>Updated to 23w17a</li>
-  <li>Snifferiety is no longer built into the mod, as the sniffer using a loot table for seed drops makes the mod useless.</li>
-  <li>Callery twigs now have the same chance of dropping as all other seed items.</li>
-  <li>Huge Pears will now place correctly when placed with commands.</li>
+  <li>Updated to 23w18a</li>
+  <li>Fixed issues with world generation.</li>
 </ul> '''
         releaseType = "release" // Optional, use "release", "beta" or "alpha"
         gameVersions = ["${project.minecraft_version}"]

@@ -6,7 +6,9 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.PillarBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.floatprovider.ConstantFloatProvider;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
@@ -29,7 +31,7 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
     public boolean generate(FeatureContext<HugePearFeatureConfig> context) {
 
         BlockPos blockPos = context.getOrigin().up();
-        World world = context.getWorld().toServerWorld();
+        StructureWorldAccess world = context.getWorld();
         Random random = context.getRandom();
         HugePearFeatureConfig config = context.getConfig();
         BlockStateProvider stem = context.getConfig().trunkProvider;
@@ -67,12 +69,12 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
         PLACEMENTS.put(BlockPos.iterate(blockPos, blockPos.offset(Direction.UP, 2)),
                 stem.get(random, blockPos).with(PillarBlock.AXIS, Direction.Axis.Y));
 
-        placeFoliage(world, blockPos.offset(Direction.UP, 2 + stemLengthMultiplier).offset(turnDirection), config);
+        placeFoliage(world, random, blockPos.offset(Direction.UP, 2 + stemLengthMultiplier).offset(turnDirection), config);
         PLACEMENTS.put(BlockPos.iterate(blockPos.offset(Direction.UP, 2).offset(turnDirection), blockPos.offset(Direction.UP, 2 + stemLengthMultiplier).offset(turnDirection)),
                 stem.get(random, blockPos).with(PillarBlock.AXIS, Direction.Axis.Y));
 
         BlockPos newPos = blockPos.offset(Direction.UP, 2 + stemLengthMultiplier).offset(turnDirection);
-        placeFoliage(world, newPos, config);
+        placeFoliage(world, random, newPos, config);
         PLACEMENTS.put(BlockPos.iterate(newPos, newPos.offset(turnDirection, 1 + stemLengthMultiplier)), stem.get(random, blockPos).with(PillarBlock.AXIS, turnDirection.getAxis()));
 
 
@@ -88,7 +90,7 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
             }
         });
         world.setBlockState(newPos.offset(turnDirection, 2 + stemLengthMultiplier).down(), stem.get(random, blockPos).with(PillarBlock.AXIS, Direction.Axis.Y), 2);
-        placeFoliage(world, newPos.offset(turnDirection, 2 + stemLengthMultiplier), config);
+        placeFoliage(world, random, newPos.offset(turnDirection, 2 + stemLengthMultiplier), config);
 
         return true;
     }
@@ -101,10 +103,10 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
         return direction;
     }
 
-    public static void placeFoliage(World world, BlockPos blockPos, HugePearFeatureConfig config){
-        int x = world.random.nextBetween(1, 2);
+    public static void placeFoliage(StructureWorldAccess world, Random random, BlockPos blockPos, HugePearFeatureConfig config){
+        int x = random.nextBetween(1, 2);
         int y = 1;
-        int z = world.random.nextBetween(1, 2);
+        int z = random.nextBetween(1, 2);
         float radius = (float)(x + y + z) * 0.333F + 0.5F;
 
 
@@ -113,23 +115,24 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
                 Place leaves
             */
             if (currentBlockPos.getSquaredDistance(blockPos) <= (double) (radius * radius) && world.getBlockState(currentBlockPos).isAir()) {
-                BlockStateProvider leaves = world.random.nextBoolean() ? config.floweringFoliageProvider : config.foliageProvider;
-                world.setBlockState(currentBlockPos, leaves.get(world.random, currentBlockPos), 2);
+                BlockStateProvider leaves = random.nextBoolean() ? config.floweringFoliageProvider : config.foliageProvider;
+                world.setBlockState(currentBlockPos, leaves.get(random, currentBlockPos), 2);
             }
         }
         for (BlockPos currentBlockPos : BlockPos.iterate(blockPos.add(-x, -y, -z).down(), blockPos.add(x, y, z).down())) {
-            if (world.getBlockState(currentBlockPos).isAir() && world.random.nextFloat() < 0.6f) {
+            if (world.getBlockState(currentBlockPos).isAir() && random.nextFloat() < 0.6f) {
                 /*
                     Place leaves
                  */
-                BlockStateProvider leaves = world.random.nextBoolean() ? config.floweringFoliageProvider : config.foliageProvider;
-                world.setBlockState(currentBlockPos, leaves.get(world.random, currentBlockPos), 2);
+                BlockStateProvider leaves = random.nextBoolean() ? config.floweringFoliageProvider : config.foliageProvider;
+                world.setBlockState(currentBlockPos, leaves.get(random, currentBlockPos), 2);
 
                 /*
                     Place fruit
                  */
-                if (world.getBlockState(currentBlockPos.down()).isAir() && world.random.nextFloat() < 0.2){
-                    world.setBlockState(currentBlockPos.down(), config.fruitProvider.get(world.random, currentBlockPos.down()), 2);
+                if (world.getBlockState(currentBlockPos.down()).isAir() && random.nextFloat() < 0.2){
+                    BlockStateProvider fruit = random.nextFloat() < 0.25 ? config.rareFruitProvider : config.fruitProvider;
+                    world.setBlockState(currentBlockPos.down(), fruit.get(random, currentBlockPos.down()), 2);
                 }
             }
         }

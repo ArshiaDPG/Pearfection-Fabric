@@ -47,6 +47,16 @@
         }
       }
     },
+    "rare_fruit_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "pearfection:lampear",
+        "Properties": {
+          "hanging": "true",
+          "waterlogged": "false"
+        }
+      }
+    },
     "stem_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
