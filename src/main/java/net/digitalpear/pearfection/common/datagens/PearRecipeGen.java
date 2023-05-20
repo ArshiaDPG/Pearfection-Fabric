@@ -37,8 +37,7 @@ public class PearRecipeGen extends FabricRecipeProvider {
         RecipeProvider.offerBoatRecipe(exporter, PearItems.CALLERY_BOAT, PearBlocks.CALLERY_PLANKS);
         RecipeProvider.offerChestBoatRecipe(exporter, PearItems.CALLERY_CHEST_BOAT, PearBlocks.CALLERY_PLANKS);
         RecipeProvider.offerHangingSignRecipe(exporter, PearItems.CALLERY_HANGING_SIGN, PearBlocks.STRIPPED_CALLERY_STEM);
-        RecipeProvider.offerPlanksRecipe2(exporter, PearBlocks.CALLERY_PLANKS, PearItemTags.CALLERY_STEMS, 4);
-        woodFromHollow(exporter, RecipeCategory.BUILDING_BLOCKS, PearBlocks.CALLERY_WOOD, PearBlocks.HOLLOWED_CALLERY_STEM);
+        RecipeProvider.offerPlanksRecipe2(exporter, PearBlocks.CALLERY_PLANKS, PearItemTags.C_FRUITS_PEARS, 4);
         wood(exporter, RecipeCategory.BUILDING_BLOCKS, PearBlocks.CALLERY_WOOD, PearBlocks.CALLERY_STEM);
         wood(exporter, RecipeCategory.BUILDING_BLOCKS, PearBlocks.STRIPPED_CALLERY_WOOD, PearBlocks.STRIPPED_CALLERY_STEM);
 
@@ -92,8 +91,5 @@ public class PearRecipeGen extends FabricRecipeProvider {
 
     public static void wood(Consumer<RecipeJsonProvider> exporter, RecipeCategory category, ItemConvertible output, ItemConvertible input) {
         ShapedRecipeJsonBuilder.create(category, output, 4).input('#', input).pattern("##").pattern("##").criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
-    }
-    public static void woodFromHollow(Consumer<RecipeJsonProvider> exporter, RecipeCategory category, ItemConvertible output, ItemConvertible input) {
-        ShapedRecipeJsonBuilder.create(category, output, 2).input('#', input).pattern("##").pattern("##").group("bark").criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter, Registries.ITEM.getId(output.asItem()).withSuffixedPath("_from_hollowed"));
     }
 }

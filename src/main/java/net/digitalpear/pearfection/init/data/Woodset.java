@@ -7,7 +7,6 @@ import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.digitalpear.pearfection.Pearfection;
 import net.digitalpear.pearfection.common.blocks.CalleryLeavesBlock;
-import net.digitalpear.pearfection.common.blocks.compat.HollowedLogBlock;
 import net.minecraft.block.*;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
@@ -108,10 +107,6 @@ public record Woodset(String name, MapColor topColor, MapColor sideColor, WoodTy
             name += mushroom ? "_stem" : "_log";
         }
         return createBlockWithItem(name, createLogBlock(topColor, sideColor));
-    }
-    public Block createHollowedLog(Block log){
-        String name = Registries.BLOCK.getId(log).getPath();
-        return createBlockWithItem("hollowed_" + name, new HollowedLogBlock(AbstractBlock.Settings.create().mapColor((state) -> state.get(HollowedLogBlock.AXIS) == Direction.Axis.Y ? topColor() : sideColor()).strength(log.getHardness(), log.getBlastResistance()).sounds(log.getSoundGroup(log.getDefaultState()))));
     }
     public Block createLeaves(){
         return createBlockWithItem(this.name() + "_leaves", createLeavesBlock(BlockSoundGroup.AZALEA_LEAVES));

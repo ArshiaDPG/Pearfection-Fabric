@@ -66,13 +66,10 @@ public class PearfectionBlockTagGen extends FabricTagProvider<Block> {
          */
         getOrCreateTagBuilder(PearBlockTags.CALLERY_STEMS)
                 .add(PearBlocks.CALLERY_STEM).add(PearBlocks.STRIPPED_CALLERY_STEM)
-                .add(PearBlocks.CALLERY_WOOD).add(PearBlocks.STRIPPED_CALLERY_WOOD)
-                .add(PearBlocks.HOLLOWED_CALLERY_STEM);
+                .add(PearBlocks.CALLERY_WOOD).add(PearBlocks.STRIPPED_CALLERY_WOOD);
 
         getOrCreateTagBuilder(PearBlockTags.HUGE_PEAR_CANNOT_REPLACE)
-                .add(Blocks.SCULK)
                 .add(Blocks.SCULK_CATALYST)
-                .add(Blocks.SCULK_SENSOR)
                 .add(Blocks.SCULK_SHRIEKER)
                 .forceAddTag(BlockTags.BEACON_BASE_BLOCKS)
                 .forceAddTag(BlockTags.FEATURES_CANNOT_REPLACE);
@@ -83,13 +80,5 @@ public class PearfectionBlockTagGen extends FabricTagProvider<Block> {
                 .forceAddTag(BlockTags.SAND)
                 .add(Blocks.SCULK)
                 .add(Blocks.FARMLAND);
-
-
-
-        /*
-            WILDER WILD
-         */
-        getOrCreateTagBuilder(PearBlockTags.HOLLOWED_LOGS).add(PearBlocks.HOLLOWED_CALLERY_STEM);
-        getOrCreateTagBuilder(PearBlockTags.TERMITE_BREAKABLE).add(PearBlocks.HOLLOWED_CALLERY_STEM);
     }
 }

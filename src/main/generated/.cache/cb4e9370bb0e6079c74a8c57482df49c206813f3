@@ -1,4 +1,4 @@
-// 1.20 Pre-release 1	2023-05-11T10:03:05.8653011	Pearfection/Tags for minecraft:item
+// 1.20 Pre-release 1	2023-05-19T17:42:12.337553	Pearfection/Tags for minecraft:item
 d1ba86d171b2e83682211e4823a0ff9943eefdaa data\minecraft\tags\items\planks.json
 9707d0a29c98adf376432fdc832fb4573dc3aeca data\minecraft\tags\items\wooden_doors.json
 2b04b49981d8712d193adeb167070a9c19bea38c data\minecraft\tags\items\saplings.json
@@ -10,7 +10,8 @@ cb399a5e274b7f8ab84bf4ea16504d75e71928a7 data\minecraft\tags\items\wooden_pressu
 d2707eccc4923887df1b9dee98a2bef7287441f7 data\minecraft\tags\items\wooden_trapdoors.json
 1959c42f00b6ae675c1ba454a1fae333dc708509 data\minecraft\tags\items\wooden_slabs.json
 3c50cf52d48ae068de113146a3b863f642c4f50b data\minecraft\tags\items\wooden_stairs.json
-3b659293da7fde5c72f12ed433930fe6e8af545e data\minecraft\tags\items\logs_that_burn.json
+199c20298a6c20cff565991bd8ee21eafcc0c68d data\minecraft\tags\items\logs_that_burn.json
 5931f2414a4da5dbaf4bdc6f29373e9ddd0d8e68 data\minecraft\tags\items\signs.json
+93f4b644b927b409656dab243954b47e844b391b data\c\tags\items\fruits\pears.json
 41da77b8492941a97767a3aab232375ccb60b246 data\minecraft\tags\items\wooden_buttons.json
-73a291e04feb6134cd35d2944f877a59dfb95bfb data\pearfection\tags\items\callery_stems.json
+b67a48ac09de1c10f54c6bd3ea8d097eac4764c7 data\pearfection\tags\items\callery_stems.json

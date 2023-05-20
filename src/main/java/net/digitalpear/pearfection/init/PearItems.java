@@ -7,13 +7,10 @@ import net.digitalpear.pearfection.Pearfection;
 import net.digitalpear.pearfection.init.data.PearFoodComponents;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.resource.featuretoggle.FeatureFlags;
 import net.minecraft.util.Identifier;
 
 
@@ -65,9 +62,6 @@ public class PearItems {
             entries.addAfter(Items.MANGROVE_BUTTON, PearBlocks.CALLERY_WOOD);
             entries.addAfter(Items.MANGROVE_BUTTON, PearBlocks.STRIPPED_CALLERY_STEM);
             entries.addAfter(Items.MANGROVE_BUTTON, PearBlocks.CALLERY_STEM);
-            if (FabricLoader.getInstance().isModLoaded("wilderwild")){
-                entries.addAfter(PearBlocks.CALLERY_STEM, PearBlocks.HOLLOWED_CALLERY_STEM);
-            }
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
@@ -80,9 +74,6 @@ public class PearItems {
             entries.addAfter(PearBlocks.CALLERY_LEAVES, PearBlocks.FLOWERING_CALLERY_LEAVES);
 
             entries.addAfter(Items.MANGROVE_LOG, PearBlocks.CALLERY_STEM);
-            if (FabricLoader.getInstance().isModLoaded("wilderwild")){
-                entries.addAfter(PearBlocks.CALLERY_STEM, PearBlocks.HOLLOWED_CALLERY_STEM);
-            }
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {
             entries.addAfter(Items.ENCHANTED_GOLDEN_APPLE, PearBlocks.COPPER_LAMPEAR);

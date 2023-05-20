@@ -84,8 +84,6 @@ public class PearBlocks {
     public static final Block CALLERY_STEM = CALLERY.createLog(true, false, false);
     public static final Block STRIPPED_CALLERY_STEM = CALLERY.createLog(true, true, false);
 
-    public static final Block HOLLOWED_CALLERY_STEM = CALLERY.createHollowedLog(CALLERY_STEM);
-
     public static final Block CALLERY_LEAVES = CALLERY.createLeaves();
     public static final Block FLOWERING_CALLERY_LEAVES = CALLERY.createFloweringLeaves(MapColor.PALE_GREEN);
 

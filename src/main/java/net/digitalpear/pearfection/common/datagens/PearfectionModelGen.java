@@ -60,9 +60,6 @@ public class PearfectionModelGen extends FabricModelProvider {
         blockStateModelGenerator.registerFlowerPotPlant(PearBlocks.CALLERY_TWIG, PearBlocks.POTTED_CALLERY_TWIG, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         registerPearBlock(blockStateModelGenerator, PearBlocks.LAMPEAR_BLOCK);
-
-
-        makeHollowLogs(blockStateModelGenerator, PearBlocks.HOLLOWED_CALLERY_STEM);
     }
 
 //    private void registerBookshelf(BlockStateModelGenerator blockStateModelGenerator) {
@@ -96,12 +93,6 @@ public class PearfectionModelGen extends FabricModelProvider {
         blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(wallSign, identifier));
     }
 
-
-
-
-    public final void makeHollowLogs(BlockStateModelGenerator blockStateModelGenerator, Block hollowLog){
-        blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createAxisRotatedBlockState(hollowLog, getId(PearBlocks.HOLLOWED_CALLERY_STEM)));
-    }
 
 
     /*

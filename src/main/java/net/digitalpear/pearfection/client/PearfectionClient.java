@@ -26,8 +26,7 @@ public class PearfectionClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
                 PearBlocks.LAMPEAR, PearBlocks.COPPER_LAMPEAR,
                 PearBlocks.CALLERY_TWIG, PearBlocks.CALLERY_SPROUT, PearBlocks.CALLERY_VINE,
-                PearBlocks.POTTED_CALLERY_TWIG, PearBlocks.POTTED_CALLERY_SPROUT,
-                PearBlocks.HOLLOWED_CALLERY_STEM);
+                PearBlocks.POTTED_CALLERY_TWIG, PearBlocks.POTTED_CALLERY_SPROUT);
 
         TerraformBoatClientHelper.registerModelLayers(new Identifier(Pearfection.MOD_ID, "callery"), false);
     }

@@ -17,7 +17,6 @@ public class PearfectionBlockLootTableGen extends FabricBlockLootTableProvider {
         addDrop(PearBlocks.CALLERY_WOOD);
         addDrop(PearBlocks.STRIPPED_CALLERY_STEM);
         addDrop(PearBlocks.STRIPPED_CALLERY_WOOD);
-        addDrop(PearBlocks.HOLLOWED_CALLERY_STEM);
 
         addDrop(PearBlocks.CALLERY_PLANKS);
         addDrop(PearBlocks.CALLERY_STAIRS);

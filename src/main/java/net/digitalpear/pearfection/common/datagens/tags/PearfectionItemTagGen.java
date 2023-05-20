@@ -8,7 +8,6 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.ItemTags;
 
 import java.util.concurrent.CompletableFuture;
@@ -38,16 +37,17 @@ public class PearfectionItemTagGen extends FabricTagProvider<Item> {
         getOrCreateTagBuilder(ItemTags.WOODEN_BUTTONS).add(PearBlocks.CALLERY_BUTTON.asItem());
         getOrCreateTagBuilder(ItemTags.WOODEN_SLABS).add(PearBlocks.CALLERY_SLAB.asItem());
         getOrCreateTagBuilder(ItemTags.WOODEN_STAIRS).add(PearBlocks.CALLERY_STAIRS.asItem());
-        getOrCreateTagBuilder(ItemTags.LOGS_THAT_BURN).forceAddTag(PearItemTags.CALLERY_STEMS);
+        getOrCreateTagBuilder(ItemTags.LOGS_THAT_BURN).forceAddTag(PearItemTags.C_FRUITS_PEARS);
         getOrCreateTagBuilder(ItemTags.LEAVES).add(PearBlocks.CALLERY_LEAVES.asItem()).add(PearBlocks.FLOWERING_CALLERY_LEAVES.asItem());
         getOrCreateTagBuilder(ItemTags.SIGNS).add(PearItems.CALLERY_SIGN.asItem());
         getOrCreateTagBuilder(ItemTags.HANGING_SIGNS).add(PearItems.CALLERY_HANGING_SIGN.asItem());
         getOrCreateTagBuilder(ItemTags.SAPLINGS).add(PearBlocks.CALLERY_TWIG.asItem());
 
 
+        getOrCreateTagBuilder(PearItemTags.C_FRUITS_PEARS).add(PearBlocks.LAMPEAR.asItem()).add(PearBlocks.COPPER_LAMPEAR.asItem());
+
         getOrCreateTagBuilder(PearItemTags.CALLERY_STEMS)
                 .add(PearBlocks.CALLERY_STEM.asItem()).add(PearBlocks.STRIPPED_CALLERY_STEM.asItem())
-                .add(PearBlocks.CALLERY_WOOD.asItem()).add(PearBlocks.STRIPPED_CALLERY_WOOD.asItem())
-                .add(PearBlocks.HOLLOWED_CALLERY_STEM.asItem());
+                .add(PearBlocks.CALLERY_WOOD.asItem()).add(PearBlocks.STRIPPED_CALLERY_WOOD.asItem());
     }
 }
