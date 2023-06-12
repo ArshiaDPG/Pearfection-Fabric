@@ -4,7 +4,7 @@
   "group": "bark",
   "key": {
     "#": {
-      "item": "pearfection:hollowed_callery_stem"
+      "item": "pearfection:callery_stem"
     }
   },
   "pattern": [
@@ -12,7 +12,7 @@
     "##"
   ],
   "result": {
-    "count": 2,
+    "count": 3,
     "item": "pearfection:callery_wood"
   },
   "show_notification": true

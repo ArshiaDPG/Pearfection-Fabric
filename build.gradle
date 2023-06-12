@@ -113,9 +113,7 @@ unifiedPublishing {
     project {
         displayName = "${project.minecraft_version}-${project.mod_version}" // Optional, name of the file
         changelog = '''<ul>
-  <li>Updated to 23w18a</li>
-  <li>huge pears can now replace sculk.</li>
-  <li>Removed hollowed stems.</li>
+  <li>Updated to 1.20.1</li>
 </ul> '''
         releaseType = "release" // Optional, use "release", "beta" or "alpha"
         gameVersions = ["${project.minecraft_version}"]
@@ -136,7 +134,6 @@ unifiedPublishing {
         curseforge {
             token = System.getenv("CF_TOKEN")
             id = "837277" // Required, must be a string, ID of CurseForge project
-            gameVersions = ["1.20-Snapshot"]
         }
 
         modrinth {

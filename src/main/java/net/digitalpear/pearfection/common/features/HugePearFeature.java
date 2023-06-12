@@ -3,7 +3,9 @@ package net.digitalpear.pearfection.common.features;
 import com.mojang.serialization.Codec;
 import net.digitalpear.pearfection.init.tags.PearBlockTags;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.PillarBlock;
+import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.floatprovider.ConstantFloatProvider;
@@ -23,33 +25,34 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
     }
 
     public static boolean isReplaceable(BlockState state) {
-        return !state.isIn(PearBlockTags.HUGE_PEAR_CANNOT_REPLACE) && state.getBlock().getHardness() < 1.5;
+        return (!state.isIn(PearBlockTags.HUGE_PEAR_CANNOT_REPLACE) && state.getBlock().getHardness() < 1.5) || state.isOf(Blocks.WATER);
     }
 
 
     @Override
     public boolean generate(FeatureContext<HugePearFeatureConfig> context) {
+        return placeStem(context);
+    }
 
+    public static boolean placeStem(FeatureContext<HugePearFeatureConfig> context){
         BlockPos blockPos = context.getOrigin().up();
         StructureWorldAccess world = context.getWorld();
         Random random = context.getRandom();
-        HugePearFeatureConfig config = context.getConfig();
-        BlockStateProvider stem = context.getConfig().trunkProvider;
-        BlockStateProvider baseBlock = context.getConfig().baseBlockProvider;
-
-
         int stemLengthMultiplier = random.nextBetween(3, 4);
         int radius = 1;
         int height = random.nextBetween(2, 3);
-
+        HugePearFeatureConfig config = context.getConfig();
+        BlockStateProvider stem = context.getConfig().trunkProvider;
+        BlockStateProvider baseBlock = context.getConfig().baseBlockProvider;
+        if (blockPos.getY() <= world.getBottomY() + 1 && blockPos.getY() + height + stemLengthMultiplier + 1 > world.getTopY()) {
+            return false;
+        }
         Direction turnDirection = getHorizontal(random);
 
         Map<Iterable<BlockPos>, BlockState> PLACEMENTS = new HashMap<>();
 
 
-        if (blockPos.getY() <= world.getBottomY() + 1 && blockPos.getY() + height + stemLengthMultiplier + 1 > world.getTopY()) {
-            return false;
-        }
+
 
         /*
             Collect smaller pear layer
@@ -77,8 +80,6 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
         placeFoliage(world, random, newPos, config);
         PLACEMENTS.put(BlockPos.iterate(newPos, newPos.offset(turnDirection, 1 + stemLengthMultiplier)), stem.get(random, blockPos).with(PillarBlock.AXIS, turnDirection.getAxis()));
 
-
-
         /*
             Place all collected maps
          */
@@ -93,14 +94,6 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
         placeFoliage(world, random, newPos.offset(turnDirection, 2 + stemLengthMultiplier), config);
 
         return true;
-    }
-
-    public static Direction getHorizontal(Random random){
-        Direction direction = Direction.random(random);
-        while (direction.getAxis().isVertical()){
-            direction = Direction.random(random);
-        }
-        return direction;
     }
 
     public static void placeFoliage(StructureWorldAccess world, Random random, BlockPos blockPos, HugePearFeatureConfig config){
@@ -136,6 +129,14 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
                 }
             }
         }
+    }
+
+    public static Direction getHorizontal(Random random){
+        Direction direction = Direction.random(random);
+        while (direction.getAxis().isVertical()){
+            direction = Direction.random(random);
+        }
+        return direction;
     }
 
 }

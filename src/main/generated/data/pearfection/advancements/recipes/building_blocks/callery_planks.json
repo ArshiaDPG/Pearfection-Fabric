@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_log": {
+    "has_logs": {
       "conditions": {
         "items": [
           {
-            "tag": "c:fruits/pears"
+            "tag": "pearfection:callery_stems"
           }
         ]
       },
@@ -20,7 +20,7 @@
   },
   "requirements": [
     [
-      "has_log",
+      "has_logs",
       "has_the_recipe"
     ]
   ],

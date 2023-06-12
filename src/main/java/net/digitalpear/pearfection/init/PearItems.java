@@ -86,7 +86,6 @@ public class PearItems {
 
             entries.addAfter(Items.MANGROVE_HANGING_SIGN, CALLERY_SIGN);
             entries.addAfter(CALLERY_SIGN, CALLERY_HANGING_SIGN);
-
         });
     }
 }

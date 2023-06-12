@@ -12,6 +12,7 @@ import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.Registries;
 
@@ -37,9 +38,9 @@ public class PearRecipeGen extends FabricRecipeProvider {
         RecipeProvider.offerBoatRecipe(exporter, PearItems.CALLERY_BOAT, PearBlocks.CALLERY_PLANKS);
         RecipeProvider.offerChestBoatRecipe(exporter, PearItems.CALLERY_CHEST_BOAT, PearBlocks.CALLERY_PLANKS);
         RecipeProvider.offerHangingSignRecipe(exporter, PearItems.CALLERY_HANGING_SIGN, PearBlocks.STRIPPED_CALLERY_STEM);
-        RecipeProvider.offerPlanksRecipe2(exporter, PearBlocks.CALLERY_PLANKS, PearItemTags.C_FRUITS_PEARS, 4);
-        wood(exporter, RecipeCategory.BUILDING_BLOCKS, PearBlocks.CALLERY_WOOD, PearBlocks.CALLERY_STEM);
-        wood(exporter, RecipeCategory.BUILDING_BLOCKS, PearBlocks.STRIPPED_CALLERY_WOOD, PearBlocks.STRIPPED_CALLERY_STEM);
+        RecipeProvider.offerPlanksRecipe(exporter, PearBlocks.CALLERY_PLANKS, PearItemTags.CALLERY_STEMS, 4);
+        RecipeProvider.offerBarkBlockRecipe(exporter, PearBlocks.CALLERY_WOOD, PearBlocks.CALLERY_STEM);
+        RecipeProvider.offerBarkBlockRecipe(exporter, PearBlocks.STRIPPED_CALLERY_WOOD, PearBlocks.STRIPPED_CALLERY_STEM);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, PearItems.PEAR_TART, 2)
                 .input(PearBlocks.LAMPEAR)
@@ -57,39 +58,20 @@ public class PearRecipeGen extends FabricRecipeProvider {
                 .pattern("LPL")
                 .pattern("LHL")
                 .criterion(hasItem(PearBlocks.LAMPEAR), conditionsFromItem(PearBlocks.LAMPEAR)).offerTo(exporter);
+
     }
 
     public static void makeRecipes(Consumer<RecipeJsonProvider> exporter, Block planks, Block stairs, Block slab, Block fence, Block fenceGate, Block door, Block trapdoor, Block button, Block pressurePlate, ItemConvertible sign){
-        createStairsRecipe(exporter, stairs, planks);
-        createSlabRecipe(exporter, slab, planks);
-        createTrapdoorRecipe(exporter, trapdoor, planks);
-        createSignRecipe(exporter, sign, planks);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, door, 3).input('#', planks).pattern("##").pattern("##").pattern("##").criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, fence, 3).input('W', planks).input('#', Items.STICK).pattern("W#W").pattern("W#W").criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, fenceGate).input('#', Items.STICK).input('W', planks).pattern("#W#").pattern("#W#").criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, pressurePlate).input('#', planks).pattern("##").criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, sign, 3).group("sign").input('#', planks).input('X', Items.STICK).pattern("###").pattern("###").pattern(" X ");
+
+        RecipeProvider.createStairsRecipe(stairs, Ingredient.ofItems(planks)).criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
+        RecipeProvider.createSlabRecipe(RecipeCategory.BUILDING_BLOCKS, slab, Ingredient.ofItems(planks)).criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
+        RecipeProvider.createTrapdoorRecipe(trapdoor, Ingredient.ofItems(planks)).criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
+        RecipeProvider.createDoorRecipe(door, Ingredient.ofItems(planks)).criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
+        RecipeProvider.createFenceRecipe(fence, Ingredient.ofItems(planks)).criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
+        RecipeProvider.createFenceGateRecipe(fenceGate, Ingredient.ofItems(planks)).criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
+        RecipeProvider.createSignRecipe(sign, Ingredient.ofItems(planks)).criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
+        RecipeProvider.createPressurePlateRecipe(RecipeCategory.REDSTONE, pressurePlate, Ingredient.ofItems(planks)).criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
+
         ShapelessRecipeJsonBuilder.create(RecipeCategory.REDSTONE, button, 1).input(planks).criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
-    }
-
-    public static void createSlabRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 6).input('#', input).pattern("###").criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
-    }
-
-
-    public static void createStairsRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 4).input('#', input).pattern("#  ").pattern("## ").pattern("###").criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
-    }
-
-    public static void createTrapdoorRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, output, 2).input('#', input).pattern("###").pattern("###").criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
-    }
-
-    public static void createSignRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, output, 3).group("sign").input('#', input).input('X', Items.STICK).pattern("###").pattern("###").pattern(" X ").criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
-    }
-
-    public static void wood(Consumer<RecipeJsonProvider> exporter, RecipeCategory category, ItemConvertible output, ItemConvertible input) {
-        ShapedRecipeJsonBuilder.create(category, output, 4).input('#', input).pattern("##").pattern("##").criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
     }
 }

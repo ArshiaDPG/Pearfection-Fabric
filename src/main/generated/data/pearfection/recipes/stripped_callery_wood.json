@@ -1,6 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
+  "group": "bark",
   "key": {
     "#": {
       "item": "pearfection:stripped_callery_stem"
@@ -11,7 +12,7 @@
     "##"
   ],
   "result": {
-    "count": 4,
+    "count": 3,
     "item": "pearfection:stripped_callery_wood"
   },
   "show_notification": true
