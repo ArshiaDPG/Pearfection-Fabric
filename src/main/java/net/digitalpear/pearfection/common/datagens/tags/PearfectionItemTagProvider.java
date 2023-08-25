@@ -12,7 +12,7 @@ import net.minecraft.registry.tag.ItemTags;
 
 import java.util.concurrent.CompletableFuture;
 
-public class PearfectionItemTagGen extends FabricTagProvider<Item> {
+public class PearfectionItemTagProvider extends FabricTagProvider<Item> {
     /**
      * Constructs a new {@link FabricTagProvider} with the default computed path.
      *
@@ -21,7 +21,7 @@ public class PearfectionItemTagGen extends FabricTagProvider<Item> {
      * @param output           the {@link FabricDataOutput} instance
      * @param registriesFuture the backing registry for the tag type
      */
-    public PearfectionItemTagGen(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+    public PearfectionItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, Registries.ITEM.getKey(), registriesFuture);
     }
 

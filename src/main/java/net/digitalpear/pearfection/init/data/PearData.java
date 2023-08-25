@@ -11,6 +11,8 @@ import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 
+import java.util.HashMap;
+
 public class PearData {
     public static void registerFlammableBlock(){
         FlammableBlockRegistry instance = FlammableBlockRegistry.getDefaultInstance();
@@ -72,11 +74,8 @@ public class PearData {
          */
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
             if (source.isBuiltin() && LootTables.SNIFFER_DIGGING_GAMEPLAY.equals(id)) {
-                tableBuilder.modifyPools(builder -> {
-                    builder.with(ItemEntry.builder(PearBlocks.CALLERY_TWIG));
-                });
+                tableBuilder.modifyPools(builder -> builder.with(ItemEntry.builder(PearBlocks.CALLERY_TWIG)));
             }
-
         });
     }
 }

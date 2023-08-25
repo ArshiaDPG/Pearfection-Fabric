@@ -6,8 +6,8 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.FlowerPotBlock;
 
-public class PearfectionBlockLootTableGen extends FabricBlockLootTableProvider {
-    public PearfectionBlockLootTableGen(FabricDataOutput dataOutput) {
+public class PearfectionBlockLootTableProvider extends FabricBlockLootTableProvider {
+    public PearfectionBlockLootTableProvider(FabricDataOutput dataOutput) {
         super(dataOutput);
     }
 

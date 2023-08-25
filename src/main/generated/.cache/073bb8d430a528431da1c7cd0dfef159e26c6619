@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-02T16:13:34.7123822	Pearfection/Recipes
+// 1.20.1	2023-08-24T15:31:36.2565845	Pearfection/Recipes
 4c182ad99a36a0f772716afd3811fee54318cad8 data\pearfection\recipes\callery_wood.json
 ee1b03fb850ede7ce7b29a56c48819a5a27d5aa5 data\pearfection\recipes\callery_fence_gate.json
 1f3c381b39bad36c800424f6708234d11e3f2b28 data\pearfection\advancements\recipes\decorations\callery_sign.json
@@ -23,8 +23,8 @@ b45bab88a570be5b73edaa50064260dabe833cb9 data\pearfection\recipes\callery_pressu
 7c29d7cf3db4f8374f2de95acf3c05fb4fe788c2 data\pearfection\recipes\callery_stairs.json
 8f17a945ea45a7f79228ecd72fb4a8d903d33e17 data\pearfection\advancements\recipes\building_blocks\callery_slab.json
 8070098b0027314b6f6da835560b07902f1bb052 data\pearfection\advancements\recipes\decorations\callery_hanging_sign.json
-8e5729af2e06e59a817277f14615639676ea7fff data\pearfection\advancements\recipes\building_blocks\stripped_callery_wood.json
 2ffac41d9b3739fafc6091ce4d41d910c9a69344 data\pearfection\advancements\recipes\food\pear_tart.json
+8e5729af2e06e59a817277f14615639676ea7fff data\pearfection\advancements\recipes\building_blocks\stripped_callery_wood.json
 df6aaf2ba19d2edd9da3edcb8e5f863130dc3e19 data\pearfection\advancements\recipes\food\copper_lampear.json
 3c175675cbdc5ea97ccdde20d1af29071c615a01 data\pearfection\advancements\recipes\redstone\callery_trapdoor.json
 a646489e54c6e50479424faa6420c061f5ce2dfd data\pearfection\advancements\recipes\building_blocks\callery_stairs.json

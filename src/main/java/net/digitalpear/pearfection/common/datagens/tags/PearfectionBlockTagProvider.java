@@ -12,7 +12,7 @@ import net.minecraft.registry.tag.BlockTags;
 
 import java.util.concurrent.CompletableFuture;
 
-public class PearfectionBlockTagGen extends FabricTagProvider<Block> {
+public class PearfectionBlockTagProvider extends FabricTagProvider<Block> {
     /**
      * Constructs a new {@link FabricTagProvider} with the default computed path.
      *
@@ -21,7 +21,7 @@ public class PearfectionBlockTagGen extends FabricTagProvider<Block> {
      * @param output           the {@link FabricDataOutput} instance
      * @param registriesFuture the backing registry for the tag type
      */
-    public PearfectionBlockTagGen(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+    public PearfectionBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, Registries.BLOCK.getKey(), registriesFuture);
     }
 
@@ -76,9 +76,12 @@ public class PearfectionBlockTagGen extends FabricTagProvider<Block> {
 
         getOrCreateTagBuilder(PearBlockTags.PEAR_GROWABLE_ON)
                 .forceAddTag(BlockTags.DIRT)
-                .add(Blocks.MOSS_BLOCK)
+                .forceAddTag(PearBlockTags.ENORMOUS_PEAR_GROWABLE_ON)
                 .forceAddTag(BlockTags.SAND)
                 .add(Blocks.SCULK)
                 .add(Blocks.FARMLAND);
+
+        getOrCreateTagBuilder(PearBlockTags.ENORMOUS_PEAR_GROWABLE_ON)
+                .add(Blocks.MOSS_BLOCK);
     }
 }

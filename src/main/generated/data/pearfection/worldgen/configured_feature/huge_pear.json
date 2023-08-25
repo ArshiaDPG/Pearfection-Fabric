@@ -18,7 +18,7 @@
     "flowering_foliage_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "pearfection:callery_leaves",
+        "Name": "pearfection:flowering_callery_leaves",
         "Properties": {
           "distance": "7",
           "persistent": "false",

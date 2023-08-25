@@ -5,8 +5,8 @@ import net.digitalpear.pearfection.init.PearItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
-public class PearfectionLanguageGen extends FabricLanguageProvider {
-    public PearfectionLanguageGen(FabricDataOutput dataOutput) {
+public class PearfectionLanguageProvider extends FabricLanguageProvider {
+    public PearfectionLanguageProvider(FabricDataOutput dataOutput) {
         super(dataOutput);
     }
 
@@ -71,9 +71,5 @@ public class PearfectionLanguageGen extends FabricLanguageProvider {
         translationBuilder.add("subtitles.block.pear.step", "Footsteps");
 
         translationBuilder.add(PearItems.PEAR_TART, "Pear Tart");
-
-
-
-
     }
 }

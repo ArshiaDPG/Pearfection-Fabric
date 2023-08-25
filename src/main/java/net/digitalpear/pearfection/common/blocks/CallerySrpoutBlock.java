@@ -20,6 +20,8 @@ public class CallerySrpoutBlock extends PlantBlock implements Fertilizable {
         super(settings);
     }
 
+
+
     @Override
     public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
         return true;
@@ -42,7 +44,7 @@ public class CallerySrpoutBlock extends PlantBlock implements Fertilizable {
 
     @Override
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
-        TallPlantBlock.placeAt(world, PearBlocks.CALLERY_VINE.getDefaultState(), pos, 2);
-        world.setBlockState(pos.down(), Blocks.ROOTED_DIRT.getDefaultState(), 2);
+        TallPlantBlock.placeAt(world, PearBlocks.CALLERY_VINE.getDefaultState(), pos, 3);
+        world.setBlockState(pos.down(), Blocks.ROOTED_DIRT.getDefaultState(), 3);
     }
 }

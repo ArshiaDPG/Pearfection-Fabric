@@ -18,8 +18,8 @@ import net.minecraft.registry.Registries;
 
 import java.util.function.Consumer;
 
-public class PearRecipeGen extends FabricRecipeProvider {
-    public PearRecipeGen(FabricDataOutput output) {
+public class PearRecipeProvider extends FabricRecipeProvider {
+    public PearRecipeProvider(FabricDataOutput output) {
         super(output);
     }
 

@@ -14,8 +14,8 @@ import net.minecraft.util.Identifier;
 
 import java.util.Optional;
 
-public class PearfectionModelGen extends FabricModelProvider {
-    public PearfectionModelGen(FabricDataOutput output) {
+public class PearfectionModelProvider extends FabricModelProvider {
+    public PearfectionModelProvider(FabricDataOutput output) {
         super(output);
     }
 

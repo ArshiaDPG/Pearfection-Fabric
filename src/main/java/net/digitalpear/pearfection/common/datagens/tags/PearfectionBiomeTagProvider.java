@@ -8,7 +8,7 @@ import net.minecraft.world.biome.Biome;
 
 import java.util.concurrent.CompletableFuture;
 
-public class PearfectionBiomeTagGen extends FabricTagProvider<Biome> {
+public class PearfectionBiomeTagProvider extends FabricTagProvider<Biome> {
     /**
      * Constructs a new {@link FabricTagProvider} with the default computed path.
      *
@@ -17,7 +17,7 @@ public class PearfectionBiomeTagGen extends FabricTagProvider<Biome> {
      * @param output           the {@link FabricDataOutput} instance
      * @param registriesFuture the backing registry for the tag type
      */
-    public PearfectionBiomeTagGen(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+    public PearfectionBiomeTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, RegistryKeys.BIOME, registriesFuture);
     }
 

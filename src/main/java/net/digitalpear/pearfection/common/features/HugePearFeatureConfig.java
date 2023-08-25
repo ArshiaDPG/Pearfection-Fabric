@@ -13,7 +13,7 @@ public class HugePearFeatureConfig implements FeatureConfig {
             instance.group(
                     BlockStateProvider.TYPE_CODEC.fieldOf("stem_provider").forGetter((config) -> config.trunkProvider),
                     BlockStateProvider.TYPE_CODEC.fieldOf("foliage_provider").forGetter((config) -> config.foliageProvider),
-                    BlockStateProvider.TYPE_CODEC.fieldOf("flowering_foliage_provider").forGetter((config) -> config.foliageProvider),
+                    BlockStateProvider.TYPE_CODEC.fieldOf("flowering_foliage_provider").forGetter((config) -> config.floweringFoliageProvider),
                     BlockStateProvider.TYPE_CODEC.fieldOf("base_block_provider").forGetter((config) -> config.baseBlockProvider),
                     BlockStateProvider.TYPE_CODEC.fieldOf("fruit_provider").forGetter((config) -> config.fruitProvider),
                     BlockStateProvider.TYPE_CODEC.fieldOf("rare_fruit_provider").forGetter((config) -> config.rareFruitProvider))

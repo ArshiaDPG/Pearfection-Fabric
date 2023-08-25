@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     "#minecraft:dirt",
-    "minecraft:moss_block",
+    "#pearfection:enormous_pear_growable_on",
     "#minecraft:sand",
     "minecraft:sculk",
     "minecraft:farmland"

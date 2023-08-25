@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-02T16:13:34.7113847	Pearfection/Block Loot Tables
+// 1.20.1	2023-08-24T15:31:36.255587	Pearfection/Block Loot Tables
 3a7bba962bc2830668f0494a7adb15a2a9f28262 data\pearfection\loot_tables\blocks\stripped_callery_stem.json
 ef358635baf30fd28e82826f81d04a0ee075c25c data\pearfection\loot_tables\blocks\callery_wall_sign.json
 2099c652e181ab9806e12925b0601ae256f3306c data\pearfection\loot_tables\blocks\copper_lampear.json
@@ -11,8 +11,8 @@ b9054f8b5e296106433e2aedc3e3e0c85bb61aa5 data\pearfection\loot_tables\blocks\cal
 a8c1003f62eb208d3cb9b9406757ce3866a7134b data\pearfection\loot_tables\blocks\callery_sprout.json
 3d25521ec6362324b18e022b8f6113d2e011bd7c data\pearfection\loot_tables\blocks\callery_wall_hanging_sign.json
 a56b39eac61939ce258bfe162eac449238a88edf data\pearfection\loot_tables\blocks\callery_slab.json
-70afaabeb3b97b82c37c176a6c733c7a1a67bcde data\pearfection\loot_tables\blocks\lampear_block.json
 ef358635baf30fd28e82826f81d04a0ee075c25c data\pearfection\loot_tables\blocks\callery_sign.json
+70afaabeb3b97b82c37c176a6c733c7a1a67bcde data\pearfection\loot_tables\blocks\lampear_block.json
 a6c003bd1b9fbe6a0a958c85fab4f08f6d1db9a7 data\pearfection\loot_tables\blocks\stripped_callery_wood.json
 81c5ee2736f8d5b2181a9237b36ca6f801665649 data\pearfection\loot_tables\blocks\potted_callery_twig.json
 4436e4c63fb41fb5e08391ec7cd3401afbced2cc data\pearfection\loot_tables\blocks\callery_leaves.json

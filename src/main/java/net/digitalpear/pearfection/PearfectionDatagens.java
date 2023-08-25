@@ -1,9 +1,9 @@
 package net.digitalpear.pearfection;
 
 import net.digitalpear.pearfection.common.datagens.*;
-import net.digitalpear.pearfection.common.datagens.tags.PearfectionBiomeTagGen;
-import net.digitalpear.pearfection.common.datagens.tags.PearfectionBlockTagGen;
-import net.digitalpear.pearfection.common.datagens.tags.PearfectionItemTagGen;
+import net.digitalpear.pearfection.common.datagens.tags.PearfectionBiomeTagProvider;
+import net.digitalpear.pearfection.common.datagens.tags.PearfectionBlockTagProvider;
+import net.digitalpear.pearfection.common.datagens.tags.PearfectionItemTagProvider;
 import net.digitalpear.pearfection.common.datagens.worldgen.PearConfiguredFeatureProvider;
 import net.digitalpear.pearfection.init.PearConfiguredFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
@@ -15,16 +15,16 @@ public class PearfectionDatagens implements DataGeneratorEntrypoint {
 
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
-        fabricDataGenerator.createPack().addProvider(PearfectionModelGen::new);
-        fabricDataGenerator.createPack().addProvider(PearfectionLanguageGen::new);
-        fabricDataGenerator.createPack().addProvider(PearfectionBlockLootTableGen::new);
-        fabricDataGenerator.createPack().addProvider(PearRecipeGen::new);
+        fabricDataGenerator.createPack().addProvider(PearfectionModelProvider::new);
+        fabricDataGenerator.createPack().addProvider(PearfectionLanguageProvider::new);
+        fabricDataGenerator.createPack().addProvider(PearfectionBlockLootTableProvider::new);
+        fabricDataGenerator.createPack().addProvider(PearRecipeProvider::new);
 
         fabricDataGenerator.createPack().addProvider(PearConfiguredFeatureProvider::new);
 
-        fabricDataGenerator.createPack().addProvider(PearfectionBlockTagGen::new);
-        fabricDataGenerator.createPack().addProvider(PearfectionItemTagGen::new);
-        fabricDataGenerator.createPack().addProvider(PearfectionBiomeTagGen::new);
+        fabricDataGenerator.createPack().addProvider(PearfectionBlockTagProvider::new);
+        fabricDataGenerator.createPack().addProvider(PearfectionItemTagProvider::new);
+        fabricDataGenerator.createPack().addProvider(PearfectionBiomeTagProvider::new);
     }
 
     @Override

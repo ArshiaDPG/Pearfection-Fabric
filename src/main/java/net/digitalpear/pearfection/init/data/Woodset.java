@@ -22,10 +22,10 @@ import net.minecraft.util.math.Direction;
 public record Woodset(Identifier id, MapColor topColor, MapColor sideColor, WoodType woodType) {
 
     public static LeavesBlock createLeavesBlock(BlockSoundGroup soundGroup) {
-        return new LeavesBlock(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).strength(0.2f).ticksRandomly().sounds(soundGroup).nonOpaque().allowsSpawning(Woodset::canSpawnOnLeaves).suffocates(Woodset::never).blockVision(Woodset::never));
+        return new CalleryLeavesBlock(false, AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).strength(0.2f).ticksRandomly().sounds(soundGroup).nonOpaque().allowsSpawning(Woodset::canSpawnOnLeaves).suffocates(Woodset::never).blockVision(Woodset::never));
     }
     public static LeavesBlock createFloweringLeavesBlock(BlockSoundGroup soundGroup, MapColor color) {
-        return new CalleryLeavesBlock(AbstractBlock.Settings.create().mapColor(color).strength(0.2f).ticksRandomly().sounds(soundGroup).nonOpaque().allowsSpawning(Woodset::canSpawnOnLeaves).suffocates(Woodset::never).blockVision(Woodset::never));
+        return new CalleryLeavesBlock(true, AbstractBlock.Settings.create().mapColor(color).strength(0.2f).ticksRandomly().sounds(soundGroup).nonOpaque().allowsSpawning(Woodset::canSpawnOnLeaves).suffocates(Woodset::never).blockVision(Woodset::never));
     }
     public static LeavesBlock createFloweringLeavesBlock(BlockSoundGroup soundGroup) {
         return createFloweringLeavesBlock(soundGroup, MapColor.DARK_GREEN);
