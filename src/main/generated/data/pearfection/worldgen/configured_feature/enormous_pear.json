@@ -1,0 +1,70 @@
+{
+  "type": "pearfection:enormous_pear",
+  "config": {
+    "base_block_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "pearfection:lampear_block",
+        "Properties": {
+          "down": "true",
+          "east": "true",
+          "north": "true",
+          "south": "true",
+          "up": "true",
+          "west": "true"
+        }
+      }
+    },
+    "flowering_foliage_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "pearfection:flowering_callery_leaves",
+        "Properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "foliage_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "pearfection:callery_leaves",
+        "Properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "fruit_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "pearfection:lampear",
+        "Properties": {
+          "hanging": "true",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "rare_fruit_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "pearfection:lampear",
+        "Properties": {
+          "hanging": "true",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "stem_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "pearfection:callery_stem",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    }
+  }
+}
