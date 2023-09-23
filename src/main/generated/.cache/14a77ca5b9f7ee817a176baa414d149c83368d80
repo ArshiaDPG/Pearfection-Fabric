@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-24T15:31:36.2535913	Pearfection/Tags for minecraft:block
+// 1.20.2	2023-09-23T16:28:02.135709	Pearfection/Tags for minecraft:block
 9b961f7a994fc52230ecaf790da38ae02b506381 data\pearfection\tags\blocks\huge_pear_cannot_replace.json
 d2707eccc4923887df1b9dee98a2bef7287441f7 data\minecraft\tags\blocks\wooden_trapdoors.json
 51e4d07014b47c6f5f25bcba363077aed6956720 data\pearfection\tags\blocks\enormous_pear_growable_on.json
@@ -12,11 +12,11 @@ c65d743b2082f319e5ab56e0da331d61e88f17ff data\minecraft\tags\blocks\mineable\hoe
 c5a7f503b257feded71879dc06612399a3767d1c data\minecraft\tags\blocks\leaves.json
 e91a6083e2c9a3f4340253ae3a86e094e5a8eb4d data\minecraft\tags\blocks\wall_signs.json
 3b659293da7fde5c72f12ed433930fe6e8af545e data\minecraft\tags\blocks\logs_that_burn.json
-6bb9f67f3b323894052691ea877d5adfb405842a data\minecraft\tags\blocks\small_flowers.json
 41da77b8492941a97767a3aab232375ccb60b246 data\minecraft\tags\blocks\buttons.json
+6bb9f67f3b323894052691ea877d5adfb405842a data\minecraft\tags\blocks\small_flowers.json
 b8a7432e7898abbd12988ad2ef53d4a4b8d02f27 data\minecraft\tags\blocks\flower_pots.json
-1959c42f00b6ae675c1ba454a1fae333dc708509 data\minecraft\tags\blocks\wooden_slabs.json
 9707d0a29c98adf376432fdc832fb4573dc3aeca data\minecraft\tags\blocks\wooden_doors.json
+1959c42f00b6ae675c1ba454a1fae333dc708509 data\minecraft\tags\blocks\wooden_slabs.json
 5c3ca896dcb491396039d07e40c858d0f8252426 data\pearfection\tags\blocks\pear_growable_on.json
 38a2329d28dcca31ba706ee125b1893c86c444fa data\minecraft\tags\blocks\wall_hanging_signs.json
 5048f908d739843dc4d15b3ffb575a1836c699e8 data\minecraft\tags\blocks\tall_flowers.json

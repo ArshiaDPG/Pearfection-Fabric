@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_lampear",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_lampear"
     ]
   ],
   "rewards": {

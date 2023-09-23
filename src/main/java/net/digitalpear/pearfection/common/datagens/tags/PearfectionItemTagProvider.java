@@ -37,7 +37,7 @@ public class PearfectionItemTagProvider extends FabricTagProvider<Item> {
         getOrCreateTagBuilder(ItemTags.WOODEN_BUTTONS).add(PearBlocks.CALLERY_BUTTON.asItem());
         getOrCreateTagBuilder(ItemTags.WOODEN_SLABS).add(PearBlocks.CALLERY_SLAB.asItem());
         getOrCreateTagBuilder(ItemTags.WOODEN_STAIRS).add(PearBlocks.CALLERY_STAIRS.asItem());
-        getOrCreateTagBuilder(ItemTags.LOGS_THAT_BURN).forceAddTag(PearItemTags.C_FRUITS_PEARS);
+        getOrCreateTagBuilder(ItemTags.LOGS_THAT_BURN).forceAddTag(PearItemTags.CALLERY_STEMS);
         getOrCreateTagBuilder(ItemTags.LEAVES).add(PearBlocks.CALLERY_LEAVES.asItem()).add(PearBlocks.FLOWERING_CALLERY_LEAVES.asItem());
         getOrCreateTagBuilder(ItemTags.SIGNS).add(PearItems.CALLERY_SIGN.asItem());
         getOrCreateTagBuilder(ItemTags.HANGING_SIGNS).add(PearItems.CALLERY_HANGING_SIGN.asItem());

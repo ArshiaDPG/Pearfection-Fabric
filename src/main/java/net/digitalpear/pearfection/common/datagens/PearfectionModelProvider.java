@@ -18,7 +18,6 @@ public class PearfectionModelProvider extends FabricModelProvider {
     public PearfectionModelProvider(FabricDataOutput output) {
         super(output);
     }
-
     /*
         CODE FOR LAMPEAR MODEL GENERATION
      */

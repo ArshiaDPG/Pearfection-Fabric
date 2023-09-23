@@ -113,13 +113,10 @@ unifiedPublishing {
     project {
         displayName = "${project.minecraft_version}-${project.mod_version}" // Optional, name of the file
         changelog = '''<ul>
-  <li>Added Enormous Pears, a giant variant of Huge Pears that grows when Callery Vines are grown on special blocks like moss (This feature is in active development, if you have feedback to offer regarding it, feel free to do so).</li>
-  <li>Lampear blocks now support callery leaves.</li>
-  <li>Fixed a bug where flowering callery leaves would never generate.</li>
-  <li>Fixed issue that would cause callery leaves to disintigrate upon generating (I still don't understand this one).</li>
+  <li>Updated to 1..</li>
 </ul> '''
-        releaseType = "beta" // Optional, use "release", "beta" or "alpha"
-        gameVersions = ["${project.minecraft_version}", "1.20"]
+        releaseType = "release" // Optional, use "release", "beta" or "alpha"
+        gameVersions = ["${project.minecraft_version}"]
         gameLoaders = ["fabric"]
 
         mainPublication tasks.remapJar // Declares the publicated jar
@@ -142,7 +139,6 @@ unifiedPublishing {
         modrinth {
             token = System.getenv("MODRINTH_TOKEN")
             id = "h77S83wP" // Required, must be a string, ID of Modrinth project
-
         }
     }
 }

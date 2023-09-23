@@ -6,10 +6,7 @@ import net.digitalpear.pearfection.init.tags.PearItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Block;
-import net.minecraft.data.server.recipe.RecipeJsonProvider;
-import net.minecraft.data.server.recipe.RecipeProvider;
-import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.*;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
@@ -24,8 +21,9 @@ public class PearRecipeProvider extends FabricRecipeProvider {
     }
 
 
+
     @Override
-    public void generate(Consumer<RecipeJsonProvider> exporter) {
+    public void generate(RecipeExporter exporter) {
 
         makeRecipes(exporter, PearBlocks.CALLERY_PLANKS, PearBlocks.CALLERY_STAIRS, PearBlocks.CALLERY_SLAB, PearBlocks.CALLERY_FENCE, PearBlocks.CALLERY_FENCE_GATE,
                 PearBlocks.CALLERY_DOOR, PearBlocks.CALLERY_TRAPDOOR, PearBlocks.CALLERY_BUTTON, PearBlocks.CALLERY_PRESSURE_PLATE, PearItems.CALLERY_SIGN);
@@ -61,7 +59,7 @@ public class PearRecipeProvider extends FabricRecipeProvider {
 
     }
 
-    public static void makeRecipes(Consumer<RecipeJsonProvider> exporter, Block planks, Block stairs, Block slab, Block fence, Block fenceGate, Block door, Block trapdoor, Block button, Block pressurePlate, ItemConvertible sign){
+    public static void makeRecipes(RecipeExporter exporter, Block planks, Block stairs, Block slab, Block fence, Block fenceGate, Block door, Block trapdoor, Block button, Block pressurePlate, ItemConvertible sign){
 
         RecipeProvider.createStairsRecipe(stairs, Ingredient.ofItems(planks)).criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
         RecipeProvider.createSlabRecipe(RecipeCategory.BUILDING_BLOCKS, slab, Ingredient.ofItems(planks)).criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
