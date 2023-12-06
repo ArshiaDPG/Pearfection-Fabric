@@ -25,7 +25,7 @@ import java.util.OptionalInt;
 public class CalleryLeavesBlock extends LeavesBlock implements Fertilizable {
 
     boolean bearsFruit;
-    public CalleryLeavesBlock(boolean bearsFruit,Settings settings) {
+    public CalleryLeavesBlock(boolean bearsFruit, Settings settings) {
         super(settings);
         this.bearsFruit = bearsFruit;
     }
@@ -67,7 +67,7 @@ public class CalleryLeavesBlock extends LeavesBlock implements Fertilizable {
     }
 
     public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
-        return this.bearsFruit;
+        return this.bearsFruit && world.getBlockState(pos.down()).isAir();
     }
 
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
