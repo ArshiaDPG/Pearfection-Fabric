@@ -7,8 +7,8 @@ import net.digitalpear.pearfection.common.blocks.CalleryVineBlock;
 import net.digitalpear.pearfection.common.blocks.LampearBlock;
 import net.digitalpear.pearfection.init.data.PearFoodComponents;
 import net.digitalpear.pearfection.init.data.Woodset;
-import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeRegistry;
-import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeRegistry;
+import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
+import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.FoodComponent;
@@ -16,7 +16,6 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 
@@ -25,11 +24,7 @@ public class PearBlocks {
     public static MapColor callerySideColor = MapColor.BROWN;
 
 
-    public static final WoodType CALLERY_WOOD_TYPE = WoodTypeRegistry.register(Pearfection.id("callery"),
-            BlockSetTypeRegistry.registerWood(Pearfection.id("callery")), BlockSoundGroup.CHERRY_WOOD,
-            BlockSoundGroup.CHERRY_WOOD_HANGING_SIGN,
-            SoundEvents.BLOCK_CHERRY_WOOD_FENCE_GATE_CLOSE,
-            SoundEvents.BLOCK_CHERRY_WOOD_FENCE_GATE_OPEN);
+    public static final WoodType CALLERY_WOOD_TYPE = new WoodTypeBuilder().register(Pearfection.id("callery"), BlockSetTypeBuilder.copyOf(BlockSetType.CHERRY).build(Pearfection.id("callery")));
 
 
     public static BlockItem createBlockItem(String blockID, Block block){

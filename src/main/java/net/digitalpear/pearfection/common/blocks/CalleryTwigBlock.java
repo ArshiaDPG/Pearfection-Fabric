@@ -1,5 +1,6 @@
 package net.digitalpear.pearfection.common.blocks;
 
+import com.mojang.serialization.MapCodec;
 import net.digitalpear.pearfection.init.PearBlocks;
 import net.minecraft.block.*;
 import net.minecraft.item.ItemPlacementContext;
@@ -24,7 +25,11 @@ public class CalleryTwigBlock extends PlantBlock implements Fertilizable {
         super(settings.ticksRandomly());
         this.setDefaultState(this.stateManager.getDefaultState().with(AGE, 0));
     }
-
+    public static final MapCodec<CalleryTwigBlock> CODEC = createCodec(CalleryTwigBlock::new);
+    @Override
+    protected MapCodec<? extends PlantBlock> getCodec() {
+        return CODEC;
+    }
 
     @Override
     public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state) {

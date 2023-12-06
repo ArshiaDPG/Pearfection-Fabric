@@ -78,7 +78,7 @@ public record Woodset(Identifier id, MapColor topColor, MapColor sideColor, Wood
     }
 
     private ButtonBlock createWoodenButtonBlock() {
-        return new ButtonBlock(AbstractBlock.Settings.copy(Blocks.OAK_BUTTON), this.woodType().setType(), 30, true);
+        return new ButtonBlock(this.woodType().setType(), 30, AbstractBlock.Settings.copy(Blocks.OAK_BUTTON));
     }
 
 
@@ -96,19 +96,19 @@ public record Woodset(Identifier id, MapColor topColor, MapColor sideColor, Wood
         return createBlockWithItem(this.name() + "_fence", new FenceBlock(AbstractBlock.Settings.copy(Blocks.OAK_FENCE).mapColor(this.topColor()).sounds(this.woodType().soundType())));
     }
     public Block createFenceGate(){
-        return createBlockWithItem(this.name() + "_fence_gate", new FenceGateBlock(AbstractBlock.Settings.copy(Blocks.OAK_FENCE_GATE).sounds(this.woodType().soundType()).mapColor(this.topColor()), this.woodType()));
+        return createBlockWithItem(this.name() + "_fence_gate", new FenceGateBlock(this.woodType(), AbstractBlock.Settings.copy(Blocks.OAK_FENCE_GATE).sounds(this.woodType().soundType()).mapColor(this.topColor())));
     }
     public Block createPressurePlate(){
-        return createBlockWithItem(this.name() + "_pressure_plate", new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, AbstractBlock.Settings.copy(Blocks.OAK_PRESSURE_PLATE).sounds(this.woodType().soundType()).mapColor(this.topColor()), this.woodType().setType()));
+        return createBlockWithItem(this.name() + "_pressure_plate", new PressurePlateBlock(this.woodType().setType(), AbstractBlock.Settings.copy(Blocks.OAK_PRESSURE_PLATE).sounds(this.woodType().soundType()).mapColor(this.topColor())));
     }
     public Block createButton(){
         return createBlockWithItem(this.name() + "_button", createWoodenButtonBlock());
     }
     public Block createDoor(){
-        return createBlockWithItem(this.name() + "_door", new DoorBlock(AbstractBlock.Settings.copy(Blocks.OAK_DOOR).mapColor(this.topColor()), this.woodType().setType()));
+        return createBlockWithItem(this.name() + "_door", new DoorBlock(this.woodType().setType(), AbstractBlock.Settings.copy(Blocks.OAK_DOOR).mapColor(this.topColor())));
     }
     public Block createTrapDoor(){
-        return createBlockWithItem(this.name() + "_trapdoor", new TrapdoorBlock(AbstractBlock.Settings.copy(Blocks.OAK_TRAPDOOR).mapColor(this.topColor()), this.woodType().setType()));
+        return createBlockWithItem(this.name() + "_trapdoor", new TrapdoorBlock(this.woodType().setType(), AbstractBlock.Settings.copy(Blocks.OAK_TRAPDOOR).mapColor(this.topColor())));
     }
     public Block createLog(boolean mushroom, boolean stripped, boolean wood) {
         String name = this.name();

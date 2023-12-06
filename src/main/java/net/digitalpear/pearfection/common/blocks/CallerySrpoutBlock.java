@@ -1,5 +1,6 @@
 package net.digitalpear.pearfection.common.blocks;
 
+import com.mojang.serialization.MapCodec;
 import net.digitalpear.pearfection.init.PearBlocks;
 import net.minecraft.block.*;
 import net.minecraft.item.ItemPlacementContext;
@@ -14,12 +15,18 @@ import net.minecraft.world.WorldView;
 
 
 public class CallerySrpoutBlock extends PlantBlock implements Fertilizable {
+
     protected static final VoxelShape SHAPE = Block.createCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 12.0D, 14.0D);
 
     public CallerySrpoutBlock(Settings settings) {
         super(settings);
     }
 
+    public static final MapCodec<CallerySrpoutBlock> CODEC = createCodec(CallerySrpoutBlock::new);
+    @Override
+    protected MapCodec<? extends PlantBlock> getCodec() {
+        return CODEC;
+    }
 
 
     @Override
