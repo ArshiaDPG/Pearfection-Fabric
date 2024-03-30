@@ -24,7 +24,7 @@ public class PearfectionClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
-                PearBlocks.LAMPEAR, PearBlocks.COPPER_LAMPEAR,
+                PearBlocks.LAMPEAR, PearBlocks.COPPER_LAMPEAR, PearBlocks.CALLERY_PICKETS,
                 PearBlocks.CALLERY_TWIG, PearBlocks.CALLERY_SPROUT, PearBlocks.CALLERY_VINE,
                 PearBlocks.POTTED_CALLERY_TWIG, PearBlocks.POTTED_CALLERY_SPROUT);
 

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_lampear": {
+    "has_callery_pickets": {
       "conditions": {
         "items": [
           {
             "items": [
-              "pearfection:lampear"
+              "pearfection:callery_pickets"
             ]
           }
         ]
@@ -23,13 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_lampear"
+      "has_callery_pickets"
     ]
   ],
   "rewards": {
     "recipes": [
       "pearfection:copper_lampear"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

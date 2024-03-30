@@ -55,7 +55,13 @@ public class PearRecipeProvider extends FabricRecipeProvider {
                 .pattern("LLL")
                 .pattern("LPL")
                 .pattern("LHL")
-                .criterion(hasItem(PearBlocks.LAMPEAR), conditionsFromItem(PearBlocks.LAMPEAR)).offerTo(exporter);
+                .criterion(hasItem(PearBlocks.CALLERY_PICKETS), conditionsFromItem(PearBlocks.CALLERY_PICKETS)).offerTo(exporter);
+
+//        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, PearBlocks.CALLERY_PICKETS)
+//                .input('S', Items.STICK)
+//                .input('P', PearBlocks.CALLERY_PLANKS)
+//                .pattern("PSP")
+//                .criterion(hasItem(PearBlocks.CALLERY_PICKETS), conditionsFromItem(PearBlocks.CALLERY_PICKETS)).offerTo(exporter);
 
     }
 

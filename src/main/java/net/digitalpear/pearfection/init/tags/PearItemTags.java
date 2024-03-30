@@ -10,10 +10,17 @@ public class PearItemTags {
     public static final TagKey<Item> CALLERY_STEMS = tag("callery_stems");
     public static final TagKey<Item> C_FRUITS_PEARS = commonTag("fruits/pears");
 
+
+    public static final TagKey<Item> EATABLE_ON_DISH = compatTag("bountifulfares", "eatable_on_dish");
+
     private static TagKey<Item> tag(String id) {
-        return TagKey.of(RegistryKeys.ITEM, new Identifier(Pearfection.MOD_ID, id));
+        return compatTag(Pearfection.MOD_ID, id);
     }
     private static TagKey<Item> commonTag(String id) {
-        return TagKey.of(RegistryKeys.ITEM, new Identifier("c", id));
+        return compatTag("c", id);
+    }
+
+    private static TagKey<Item> compatTag(String namespace, String id){
+        return TagKey.of(RegistryKeys.ITEM, new Identifier(namespace, id));
     }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "pearfection:stripped_callery_wood"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

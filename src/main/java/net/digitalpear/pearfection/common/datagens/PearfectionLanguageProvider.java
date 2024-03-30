@@ -65,6 +65,8 @@ public class PearfectionLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(PearItems.CALLERY_BOAT, "Callery Boat");
         translationBuilder.add(PearItems.CALLERY_CHEST_BOAT, "Callery Boat with Chest");
 
+        translationBuilder.add(PearBlocks.CALLERY_PICKETS, "Callery Pickets");
+
         /*
             Misc
          */

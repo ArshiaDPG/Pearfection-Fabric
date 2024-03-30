@@ -7,6 +7,7 @@ import net.digitalpear.pearfection.Pearfection;
 import net.digitalpear.pearfection.init.data.PearFoodComponents;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -49,19 +50,15 @@ public class PearItems {
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
-            entries.addAfter(Items.MANGROVE_BUTTON, PearBlocks.CALLERY_BUTTON);
-            entries.addAfter(Items.MANGROVE_BUTTON, PearBlocks.CALLERY_PRESSURE_PLATE);
-            entries.addAfter(Items.MANGROVE_BUTTON, PearBlocks.CALLERY_TRAPDOOR);
-            entries.addAfter(Items.MANGROVE_BUTTON, PearBlocks.CALLERY_DOOR);
-            entries.addAfter(Items.MANGROVE_BUTTON, PearBlocks.CALLERY_FENCE_GATE);
-            entries.addAfter(Items.MANGROVE_BUTTON, PearBlocks.CALLERY_FENCE);
-            entries.addAfter(Items.MANGROVE_BUTTON, PearBlocks.CALLERY_SLAB);
-            entries.addAfter(Items.MANGROVE_BUTTON, PearBlocks.CALLERY_STAIRS);
-            entries.addAfter(Items.MANGROVE_BUTTON, PearBlocks.CALLERY_PLANKS);
-            entries.addAfter(Items.MANGROVE_BUTTON, PearBlocks.STRIPPED_CALLERY_WOOD);
-            entries.addAfter(Items.MANGROVE_BUTTON, PearBlocks.CALLERY_WOOD);
-            entries.addAfter(Items.MANGROVE_BUTTON, PearBlocks.STRIPPED_CALLERY_STEM);
-            entries.addAfter(Items.MANGROVE_BUTTON, PearBlocks.CALLERY_STEM);
+            entries.addAfter(Items.MANGROVE_BUTTON,
+                    PearBlocks.CALLERY_STEM, PearBlocks.STRIPPED_CALLERY_STEM, PearBlocks.CALLERY_WOOD, PearBlocks.STRIPPED_CALLERY_WOOD,
+                    PearBlocks.CALLERY_PLANKS, PearBlocks.CALLERY_STAIRS, PearBlocks.CALLERY_SLAB,
+                    PearBlocks.CALLERY_FENCE, PearBlocks.CALLERY_FENCE_GATE, PearBlocks.CALLERY_DOOR,
+                    PearBlocks.CALLERY_TRAPDOOR, PearBlocks.CALLERY_PRESSURE_PLATE, PearBlocks.CALLERY_BUTTON
+            );
+            if (FabricLoader.getInstance().isModLoaded("bountifulfares")){
+                entries.addAfter(PearBlocks.CALLERY_FENCE_GATE, PearBlocks.CALLERY_PICKETS);
+            }
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
@@ -87,5 +84,6 @@ public class PearItems {
             entries.addAfter(Items.MANGROVE_HANGING_SIGN, CALLERY_SIGN);
             entries.addAfter(CALLERY_SIGN, CALLERY_HANGING_SIGN);
         });
+
     }
 }

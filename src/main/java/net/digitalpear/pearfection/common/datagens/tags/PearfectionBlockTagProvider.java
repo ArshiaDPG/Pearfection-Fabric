@@ -13,14 +13,6 @@ import net.minecraft.registry.tag.BlockTags;
 import java.util.concurrent.CompletableFuture;
 
 public class PearfectionBlockTagProvider extends FabricTagProvider<Block> {
-    /**
-     * Constructs a new {@link FabricTagProvider} with the default computed path.
-     *
-     * <p>Common implementations of this class are provided.
-     *
-     * @param output           the {@link FabricDataOutput} instance
-     * @param registriesFuture the backing registry for the tag type
-     */
     public PearfectionBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, Registries.BLOCK.getKey(), registriesFuture);
     }
@@ -83,5 +75,11 @@ public class PearfectionBlockTagProvider extends FabricTagProvider<Block> {
 
         getOrCreateTagBuilder(PearBlockTags.ENORMOUS_PEAR_GROWABLE_ON)
                 .add(Blocks.MOSS_BLOCK);
+
+
+        /*
+            COMPAT
+         */
+        getOrCreateTagBuilder(PearBlockTags.PICKETS).add(PearBlocks.CALLERY_PICKETS);
     }
 }

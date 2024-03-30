@@ -13,14 +13,6 @@ import net.minecraft.registry.tag.ItemTags;
 import java.util.concurrent.CompletableFuture;
 
 public class PearfectionItemTagProvider extends FabricTagProvider<Item> {
-    /**
-     * Constructs a new {@link FabricTagProvider} with the default computed path.
-     *
-     * <p>Common implementations of this class are provided.
-     *
-     * @param output           the {@link FabricDataOutput} instance
-     * @param registriesFuture the backing registry for the tag type
-     */
     public PearfectionItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, Registries.ITEM.getKey(), registriesFuture);
     }
@@ -44,10 +36,12 @@ public class PearfectionItemTagProvider extends FabricTagProvider<Item> {
         getOrCreateTagBuilder(ItemTags.SAPLINGS).add(PearBlocks.CALLERY_TWIG.asItem());
 
 
-        getOrCreateTagBuilder(PearItemTags.C_FRUITS_PEARS).add(PearBlocks.LAMPEAR.asItem()).add(PearBlocks.COPPER_LAMPEAR.asItem());
-
         getOrCreateTagBuilder(PearItemTags.CALLERY_STEMS)
                 .add(PearBlocks.CALLERY_STEM.asItem()).add(PearBlocks.STRIPPED_CALLERY_STEM.asItem())
                 .add(PearBlocks.CALLERY_WOOD.asItem()).add(PearBlocks.STRIPPED_CALLERY_WOOD.asItem());
+
+
+        getOrCreateTagBuilder(PearItemTags.C_FRUITS_PEARS).add(PearBlocks.LAMPEAR.asItem()).add(PearBlocks.COPPER_LAMPEAR.asItem());
+        getOrCreateTagBuilder(PearItemTags.EATABLE_ON_DISH).add(PearBlocks.LAMPEAR.asItem()).add(PearBlocks.COPPER_LAMPEAR.asItem());
     }
 }

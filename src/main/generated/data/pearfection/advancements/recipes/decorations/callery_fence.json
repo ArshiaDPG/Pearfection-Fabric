@@ -30,6 +30,5 @@
     "recipes": [
       "pearfection:callery_fence"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

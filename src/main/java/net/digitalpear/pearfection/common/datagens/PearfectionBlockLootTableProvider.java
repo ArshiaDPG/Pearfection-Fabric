@@ -1,10 +1,17 @@
 package net.digitalpear.pearfection.common.datagens;
 
+import net.digitalpear.pearfection.common.blocks.compat.PicketsBlock;
 import net.digitalpear.pearfection.init.PearBlocks;
 import net.digitalpear.pearfection.init.PearItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.fabricmc.fabric.api.loot.v2.FabricLootTableBuilder;
 import net.minecraft.block.FlowerPotBlock;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
+import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.predicate.StatePredicate;
 
 public class PearfectionBlockLootTableProvider extends FabricBlockLootTableProvider {
     public PearfectionBlockLootTableProvider(FabricDataOutput dataOutput) {
@@ -43,6 +50,13 @@ public class PearfectionBlockLootTableProvider extends FabricBlockLootTableProvi
 
         addDrop(PearBlocks.CALLERY_LEAVES, leavesDrops(PearBlocks.CALLERY_LEAVES, PearBlocks.CALLERY_TWIG, 0.05f, 0.0625f, 0.025f, 0.083333336f, 0.1f));
         addDrop(PearBlocks.FLOWERING_CALLERY_LEAVES, leavesDrops(PearBlocks.CALLERY_LEAVES, PearBlocks.CALLERY_TWIG, 0.05f, 0.0625f, 0.025f, 0.083333336f, 0.1f));
+
+        addDrop(PearBlocks.CALLERY_PICKETS, LootTable.builder()
+                .pool(LootPool.builder().with(ItemEntry.builder(PearBlocks.CALLERY_PICKETS)).conditionally(BlockStatePropertyLootCondition.builder(PearBlocks.CALLERY_PICKETS).properties(StatePredicate.Builder.create().exactMatch(PicketsBlock.NORTH, true))).build())
+                .pool(LootPool.builder().with(ItemEntry.builder(PearBlocks.CALLERY_PICKETS)).conditionally(BlockStatePropertyLootCondition.builder(PearBlocks.CALLERY_PICKETS).properties(StatePredicate.Builder.create().exactMatch(PicketsBlock.SOUTH, true))).build())
+                .pool(LootPool.builder().with(ItemEntry.builder(PearBlocks.CALLERY_PICKETS)).conditionally(BlockStatePropertyLootCondition.builder(PearBlocks.CALLERY_PICKETS).properties(StatePredicate.Builder.create().exactMatch(PicketsBlock.EAST, true))).build())
+                .pool(LootPool.builder().with(ItemEntry.builder(PearBlocks.CALLERY_PICKETS)).conditionally(BlockStatePropertyLootCondition.builder(PearBlocks.CALLERY_PICKETS).properties(StatePredicate.Builder.create().exactMatch(PicketsBlock.WEST, true))).build())
+        );
     }
 
     public void makePottedLootTable(FlowerPotBlock flowerPotBlock){

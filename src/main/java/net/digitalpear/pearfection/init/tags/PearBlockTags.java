@@ -2,6 +2,7 @@ package net.digitalpear.pearfection.init.tags;
 
 import net.digitalpear.pearfection.Pearfection;
 import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
@@ -13,10 +14,17 @@ public class PearBlockTags {
     public static final TagKey<Block> ENORMOUS_PEAR_GROWABLE_ON = tag("enormous_pear_growable_on");
 
 
+    public static final TagKey<Block> PICKETS = compatTag("bountifulfares", "pickets");
+
+
     private static TagKey<Block> tag(String id) {
-        return TagKey.of(RegistryKeys.BLOCK, new Identifier(Pearfection.MOD_ID, id));
+        return compatTag(Pearfection.MOD_ID, id);
     }
-    private static TagKey<Block> commonTag(String mod,String id) {
-        return TagKey.of(RegistryKeys.BLOCK, new Identifier(mod, id));
+    private static TagKey<Block> commonTag(String id) {
+        return compatTag("c", id);
+    }
+
+    private static TagKey<Block> compatTag(String namespace, String id){
+        return TagKey.of(RegistryKeys.BLOCK, new Identifier(namespace, id));
     }
 }

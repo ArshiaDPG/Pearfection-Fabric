@@ -9,14 +9,7 @@ import net.minecraft.world.biome.Biome;
 import java.util.concurrent.CompletableFuture;
 
 public class PearfectionBiomeTagProvider extends FabricTagProvider<Biome> {
-    /**
-     * Constructs a new {@link FabricTagProvider} with the default computed path.
-     *
-     * <p>Common implementations of this class are provided.
-     *
-     * @param output           the {@link FabricDataOutput} instance
-     * @param registriesFuture the backing registry for the tag type
-     */
+
     public PearfectionBiomeTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, RegistryKeys.BIOME, registriesFuture);
     }

@@ -5,11 +5,14 @@ import net.digitalpear.pearfection.common.blocks.CallerySrpoutBlock;
 import net.digitalpear.pearfection.common.blocks.CalleryTwigBlock;
 import net.digitalpear.pearfection.common.blocks.CalleryVineBlock;
 import net.digitalpear.pearfection.common.blocks.LampearBlock;
+import net.digitalpear.pearfection.common.blocks.compat.PicketsBlock;
 import net.digitalpear.pearfection.init.data.PearFoodComponents;
 import net.digitalpear.pearfection.init.data.Woodset;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
 import net.minecraft.block.*;
+import net.minecraft.block.enums.Instrument;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
@@ -104,7 +107,13 @@ public class PearBlocks {
     public static final Block CALLERY_HANGING_SIGN = CALLERY.createHangingSign();
     public static final Block CALLERY_WALL_HANGING_SIGN = CALLERY.createWallHangingSign();
 
+    public static Block CALLERY_PICKETS = createBlockWithItem("callery_pickets",
+            new PicketsBlock(FabricBlockSettings.create().burnable().mapColor(CALLERY.topColor())
+                    .strength(0.5F).sounds(CALLERY.woodType().soundType()).instrument(Instrument.BASS)
+                    .notSolid().nonOpaque()));
+
 
     public static void init() {
+
     }
 }

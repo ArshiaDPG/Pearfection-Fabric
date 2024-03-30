@@ -30,6 +30,5 @@
     "recipes": [
       "pearfection:callery_trapdoor"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
