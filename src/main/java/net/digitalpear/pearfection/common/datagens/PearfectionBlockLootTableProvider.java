@@ -49,7 +49,7 @@ public class PearfectionBlockLootTableProvider extends FabricBlockLootTableProvi
 
 
         addDrop(PearBlocks.CALLERY_LEAVES, leavesDrops(PearBlocks.CALLERY_LEAVES, PearBlocks.CALLERY_TWIG, 0.05f, 0.0625f, 0.025f, 0.083333336f, 0.1f));
-        addDrop(PearBlocks.FLOWERING_CALLERY_LEAVES, leavesDrops(PearBlocks.CALLERY_LEAVES, PearBlocks.CALLERY_TWIG, 0.05f, 0.0625f, 0.025f, 0.083333336f, 0.1f));
+        addDrop(PearBlocks.FLOWERING_CALLERY_LEAVES, leavesDrops(PearBlocks.FLOWERING_CALLERY_LEAVES, PearBlocks.CALLERY_TWIG, 0.05f, 0.0625f, 0.025f, 0.083333336f, 0.1f));
 
         addDrop(PearBlocks.CALLERY_PICKETS, LootTable.builder()
                 .pool(LootPool.builder().with(ItemEntry.builder(PearBlocks.CALLERY_PICKETS)).conditionally(BlockStatePropertyLootCondition.builder(PearBlocks.CALLERY_PICKETS).properties(StatePredicate.Builder.create().exactMatch(PicketsBlock.NORTH, true))).build())

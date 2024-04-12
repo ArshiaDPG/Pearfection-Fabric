@@ -86,8 +86,6 @@ public class PearfectionModelProvider extends FabricModelProvider {
         blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(wallSign, identifier));
     }
 
-
-
     /*
         USE BASE MODELS TO GENERATE MODELS
      */
