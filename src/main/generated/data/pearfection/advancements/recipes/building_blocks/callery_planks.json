@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "pearfection:callery_stems"
+            "items": "#pearfection:callery_stems"
           }
         ]
       },

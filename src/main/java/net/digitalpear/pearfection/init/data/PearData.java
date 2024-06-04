@@ -72,10 +72,12 @@ public class PearData {
             Adds the callery twig to the sniffers loot table (Adds to the existing pool instead of creating a new pool).
             I'd recommend using this method if you want to add new drops quickly.
          */
-        LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-            if (source.isBuiltin() && LootTables.SNIFFER_DIGGING_GAMEPLAY.equals(id)) {
+        LootTableEvents.MODIFY.register((key, tableBuilder, source) -> {
+            if (source.isBuiltin() && LootTables.SNIFFER_DIGGING_GAMEPLAY.equals(key)) {
                 tableBuilder.modifyPools(builder -> builder.with(ItemEntry.builder(PearBlocks.CALLERY_TWIG)));
             }
         });
+
+
     }
 }

@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "pearfection:lampear"
-            ]
+            "items": "pearfection:lampear"
           }
         ]
       },

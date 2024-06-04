@@ -4,15 +4,19 @@ import net.digitalpear.pearfection.init.PearBlocks;
 import net.digitalpear.pearfection.init.PearItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
+import net.minecraft.registry.RegistryWrapper;
+
+import java.util.concurrent.CompletableFuture;
 
 public class PearfectionLanguageProvider extends FabricLanguageProvider {
-    public PearfectionLanguageProvider(FabricDataOutput dataOutput) {
-        super(dataOutput);
+
+    public PearfectionLanguageProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+        super(dataOutput, registryLookup);
     }
 
-    @Override
-    public void generateTranslations(TranslationBuilder translationBuilder) {
 
+    @Override
+    public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
         /*
             Lampears
          */

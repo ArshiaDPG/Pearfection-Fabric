@@ -12,10 +12,15 @@ import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.predicate.StatePredicate;
+import net.minecraft.registry.RegistryWrapper;
+
+import java.util.concurrent.CompletableFuture;
 
 public class PearfectionBlockLootTableProvider extends FabricBlockLootTableProvider {
-    public PearfectionBlockLootTableProvider(FabricDataOutput dataOutput) {
-        super(dataOutput);
+
+
+    public PearfectionBlockLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+        super(dataOutput, registryLookup);
     }
 
     @Override

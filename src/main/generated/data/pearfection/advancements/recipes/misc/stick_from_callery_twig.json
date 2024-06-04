@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "pearfection:callery_twig"
-            ]
+            "items": "pearfection:callery_twig"
           }
         ]
       },

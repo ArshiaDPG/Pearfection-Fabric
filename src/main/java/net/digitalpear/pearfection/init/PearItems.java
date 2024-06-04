@@ -5,7 +5,6 @@ import com.terraformersmc.terraform.boat.api.TerraformBoatTypeRegistry;
 import com.terraformersmc.terraform.boat.impl.item.TerraformBoatItem;
 import net.digitalpear.pearfection.Pearfection;
 import net.digitalpear.pearfection.init.data.PearFoodComponents;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
@@ -28,10 +27,10 @@ public class PearItems {
     }
 
     public static Item createSignItem(Block sign, Block wallSign) {
-        return new SignItem(new FabricItemSettings().maxCount(16), sign, wallSign);
+        return new SignItem(new Item.Settings().maxCount(16), sign, wallSign);
     }
     public static Item createHangingSignItem(Block sign, Block wallSign) {
-        return new HangingSignItem(sign, wallSign, new FabricItemSettings().maxCount(16));
+        return new HangingSignItem(sign, wallSign, new Item.Settings().maxCount(16));
     }
 
     public static final Item CALLERY_BOAT = createItem("callery_boat", createBoatItem(PearBoatTypes.CALLERY));

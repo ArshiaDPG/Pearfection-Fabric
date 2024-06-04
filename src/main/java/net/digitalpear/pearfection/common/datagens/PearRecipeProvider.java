@@ -12,15 +12,17 @@ import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.RegistryWrapper;
 
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
 public class PearRecipeProvider extends FabricRecipeProvider {
-    public PearRecipeProvider(FabricDataOutput output) {
-        super(output);
+
+
+    public PearRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+        super(output, registriesFuture);
     }
-
-
 
     @Override
     public void generate(RecipeExporter exporter) {
