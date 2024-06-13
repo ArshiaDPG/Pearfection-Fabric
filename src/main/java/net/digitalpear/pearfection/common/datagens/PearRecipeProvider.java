@@ -42,6 +42,9 @@ public class PearRecipeProvider extends FabricRecipeProvider {
         RecipeProvider.offerBarkBlockRecipe(exporter, PearBlocks.CALLERY_WOOD, PearBlocks.CALLERY_STEM);
         RecipeProvider.offerBarkBlockRecipe(exporter, PearBlocks.STRIPPED_CALLERY_WOOD, PearBlocks.STRIPPED_CALLERY_STEM);
 
+
+//        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, PearBlocks.CALLERY_PICKETS).pattern("PSP").input('P', PearBlocks.CALLERY_PLANKS).input('S', Items.STICK).criterion(hasItem(PearBlocks.CALLERY_PLANKS), conditionsFromItem(PearBlocks.CALLERY_PLANKS)).offerTo(exporter);
+
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, PearItems.PEAR_TART, 2)
                 .input(PearBlocks.LAMPEAR)
                 .input(Items.SUGAR)
