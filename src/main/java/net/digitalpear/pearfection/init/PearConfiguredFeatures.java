@@ -15,8 +15,8 @@ import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 
 public class PearConfiguredFeatures {
 
-    public static final RegistryKey<ConfiguredFeature<?, ?>> HUGE_PEAR = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(Pearfection.MOD_ID, "huge_pear"));
-    public static final RegistryKey<ConfiguredFeature<?, ?>> ENORMOUS_PEAR = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(Pearfection.MOD_ID, "enormous_pear"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> HUGE_PEAR = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Pearfection.id("huge_pear"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ENORMOUS_PEAR = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Pearfection.id("enormous_pear"));
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> featureRegisterable) {
         ConfiguredFeatures.register(featureRegisterable, HUGE_PEAR, PearFeatures.HUGE_PEAR,

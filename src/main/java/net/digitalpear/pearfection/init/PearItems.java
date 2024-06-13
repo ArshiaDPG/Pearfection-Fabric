@@ -17,7 +17,7 @@ import net.minecraft.util.Identifier;
 public class PearItems {
 
     public static Item createItem(String blockID, Item item){
-        return Registry.register(Registries.ITEM, new Identifier(Pearfection.MOD_ID, blockID), item);
+        return Registry.register(Registries.ITEM, Pearfection.id(blockID), item);
     }
     public static Item createBoatItem(TerraformBoatType type) {
         return new TerraformBoatItem(TerraformBoatTypeRegistry.INSTANCE.getKey(type).get(), false, new Item.Settings().maxCount(1));

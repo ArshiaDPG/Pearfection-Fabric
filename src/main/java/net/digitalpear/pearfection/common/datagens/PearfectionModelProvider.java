@@ -24,10 +24,10 @@ public class PearfectionModelProvider extends FabricModelProvider {
     public static final Model LAMPEAR_BASE = block("lampear_base", TextureKey.ALL);
     public static final Model LAMPEAR_HANGING_BASE = block("lampear_hanging_base", TextureKey.ALL);
 
-    public static final Model PICKET_BASE = block(new Identifier("bountifulfares", "template_pickets"), TextureKey.TEXTURE);
+    public static final Model PICKET_BASE = block(Identifier.of("bountifulfares", "template_pickets"), TextureKey.TEXTURE);
 
     private static Model block(String parent, TextureKey... requiredTextureKeys) {
-        return new Model(Optional.of(new Identifier(Pearfection.MOD_ID, "block/" + parent)), Optional.empty(), requiredTextureKeys);
+        return new Model(Optional.of(Pearfection.id("block/" + parent)), Optional.empty(), requiredTextureKeys);
     }
     private static Model block(Identifier parent, TextureKey... requiredTextureKeys) {
         return new Model(Optional.of(parent.withPrefixedPath("block/")), Optional.empty(), requiredTextureKeys);
@@ -81,7 +81,7 @@ public class PearfectionModelProvider extends FabricModelProvider {
     }
 
     public void makeParticles(BlockStateModelGenerator blockStateModelGenerator, Block particle, Block sign, Block wallSign){
-        Identifier identifier = Models.PARTICLE.upload(sign, TextureMap.particle(new Identifier(Pearfection.MOD_ID, "block/" + Registries.BLOCK.getId(particle).getPath())), blockStateModelGenerator.modelCollector);
+        Identifier identifier = Models.PARTICLE.upload(sign, TextureMap.particle(Pearfection.id("block/" + Registries.BLOCK.getId(particle).getPath())), blockStateModelGenerator.modelCollector);
         blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(sign, identifier));
         blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(wallSign, identifier));
     }

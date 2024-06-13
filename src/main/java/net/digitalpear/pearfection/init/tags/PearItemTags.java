@@ -21,6 +21,6 @@ public class PearItemTags {
     }
 
     private static TagKey<Item> compatTag(String namespace, String id){
-        return TagKey.of(RegistryKeys.ITEM, new Identifier(namespace, id));
+        return TagKey.of(RegistryKeys.ITEM, Identifier.of(namespace, id));
     }
 }

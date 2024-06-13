@@ -36,7 +36,7 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     modImplementation include("com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}")
 
-    compileOnly "maven.modrinth:bountiful-fares:${project.bountifulfares}"
+    //compileOnly "maven.modrinth:bountiful-fares:${project.bountifulfares}"
 }
 
 processResources {

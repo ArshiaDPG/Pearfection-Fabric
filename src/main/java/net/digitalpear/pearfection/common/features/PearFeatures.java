@@ -14,7 +14,7 @@ public class PearFeatures {
 
 
     private static <C extends FeatureConfig, F extends Feature<C>> F register(String name, F feature) {
-        return Registry.register(Registries.FEATURE, new Identifier(Pearfection.MOD_ID, name), feature);
+        return Registry.register(Registries.FEATURE, Pearfection.id(name), feature);
     }
 
     public static void init() {

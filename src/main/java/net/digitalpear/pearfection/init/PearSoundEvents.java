@@ -19,6 +19,6 @@ public class PearSoundEvents {
 
 
     private static SoundEvent register(String id) {
-        return Registry.register(Registries.SOUND_EVENT, new Identifier(Pearfection.MOD_ID, id), SoundEvent.of(new Identifier(Pearfection.MOD_ID, id)));
+        return Registry.register(Registries.SOUND_EVENT, Pearfection.id(id), SoundEvent.of(Pearfection.id(id)));
     }
 }

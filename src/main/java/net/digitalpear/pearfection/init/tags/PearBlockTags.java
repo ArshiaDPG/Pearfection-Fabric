@@ -25,6 +25,6 @@ public class PearBlockTags {
     }
 
     private static TagKey<Block> compatTag(String namespace, String id){
-        return TagKey.of(RegistryKeys.BLOCK, new Identifier(namespace, id));
+        return TagKey.of(RegistryKeys.BLOCK, Identifier.of(namespace, id));
     }
 }

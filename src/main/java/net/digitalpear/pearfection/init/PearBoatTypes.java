@@ -12,7 +12,7 @@ public class PearBoatTypes {
 
 
     public static TerraformBoatType makeBoat(String name, ItemConvertible planks, Item boat, Item chestBoat){
-        return Registry.register(TerraformBoatTypeRegistry.INSTANCE, new Identifier(Pearfection.MOD_ID, name),
+        return Registry.register(TerraformBoatTypeRegistry.INSTANCE, Pearfection.id(name),
                 new TerraformBoatType.Builder()
                 .planks(planks.asItem())
                 .item(boat)

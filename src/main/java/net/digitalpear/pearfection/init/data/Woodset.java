@@ -1,10 +1,11 @@
 package net.digitalpear.pearfection.init.data;
 
 
-import com.terraformersmc.terraform.sign.block.TerraformHangingSignBlock;
-import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
-import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
-import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
+
+import com.terraformersmc.terraform.sign.api.block.TerraformHangingSignBlock;
+import com.terraformersmc.terraform.sign.api.block.TerraformSignBlock;
+import com.terraformersmc.terraform.sign.api.block.TerraformWallHangingSignBlock;
+import com.terraformersmc.terraform.sign.api.block.TerraformWallSignBlock;
 import net.digitalpear.pearfection.Pearfection;
 import net.digitalpear.pearfection.common.blocks.CalleryLeavesBlock;
 import net.minecraft.block.*;
@@ -33,7 +34,7 @@ public record Woodset(Identifier id, MapColor topColor, MapColor sideColor, Wood
 
 
     public Woodset(String name, MapColor topColor, MapColor sideColor, WoodType woodType){
-        this(new Identifier(Pearfection.MOD_ID, name), topColor, sideColor, woodType);
+        this(Pearfection.id(name), topColor, sideColor, woodType);
     }
     public Woodset(Identifier id, MapColor topColor, MapColor sideColor){
         this(id, topColor, sideColor, WoodType.OAK);
@@ -61,16 +62,16 @@ public record Woodset(Identifier id, MapColor topColor, MapColor sideColor, Wood
 
 
     public BlockItem createBlockItem(String blockID, Block block){
-        return Registry.register(Registries.ITEM, new Identifier(namespace(), blockID), new BlockItem(block, new Item.Settings()));
+        return Registry.register(Registries.ITEM, Identifier.of(namespace(), blockID), new BlockItem(block, new Item.Settings()));
     }
 
     public Block createBlockWithItem(String blockID, Block block){
         createBlockItem(blockID, block);
-        return Registry.register(Registries.BLOCK, new Identifier(namespace(), blockID), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(namespace(), blockID), block);
     }
 
     public Block createBlockWithoutItem(String blockID, Block block){
-        return Registry.register(Registries.BLOCK, new Identifier(namespace(), blockID), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(namespace(), blockID), block);
     }
 
     private PillarBlock createLogBlock(MapColor topMapColor, MapColor sideMapColor) {
@@ -134,15 +135,15 @@ public record Woodset(Identifier id, MapColor topColor, MapColor sideColor, Wood
         return createBlockWithItem("flowering_" + this.name() + "_leaves", createFloweringLeavesBlock(BlockSoundGroup.AZALEA_LEAVES, flowerColor));
     }
     public Block createSign(){
-        return createBlockWithoutItem(this.name() + "_sign", new TerraformSignBlock(new Identifier(namespace(), "entity/signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_SIGN).mapColor(this.topColor())));
+        return createBlockWithoutItem(this.name() + "_sign", new TerraformSignBlock(Identifier.of(namespace(), "entity/signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_SIGN).mapColor(this.topColor())));
     }
     public Block createWallSign(){
-        return createBlockWithoutItem(this.name() + "_wall_sign", new TerraformWallSignBlock(new Identifier(namespace(), "entity/signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_WALL_SIGN).mapColor(this.topColor())));
+        return createBlockWithoutItem(this.name() + "_wall_sign", new TerraformWallSignBlock(Identifier.of(namespace(), "entity/signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_WALL_SIGN).mapColor(this.topColor())));
     }
     public Block createHangingSign(){
-        return createBlockWithoutItem(this.name() + "_hanging_sign", new TerraformHangingSignBlock(new Identifier(namespace(), "entity/signs/hanging/" + this.name()), new Identifier(Pearfection.MOD_ID, "textures/gui/hanging_signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_HANGING_SIGN).mapColor(this.topColor())));
+        return createBlockWithoutItem(this.name() + "_hanging_sign", new TerraformHangingSignBlock(Identifier.of(namespace(), "entity/signs/hanging/" + this.name()), Identifier.of(namespace(), "textures/gui/hanging_signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_HANGING_SIGN).mapColor(this.topColor())));
     }
     public Block createWallHangingSign(){
-        return createBlockWithoutItem(this.name() + "_wall_hanging_sign", new TerraformWallHangingSignBlock(new Identifier(namespace(), "entity/signs/hanging/" + this.name()), new Identifier(Pearfection.MOD_ID, "textures/gui/hanging_signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_WALL_HANGING_SIGN).mapColor(this.topColor())));
+        return createBlockWithoutItem(this.name() + "_wall_hanging_sign", new TerraformWallHangingSignBlock(Identifier.of(namespace(), "entity/signs/hanging/" + this.name()), Identifier.of(namespace(), "textures/gui/hanging_signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_WALL_HANGING_SIGN).mapColor(this.topColor())));
     }
 }

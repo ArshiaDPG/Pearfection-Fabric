@@ -12,7 +12,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
 import net.minecraft.block.*;
-import net.minecraft.block.enums.Instrument;
+import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -31,23 +31,23 @@ public class PearBlocks {
 
 
     public static BlockItem createBlockItem(String blockID, Block block){
-        return Registry.register(Registries.ITEM, new Identifier(Pearfection.MOD_ID, blockID), new BlockItem(block, new Item.Settings()));
+        return Registry.register(Registries.ITEM, Pearfection.id(blockID), new BlockItem(block, new Item.Settings()));
     }
     public static BlockItem createBlockItem(String blockID, Block block, Item.Settings item){
-        return Registry.register(Registries.ITEM, new Identifier(Pearfection.MOD_ID, blockID), new BlockItem(block, item));
+        return Registry.register(Registries.ITEM, Pearfection.id(blockID), new BlockItem(block, item));
     }
 
     public static Block createBlockWithItem(String blockID, Block block){
         createBlockItem(blockID, block);
-        return Registry.register(Registries.BLOCK, new Identifier(Pearfection.MOD_ID, blockID), block);
+        return Registry.register(Registries.BLOCK, Pearfection.id(blockID), block);
     }
     public static Block createBlockWithoutItem(String blockID, Block block){
-        return Registry.register(Registries.BLOCK, new Identifier(Pearfection.MOD_ID, blockID), block);
+        return Registry.register(Registries.BLOCK, Pearfection.id(blockID), block);
     }
 
     public static Block createLampear(String name, Block block, FoodComponent foodComponent, Rarity rarity){
         createBlockItem(name, block, new Item.Settings().food(foodComponent).rarity(rarity));
-        return Registry.register(Registries.BLOCK, new Identifier(Pearfection.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, Pearfection.id(name), block);
     }
     public static Block createLampear(String name, Block block, FoodComponent foodComponent){
         return createLampear(name, block, foodComponent, Rarity.COMMON);
@@ -108,8 +108,8 @@ public class PearBlocks {
     public static final Block CALLERY_WALL_HANGING_SIGN = CALLERY.createWallHangingSign();
 
     public static Block CALLERY_PICKETS = createBlockWithItem("callery_pickets",
-            new PicketsBlock(FabricBlockSettings.create().burnable().mapColor(CALLERY.topColor())
-                    .strength(0.5F).sounds(CALLERY.woodType().soundType()).instrument(Instrument.BASS)
+            new PicketsBlock(AbstractBlock.Settings.create().burnable().mapColor(CALLERY.topColor())
+                    .strength(0.5F).sounds(CALLERY.woodType().soundType()).instrument(NoteBlockInstrument.BASS)
                     .notSolid().nonOpaque()));
 
 

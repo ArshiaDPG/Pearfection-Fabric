@@ -28,6 +28,6 @@ public class PearfectionClient implements ClientModInitializer {
                 PearBlocks.CALLERY_TWIG, PearBlocks.CALLERY_SPROUT, PearBlocks.CALLERY_VINE,
                 PearBlocks.POTTED_CALLERY_TWIG, PearBlocks.POTTED_CALLERY_SPROUT);
 
-        TerraformBoatClientHelper.registerModelLayers(new Identifier(Pearfection.MOD_ID, "callery"), false);
+        TerraformBoatClientHelper.registerModelLayers(Pearfection.id("callery"), false);
     }
 }
