@@ -1,7 +1,7 @@
-// 1.21	2024-06-13T10:56:12.7112034	Pearfection/Tags for minecraft:block
+// 1.21	2024-08-15T09:16:45.5899754	Pearfection/Tags for minecraft:block
 251a85828e277287b71e1bf03f97a9703e2e0d71 data\minecraft\tags\block\wooden_pressure_plates.json
-a31c90e8857832747224c1474ded3612ec6a95b5 data\pearfection\tags\block\pear_growable_on.json
 e59412c4fda100b5bd8d3b30858c49bd57580e3e data\minecraft\tags\block\wall_signs.json
+a31c90e8857832747224c1474ded3612ec6a95b5 data\pearfection\tags\block\pear_growable_on.json
 0c4fe5195095039143d7c2d08b4fa24d0885893e data\minecraft\tags\block\wall_hanging_signs.json
 34977700b6e07db1cc713b1d4f3d5c5d45fb4e94 data\minecraft\tags\block\ceiling_hanging_signs.json
 158a4877fad0ee79d00e8c9f641ad661e822cdb5 data\pearfection\tags\block\enormous_pear_growable_on.json

@@ -9,6 +9,7 @@ import com.terraformersmc.terraform.sign.api.block.TerraformWallSignBlock;
 import net.digitalpear.pearfection.Pearfection;
 import net.digitalpear.pearfection.common.blocks.CalleryLeavesBlock;
 import net.minecraft.block.*;
+import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -135,15 +136,15 @@ public record Woodset(Identifier id, MapColor topColor, MapColor sideColor, Wood
         return createBlockWithItem("flowering_" + this.name() + "_leaves", createFloweringLeavesBlock(BlockSoundGroup.AZALEA_LEAVES, flowerColor));
     }
     public Block createSign(){
-        return createBlockWithoutItem(this.name() + "_sign", new TerraformSignBlock(Identifier.of(namespace(), "entity/signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_SIGN).mapColor(this.topColor())));
+        return createBlockWithoutItem(this.name() + "_sign", new TerraformSignBlock(Identifier.of(namespace(), "entity/signs/" + this.name()), AbstractBlock.Settings.create().solid().instrument(NoteBlockInstrument.BASS).noCollision().strength(1.0F).burnable().mapColor(this.topColor())));
     }
-    public Block createWallSign(){
-        return createBlockWithoutItem(this.name() + "_wall_sign", new TerraformWallSignBlock(Identifier.of(namespace(), "entity/signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_WALL_SIGN).mapColor(this.topColor())));
+    public Block createWallSign(Block lootTableDependant){
+        return createBlockWithoutItem(this.name() + "_wall_sign", new TerraformWallSignBlock(Identifier.of(namespace(), "entity/signs/" + this.name()), AbstractBlock.Settings.create().solid().instrument(NoteBlockInstrument.BASS).noCollision().strength(1.0F).burnable().dropsLike(lootTableDependant).mapColor(this.topColor())));
     }
     public Block createHangingSign(){
-        return createBlockWithoutItem(this.name() + "_hanging_sign", new TerraformHangingSignBlock(Identifier.of(namespace(), "entity/signs/hanging/" + this.name()), Identifier.of(namespace(), "textures/gui/hanging_signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_HANGING_SIGN).mapColor(this.topColor())));
+        return createBlockWithoutItem(this.name() + "_hanging_sign", new TerraformHangingSignBlock(Identifier.of(namespace(), "entity/signs/hanging/" + this.name()), Identifier.of(namespace(), "textures/gui/hanging_signs/" + this.name()), AbstractBlock.Settings.create().solid().instrument(NoteBlockInstrument.BASS).noCollision().strength(1.0F).burnable().mapColor(this.topColor())));
     }
-    public Block createWallHangingSign(){
-        return createBlockWithoutItem(this.name() + "_wall_hanging_sign", new TerraformWallHangingSignBlock(Identifier.of(namespace(), "entity/signs/hanging/" + this.name()), Identifier.of(namespace(), "textures/gui/hanging_signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_WALL_HANGING_SIGN).mapColor(this.topColor())));
+    public Block createWallHangingSign(Block lootTableDependant){
+        return createBlockWithoutItem(this.name() + "_wall_hanging_sign", new TerraformWallHangingSignBlock(Identifier.of(namespace(), "entity/signs/hanging/" + this.name()), Identifier.of(namespace(), "textures/gui/hanging_signs/" + this.name()), AbstractBlock.Settings.create().solid().instrument(NoteBlockInstrument.BASS).noCollision().strength(1.0F).burnable().dropsLike(lootTableDependant).mapColor(this.topColor())));
     }
 }

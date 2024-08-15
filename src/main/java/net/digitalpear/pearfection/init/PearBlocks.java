@@ -8,7 +8,6 @@ import net.digitalpear.pearfection.common.blocks.LampearBlock;
 import net.digitalpear.pearfection.common.blocks.compat.PicketsBlock;
 import net.digitalpear.pearfection.init.data.PearFoodComponents;
 import net.digitalpear.pearfection.init.data.Woodset;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
 import net.minecraft.block.*;
@@ -19,7 +18,6 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 
 public class PearBlocks {
@@ -102,10 +100,10 @@ public class PearBlocks {
     public static final Block CALLERY_TRAPDOOR = CALLERY.createTrapDoor();
 
     public static final Block CALLERY_SIGN = CALLERY.createSign();
-    public static final Block CALLERY_WALL_SIGN = CALLERY.createWallSign();
+    public static final Block CALLERY_WALL_SIGN = CALLERY.createWallSign(CALLERY_SIGN);
 
     public static final Block CALLERY_HANGING_SIGN = CALLERY.createHangingSign();
-    public static final Block CALLERY_WALL_HANGING_SIGN = CALLERY.createWallHangingSign();
+    public static final Block CALLERY_WALL_HANGING_SIGN = CALLERY.createWallHangingSign(CALLERY_HANGING_SIGN);
 
     public static Block CALLERY_PICKETS = createBlockWithItem("callery_pickets",
             new PicketsBlock(AbstractBlock.Settings.create().burnable().mapColor(CALLERY.topColor())
