@@ -102,10 +102,10 @@ public class PearBlocks {
     public static final Block CALLERY_TRAPDOOR = CALLERY.createTrapDoor();
 
     public static final Block CALLERY_SIGN = CALLERY.createSign();
-    public static final Block CALLERY_WALL_SIGN = CALLERY.createWallSign();
+    public static final Block CALLERY_WALL_SIGN = CALLERY.createWallSign(CALLERY_SIGN);
 
     public static final Block CALLERY_HANGING_SIGN = CALLERY.createHangingSign();
-    public static final Block CALLERY_WALL_HANGING_SIGN = CALLERY.createWallHangingSign();
+    public static final Block CALLERY_WALL_HANGING_SIGN = CALLERY.createWallHangingSign(CALLERY_HANGING_SIGN);
 
     public static Block CALLERY_PICKETS = createBlockWithItem("callery_pickets",
             new PicketsBlock(FabricBlockSettings.create().burnable().mapColor(CALLERY.topColor())

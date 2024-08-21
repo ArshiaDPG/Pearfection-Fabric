@@ -136,13 +136,13 @@ public record Woodset(Identifier id, MapColor topColor, MapColor sideColor, Wood
     public Block createSign(){
         return createBlockWithoutItem(this.name() + "_sign", new TerraformSignBlock(new Identifier(namespace(), "entity/signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_SIGN).mapColor(this.topColor())));
     }
-    public Block createWallSign(){
-        return createBlockWithoutItem(this.name() + "_wall_sign", new TerraformWallSignBlock(new Identifier(namespace(), "entity/signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_WALL_SIGN).mapColor(this.topColor())));
+    public Block createWallSign(Block lootBase){
+        return createBlockWithoutItem(this.name() + "_wall_sign", new TerraformWallSignBlock(new Identifier(namespace(), "entity/signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_WALL_SIGN).dropsLike(lootBase).mapColor(this.topColor())));
     }
     public Block createHangingSign(){
         return createBlockWithoutItem(this.name() + "_hanging_sign", new TerraformHangingSignBlock(new Identifier(namespace(), "entity/signs/hanging/" + this.name()), new Identifier(Pearfection.MOD_ID, "textures/gui/hanging_signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_HANGING_SIGN).mapColor(this.topColor())));
     }
-    public Block createWallHangingSign(){
-        return createBlockWithoutItem(this.name() + "_wall_hanging_sign", new TerraformWallHangingSignBlock(new Identifier(namespace(), "entity/signs/hanging/" + this.name()), new Identifier(Pearfection.MOD_ID, "textures/gui/hanging_signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_WALL_HANGING_SIGN).mapColor(this.topColor())));
+    public Block createWallHangingSign(Block lootBase){
+        return createBlockWithoutItem(this.name() + "_wall_hanging_sign", new TerraformWallHangingSignBlock(new Identifier(namespace(), "entity/signs/hanging/" + this.name()), new Identifier(Pearfection.MOD_ID, "textures/gui/hanging_signs/" + this.name()), AbstractBlock.Settings.copy(Blocks.ACACIA_WALL_HANGING_SIGN).dropsLike(lootBase).mapColor(this.topColor())));
     }
 }
