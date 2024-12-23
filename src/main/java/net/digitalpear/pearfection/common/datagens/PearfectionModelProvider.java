@@ -3,10 +3,10 @@ package net.digitalpear.pearfection.common.datagens;
 import net.digitalpear.pearfection.Pearfection;
 import net.digitalpear.pearfection.init.PearBlocks;
 import net.digitalpear.pearfection.init.PearItems;
+import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
-import net.minecraft.data.client.*;
+import net.minecraft.client.data.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
@@ -14,9 +14,6 @@ import net.minecraft.util.Identifier;
 import java.util.Optional;
 
 public class PearfectionModelProvider extends FabricModelProvider {
-    public PearfectionModelProvider(FabricDataOutput output) {
-        super(output);
-    }
     /*
         CODE FOR LAMPEAR MODEL GENERATION
      */
@@ -24,6 +21,10 @@ public class PearfectionModelProvider extends FabricModelProvider {
     public static final Model LAMPEAR_HANGING_BASE = block("lampear_hanging_base", TextureKey.ALL);
 
     public static final Model PICKET_BASE = block(Identifier.of("bountifulfares", "template_pickets"), TextureKey.TEXTURE);
+
+    public PearfectionModelProvider(FabricDataOutput output) {
+        super(output);
+    }
 
     private static Model block(String parent, TextureKey... requiredTextureKeys) {
         return new Model(Optional.of(Pearfection.id("block/" + parent)), Optional.empty(), requiredTextureKeys);
@@ -38,18 +39,15 @@ public class PearfectionModelProvider extends FabricModelProvider {
         registerLantern(blockStateModelGenerator, PearBlocks.COPPER_LAMPEAR);
 
         PearBlocks.CALLERY.fullWoodset(blockStateModelGenerator);
-//        blockStateModelGenerator.registerLog(PearBlocks.CALLERY_STEM).stem(PearBlocks.CALLERY_STEM).wood(PearBlocks.CALLERY_WOOD);
-//        blockStateModelGenerator.registerLog(PearBlocks.STRIPPED_CALLERY_STEM).stem(PearBlocks.STRIPPED_CALLERY_STEM).wood(PearBlocks.STRIPPED_CALLERY_WOOD);
-//        makeStuff(blockStateModelGenerator, PearBlocks.CALLERY_PLANKS, PearBlocks.CALLERY_STAIRS, PearBlocks.CALLERY_SLAB, PearBlocks.CALLERY_FENCE, PearBlocks.CALLERY_FENCE_GATE, PearBlocks.CALLERY_BUTTON, PearBlocks.CALLERY_PRESSURE_PLATE);
-//        blockStateModelGenerator.registerDoor(PearBlocks.CALLERY_DOOR);
-//        blockStateModelGenerator.registerTrapdoor(PearBlocks.CALLERY_TRAPDOOR);
-//        blockStateModelGenerator.registerSimpleCubeAll(PearBlocks.CALLERY_LEAVES);
         blockStateModelGenerator.registerSimpleCubeAll(PearBlocks.FLOWERING_CALLERY_LEAVES);
-//        blockStateModelGenerator.registerHangingSign(PearBlocks.STRIPPED_CALLERY_STEM, PearBlocks.CALLERY_HANGING_SIGN, PearBlocks.CALLERY_WALL_HANGING_SIGN);
-//        makeParticles(blockStateModelGenerator, PearBlocks.CALLERY_PLANKS, PearBlocks.CALLERY_SIGN, PearBlocks.CALLERY_WALL_SIGN);
-        blockStateModelGenerator.registerDoubleBlock(PearBlocks.CALLERY_VINE, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(PearBlocks.CALLERY_SPROUT, PearBlocks.POTTED_CALLERY_SPROUT, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(PearBlocks.CALLERY_TWIG, PearBlocks.POTTED_CALLERY_TWIG, BlockStateModelGenerator.TintType.NOT_TINTED);
+
+        blockStateModelGenerator.registerDoubleBlock(PearBlocks.CALLERY_VINE, BlockStateModelGenerator.CrossType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(PearBlocks.CALLERY_SPROUT, PearBlocks.POTTED_CALLERY_SPROUT, BlockStateModelGenerator.CrossType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(PearBlocks.CALLERY_TWIG, PearBlocks.POTTED_CALLERY_TWIG, BlockStateModelGenerator.CrossType.NOT_TINTED);
+
+        blockStateModelGenerator.registerParentedItemModel(PearBlocks.CALLERY_VINE, blockStateModelGenerator.uploadBlockItemModel(PearBlocks.CALLERY_VINE.asItem(), PearBlocks.CALLERY_VINE, "_top"));
+        blockStateModelGenerator.registerItemModel(PearBlocks.CALLERY_SPROUT);
+        blockStateModelGenerator.registerItemModel(PearBlocks.CALLERY_TWIG);
 
         registerPearBlock(blockStateModelGenerator, PearBlocks.LAMPEAR_BLOCK);
 
@@ -61,13 +59,12 @@ public class PearfectionModelProvider extends FabricModelProvider {
 
     }
 
+
+
+
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-//        itemModelGenerator.register(PearItems.CALLERY_BOAT, Models.GENERATED);
-//        itemModelGenerator.register(PearItems.CALLERY_CHEST_BOAT, Models.GENERATED);
-//        itemModelGenerator.register(PearItems.CALLERY_SIGN, Models.GENERATED);
         itemModelGenerator.register(PearItems.PEAR_TART, Models.GENERATED);
-
     }
 
     /*

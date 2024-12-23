@@ -6,10 +6,10 @@ import net.digitalpear.pearfection.init.PearItems;
 import net.digitalpear.pearfection.init.tags.PearItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.data.server.recipe.RecipeExporter;
-import net.minecraft.data.server.recipe.RecipeGenerator;
-import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
+import net.minecraft.data.recipe.RecipeExporter;
+import net.minecraft.data.recipe.RecipeGenerator;
+import net.minecraft.data.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.data.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
@@ -28,6 +28,7 @@ public class PearRecipeProvider extends FabricRecipeProvider {
     protected RecipeGenerator getRecipeGenerator(RegistryWrapper.WrapperLookup wrapperLookup, RecipeExporter recipeExporter) {
         return new PearRecipeGenerator(wrapperLookup, recipeExporter);
     }
+
 
     @Override
     public String getName() {
@@ -72,35 +73,14 @@ public class PearRecipeProvider extends FabricRecipeProvider {
                     .criterion(hasItem(PearBlocks.LAMPEAR), conditionsFromItem(PearBlocks.LAMPEAR)).offerTo(exporter);
 
 
-                ShapedRecipeJsonBuilder.create(lookup, RecipeCategory.FOOD, PearBlocks.COPPER_LAMPEAR)
-                        .input('L', Items.COPPER_BLOCK)
-                        .input('P', PearBlocks.LAMPEAR)
-                        .input('H', Items.HONEYCOMB)
-                        .pattern("LLL")
-                        .pattern("LPL")
-                        .pattern("LHL")
-                        .criterion(hasItem(PearBlocks.LAMPEAR), conditionsFromItem(PearBlocks.LAMPEAR)).offerTo(exporter);
-
-//        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, PearBlocks.CALLERY_PICKETS)
-//                .input('S', Items.STICK)
-//                .input('P', PearBlocks.CALLERY_PLANKS)
-//                .pattern("PSP")
-//                .criterion(hasItem(PearBlocks.CALLERY_PICKETS), conditionsFromItem(PearBlocks.CALLERY_PICKETS)).offerTo(exporter);
-
-            }
-
-//            public static void makeRecipes(RecipeExporter exporter, Block planks, Block stairs, Block slab, Block fence, Block fenceGate, Block door, Block trapdoor, Block button, Block pressurePlate, ItemConvertible sign){
-//
-//                RecipeProvider.createStairsRecipe(stairs, Ingredient.ofItems(planks)).criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
-//                RecipeProvider.createSlabRecipe(RecipeCategory.BUILDING_BLOCKS, slab, Ingredient.ofItems(planks)).criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
-//                RecipeProvider.createTrapdoorRecipe(trapdoor, Ingredient.ofItems(planks)).criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
-//                RecipeProvider.createDoorRecipe(door, Ingredient.ofItems(planks)).criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
-//                RecipeProvider.createFenceRecipe(fence, Ingredient.ofItems(planks)).criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
-//                RecipeProvider.createFenceGateRecipe(fenceGate, Ingredient.ofItems(planks)).criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
-//                RecipeProvider.createSignRecipe(sign, Ingredient.ofItems(planks)).criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
-//                RecipeProvider.createPressurePlateRecipe(RecipeCategory.REDSTONE, pressurePlate, Ingredient.ofItems(planks)).criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
-//
-//                ShapelessRecipeJsonBuilder.create(RecipeCategory.REDSTONE, button, 1).input(planks).criterion(hasItem(planks), conditionsFromItem(planks)).offerTo(exporter);
-//            }
+            ShapedRecipeJsonBuilder.create(lookup, RecipeCategory.FOOD, PearBlocks.COPPER_LAMPEAR)
+                    .input('L', Items.COPPER_BLOCK)
+                    .input('P', PearBlocks.LAMPEAR)
+                    .input('H', Items.HONEYCOMB)
+                    .pattern("LLL")
+                    .pattern("LPL")
+                    .pattern("LHL")
+                    .criterion(hasItem(PearBlocks.LAMPEAR), conditionsFromItem(PearBlocks.LAMPEAR)).offerTo(exporter);
         }
+    }
 }

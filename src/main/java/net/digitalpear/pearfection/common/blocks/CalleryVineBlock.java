@@ -96,14 +96,14 @@ public class CalleryVineBlock extends TallPlantBlock implements Fertilizable {
             world.getRegistryManager().getOptional(RegistryKeys.CONFIGURED_FEATURE).flatMap((registry) -> {
                 return registry.getOptional(enormousPear);
             }).ifPresent((entry) -> {
-                entry.value().generate(world, world.getChunkManager().getChunkGenerator(), random, pos.up());
+                entry.value().generate(world, world.getChunkManager().getChunkGenerator(), random, startingPos);
             });
         }
         else{
             world.getRegistryManager().getOptional(RegistryKeys.CONFIGURED_FEATURE).flatMap((registry) -> {
                 return registry.getOptional(hugePear);
             }).ifPresent((entry) -> {
-                entry.value().generate(world, world.getChunkManager().getChunkGenerator(), random, pos.up());
+                entry.value().generate(world, world.getChunkManager().getChunkGenerator(), random, startingPos);
             });
         }
 

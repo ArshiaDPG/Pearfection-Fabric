@@ -23,12 +23,6 @@ import java.util.Objects;
 @Environment(EnvType.CLIENT)
 public class PearfectionClient implements ClientModInitializer {
 
-
-    public static void initColor(int color, Block block){
-        ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> color, block);
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> color, block);
-    }
-
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),

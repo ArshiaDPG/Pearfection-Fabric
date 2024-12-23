@@ -44,7 +44,7 @@ public class PearfectionBlockTagProvider extends FabricTagProvider<Block> {
         getOrCreateTagBuilder(BlockTags.SAPLINGS).add(PearBlocks.CALLERY_SPROUT);
         getOrCreateTagBuilder(BlockTags.FLOWER_POTS).add(PearBlocks.POTTED_CALLERY_TWIG).add(PearBlocks.POTTED_CALLERY_SPROUT);
         getOrCreateTagBuilder(BlockTags.SMALL_FLOWERS).add(PearBlocks.CALLERY_SPROUT);
-        getOrCreateTagBuilder(BlockTags.TALL_FLOWERS).add(PearBlocks.CALLERY_VINE);
+        getOrCreateTagBuilder(BlockTags.FLOWERS).add(PearBlocks.CALLERY_VINE);
 
         /*
             Good idea or no?
