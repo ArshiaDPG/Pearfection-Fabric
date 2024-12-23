@@ -1,9 +1,7 @@
 package net.digitalpear.pearfection.common.features;
 
 import com.mojang.serialization.Codec;
-import net.digitalpear.pearfection.init.tags.PearBlockTags;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.PillarBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -28,11 +26,11 @@ public class EnormousPearFeature extends Feature<HugePearFeatureConfig> {
         Random random = context.getRandom();
 
         int baseMaxY = 35;
-        int maxY = origin.getY() < (world.getTopY() - baseMaxY) ? baseMaxY : world.getTopY() - origin.getY() - baseMaxY/2;
+        int maxY = origin.getY() < (world.getTopYInclusive() - baseMaxY) ? baseMaxY : world.getTopYInclusive() - origin.getY() - baseMaxY/2;
         int height = random.nextBetween(maxY/2, maxY);
         HugePearFeatureConfig config = context.getConfig();
 
-        if (!(origin.getY() > world.getBottomY() + 4) && !(origin.getY() < world.getTopY() - baseMaxY)){
+        if (!(origin.getY() > world.getBottomY() + 4) && !(origin.getY() < world.getTopYInclusive() - baseMaxY)){
             return false;
         }
         Map<BlockPos, BlockState> placements = new HashMap<>();

@@ -1,7 +1,6 @@
 package net.digitalpear.pearfection.common.datagens;
 
 import net.digitalpear.pearfection.Pearfection;
-import net.digitalpear.pearfection.common.blocks.compat.PicketsBlock;
 import net.digitalpear.pearfection.init.PearBlocks;
 import net.digitalpear.pearfection.init.PearItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -38,15 +37,16 @@ public class PearfectionModelProvider extends FabricModelProvider {
         registerLantern(blockStateModelGenerator, PearBlocks.LAMPEAR);
         registerLantern(blockStateModelGenerator, PearBlocks.COPPER_LAMPEAR);
 
-        blockStateModelGenerator.registerLog(PearBlocks.CALLERY_STEM).stem(PearBlocks.CALLERY_STEM).wood(PearBlocks.CALLERY_WOOD);
-        blockStateModelGenerator.registerLog(PearBlocks.STRIPPED_CALLERY_STEM).stem(PearBlocks.STRIPPED_CALLERY_STEM).wood(PearBlocks.STRIPPED_CALLERY_WOOD);
-        makeStuff(blockStateModelGenerator, PearBlocks.CALLERY_PLANKS, PearBlocks.CALLERY_STAIRS, PearBlocks.CALLERY_SLAB, PearBlocks.CALLERY_FENCE, PearBlocks.CALLERY_FENCE_GATE, PearBlocks.CALLERY_BUTTON, PearBlocks.CALLERY_PRESSURE_PLATE);
-        blockStateModelGenerator.registerDoor(PearBlocks.CALLERY_DOOR);
-        blockStateModelGenerator.registerTrapdoor(PearBlocks.CALLERY_TRAPDOOR);
-        blockStateModelGenerator.registerSimpleCubeAll(PearBlocks.CALLERY_LEAVES);
+        PearBlocks.CALLERY.fullWoodset(blockStateModelGenerator);
+//        blockStateModelGenerator.registerLog(PearBlocks.CALLERY_STEM).stem(PearBlocks.CALLERY_STEM).wood(PearBlocks.CALLERY_WOOD);
+//        blockStateModelGenerator.registerLog(PearBlocks.STRIPPED_CALLERY_STEM).stem(PearBlocks.STRIPPED_CALLERY_STEM).wood(PearBlocks.STRIPPED_CALLERY_WOOD);
+//        makeStuff(blockStateModelGenerator, PearBlocks.CALLERY_PLANKS, PearBlocks.CALLERY_STAIRS, PearBlocks.CALLERY_SLAB, PearBlocks.CALLERY_FENCE, PearBlocks.CALLERY_FENCE_GATE, PearBlocks.CALLERY_BUTTON, PearBlocks.CALLERY_PRESSURE_PLATE);
+//        blockStateModelGenerator.registerDoor(PearBlocks.CALLERY_DOOR);
+//        blockStateModelGenerator.registerTrapdoor(PearBlocks.CALLERY_TRAPDOOR);
+//        blockStateModelGenerator.registerSimpleCubeAll(PearBlocks.CALLERY_LEAVES);
         blockStateModelGenerator.registerSimpleCubeAll(PearBlocks.FLOWERING_CALLERY_LEAVES);
-        blockStateModelGenerator.registerHangingSign(PearBlocks.STRIPPED_CALLERY_STEM, PearBlocks.CALLERY_HANGING_SIGN, PearBlocks.CALLERY_WALL_HANGING_SIGN);
-        makeParticles(blockStateModelGenerator, PearBlocks.CALLERY_PLANKS, PearBlocks.CALLERY_SIGN, PearBlocks.CALLERY_WALL_SIGN);
+//        blockStateModelGenerator.registerHangingSign(PearBlocks.STRIPPED_CALLERY_STEM, PearBlocks.CALLERY_HANGING_SIGN, PearBlocks.CALLERY_WALL_HANGING_SIGN);
+//        makeParticles(blockStateModelGenerator, PearBlocks.CALLERY_PLANKS, PearBlocks.CALLERY_SIGN, PearBlocks.CALLERY_WALL_SIGN);
         blockStateModelGenerator.registerDoubleBlock(PearBlocks.CALLERY_VINE, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(PearBlocks.CALLERY_SPROUT, PearBlocks.POTTED_CALLERY_SPROUT, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(PearBlocks.CALLERY_TWIG, PearBlocks.POTTED_CALLERY_TWIG, BlockStateModelGenerator.TintType.NOT_TINTED);
@@ -57,33 +57,17 @@ public class PearfectionModelProvider extends FabricModelProvider {
         /*
             MOD COMPAT BLOCKS
          */
-        registerPicketsModels(blockStateModelGenerator, PearBlocks.CALLERY_PICKETS);
+//        registerPicketsModels(blockStateModelGenerator, PearBlocks.CALLERY_PICKETS);
 
-    }
-
-    public static void makeStuff(BlockStateModelGenerator blockStateModelGenerator, Block planks, Block stairs, Block slab, Block fence, Block fenceGate, Block button, Block pressurePlate){
-        BlockStateModelGenerator.BlockTexturePool texturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(planks);
-        texturePool.stairs(stairs);
-        texturePool.slab(slab);
-        texturePool.fence(fence);
-        texturePool.fenceGate(fenceGate);
-        texturePool.button(button);
-        texturePool.pressurePlate(pressurePlate);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(PearItems.CALLERY_BOAT, Models.GENERATED);
-        itemModelGenerator.register(PearItems.CALLERY_CHEST_BOAT, Models.GENERATED);
-        itemModelGenerator.register(PearItems.CALLERY_SIGN, Models.GENERATED);
+//        itemModelGenerator.register(PearItems.CALLERY_BOAT, Models.GENERATED);
+//        itemModelGenerator.register(PearItems.CALLERY_CHEST_BOAT, Models.GENERATED);
+//        itemModelGenerator.register(PearItems.CALLERY_SIGN, Models.GENERATED);
         itemModelGenerator.register(PearItems.PEAR_TART, Models.GENERATED);
 
-    }
-
-    public void makeParticles(BlockStateModelGenerator blockStateModelGenerator, Block particle, Block sign, Block wallSign){
-        Identifier identifier = Models.PARTICLE.upload(sign, TextureMap.particle(Pearfection.id("block/" + Registries.BLOCK.getId(particle).getPath())), blockStateModelGenerator.modelCollector);
-        blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(sign, identifier));
-        blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(wallSign, identifier));
     }
 
     /*
@@ -105,51 +89,51 @@ public class PearfectionModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerParentedItemModel(pearBlock, TexturedModel.CUBE_ALL.upload(pearBlock, "_inventory", blockStateModelGenerator.modelCollector));
     }
 
-    public final void registerPicketsModels(BlockStateModelGenerator blockStateModelGenerator, Block picket){
-        Identifier modelID = PICKET_BASE.upload(picket, TextureMap.texture(picket), blockStateModelGenerator.modelCollector);
-        blockStateModelGenerator.blockStateCollector.accept(MultipartBlockStateSupplier.create(picket)
-                .with(When.create().set(PicketsBlock.NORTH, true),
-                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID))
-                .with(When.create()
-                    .set(PicketsBlock.NORTH, false)
-                    .set(PicketsBlock.SOUTH, false)
-                    .set(PicketsBlock.EAST, false)
-                    .set(PicketsBlock.WEST, false),
-                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID))
-
-
-                .with(When.create().set(PicketsBlock.EAST, true),
-                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID).put(VariantSettings.Y, VariantSettings.Rotation.R90))
-                .with(When.create()
-                    .set(PicketsBlock.NORTH, false)
-                    .set(PicketsBlock.SOUTH, false)
-                    .set(PicketsBlock.EAST, false)
-                    .set(PicketsBlock.WEST, false),
-                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID).put(VariantSettings.Y, VariantSettings.Rotation.R90))
-
-
-                .with(When.create().set(PicketsBlock.SOUTH, true),
-                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID).put(VariantSettings.Y, VariantSettings.Rotation.R180))
-                .with(When.create()
-                    .set(PicketsBlock.NORTH, false)
-                    .set(PicketsBlock.SOUTH, false)
-                    .set(PicketsBlock.EAST, false)
-                    .set(PicketsBlock.WEST, false),
-                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID).put(VariantSettings.Y, VariantSettings.Rotation.R180))
-
-
-                .with(When.create().set(PicketsBlock.WEST, true),
-                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID).put(VariantSettings.Y, VariantSettings.Rotation.R270))
-                .with(When.create()
-                    .set(PicketsBlock.NORTH, false)
-                    .set(PicketsBlock.SOUTH, false)
-                    .set(PicketsBlock.EAST, false)
-                    .set(PicketsBlock.WEST, false),
-                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID).put(VariantSettings.Y, VariantSettings.Rotation.R270))
-
-        );
-        Models.GENERATED.upload(ModelIds.getItemModelId(picket.asItem()), TextureMap.layer0(getItemId(picket)), blockStateModelGenerator.modelCollector);
-    }
+//    public final void registerPicketsModels(BlockStateModelGenerator blockStateModelGenerator, Block picket){
+//        Identifier modelID = PICKET_BASE.upload(picket, TextureMap.texture(picket), blockStateModelGenerator.modelCollector);
+//        blockStateModelGenerator.blockStateCollector.accept(MultipartBlockStateSupplier.create(picket)
+//                .with(When.create().set(PicketsBlock.NORTH, true),
+//                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID))
+//                .with(When.create()
+//                    .set(PicketsBlock.NORTH, false)
+//                    .set(PicketsBlock.SOUTH, false)
+//                    .set(PicketsBlock.EAST, false)
+//                    .set(PicketsBlock.WEST, false),
+//                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID))
+//
+//
+//                .with(When.create().set(PicketsBlock.EAST, true),
+//                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID).put(VariantSettings.Y, VariantSettings.Rotation.R90))
+//                .with(When.create()
+//                    .set(PicketsBlock.NORTH, false)
+//                    .set(PicketsBlock.SOUTH, false)
+//                    .set(PicketsBlock.EAST, false)
+//                    .set(PicketsBlock.WEST, false),
+//                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID).put(VariantSettings.Y, VariantSettings.Rotation.R90))
+//
+//
+//                .with(When.create().set(PicketsBlock.SOUTH, true),
+//                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID).put(VariantSettings.Y, VariantSettings.Rotation.R180))
+//                .with(When.create()
+//                    .set(PicketsBlock.NORTH, false)
+//                    .set(PicketsBlock.SOUTH, false)
+//                    .set(PicketsBlock.EAST, false)
+//                    .set(PicketsBlock.WEST, false),
+//                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID).put(VariantSettings.Y, VariantSettings.Rotation.R180))
+//
+//
+//                .with(When.create().set(PicketsBlock.WEST, true),
+//                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID).put(VariantSettings.Y, VariantSettings.Rotation.R270))
+//                .with(When.create()
+//                    .set(PicketsBlock.NORTH, false)
+//                    .set(PicketsBlock.SOUTH, false)
+//                    .set(PicketsBlock.EAST, false)
+//                    .set(PicketsBlock.WEST, false),
+//                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID).put(VariantSettings.Y, VariantSettings.Rotation.R270))
+//
+//        );
+//        Models.GENERATED.upload(ModelIds.getItemModelId(picket.asItem()), TextureMap.layer0(getItemId(picket)), blockStateModelGenerator.modelCollector);
+//    }
 
 
 

@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "H": {
-      "item": "minecraft:honeycomb"
-    },
-    "L": {
-      "item": "minecraft:copper_block"
-    },
-    "P": {
-      "item": "pearfection:lampear"
-    }
+    "H": "minecraft:honeycomb",
+    "L": "minecraft:copper_block",
+    "P": "pearfection:lampear"
   },
   "pattern": [
     "LLL",

@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "hanging_sign",
   "key": {
-    "#": {
-      "item": "pearfection:stripped_callery_stem"
-    },
-    "X": {
-      "item": "minecraft:chain"
-    }
+    "#": "pearfection:stripped_callery_stem",
+    "X": "minecraft:chain"
   },
   "pattern": [
     "X X",

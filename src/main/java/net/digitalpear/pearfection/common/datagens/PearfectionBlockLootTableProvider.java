@@ -1,17 +1,11 @@
 package net.digitalpear.pearfection.common.datagens;
 
-import net.digitalpear.pearfection.common.blocks.compat.PicketsBlock;
 import net.digitalpear.pearfection.init.PearBlocks;
-import net.digitalpear.pearfection.init.PearItems;
+import net.digitalpear.pearfection.init.data.Woodset;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.fabricmc.fabric.api.loot.v2.FabricLootTableBuilder;
+import net.minecraft.block.Block;
 import net.minecraft.block.FlowerPotBlock;
-import net.minecraft.loot.LootPool;
-import net.minecraft.loot.LootTable;
-import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
-import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.predicate.StatePredicate;
 import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
@@ -25,45 +19,49 @@ public class PearfectionBlockLootTableProvider extends FabricBlockLootTableProvi
 
     @Override
     public void generate() {
-        addDrop(PearBlocks.CALLERY_STEM);
-        addDrop(PearBlocks.CALLERY_WOOD);
-        addDrop(PearBlocks.STRIPPED_CALLERY_STEM);
-        addDrop(PearBlocks.STRIPPED_CALLERY_WOOD);
-
-        addDrop(PearBlocks.CALLERY_PLANKS);
-        addDrop(PearBlocks.CALLERY_STAIRS);
-        addDrop(PearBlocks.CALLERY_SLAB, slabDrops(PearBlocks.CALLERY_SLAB));
-        addDrop(PearBlocks.CALLERY_FENCE_GATE);
-        addDrop(PearBlocks.CALLERY_FENCE);
-
+        makeWoodLoot(PearBlocks.CALLERY, PearBlocks.CALLERY_TWIG);
 
         addDrop(PearBlocks.LAMPEAR_BLOCK);
         addDrop(PearBlocks.LAMPEAR);
         addDrop(PearBlocks.COPPER_LAMPEAR);
-
-        addDrop(PearBlocks.CALLERY_SIGN, PearItems.CALLERY_SIGN);
-        addDrop(PearBlocks.CALLERY_WALL_SIGN, PearItems.CALLERY_SIGN);
-
-        addDrop(PearBlocks.CALLERY_HANGING_SIGN, PearItems.CALLERY_HANGING_SIGN);
-        addDrop(PearBlocks.CALLERY_WALL_HANGING_SIGN, PearItems.CALLERY_HANGING_SIGN);
-
 
         makePottedLootTable((FlowerPotBlock) PearBlocks.POTTED_CALLERY_TWIG);
         makePottedLootTable((FlowerPotBlock) PearBlocks.POTTED_CALLERY_SPROUT);
         addDrop(PearBlocks.CALLERY_VINE, doorDrops(PearBlocks.CALLERY_VINE));
 
 
-        addDrop(PearBlocks.CALLERY_LEAVES, leavesDrops(PearBlocks.CALLERY_LEAVES, PearBlocks.CALLERY_TWIG, 0.05f, 0.0625f, 0.025f, 0.083333336f, 0.1f));
         addDrop(PearBlocks.FLOWERING_CALLERY_LEAVES, leavesDrops(PearBlocks.FLOWERING_CALLERY_LEAVES, PearBlocks.CALLERY_TWIG, 0.05f, 0.0625f, 0.025f, 0.083333336f, 0.1f));
 
-        addDrop(PearBlocks.CALLERY_PICKETS, LootTable.builder()
-                .pool(LootPool.builder().with(ItemEntry.builder(PearBlocks.CALLERY_PICKETS)).conditionally(BlockStatePropertyLootCondition.builder(PearBlocks.CALLERY_PICKETS).properties(StatePredicate.Builder.create().exactMatch(PicketsBlock.NORTH, true))).build())
-                .pool(LootPool.builder().with(ItemEntry.builder(PearBlocks.CALLERY_PICKETS)).conditionally(BlockStatePropertyLootCondition.builder(PearBlocks.CALLERY_PICKETS).properties(StatePredicate.Builder.create().exactMatch(PicketsBlock.SOUTH, true))).build())
-                .pool(LootPool.builder().with(ItemEntry.builder(PearBlocks.CALLERY_PICKETS)).conditionally(BlockStatePropertyLootCondition.builder(PearBlocks.CALLERY_PICKETS).properties(StatePredicate.Builder.create().exactMatch(PicketsBlock.EAST, true))).build())
-                .pool(LootPool.builder().with(ItemEntry.builder(PearBlocks.CALLERY_PICKETS)).conditionally(BlockStatePropertyLootCondition.builder(PearBlocks.CALLERY_PICKETS).properties(StatePredicate.Builder.create().exactMatch(PicketsBlock.WEST, true))).build())
-        );
     }
+    public void makeWoodLoot(Woodset woodset, Block sapling){
+        addDrop(woodset.getPlanks());
+        addDrop(woodset.getStairs());
+        addDrop(woodset.getSlab(), slabDrops(woodset.getSlab()));
+        addDrop(woodset.getFence());
+        addDrop(woodset.getFenceGate());
+        addDrop(woodset.getButton());
+        addDrop(woodset.getPressurePlate());
+        addDrop(woodset.getLog());
 
+        if (woodset.getWoodPreset() == Woodset.WoodPreset.BAMBOO) {
+            addDrop(woodset.getMosaic());
+            addDrop(woodset.getMosaicStairs());
+            addDrop(woodset.getMosaicSlab(), slabDrops(woodset.getMosaic()));
+        }
+        else{
+            addDrop(woodset.getWood());
+            addDrop(woodset.getStrippedLog());
+            addDrop(woodset.getStrippedWood());
+        }
+
+        addDrop(woodset.getTrapDoor());
+        addDrop(woodset.getDoor(), doorDrops(woodset.getDoor()));
+        if (woodset.isOverworldTreeWood()){
+            addDrop(woodset.getLeaves(), leavesDrops(woodset.getLeaves(), sapling, 0.05f, 0.0625f, 0.025f, 0.083333336f, 0.1f));
+        }
+        addDrop(woodset.getSign());
+        addDrop(woodset.getHangingSign());
+    }
     public void makePottedLootTable(FlowerPotBlock flowerPotBlock){
         addPottedPlantDrops(flowerPotBlock);
         addDrop(flowerPotBlock.getContent());

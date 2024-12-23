@@ -14,7 +14,6 @@ public class PearfectionLanguageProvider extends FabricLanguageProvider {
         super(dataOutput, registryLookup);
     }
 
-
     @Override
     public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
         /*
@@ -41,35 +40,39 @@ public class PearfectionLanguageProvider extends FabricLanguageProvider {
         /*
             Callery Woodset
          */
-        translationBuilder.add(PearBlocks.CALLERY_STEM, "Callery Stem");
-        translationBuilder.add(PearBlocks.STRIPPED_CALLERY_STEM, "Stripped Callery Stem");
-        translationBuilder.add(PearBlocks.CALLERY_WOOD, "Callery Wood");
-        translationBuilder.add(PearBlocks.STRIPPED_CALLERY_WOOD, "Stripped Callery Wood");
+        translationBuilder.add(PearBlocks.CALLERY.getLog(), "Callery Stem");
+        translationBuilder.add(PearBlocks.CALLERY.getStrippedLog(), "Stripped Callery Stem");
+        translationBuilder.add(PearBlocks.CALLERY.getWood(), "Callery Wood");
+        translationBuilder.add(PearBlocks.CALLERY.getStrippedWood(), "Stripped Callery Wood");
 
 
-        translationBuilder.add(PearBlocks.CALLERY_PLANKS, "Callery Planks");
-        translationBuilder.add(PearBlocks.CALLERY_SLAB, "Callery Slab");
-        translationBuilder.add(PearBlocks.CALLERY_STAIRS, "Callery Stairs");
+        translationBuilder.add(PearBlocks.CALLERY.getPlanks(), "Callery Planks");
+        translationBuilder.add(PearBlocks.CALLERY.getSlab(), "Callery Slab");
+        translationBuilder.add(PearBlocks.CALLERY.getStairs(), "Callery Stairs");
 
-        translationBuilder.add(PearBlocks.CALLERY_FENCE, "Callery Fence");
-        translationBuilder.add(PearBlocks.CALLERY_FENCE_GATE, "Callery Fence Gate");
+        translationBuilder.add(PearBlocks.CALLERY.getFence(), "Callery Fence");
+        translationBuilder.add(PearBlocks.CALLERY.getFenceGate(), "Callery Fence Gate");
 
-        translationBuilder.add(PearBlocks.CALLERY_HANGING_SIGN, "Callery Hanging Sign");
-        translationBuilder.add(PearBlocks.CALLERY_SIGN, "Callery Sign");
+        translationBuilder.add(PearBlocks.CALLERY.getHangingSign(), "Callery Hanging Sign");
+        translationBuilder.add(PearBlocks.CALLERY.getSign(), "Callery Sign");
 
-        translationBuilder.add(PearBlocks.CALLERY_LEAVES, "Callery Leaves");
+        translationBuilder.add(PearBlocks.CALLERY.getLeaves(), "Callery Leaves");
         translationBuilder.add(PearBlocks.FLOWERING_CALLERY_LEAVES, "Flowering Callery Leaves");
 
+        translationBuilder.add(PearBlocks.CALLERY.getSignItem(), "Callery Sign");
+        translationBuilder.add(PearBlocks.CALLERY.getHangingSignItem(), "Callery Hanging Sign");
 
-        translationBuilder.add(PearBlocks.CALLERY_BUTTON, "Callery Button");
-        translationBuilder.add(PearBlocks.CALLERY_DOOR, "Callery Door");
-        translationBuilder.add(PearBlocks.CALLERY_TRAPDOOR, "Callery Trapdoor");
-        translationBuilder.add(PearBlocks.CALLERY_PRESSURE_PLATE, "Callery Pressure Plate");
+        translationBuilder.add(PearBlocks.CALLERY.getButton(), "Callery Button");
+        translationBuilder.add(PearBlocks.CALLERY.getDoor(), "Callery Door");
+        translationBuilder.add(PearBlocks.CALLERY.getTrapDoor(), "Callery Trapdoor");
+        translationBuilder.add(PearBlocks.CALLERY.getPressurePlate(), "Callery Pressure Plate");
 
-        translationBuilder.add(PearItems.CALLERY_BOAT, "Callery Boat");
-        translationBuilder.add(PearItems.CALLERY_CHEST_BOAT, "Callery Boat with Chest");
+        translationBuilder.add(PearBlocks.CALLERY.getBoatItem(), "Callery Boat");
+        translationBuilder.add(PearBlocks.CALLERY.getChestBoatItem(), "Callery Boat with Chest");
 
-        translationBuilder.add(PearBlocks.CALLERY_PICKETS, "Callery Pickets");
+//        translationBuilder.add(PearBlocks.CALLERY_PICKETS, "Callery Pickets");
+        translationBuilder.add(PearBlocks.CALLERY.getBoat(), "Callery Boat");
+        translationBuilder.add(PearBlocks.CALLERY.getChestBoat(), "Callery Boat with Chest");
 
         /*
             Misc

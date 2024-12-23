@@ -21,16 +21,16 @@ public class PearConfiguredFeatures {
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> featureRegisterable) {
         ConfiguredFeatures.register(featureRegisterable, HUGE_PEAR, PearFeatures.HUGE_PEAR,
                 new HugePearFeatureConfig(
-                        BlockStateProvider.of(PearBlocks.CALLERY_STEM),
-                        BlockStateProvider.of(PearBlocks.CALLERY_LEAVES),
+                        BlockStateProvider.of(PearBlocks.CALLERY.getLog()),
+                        BlockStateProvider.of(PearBlocks.CALLERY.getLeaves()),
                         BlockStateProvider.of(PearBlocks.FLOWERING_CALLERY_LEAVES),
                         BlockStateProvider.of(PearBlocks.LAMPEAR_BLOCK),
                         BlockStateProvider.of(PearBlocks.LAMPEAR.getDefaultState().with(LampearBlock.HANGING, true))
                 ));
         ConfiguredFeatures.register(featureRegisterable, ENORMOUS_PEAR, PearFeatures.ENORMOUS_PEAR,
                 new HugePearFeatureConfig(
-                        BlockStateProvider.of(PearBlocks.CALLERY_STEM),
-                        BlockStateProvider.of(PearBlocks.CALLERY_LEAVES),
+                        BlockStateProvider.of(PearBlocks.CALLERY.getLog()),
+                        BlockStateProvider.of(PearBlocks.CALLERY.getLeaves()),
                         BlockStateProvider.of(PearBlocks.FLOWERING_CALLERY_LEAVES),
                         BlockStateProvider.of(PearBlocks.LAMPEAR_BLOCK),
                         BlockStateProvider.of(PearBlocks.LAMPEAR.getDefaultState().with(LampearBlock.HANGING, true))

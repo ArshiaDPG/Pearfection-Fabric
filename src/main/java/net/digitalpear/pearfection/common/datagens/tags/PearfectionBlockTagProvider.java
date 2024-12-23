@@ -23,24 +23,24 @@ public class PearfectionBlockTagProvider extends FabricTagProvider<Block> {
         /*
             VANILLA
          */
-        getOrCreateTagBuilder(BlockTags.HOE_MINEABLE).add(PearBlocks.LAMPEAR).add(PearBlocks.LAMPEAR_BLOCK).add(PearBlocks.CALLERY_LEAVES);
+        getOrCreateTagBuilder(BlockTags.HOE_MINEABLE).add(PearBlocks.LAMPEAR).add(PearBlocks.LAMPEAR_BLOCK).add(PearBlocks.CALLERY.getLeaves());
 
         getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN).forceAddTag(PearBlockTags.CALLERY_STEMS);
-        getOrCreateTagBuilder(BlockTags.PLANKS).add(PearBlocks.CALLERY_PLANKS);
-        getOrCreateTagBuilder(BlockTags.WOODEN_STAIRS).add(PearBlocks.CALLERY_STAIRS);
-        getOrCreateTagBuilder(BlockTags.WOODEN_SLABS).add(PearBlocks.CALLERY_SLAB);
-        getOrCreateTagBuilder(BlockTags.WOODEN_FENCES).add(PearBlocks.CALLERY_FENCE);
-        getOrCreateTagBuilder(BlockTags.FENCE_GATES).add(PearBlocks.CALLERY_FENCE_GATE);
-        getOrCreateTagBuilder(BlockTags.WOODEN_DOORS).add(PearBlocks.CALLERY_DOOR);
-        getOrCreateTagBuilder(BlockTags.WOODEN_TRAPDOORS).add(PearBlocks.CALLERY_TRAPDOOR);
-        getOrCreateTagBuilder(BlockTags.LEAVES).add(PearBlocks.CALLERY_LEAVES).add(PearBlocks.FLOWERING_CALLERY_LEAVES);
-        getOrCreateTagBuilder(BlockTags.WOODEN_PRESSURE_PLATES).add(PearBlocks.CALLERY_PRESSURE_PLATE);
-        getOrCreateTagBuilder(BlockTags.BUTTONS).add(PearBlocks.CALLERY_BUTTON);
-        getOrCreateTagBuilder(BlockTags.WALL_SIGNS).add(PearBlocks.CALLERY_WALL_SIGN);
-        getOrCreateTagBuilder(BlockTags.STANDING_SIGNS).add(PearBlocks.CALLERY_SIGN);
-        getOrCreateTagBuilder(BlockTags.CEILING_HANGING_SIGNS).add(PearBlocks.CALLERY_HANGING_SIGN);
-        getOrCreateTagBuilder(BlockTags.WALL_HANGING_SIGNS).add(PearBlocks.CALLERY_WALL_HANGING_SIGN);
-        getOrCreateTagBuilder(BlockTags.ALL_HANGING_SIGNS).add(PearBlocks.CALLERY_HANGING_SIGN).add(PearBlocks.CALLERY_WALL_HANGING_SIGN);
+        getOrCreateTagBuilder(BlockTags.PLANKS).add(PearBlocks.CALLERY.getPlanks());
+        getOrCreateTagBuilder(BlockTags.WOODEN_STAIRS).add(PearBlocks.CALLERY.getStairs());
+        getOrCreateTagBuilder(BlockTags.WOODEN_SLABS).add(PearBlocks.CALLERY.getSlab());
+        getOrCreateTagBuilder(BlockTags.WOODEN_FENCES).add(PearBlocks.CALLERY.getFence());
+        getOrCreateTagBuilder(BlockTags.FENCE_GATES).add(PearBlocks.CALLERY.getFenceGate());
+        getOrCreateTagBuilder(BlockTags.WOODEN_DOORS).add(PearBlocks.CALLERY.getDoor());
+        getOrCreateTagBuilder(BlockTags.WOODEN_TRAPDOORS).add(PearBlocks.CALLERY.getTrapDoor());
+        getOrCreateTagBuilder(BlockTags.LEAVES).add(PearBlocks.CALLERY.getLeaves()).add(PearBlocks.FLOWERING_CALLERY_LEAVES);
+        getOrCreateTagBuilder(BlockTags.WOODEN_PRESSURE_PLATES).add(PearBlocks.CALLERY.getPressurePlate());
+        getOrCreateTagBuilder(BlockTags.BUTTONS).add(PearBlocks.CALLERY.getButton());
+        getOrCreateTagBuilder(BlockTags.WALL_SIGNS).add(PearBlocks.CALLERY.getWallSign());
+        getOrCreateTagBuilder(BlockTags.STANDING_SIGNS).add(PearBlocks.CALLERY.getSign());
+        getOrCreateTagBuilder(BlockTags.CEILING_HANGING_SIGNS).add(PearBlocks.CALLERY.getHangingSign());
+        getOrCreateTagBuilder(BlockTags.WALL_HANGING_SIGNS).add(PearBlocks.CALLERY.getWallHangingSign());
+        getOrCreateTagBuilder(BlockTags.ALL_HANGING_SIGNS).add(PearBlocks.CALLERY.getHangingSign()).add(PearBlocks.CALLERY.getWallHangingSign());
         getOrCreateTagBuilder(BlockTags.SAPLINGS).add(PearBlocks.CALLERY_SPROUT);
         getOrCreateTagBuilder(BlockTags.FLOWER_POTS).add(PearBlocks.POTTED_CALLERY_TWIG).add(PearBlocks.POTTED_CALLERY_SPROUT);
         getOrCreateTagBuilder(BlockTags.SMALL_FLOWERS).add(PearBlocks.CALLERY_SPROUT);
@@ -57,8 +57,8 @@ public class PearfectionBlockTagProvider extends FabricTagProvider<Block> {
             PEARFECTION
          */
         getOrCreateTagBuilder(PearBlockTags.CALLERY_STEMS)
-                .add(PearBlocks.CALLERY_STEM).add(PearBlocks.STRIPPED_CALLERY_STEM)
-                .add(PearBlocks.CALLERY_WOOD).add(PearBlocks.STRIPPED_CALLERY_WOOD);
+                .add(PearBlocks.CALLERY.getLog()).add(PearBlocks.CALLERY.getStrippedLog())
+                .add(PearBlocks.CALLERY.getWood()).add(PearBlocks.CALLERY.getStrippedWood());
 
         getOrCreateTagBuilder(PearBlockTags.HUGE_PEAR_CANNOT_REPLACE)
                 .add(Blocks.SCULK_CATALYST)
@@ -76,10 +76,5 @@ public class PearfectionBlockTagProvider extends FabricTagProvider<Block> {
         getOrCreateTagBuilder(PearBlockTags.ENORMOUS_PEAR_GROWABLE_ON)
                 .add(Blocks.MOSS_BLOCK);
 
-
-        /*
-            COMPAT
-         */
-        getOrCreateTagBuilder(PearBlockTags.PICKETS).add(PearBlocks.CALLERY_PICKETS);
     }
 }

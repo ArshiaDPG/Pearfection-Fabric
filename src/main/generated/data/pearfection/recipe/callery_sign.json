@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "sign",
   "key": {
-    "#": {
-      "item": "pearfection:callery_planks"
-    },
-    "X": {
-      "item": "minecraft:stick"
-    }
+    "#": "pearfection:callery_planks",
+    "X": "minecraft:stick"
   },
   "pattern": [
     "###",

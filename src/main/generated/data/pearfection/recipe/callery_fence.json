@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "pearfection:callery_planks"
-    }
+    "#": "minecraft:stick",
+    "W": "pearfection:callery_planks"
   },
   "pattern": [
     "W#W",

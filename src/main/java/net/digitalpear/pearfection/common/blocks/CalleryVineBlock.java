@@ -55,7 +55,7 @@ public class CalleryVineBlock extends TallPlantBlock implements Fertilizable {
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         VoxelShape SHAPE = state.get(HALF) == DoubleBlockHalf.UPPER ? TOP : BOTTOM;
-        Vec3d vec3d = state.getModelOffset(world, pos);
+        Vec3d vec3d = state.getModelOffset(pos);
         return SHAPE.offset(vec3d.x, vec3d.y, vec3d.z);
     }
     @Override
@@ -74,7 +74,7 @@ public class CalleryVineBlock extends TallPlantBlock implements Fertilizable {
 
     @Override
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
-        if (pos.getY() <= world.getBottomY() + 1 && pos.getY() + 4 < world.getTopY()) {
+        if (pos.getY() <= world.getBottomY() + 1 && pos.getY() + 4 < world.getTopYInclusive()) {
             return;
         }
         BlockState dirt = world.getBlockState(state.get(HALF) == DoubleBlockHalf.UPPER ? pos.down(2) : pos.down());
@@ -91,17 +91,20 @@ public class CalleryVineBlock extends TallPlantBlock implements Fertilizable {
             }
         }
 
+
         if (hasSpaceForEnormous && dirt.isIn(PearBlockTags.ENORMOUS_PEAR_GROWABLE_ON)){
-            world.getRegistryManager().getOptional(RegistryKeys.CONFIGURED_FEATURE).flatMap((registry) ->
-                    registry.getEntry(enormousPear)).ifPresent((reference) ->
-                    reference.value().generate(world, world.getChunkManager().getChunkGenerator(),
-                            random, startingPos));
+            world.getRegistryManager().getOptional(RegistryKeys.CONFIGURED_FEATURE).flatMap((registry) -> {
+                return registry.getOptional(enormousPear);
+            }).ifPresent((entry) -> {
+                entry.value().generate(world, world.getChunkManager().getChunkGenerator(), random, pos.up());
+            });
         }
         else{
-            world.getRegistryManager().getOptional(RegistryKeys.CONFIGURED_FEATURE).flatMap((registry) ->
-                    registry.getEntry(hugePear)).ifPresent((reference) ->
-                    reference.value().generate(world, world.getChunkManager().getChunkGenerator(),
-                            random, startingPos));
+            world.getRegistryManager().getOptional(RegistryKeys.CONFIGURED_FEATURE).flatMap((registry) -> {
+                return registry.getOptional(hugePear);
+            }).ifPresent((entry) -> {
+                entry.value().generate(world, world.getChunkManager().getChunkGenerator(), random, pos.up());
+            });
         }
 
     }

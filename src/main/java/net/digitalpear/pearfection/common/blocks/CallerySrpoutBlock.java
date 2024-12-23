@@ -40,9 +40,10 @@ public class CallerySrpoutBlock extends PlantBlock implements Fertilizable {
     }
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        Vec3d vec3d = state.getModelOffset(world, pos);
+        Vec3d vec3d = state.getModelOffset(pos);
         return SHAPE.offset(vec3d.x, vec3d.y, vec3d.z);
     }
+
 
     @Override
     public boolean canReplace(BlockState state, ItemPlacementContext context) {

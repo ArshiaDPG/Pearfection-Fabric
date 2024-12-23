@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.6.+'
+    id 'fabric-loom' version '1.8.+'
     id 'maven-publish'
     id "me.shedaniel.unified-publishing" version "0.1.+"
 }
@@ -9,10 +9,6 @@ group = project.maven_group
 
 repositories {
     maven { url "https://jitpack.io" }
-    maven {
-        name = 'TerraformersMC'
-        url = 'https://maven.terraformersmc.com/'
-    }
     exclusiveContent {
         forRepository {
             maven {
@@ -34,7 +30,7 @@ dependencies {
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    modImplementation include("com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}")
+//    modImplementation include("com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}")
 
     //compileOnly "maven.modrinth:bountiful-fares:${project.bountifulfares}"
 }

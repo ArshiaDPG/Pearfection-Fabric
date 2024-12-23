@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "chest_boat",
   "ingredients": [
-    {
-      "item": "minecraft:chest"
-    },
-    {
-      "item": "pearfection:callery_boat"
-    }
+    "minecraft:chest",
+    "pearfection:callery_boat"
   ],
   "result": {
     "count": 1,

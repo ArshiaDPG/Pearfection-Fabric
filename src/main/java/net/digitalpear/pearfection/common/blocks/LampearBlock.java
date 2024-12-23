@@ -19,7 +19,6 @@ public class LampearBlock extends LanternBlock {
     protected static final VoxelShape HANGING_SHAPE = VoxelShapes.union(
             Block.createCuboidShape(5.0D, 1.0D, 5.0D, 11.0D, 7.0D, 11.0D),
             Block.createCuboidShape(6.0D, 7.0D, 6.0D, 10.0D, 10.0D, 10.0D));
-
     public LampearBlock(Settings settings) {
         super(settings);
         this.setDefaultState(this.stateManager.getDefaultState().with(HANGING, false).with(WATERLOGGED, false));

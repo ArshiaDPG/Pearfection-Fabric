@@ -75,9 +75,10 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
         int stemLengthMultiplier = random.nextBetween(3, 4);
         HugePearFeatureConfig config = context.getConfig();
         BlockStateProvider stem = context.getConfig().trunkProvider;
-        if (blockPos.getY() <= world.getBottomY() + 1 && blockPos.getY() + stemLengthMultiplier + 1 > world.getTopY()) {
+        if (blockPos.getY() <= world.getBottomY() + 1 && blockPos.getY() + stemLengthMultiplier + 1 > world.getTopYInclusive()) {
             return false;
         }
+
         Direction turnDirection = getRandomHorizontalDirection(random);
 
 
