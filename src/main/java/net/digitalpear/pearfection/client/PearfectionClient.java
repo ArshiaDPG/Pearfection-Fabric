@@ -1,21 +1,25 @@
 package net.digitalpear.pearfection.client;
 
 import net.digitalpear.pearfection.init.PearBlocks;
+import net.digitalpear.pearfection.init.PearParticleTypes;
 import net.digitalpear.pearfection.init.data.Woodset;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.client.particle.LeavesParticle;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.BoatEntityRenderer;
 import net.minecraft.client.render.entity.RaftEntityRenderer;
 import net.minecraft.client.render.entity.model.BoatEntityModel;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.render.entity.model.RaftEntityModel;
+import net.minecraft.particle.SimpleParticleType;
 import net.minecraft.util.Identifier;
 
 import java.util.Objects;
@@ -31,6 +35,9 @@ public class PearfectionClient implements ClientModInitializer {
                 PearBlocks.POTTED_CALLERY_TWIG, PearBlocks.POTTED_CALLERY_SPROUT);
 
         registerBoatModels(PearBlocks.CALLERY);
+
+        ParticleFactoryRegistry.getInstance().register(PearParticleTypes.CALLERY_FLOWER, LeavesParticle.CherryLeavesFactory::new);
+        ParticleFactoryRegistry.getInstance().register(PearParticleTypes.CALLERY_LEAF, LeavesParticle.CherryLeavesFactory::new);
     }
     public static void registerBoatModels(Woodset woodset){
         if (!woodset.getWoodsetSettings().hasBoats()){

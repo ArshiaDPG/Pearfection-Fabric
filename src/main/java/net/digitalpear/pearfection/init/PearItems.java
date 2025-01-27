@@ -49,6 +49,5 @@ public class PearItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(fabricItemGroupEntries -> {
             fabricItemGroupEntries.addAfter(Items.MANGROVE_CHEST_BOAT, PearBlocks.CALLERY.getBoatItem(), PearBlocks.CALLERY.getChestBoatItem());
         });
-
     }
 }

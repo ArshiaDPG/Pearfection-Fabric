@@ -1,5 +1,6 @@
 package net.digitalpear.pearfection.init.data;
 
+import net.digitalpear.pearfection.common.blocks.CalleryLeavesBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityType;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
@@ -223,15 +224,19 @@ public class Woodset {
     private RegistryKey<EntityType<?>> entityKey(String id) {
         return RegistryKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(this.getNamespace(), id));
     }
+
     public <T extends Entity> EntityType<T> register(String name, EntityType.Builder<T> type){
         return register(entityKey(name), type);
     }
+
     public <T extends Entity> EntityType<T> register(RegistryKey<EntityType<?>> name, EntityType.Builder<T> type){
         return Registry.register(Registries.ENTITY_TYPE, name, type.build(name));
     }
+
     private static EntityType.EntityFactory<BoatEntity> boatFactory(Item item) {
         return (entityType, world) -> new BoatEntity(entityType, world, () -> item);
     }
+
     private static EntityType.EntityFactory<ChestBoatEntity> chestBoatFactory(Item item) {
         return (entityType, world) -> new ChestBoatEntity(entityType, world, () -> item);
     }
@@ -423,7 +428,7 @@ public class Woodset {
         return createBlockWithItem("stripped_" + this.getName() + "_" +woodsetSettings.getWoodName(), PillarBlock::new, createLogBlock(this.getTopColor(), this.getTopColor()));
     }
     private Block createLeaves() {
-        return createBlockWithItem(this.getName() + "_leaves", LeavesBlock::new, createLeavesBlock(leaveSounds));
+        return createBlockWithItem(this.getName() + "_leaves", settings -> new CalleryLeavesBlock(0.01F, settings, false), createLeavesBlock(leaveSounds));
     }
     private Block createPlanks(){
         return createBlockWithItem(this.getName() + "_planks", AbstractBlock.Settings.copy(getBase()).sounds(getBlockSetType().soundType()).mapColor(getTopColor()));

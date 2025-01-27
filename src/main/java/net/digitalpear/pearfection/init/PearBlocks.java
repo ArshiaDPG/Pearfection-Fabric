@@ -70,12 +70,9 @@ public class PearBlocks {
             .sounds(PearSoundEvents.BLOCK_SOUND_PEAR)
             .strength(0.75f).luminance(state -> 10));
 
-
-
     public static final Woodset CALLERY = new Woodset(Pearfection.id("callery"), calleryColor, callerySideColor, new Woodset.Settings().logName("stem").woodPreset(Woodset.WoodPreset.FANCY));
 
-
-    public static final Block FLOWERING_CALLERY_LEAVES = createBlockWithItem("flowering_callery_leaves", settings -> new CalleryLeavesBlock(true, settings), AbstractBlock.Settings.copy(CALLERY.getLeaves()).mapColor(MapColor.PALE_GREEN));
+    public static final Block FLOWERING_CALLERY_LEAVES = createBlockWithItem("flowering_callery_leaves", settings -> new CalleryLeavesBlock(0.01F, PearParticleTypes.CALLERY_FLOWER, settings, true), AbstractBlock.Settings.copy(CALLERY.getLeaves()).mapColor(MapColor.PALE_GREEN));
 
     public static void init() {
 

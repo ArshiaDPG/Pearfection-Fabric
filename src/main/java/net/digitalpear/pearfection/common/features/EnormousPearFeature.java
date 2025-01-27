@@ -5,6 +5,10 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.PillarBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.intprovider.IntProvider;
+import net.minecraft.util.math.intprovider.IntProviderType;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
+import net.minecraft.util.math.intprovider.WeightedListIntProvider;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
@@ -13,6 +17,7 @@ import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Stream;
 
 public class EnormousPearFeature extends Feature<HugePearFeatureConfig> {
     public EnormousPearFeature(Codec<HugePearFeatureConfig> configCodec) {
@@ -29,16 +34,17 @@ public class EnormousPearFeature extends Feature<HugePearFeatureConfig> {
         int maxY = origin.getY() < (world.getTopYInclusive() - baseMaxY) ? baseMaxY : world.getTopYInclusive() - origin.getY() - baseMaxY/2;
         int height = random.nextBetween(maxY/2, maxY);
         HugePearFeatureConfig config = context.getConfig();
+        int branchChance = 5;
 
         if (!(origin.getY() > world.getBottomY() + 4) && !(origin.getY() < world.getTopYInclusive() - baseMaxY)){
             return false;
         }
-        Map<BlockPos, BlockState> placements = new HashMap<>();
 
         BlockPos currentPos = origin;
         Direction direction = getRandomHorizontalDirection(random);
 
 
+        Map<BlockPos, BlockState> placements = new HashMap<>();
         BlockPos.iterate(origin, origin.add(1, height/2, 1)).forEach(pos -> {
             if (HugePearFeature.isReplaceable(world.getBlockState(pos))){
                 placements.put(pos, config.trunkProvider.get(random, pos));
@@ -51,13 +57,13 @@ public class EnormousPearFeature extends Feature<HugePearFeatureConfig> {
             for (BlockPos pos : BlockPos.iterate(currentPos.add(0, 0, 0), currentPos.add(1, 0, 1))) {
                 placeBlock(world, pos, config.trunkProvider.get(random, pos));
 
-                if (currentPos.getY() > origin.getY() + height/4 && random.nextInt(100) < 2){
+                if (currentPos.getY() > origin.getY() + height/4 && random.nextInt(100) < 5){
                     placeBranch(world, pos, config);
                 }
             }
 
 
-            if (currentPos.getY() > origin.getY() + height/4 && random.nextInt(100) < 25){
+            if (currentPos.getY() > origin.getY() + height/4 && random.nextInt(100) < branchChance){
                 currentPos = currentPos.offset(direction);
                 if (random.nextBoolean()){
                     placeFoliage(world, currentPos.up(), config, 1, 1);
@@ -71,7 +77,7 @@ public class EnormousPearFeature extends Feature<HugePearFeatureConfig> {
         for (int i = 0; i < height/2; i++){
             for (BlockPos pos : BlockPos.iterate(currentPos, currentPos.up().offset(direction.rotateYClockwise()))) {
                 placeBlock(world, pos, config.trunkProvider.get(random, pos).with(PillarBlock.AXIS, direction.getAxis()));
-                if (random.nextInt(100) < 5){
+                if (random.nextInt(100) < branchChance){
                     placeBranch(world, pos, config);
                 }
             }
@@ -116,9 +122,11 @@ public class EnormousPearFeature extends Feature<HugePearFeatureConfig> {
     }
     public void placeBranch(StructureWorldAccess world, BlockPos pos, HugePearFeatureConfig config){
         Random random = world.getRandom();
-        Direction direction = Direction.byId(random.nextBetween(2, 5));
+        Direction direction = getRandomHorizontalDirection(random);
         BlockPos currentPos = pos;
-        for (int i = 0; i < random.nextBetween(3, 5); i++){
+        UniformIntProvider branchLength = UniformIntProvider.create(3, 6);
+
+        for (int i = 0; i < branchLength.get(random); i++){
             placeBlock(world, currentPos, config.trunkProvider.get(random, currentPos).with(PillarBlock.AXIS, direction.getAxis()));
             currentPos = currentPos.offset(direction);
             if (random.nextFloat() < 0.3){
@@ -183,10 +191,7 @@ public class EnormousPearFeature extends Feature<HugePearFeatureConfig> {
         }
     }
     public static Direction getRandomHorizontalDirection(Random random){
-        Direction direction = Direction.random(random);
-        while (direction.getAxis().isVertical()){
-            direction = Direction.random(random);
-        }
-        return direction;
+        Stream<Direction> direction = Direction.stream().filter(direction1 -> direction1.getAxis().isHorizontal());
+        return direction.toList().get(random.nextInt(direction.toList().size()));
     }
 }

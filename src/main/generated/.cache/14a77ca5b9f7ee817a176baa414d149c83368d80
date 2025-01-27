@@ -1,4 +1,4 @@
-// 1.21.4	-999999999-01-01T00:00:00	Pearfection/Tags for minecraft:block
+// 25w04a	-999999999-01-01T00:00:00	Pearfection/Tags for minecraft:block
 214840609878ff0d4a3b6124ddaec52f82275839 data/minecraft/tags/block/all_hanging_signs.json
 0af01a60c874a551c607c93ad8f482f6ad295dd8 data/minecraft/tags/block/buttons.json
 34977700b6e07db1cc713b1d4f3d5c5d45fb4e94 data/minecraft/tags/block/ceiling_hanging_signs.json
@@ -23,6 +23,6 @@ a3939c04a72b23c4b9a02d889d1de65425dfbc45 data/minecraft/tags/block/wooden_slabs.
 2d5fb3f152f7a01694d58565ebbb3be2b9748fb3 data/minecraft/tags/block/wooden_stairs.json
 1bfce6d9cde2689548444f7625c7980861bff7d8 data/minecraft/tags/block/wooden_trapdoors.json
 5ecf5c065890c61d92374bd664666433d50e9ccc data/pearfection/tags/block/callery_stems.json
-158a4877fad0ee79d00e8c9f641ad661e822cdb5 data/pearfection/tags/block/enormous_pear_growable_on.json
+3c6594878f7df59ada560b74bd1208dc98c966d8 data/pearfection/tags/block/enormous_pear_growable_on.json
 7b3672a276a53958a3e60852a042d7257ed666f0 data/pearfection/tags/block/huge_pear_cannot_replace.json
 a31c90e8857832747224c1474ded3612ec6a95b5 data/pearfection/tags/block/pear_growable_on.json

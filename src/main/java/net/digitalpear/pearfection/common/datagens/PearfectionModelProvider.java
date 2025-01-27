@@ -39,6 +39,7 @@ public class PearfectionModelProvider extends FabricModelProvider {
         registerLantern(blockStateModelGenerator, PearBlocks.COPPER_LAMPEAR);
 
         PearBlocks.CALLERY.fullWoodset(blockStateModelGenerator);
+
         blockStateModelGenerator.registerSimpleCubeAll(PearBlocks.FLOWERING_CALLERY_LEAVES);
 
         blockStateModelGenerator.registerDoubleBlock(PearBlocks.CALLERY_VINE, BlockStateModelGenerator.CrossType.NOT_TINTED);

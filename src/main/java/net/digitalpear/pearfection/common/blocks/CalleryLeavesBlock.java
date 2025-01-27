@@ -1,9 +1,11 @@
 package net.digitalpear.pearfection.common.blocks;
 
 import net.digitalpear.pearfection.init.PearBlocks;
+import net.digitalpear.pearfection.init.PearParticleTypes;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Fertilizable;
-import net.minecraft.block.LeavesBlock;
+import net.minecraft.block.UntintedParticleLeavesBlock;
+import net.minecraft.particle.ParticleEffect;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
@@ -15,11 +17,16 @@ import net.minecraft.world.WorldView;
 
 import java.util.OptionalInt;
 
-public class CalleryLeavesBlock extends LeavesBlock implements Fertilizable {
+public class CalleryLeavesBlock extends UntintedParticleLeavesBlock implements Fertilizable {
 
     boolean bearsFruit;
-    public CalleryLeavesBlock(boolean bearsFruit, Settings settings) {
-        super(settings);
+
+    public CalleryLeavesBlock(float leafParticleChance, Settings settings, boolean bearsFruit) {
+        this(leafParticleChance, PearParticleTypes.CALLERY_LEAF, settings, bearsFruit);
+    }
+
+    public CalleryLeavesBlock(float leafParticleChance, ParticleEffect particle, Settings settings, boolean bearsFruit) {
+        super(leafParticleChance, particle, settings);
         this.bearsFruit = bearsFruit;
     }
 
@@ -27,6 +34,7 @@ public class CalleryLeavesBlock extends LeavesBlock implements Fertilizable {
     public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         world.setBlockState(pos, updateDistanceFromLogs(state, world, pos), 3);
     }
+
     private static BlockState updateDistanceFromLogs(BlockState state, WorldAccess world, BlockPos pos) {
         int i = 7;
         BlockPos.Mutable mutable = new BlockPos.Mutable();
@@ -42,6 +50,7 @@ public class CalleryLeavesBlock extends LeavesBlock implements Fertilizable {
 
         return state.with(DISTANCE, i);
     }
+
     private static int getDistanceFromLog(BlockState state) {
         return getOptionalDistanceFromLog(state).orElse(7);
     }

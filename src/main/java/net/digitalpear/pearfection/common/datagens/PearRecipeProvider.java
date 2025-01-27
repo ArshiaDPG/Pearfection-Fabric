@@ -47,23 +47,9 @@ public class PearRecipeProvider extends FabricRecipeProvider {
         public void generate() {
             PearBlocks.CALLERY.generateRecipes(this, lookup, exporter, PearItemTags.CALLERY_STEMS);
 
-//            makeRecipes(exporter, PearBlocks.CALLERY_PLANKS, PearBlocks.CALLERY_STAIRS, PearBlocks.CALLERY_SLAB, PearBlocks.CALLERY_FENCE, PearBlocks.CALLERY_FENCE_GATE,
-//                    PearBlocks.CALLERY_DOOR, PearBlocks.CALLERY_TRAPDOOR, PearBlocks.CALLERY_BUTTON, PearBlocks.CALLERY_PRESSURE_PLATE, PearItems.CALLERY_SIGN);
-
             ShapelessRecipeJsonBuilder.create(lookup, RecipeCategory.MISC, Items.STICK, 2)
                     .input(PearBlocks.CALLERY_TWIG)
                     .criterion(hasItem(PearBlocks.CALLERY_TWIG), conditionsFromItem(PearBlocks.CALLERY_TWIG)).offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Pearfection.id(Registries.ITEM.getId(Items.STICK).withSuffixedPath("_from_callery_twig").getPath())));
-
-
-//            RecipeProvider.offerBoatRecipe(exporter, PearItems.CALLERY_BOAT, PearBlocks.CALLERY_PLANKS);
-//            RecipeProvider.offerChestBoatRecipe(exporter, PearItems.CALLERY_CHEST_BOAT, PearItems.CALLERY_BOAT);
-//            RecipeProvider.offerHangingSignRecipe(exporter, PearItems.CALLERY_HANGING_SIGN, PearBlocks.STRIPPED_CALLERY_STEM);
-//            RecipeProvider.offerPlanksRecipe(exporter, PearBlocks.CALLERY_PLANKS, PearItemTags.CALLERY_STEMS, 4);
-//            RecipeProvider.offerBarkBlockRecipe(exporter, PearBlocks.CALLERY_WOOD, PearBlocks.CALLERY_STEM);
-//            RecipeProvider.offerBarkBlockRecipe(exporter, PearBlocks.STRIPPED_CALLERY_WOOD, PearBlocks.STRIPPED_CALLERY_STEM);
-
-
-//        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, PearBlocks.CALLERY_PICKETS).pattern("PSP").input('P', PearBlocks.CALLERY_PLANKS).input('S', Items.STICK).criterion(hasItem(PearBlocks.CALLERY_PLANKS), conditionsFromItem(PearBlocks.CALLERY_PLANKS)).offerTo(exporter);
 
             ShapelessRecipeJsonBuilder.create(lookup, RecipeCategory.FOOD, PearItems.PEAR_TART, 2)
                     .input(PearBlocks.LAMPEAR)

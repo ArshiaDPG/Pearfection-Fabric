@@ -2,6 +2,8 @@ package net.digitalpear.pearfection.common.datagens;
 
 import net.digitalpear.pearfection.init.PearBlocks;
 import net.digitalpear.pearfection.init.PearItems;
+import net.digitalpear.pearfection.init.tags.PearBlockTags;
+import net.digitalpear.pearfection.init.tags.PearItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -77,6 +79,11 @@ public class PearfectionLanguageProvider extends FabricLanguageProvider {
         /*
             Misc
          */
+        translationBuilder.add(PearItemTags.CALLERY_STEMS, "Callery Stems");
+        translationBuilder.add(PearBlockTags.CALLERY_STEMS, "Callery Stems");
+        translationBuilder.add(PearBlockTags.HUGE_PEAR_CANNOT_REPLACE, "Huge Pears Cannot Replace");
+        translationBuilder.add(PearBlockTags.ENORMOUS_PEAR_GROWABLE_ON, "Enormous Pear Growable On");
+
         translationBuilder.add("subtitles.block.pear.step", "Footsteps");
 
         translationBuilder.add(PearItems.PEAR_TART, "Pear Tart");

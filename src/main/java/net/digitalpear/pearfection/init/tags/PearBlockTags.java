@@ -13,10 +13,6 @@ public class PearBlockTags {
     public static final TagKey<Block> PEAR_GROWABLE_ON = tag("pear_growable_on");
     public static final TagKey<Block> ENORMOUS_PEAR_GROWABLE_ON = tag("enormous_pear_growable_on");
 
-
-    public static final TagKey<Block> PICKETS = compatTag("bountifulfares", "pickets");
-
-
     private static TagKey<Block> tag(String id) {
         return compatTag(Pearfection.MOD_ID, id);
     }
