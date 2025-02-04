@@ -31,5 +31,9 @@
   "item.pearfection.callery_hanging_sign": "Callery Hanging Sign",
   "item.pearfection.callery_sign": "Callery Sign",
   "item.pearfection.pear_tart": "Pear Tart",
-  "subtitles.block.pear.step": "Footsteps"
+  "subtitles.block.pear.step": "Footsteps",
+  "tag.block.pearfection.callery_stems": "Callery Stems",
+  "tag.block.pearfection.enormous_pear_growable_on": "Enormous Pear Growable On",
+  "tag.block.pearfection.huge_pear_cannot_replace": "Huge Pears Cannot Replace",
+  "tag.item.pearfection.callery_stems": "Callery Stems"
 }

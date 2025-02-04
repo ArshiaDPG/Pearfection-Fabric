@@ -2,39 +2,52 @@ package net.digitalpear.pearfection.init;
 
 import net.digitalpear.pearfection.Pearfection;
 import net.digitalpear.pearfection.common.blocks.LampearBlock;
-import net.digitalpear.pearfection.common.features.HugePearFeatureConfig;
+import net.digitalpear.pearfection.common.features.HugeLampearFeatureConfig;
 import net.digitalpear.pearfection.common.features.PearFeatures;
+import net.minecraft.block.BlockState;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.floatprovider.ConstantFloatProvider;
+import net.minecraft.util.math.intprovider.IntProvider;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.ConfiguredFeatures;
-import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
+import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class PearConfiguredFeatures {
 
-    public static final RegistryKey<ConfiguredFeature<?, ?>> HUGE_PEAR = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Pearfection.id("huge_pear"));
-    public static final RegistryKey<ConfiguredFeature<?, ?>> ENORMOUS_PEAR = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Pearfection.id("enormous_pear"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> HUGE_LAMPEAR = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Pearfection.id("huge_lampear"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ENORMOUS_LAMPEAR = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Pearfection.id("enormous_lampear"));
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> featureRegisterable) {
-        ConfiguredFeatures.register(featureRegisterable, HUGE_PEAR, PearFeatures.HUGE_PEAR,
-                new HugePearFeatureConfig(
-                        BlockStateProvider.of(PearBlocks.CALLERY.getLog()),
-                        BlockStateProvider.of(PearBlocks.CALLERY.getLeaves()),
-                        BlockStateProvider.of(PearBlocks.FLOWERING_CALLERY_LEAVES),
-                        BlockStateProvider.of(PearBlocks.LAMPEAR_BLOCK),
-                        BlockStateProvider.of(PearBlocks.LAMPEAR.getDefaultState().with(LampearBlock.HANGING, true))
-                ));
-        ConfiguredFeatures.register(featureRegisterable, ENORMOUS_PEAR, PearFeatures.ENORMOUS_PEAR,
-                new HugePearFeatureConfig(
-                        BlockStateProvider.of(PearBlocks.CALLERY.getLog()),
-                        BlockStateProvider.of(PearBlocks.CALLERY.getLeaves()),
-                        BlockStateProvider.of(PearBlocks.FLOWERING_CALLERY_LEAVES),
-                        BlockStateProvider.of(PearBlocks.LAMPEAR_BLOCK),
-                        BlockStateProvider.of(PearBlocks.LAMPEAR.getDefaultState().with(LampearBlock.HANGING, true))
-                ));
+        ConfiguredFeatures.register(featureRegisterable, HUGE_LAMPEAR, PearFeatures.HUGE_LAMPEAR,
+                createDefaultConfig(UniformIntProvider.create(3, 4))
+        );
+        ConfiguredFeatures.register(featureRegisterable, ENORMOUS_LAMPEAR, PearFeatures.ENORMOUS_LAMPEAR,
+                createDefaultConfig(UniformIntProvider.create(32, 35))
+        );
+    }
+
+    public static HugeLampearFeatureConfig createDefaultConfig(IntProvider heightProvider){
+        Map<BlockState, Integer> LEAVES = new HashMap<>();
+        LEAVES.put(PearBlocks.CALLERY.getLeaves().getDefaultState(), 2);
+        LEAVES.put(PearBlocks.FLOWERING_CALLERY_LEAVES.getDefaultState(), 1);
+
+        Map<BlockState, Integer> FRUITS = new HashMap<>();
+        FRUITS.put(PearBlocks.LAMPEAR.getDefaultState().with(LampearBlock.HANGING, true), 200);
+        FRUITS.put(PearBlocks.COPPER_LAMPEAR.getDefaultState().with(LampearBlock.HANGING, true), 1);
+
+        return new HugeLampearFeatureConfig(
+                SimpleBlockStateProvider.of(PearBlocks.CALLERY.getLog()),
+                HugeLampearFeatureConfig.convertToProvider(LEAVES),
+                SimpleBlockStateProvider.of(PearBlocks.LAMPEAR_BLOCK),
+                HugeLampearFeatureConfig.convertToProvider(FRUITS),
+                heightProvider
+        );
     }
 
     public static void init(){

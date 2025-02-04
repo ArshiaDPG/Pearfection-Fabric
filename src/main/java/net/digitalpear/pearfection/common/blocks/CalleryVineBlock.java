@@ -28,18 +28,9 @@ public class CalleryVineBlock extends TallPlantBlock implements Fertilizable {
         this.hugePear = hugePear;
         this.enormousPear = enormousPear;
     }
-    public CalleryVineBlock(RegistryKey<ConfiguredFeature<?, ?>> hugePear, Settings settings) {
-        super(settings);
-        this.hugePear = hugePear;
-        this.enormousPear = hugePear;
-    }
     public CalleryVineBlock(Settings settings) {
-        super(settings.ticksRandomly());
-        this.hugePear = PearConfiguredFeatures.HUGE_PEAR;
-        this.enormousPear = PearConfiguredFeatures.ENORMOUS_PEAR;
+        this(PearConfiguredFeatures.HUGE_LAMPEAR, PearConfiguredFeatures.ENORMOUS_LAMPEAR, settings);
     }
-
-
 
     @Override
     public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state) {
@@ -85,12 +76,11 @@ public class CalleryVineBlock extends TallPlantBlock implements Fertilizable {
         world.setBlockState(startingPos.up(), Blocks.AIR.getDefaultState(), 1);
 
         for (BlockPos pos1 : BlockPos.iterate(pos, pos.add(1, 10, 1))) {
-            if ((world.getBlockState(pos1).isIn(PearBlockTags.HUGE_PEAR_CANNOT_REPLACE) || world.getBlockState(pos1).getBlock().getHardness() >= 1.5 || world.getBlockState(pos1).isOf(Blocks.WATER))){
+            if ((world.getBlockState(pos1).isIn(PearBlockTags.HUGE_PEAR_CANNOT_REPLACE) || !world.isAir(pos1))){
                 hasSpaceForEnormous = false;
                 break;
             }
         }
-
 
         if (hasSpaceForEnormous && dirt.isIn(PearBlockTags.ENORMOUS_PEAR_GROWABLE_ON)){
             world.getRegistryManager().getOptional(RegistryKeys.CONFIGURED_FEATURE).flatMap((registry) -> {

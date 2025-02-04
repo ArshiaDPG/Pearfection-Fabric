@@ -7,8 +7,8 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.FeatureConfig;
 
 public class PearFeatures {
-    public static final Feature<HugePearFeatureConfig> HUGE_PEAR = register("huge_pear", new HugePearFeature(HugePearFeatureConfig.CODEC));
-    public static final Feature<HugePearFeatureConfig> ENORMOUS_PEAR = register("enormous_pear", new EnormousPearFeature(HugePearFeatureConfig.CODEC));
+    public static final Feature<HugeLampearFeatureConfig> HUGE_LAMPEAR = register("huge_lampear", new HugeLampearFeature(HugeLampearFeatureConfig.CODEC));
+    public static final Feature<HugeLampearFeatureConfig> ENORMOUS_LAMPEAR = register("enormous_lampear", new EnormousLampearFeature(HugeLampearFeatureConfig.CODEC));
 
 
     private static <C extends FeatureConfig, F extends Feature<C>> F register(String name, F feature) {

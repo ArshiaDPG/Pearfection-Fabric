@@ -12,16 +12,19 @@ public class PearData {
         FlammableBlockRegistry instance = FlammableBlockRegistry.getDefaultInstance();
         instance.add(PearBlocks.LAMPEAR, 30, 40);
         instance.add(PearBlocks.LAMPEAR_BLOCK, 7, 7);
-        instance.add(PearBlocks.CALLERY.getLog(), 5, 5);
-        instance.add(PearBlocks.CALLERY.getStrippedLog(), 5, 5);
-        instance.add(PearBlocks.CALLERY.getWood(), 5, 5);
-        instance.add(PearBlocks.CALLERY.getStrippedWood(), 5, 5);
-        instance.add(PearBlocks.CALLERY.getPlanks(), 5, 15);
-        instance.add(PearBlocks.CALLERY.getStairs(), 5, 20);
-        instance.add(PearBlocks.CALLERY.getSlab(), 5, 20);
-        instance.add(PearBlocks.CALLERY.getFence(), 5, 20);
-        instance.add(PearBlocks.CALLERY.getFenceGate(), 5, 20);
-        instance.add(PearBlocks.CALLERY.getLeaves(), 30, 60);
+        instance.add(PearBlocks.CALLERY_TWIG, 30, 40);
+        instance.add(PearBlocks.CALLERY_SPROUT, 30, 40);
+        instance.add(PearBlocks.CALLERY_VINE, 30, 40);
+//        instance.add(PearBlocks.CALLERY.getLog(), 5, 5);
+//        instance.add(PearBlocks.CALLERY.getStrippedLog(), 5, 5);
+//        instance.add(PearBlocks.CALLERY.getWood(), 5, 5);
+//        instance.add(PearBlocks.CALLERY.getStrippedWood(), 5, 5);
+//        instance.add(PearBlocks.CALLERY.getPlanks(), 5, 15);
+//        instance.add(PearBlocks.CALLERY.getStairs(), 5, 20);
+//        instance.add(PearBlocks.CALLERY.getSlab(), 5, 20);
+//        instance.add(PearBlocks.CALLERY.getFence(), 5, 20);
+//        instance.add(PearBlocks.CALLERY.getFenceGate(), 5, 20);
+//        instance.add(PearBlocks.CALLERY.getLeaves(), 30, 60);
         instance.add(PearBlocks.FLOWERING_CALLERY_LEAVES, 35, 55);
     }
 
@@ -35,22 +38,21 @@ public class PearData {
             builder.add(PearBlocks.CALLERY_SPROUT, 150);
             builder.add(PearBlocks.CALLERY_TWIG, 100);
         });
-
-
     }
 
     public static void registerComposting(){
-        CompostingChanceRegistry.INSTANCE.add(PearBlocks.CALLERY.getLeaves(), 0.3F);
-        CompostingChanceRegistry.INSTANCE.add(PearBlocks.FLOWERING_CALLERY_LEAVES, 0.3F);
+        CompostingChanceRegistry registry = CompostingChanceRegistry.INSTANCE;
+        registry.add(PearBlocks.CALLERY.getLeaves(), 0.3F);
+        registry.add(PearBlocks.FLOWERING_CALLERY_LEAVES, 0.3F);
 
-        CompostingChanceRegistry.INSTANCE.add(PearBlocks.CALLERY_TWIG, 0.3F);
-        CompostingChanceRegistry.INSTANCE.add(PearBlocks.CALLERY_SPROUT, 0.4F);
-        CompostingChanceRegistry.INSTANCE.add(PearBlocks.CALLERY_VINE, 0.7F);
+        registry.add(PearBlocks.CALLERY_TWIG, 0.3F);
+        registry.add(PearBlocks.CALLERY_SPROUT, 0.4F);
+        registry.add(PearBlocks.CALLERY_VINE, 0.7F);
 
-        CompostingChanceRegistry.INSTANCE.add(PearBlocks.LAMPEAR_BLOCK, 0.85F);
+        registry.add(PearBlocks.LAMPEAR_BLOCK, 0.85F);
 
-        CompostingChanceRegistry.INSTANCE.add(PearBlocks.LAMPEAR, 0.65F);
-        CompostingChanceRegistry.INSTANCE.add(PearBlocks.COPPER_LAMPEAR, 0.65F);
+        registry.add(PearBlocks.LAMPEAR, 0.65F);
+        registry.add(PearBlocks.COPPER_LAMPEAR, 1F);
     }
 
     public static void init(){

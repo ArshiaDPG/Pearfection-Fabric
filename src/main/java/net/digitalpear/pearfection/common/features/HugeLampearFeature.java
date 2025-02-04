@@ -12,22 +12,25 @@ import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-public class HugePearFeature extends Feature<HugePearFeatureConfig> {
-    public HugePearFeature(Codec<HugePearFeatureConfig> configCodec) {
+public class HugeLampearFeature extends Feature<HugeLampearFeatureConfig> {
+    public HugeLampearFeature(Codec<HugeLampearFeatureConfig> configCodec) {
         super(configCodec);
     }
 
-    public static boolean isReplaceable(BlockState state) {
-        return (!state.isIn(PearBlockTags.HUGE_PEAR_CANNOT_REPLACE) && state.getBlock().getHardness() < 1.5) || state.isOf(Blocks.WATER);
+    public static boolean isReplaceable(Float growThroughToughness, BlockState state) {
+        return (!state.isIn(PearBlockTags.HUGE_PEAR_CANNOT_REPLACE) && state.getBlock().getHardness() <= growThroughToughness);
     }
 
 
     @Override
-    public boolean generate(FeatureContext<HugePearFeatureConfig> context) {
+    public boolean generate(FeatureContext<HugeLampearFeatureConfig> context) {
         if (placeStem(context)) {
             placeBase(context);
             return true;
@@ -35,13 +38,14 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
         return false;
     }
 
-    public void placeBase(FeatureContext<HugePearFeatureConfig> context){
+    public void placeBase(FeatureContext<HugeLampearFeatureConfig> context){
         BlockPos blockPos = context.getOrigin().up();
         StructureWorldAccess world = context.getWorld();
         Random random = context.getRandom();
         int radius = 1;
         int height = random.nextBetween(2, 3);
-        BlockStateProvider baseBlock = context.getConfig().baseBlockProvider;
+        BlockStateProvider baseBlock = context.getConfig().baseBlockProviders;
+
 
         Map<Iterable<BlockPos>, BlockState> PLACEMENTS = new HashMap<>();
             /*
@@ -59,7 +63,7 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
          */
         PLACEMENTS.forEach((iterator, state) -> {
             for (BlockPos currentPos : iterator) {
-                if (isReplaceable(world.getBlockState(currentPos))) {
+                if (isReplaceable(context.getConfig().maxGrowThroughHardness, world.getBlockState(currentPos))) {
                     world.setBlockState(currentPos, state, 2);
                 }
             }
@@ -68,18 +72,18 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
 
 
 
-    public boolean placeStem(FeatureContext<HugePearFeatureConfig> context){
+    public boolean placeStem(FeatureContext<HugeLampearFeatureConfig> context){
         BlockPos blockPos = context.getOrigin().up();
         StructureWorldAccess world = context.getWorld();
         Random random = context.getRandom();
-        int stemLengthMultiplier = random.nextBetween(3, 4);
-        HugePearFeatureConfig config = context.getConfig();
-        BlockStateProvider stem = context.getConfig().trunkProvider;
+        HugeLampearFeatureConfig config = context.getConfig();
+        int stemLengthMultiplier = config.height.get(random);
+        BlockStateProvider stem = context.getConfig().trunkProviders;
         if (blockPos.getY() <= world.getBottomY() + 1 && blockPos.getY() + stemLengthMultiplier + 1 > world.getTopYInclusive()) {
             return false;
         }
 
-        Direction turnDirection = getRandomHorizontalDirection(random);
+        Direction turnDirection = getRandomHorizontalDirection(random, Direction.UP, Direction.DOWN);
 
 
 
@@ -92,33 +96,35 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
             Collect stems and place foliage
          */
         PLACEMENTS.put(BlockPos.iterate(blockPos, blockPos.offset(Direction.UP, 2)),
-                stem.get(random, blockPos).with(PillarBlock.AXIS, Direction.Axis.Y));
+                stem.get(random, blockPos).withIfExists(PillarBlock.AXIS, Direction.Axis.Y));
 
         placeFoliage(world, random, blockPos.offset(Direction.UP, 2 + stemLengthMultiplier).offset(turnDirection), config);
         PLACEMENTS.put(BlockPos.iterate(blockPos.offset(Direction.UP, 2).offset(turnDirection), blockPos.offset(Direction.UP, 2 + stemLengthMultiplier).offset(turnDirection)),
-                stem.get(random, blockPos).with(PillarBlock.AXIS, Direction.Axis.Y));
+                stem.get(random, blockPos).withIfExists(PillarBlock.AXIS, Direction.Axis.Y));
 
         BlockPos newPos = blockPos.offset(Direction.UP, 2 + stemLengthMultiplier).offset(turnDirection);
         placeFoliage(world, random, newPos, config);
-        PLACEMENTS.put(BlockPos.iterate(newPos, newPos.offset(turnDirection, 1 + stemLengthMultiplier)), stem.get(random, blockPos).with(PillarBlock.AXIS, turnDirection.getAxis()));
+        PLACEMENTS.put(BlockPos.iterate(newPos, newPos.offset(turnDirection, 1 + stemLengthMultiplier)), stem.get(random, blockPos).withIfExists(PillarBlock.AXIS, turnDirection.getAxis()));
 
         /*
             Place all collected maps
          */
         PLACEMENTS.forEach((iterator, state) -> {
             for (BlockPos currentPos : iterator) {
-                if (isReplaceable(world.getBlockState(currentPos))) {
+                if (isReplaceable(config.maxGrowThroughHardness, world.getBlockState(currentPos))) {
                     world.setBlockState(currentPos, state, 2);
                 }
             }
         });
-        world.setBlockState(newPos.offset(turnDirection, 2 + stemLengthMultiplier).down(), stem.get(random, blockPos).with(PillarBlock.AXIS, Direction.Axis.Y), 2);
+        if (isReplaceable(config.maxGrowThroughHardness, world.getBlockState(newPos.offset(turnDirection, 2 + stemLengthMultiplier).down()))){
+            world.setBlockState(newPos.offset(turnDirection, 2 + stemLengthMultiplier).down(), stem.get(random, blockPos).withIfExists(PillarBlock.AXIS, Direction.Axis.Y), 2);
+        }
         placeFoliage(world, random, newPos.offset(turnDirection, 2 + stemLengthMultiplier), config);
 
         return true;
     }
 
-    public void placeFoliage(StructureWorldAccess world, Random random, BlockPos blockPos, HugePearFeatureConfig config){
+    public void placeFoliage(StructureWorldAccess world, Random random, BlockPos blockPos, HugeLampearFeatureConfig config){
         int x = random.nextBetween(1, 2);
         int y = 1;
         int z = random.nextBetween(1, 2);
@@ -130,8 +136,7 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
                 Place leaves
             */
             if (currentBlockPos.getSquaredDistance(blockPos) <= (double) (radius * radius) && world.getBlockState(currentBlockPos).isAir()) {
-                BlockStateProvider leaves = random.nextBoolean() ? config.floweringFoliageProvider : config.foliageProvider;
-                world.setBlockState(currentBlockPos, leaves.get(random, currentBlockPos), 2);
+                world.setBlockState(currentBlockPos, config.foliageProviders.get(random, currentBlockPos), 2);
             }
         }
         for (BlockPos currentBlockPos : BlockPos.iterate(blockPos.add(-x, -y, -z).down(), blockPos.add(x, y, z).down())) {
@@ -139,26 +144,27 @@ public class HugePearFeature extends Feature<HugePearFeatureConfig> {
                 /*
                     Place leaves
                  */
-                BlockStateProvider leaves = random.nextBoolean() ? config.floweringFoliageProvider : config.foliageProvider;
-                world.setBlockState(currentBlockPos, leaves.get(random, currentBlockPos), 2);
+                world.setBlockState(currentBlockPos, config.foliageProviders.get(random, currentBlockPos), 2);
 
                 /*
                     Place fruit
                  */
-                if (world.getBlockState(currentBlockPos.down()).isAir() && random.nextFloat() < 0.2){
-                    BlockStateProvider fruit = random.nextFloat() < 0.25 ? config.rareFruitProvider : config.fruitProvider;
-                    world.setBlockState(currentBlockPos.down(), fruit.get(random, currentBlockPos.down()), 2);
+                if (world.getBlockState(currentBlockPos.down()).isAir() && random.nextFloat() < config.fruitSpawnChance){
+                    world.setBlockState(currentBlockPos.down(), config.fruitProviders.get(random, currentBlockPos.down()), 2);
                 }
             }
         }
     }
 
-    public static Direction getRandomHorizontalDirection(Random random){
-        Direction direction = Direction.random(random);
-        while (direction.getAxis().isVertical()){
-            direction = Direction.random(random);
+    public static Direction getRandomHorizontalDirection(Random random, Direction... disallowedDirections){
+        List<Direction> direction = new ArrayList<>(Direction.stream().toList());
+        for (Direction i : disallowedDirections){
+            direction.remove(i);
         }
-        return direction;
+        if (direction.isEmpty()){
+            return null;
+        }
+        return direction.get(random.nextInt(direction.size()));
     }
 
 }
