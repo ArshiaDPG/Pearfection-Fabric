@@ -149,7 +149,6 @@ public class Woodset {
         blockFamily.pressurePlate(pressurePlate);
 
 
-
         signBlocks.add(sign);
         signBlocks.add(wallSign);
 
@@ -759,8 +758,6 @@ public class Woodset {
 
         public static class Builder {
             private final Settings settings = new Settings();
-
-
             public Settings build(){
                 settings.boatType = getBoatType();
                 settings.woodName = getWoodName();

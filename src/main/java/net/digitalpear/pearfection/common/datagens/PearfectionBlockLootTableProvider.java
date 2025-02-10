@@ -12,7 +12,6 @@ import java.util.concurrent.CompletableFuture;
 
 public class PearfectionBlockLootTableProvider extends FabricBlockLootTableProvider {
 
-
     public PearfectionBlockLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
         super(dataOutput, registryLookup);
     }
@@ -31,7 +30,6 @@ public class PearfectionBlockLootTableProvider extends FabricBlockLootTableProvi
 
 
         addDrop(PearBlocks.FLOWERING_CALLERY_LEAVES, leavesDrops(PearBlocks.FLOWERING_CALLERY_LEAVES, PearBlocks.CALLERY_TWIG, 0.05f, 0.0625f, 0.025f, 0.083333336f, 0.1f));
-
     }
     public void makeWoodLoot(Woodset woodset, Block sapling){
         addDrop(woodset.getPlanks());

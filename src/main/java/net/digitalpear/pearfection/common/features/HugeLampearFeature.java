@@ -63,7 +63,7 @@ public class HugeLampearFeature extends Feature<HugeLampearFeatureConfig> {
          */
         PLACEMENTS.forEach((iterator, state) -> {
             for (BlockPos currentPos : iterator) {
-                if (isReplaceable(context.getConfig().maxGrowThroughHardness, world.getBlockState(currentPos))) {
+                if (isReplaceable(context.getConfig().maxGrowThroughHardness.get(random), world.getBlockState(currentPos))) {
                     world.setBlockState(currentPos, state, 2);
                 }
             }
@@ -111,12 +111,12 @@ public class HugeLampearFeature extends Feature<HugeLampearFeatureConfig> {
          */
         PLACEMENTS.forEach((iterator, state) -> {
             for (BlockPos currentPos : iterator) {
-                if (isReplaceable(config.maxGrowThroughHardness, world.getBlockState(currentPos))) {
+                if (isReplaceable(config.maxGrowThroughHardness.get(random), world.getBlockState(currentPos))) {
                     world.setBlockState(currentPos, state, 2);
                 }
             }
         });
-        if (isReplaceable(config.maxGrowThroughHardness, world.getBlockState(newPos.offset(turnDirection, 2 + stemLengthMultiplier).down()))){
+        if (isReplaceable(config.maxGrowThroughHardness.get(random), world.getBlockState(newPos.offset(turnDirection, 2 + stemLengthMultiplier).down()))){
             world.setBlockState(newPos.offset(turnDirection, 2 + stemLengthMultiplier).down(), stem.get(random, blockPos).withIfExists(PillarBlock.AXIS, Direction.Axis.Y), 2);
         }
         placeFoliage(world, random, newPos.offset(turnDirection, 2 + stemLengthMultiplier), config);
@@ -149,7 +149,7 @@ public class HugeLampearFeature extends Feature<HugeLampearFeatureConfig> {
                 /*
                     Place fruit
                  */
-                if (world.getBlockState(currentBlockPos.down()).isAir() && random.nextFloat() < config.fruitSpawnChance){
+                if (world.getBlockState(currentBlockPos.down()).isAir() && random.nextFloat() < config.fruitSpawnChance.get(random)){
                     world.setBlockState(currentBlockPos.down(), config.fruitProviders.get(random, currentBlockPos.down()), 2);
                 }
             }

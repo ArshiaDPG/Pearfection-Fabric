@@ -94,6 +94,5 @@ public class PearBlocks {
     public static final Block FLOWERING_CALLERY_LEAVES = createBlockWithItem("flowering_callery_leaves", settings -> new CalleryLeavesBlock(0.01F, PearParticleTypes.CALLERY_FLOWER, settings, true), AbstractBlock.Settings.copy(CALLERY.getLeaves()).mapColor(MapColor.PALE_GREEN));
 
     public static void init() {
-
     }
 }

@@ -17,10 +17,10 @@ import net.minecraft.registry.*;
 
 import java.util.concurrent.CompletableFuture;
 
-public class PearRecipeProvider extends FabricRecipeProvider {
+public class PearfectionRecipeProvider extends FabricRecipeProvider {
 
 
-    public PearRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+    public PearfectionRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
     }
 

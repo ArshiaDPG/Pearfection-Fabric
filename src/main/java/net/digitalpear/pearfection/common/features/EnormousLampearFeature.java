@@ -44,7 +44,7 @@ public class EnormousLampearFeature extends Feature<HugeLampearFeatureConfig> {
 
         Map<BlockPos, BlockState> placements = new HashMap<>();
         BlockPos.iterate(origin, origin.add(1, height/2, 1)).forEach(pos -> {
-            if (HugeLampearFeature.isReplaceable(config.maxGrowThroughHardness, world.getBlockState(pos))){
+            if (HugeLampearFeature.isReplaceable(config.maxGrowThroughHardness.get(random), world.getBlockState(pos))){
                 placements.put(pos, config.trunkProviders.get(random, pos));
             }
         });
@@ -129,7 +129,7 @@ public class EnormousLampearFeature extends Feature<HugeLampearFeatureConfig> {
 
 
     public void placeBlock(HugeLampearFeatureConfig config, StructureWorldAccess world, BlockPos pos, BlockState state){
-        if (HugeLampearFeature.isReplaceable(config.maxGrowThroughHardness, world.getBlockState(pos))){
+        if (HugeLampearFeature.isReplaceable(config.maxGrowThroughHardness.get(world.getRandom()), world.getBlockState(pos))){
             world.setBlockState(pos, state, 3);
         }
     }
@@ -197,7 +197,7 @@ public class EnormousLampearFeature extends Feature<HugeLampearFeatureConfig> {
                         }
                     }
                 }
-                if (random.nextFloat() < config.fruitSpawnChance){
+                if (random.nextFloat() < config.fruitSpawnChance.get(random)){
                     placeLeaf(world, currentBlockPos.down(), config);
                 }
             }
