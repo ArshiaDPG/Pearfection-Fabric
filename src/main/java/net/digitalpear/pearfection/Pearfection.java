@@ -6,7 +6,9 @@ import net.digitalpear.pearfection.init.PearConfiguredFeatures;
 import net.digitalpear.pearfection.init.PearItems;
 import net.digitalpear.pearfection.init.data.PearData;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.GameRules;
@@ -29,8 +31,8 @@ public class Pearfection implements ModInitializer {
         PearFeatures.init();
         PearData.init();
 
-        ServerPlayerEvents.ALLOW_DEATH.register((player, damageSource, damageAmount) -> {
-            if (player.getDisplayName().getString().contains("DigitalPear") && player.getServerWorld().getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
+        ServerLivingEntityEvents.ALLOW_DEATH.register((entity, damageSource, damageAmount) -> {
+            if (entity instanceof PlayerEntity player && !player.isCreative() && player.getDisplayName().getString().contains("DigitalPear") && player.getServer().getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
                 player.dropItem(new ItemStack(PearBlocks.LAMPEAR), false);
             }
             return true;

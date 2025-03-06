@@ -10,7 +10,6 @@ public class PearFeatures {
     public static final Feature<HugeLampearFeatureConfig> HUGE_LAMPEAR = register("huge_lampear", new HugeLampearFeature(HugeLampearFeatureConfig.CODEC));
     public static final Feature<HugeLampearFeatureConfig> ENORMOUS_LAMPEAR = register("enormous_lampear", new EnormousLampearFeature(HugeLampearFeatureConfig.CODEC));
 
-
     private static <C extends FeatureConfig, F extends Feature<C>> F register(String name, F feature) {
         return Registry.register(Registries.FEATURE, Pearfection.id(name), feature);
     }

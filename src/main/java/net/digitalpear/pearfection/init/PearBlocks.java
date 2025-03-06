@@ -1,29 +1,20 @@
 package net.digitalpear.pearfection.init;
 
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Maps;
-import net.digitalpear.nears.init.data.NFoodComponents;
 import net.digitalpear.pearfection.Pearfection;
 import net.digitalpear.pearfection.common.blocks.*;
 import net.digitalpear.pearfection.init.data.PearConsumableComponents;
 import net.digitalpear.pearfection.init.data.PearFoodComponents;
 import net.digitalpear.pearfection.init.data.Woodset;
-import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.*;
 import net.minecraft.component.type.ConsumableComponent;
-import net.minecraft.component.type.ConsumableComponents;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.Rarity;
-import net.minecraft.util.math.Direction;
 
-import java.util.Map;
 import java.util.function.Function;
 
 public class PearBlocks {

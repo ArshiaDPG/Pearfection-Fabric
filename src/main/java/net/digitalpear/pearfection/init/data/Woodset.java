@@ -558,12 +558,12 @@ public class Woodset {
         }
 
         if (notBambooVariant()){
-            blockStateModelGenerator.registerLog(getLog()).log(getLog()).wood(getWood());
-            blockStateModelGenerator.registerLog(getStrippedLog()).log(getStrippedLog()).wood(getStrippedWood());
+            blockStateModelGenerator.createLogTexturePool(getLog()).log(getLog()).wood(getWood());
+            blockStateModelGenerator.createLogTexturePool(getStrippedLog()).log(getStrippedLog()).wood(getStrippedWood());
         }
         if (woodsetSettings.hasMosaic()){
-            blockStateModelGenerator.registerLog(getLog()).uvLockedLog(getLog());
-            blockStateModelGenerator.registerLog(getStrippedLog()).uvLockedLog(getStrippedLog());
+            blockStateModelGenerator.createLogTexturePool(getLog()).uvLockedLog(getLog());
+            blockStateModelGenerator.createLogTexturePool(getStrippedLog()).uvLockedLog(getStrippedLog());
         }
 
         blockStateModelGenerator.registerHangingSign(strippedLog, hangingSign, wallHangingSign);

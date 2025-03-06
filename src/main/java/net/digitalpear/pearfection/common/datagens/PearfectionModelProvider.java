@@ -7,6 +7,8 @@ import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.block.Block;
 import net.minecraft.client.data.*;
+import net.minecraft.client.render.model.json.MultipartModelConditionBuilder;
+import net.minecraft.client.render.model.json.WeightedUnbakedModel;
 import net.minecraft.registry.Registries;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
@@ -69,18 +71,30 @@ public class PearfectionModelProvider extends FabricModelProvider {
         USE BASE MODELS TO GENERATE MODELS
      */
     public static void registerLantern(BlockStateModelGenerator blockStateModelGenerator, Block lantern){
-        Identifier HANGING = LAMPEAR_HANGING_BASE.upload(lantern, "_hanging", TextureMap.all(lantern), blockStateModelGenerator.modelCollector);
-        Identifier STANDING = LAMPEAR_BASE.upload(lantern, TextureMap.all(lantern), blockStateModelGenerator.modelCollector);
+        WeightedUnbakedModel HANGING = BlockStateModelGenerator.createModel(LAMPEAR_HANGING_BASE.upload(lantern, "_hanging", TextureMap.all(lantern), blockStateModelGenerator.modelCollector));
+        WeightedUnbakedModel STANDING = BlockStateModelGenerator.createModel(LAMPEAR_BASE.upload(lantern, TextureMap.all(lantern), blockStateModelGenerator.modelCollector));
 
         blockStateModelGenerator.registerItemModel(lantern.asItem());
-        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(lantern)
-                .coordinate(BlockStateModelGenerator.createBooleanModelMap(Properties.HANGING, HANGING, STANDING)));
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(lantern)
+                .with(BlockStateModelGenerator.createBooleanModelMap(Properties.HANGING, HANGING, STANDING)));
     }
 
     public static void registerPearBlock(BlockStateModelGenerator blockStateModelGenerator, Block pearBlock) {
-        Identifier outerID = Models.TEMPLATE_SINGLE_FACE.upload(pearBlock, TextureMap.texture(pearBlock), blockStateModelGenerator.modelCollector);
-        Identifier insideID = Models.TEMPLATE_SINGLE_FACE.upload(pearBlock, "_inside", TextureMap.texture(getId(pearBlock, "_inside")), blockStateModelGenerator.modelCollector);
-        blockStateModelGenerator.blockStateCollector.accept(MultipartBlockStateSupplier.create(pearBlock).with(When.create().set(Properties.NORTH, true), BlockStateVariant.create().put(VariantSettings.MODEL, outerID)).with(When.create().set(Properties.EAST, true), BlockStateVariant.create().put(VariantSettings.MODEL, outerID).put(VariantSettings.Y, VariantSettings.Rotation.R90).put(VariantSettings.UVLOCK, true)).with(When.create().set(Properties.SOUTH, true), BlockStateVariant.create().put(VariantSettings.MODEL, outerID).put(VariantSettings.Y, VariantSettings.Rotation.R180).put(VariantSettings.UVLOCK, true)).with(When.create().set(Properties.WEST, true), BlockStateVariant.create().put(VariantSettings.MODEL, outerID).put(VariantSettings.Y, VariantSettings.Rotation.R270).put(VariantSettings.UVLOCK, true)).with(When.create().set(Properties.UP, true), BlockStateVariant.create().put(VariantSettings.MODEL, outerID).put(VariantSettings.X, VariantSettings.Rotation.R270).put(VariantSettings.UVLOCK, true)).with(When.create().set(Properties.DOWN, true), BlockStateVariant.create().put(VariantSettings.MODEL, outerID).put(VariantSettings.X, VariantSettings.Rotation.R90).put(VariantSettings.UVLOCK, true)).with(When.create().set(Properties.NORTH, false), BlockStateVariant.create().put(VariantSettings.MODEL, insideID)).with(When.create().set(Properties.EAST, false), BlockStateVariant.create().put(VariantSettings.MODEL, insideID).put(VariantSettings.Y, VariantSettings.Rotation.R90).put(VariantSettings.UVLOCK, false)).with(When.create().set(Properties.SOUTH, false), BlockStateVariant.create().put(VariantSettings.MODEL, insideID).put(VariantSettings.Y, VariantSettings.Rotation.R180).put(VariantSettings.UVLOCK, false)).with(When.create().set(Properties.WEST, false), BlockStateVariant.create().put(VariantSettings.MODEL, insideID).put(VariantSettings.Y, VariantSettings.Rotation.R270).put(VariantSettings.UVLOCK, false)).with(When.create().set(Properties.UP, false), BlockStateVariant.create().put(VariantSettings.MODEL, insideID).put(VariantSettings.X, VariantSettings.Rotation.R270).put(VariantSettings.UVLOCK, false)).with(When.create().set(Properties.DOWN, false), BlockStateVariant.create().put(VariantSettings.MODEL, insideID).put(VariantSettings.X, VariantSettings.Rotation.R90).put(VariantSettings.UVLOCK, false)));
+        WeightedUnbakedModel outerID = BlockStateModelGenerator.createModel(Models.TEMPLATE_SINGLE_FACE.upload(pearBlock, TextureMap.texture(pearBlock), blockStateModelGenerator.modelCollector));
+        WeightedUnbakedModel insideID = BlockStateModelGenerator.createModel(Models.TEMPLATE_SINGLE_FACE.upload(pearBlock, "_inside", TextureMap.texture(getId(pearBlock, "_inside")), blockStateModelGenerator.modelCollector));
+        blockStateModelGenerator.blockStateCollector.accept(MultipartBlockModelDefinitionCreator.create(pearBlock)
+                .with(BlockStateModelGenerator.createMultipartConditionBuilder().put(Properties.NORTH, true), outerID)
+                .with(BlockStateModelGenerator.createMultipartConditionBuilder().put(Properties.EAST, true), outerID.apply(BlockStateModelGenerator.ROTATE_Y_90).apply(BlockStateModelGenerator.UV_LOCK))
+                .with(BlockStateModelGenerator.createMultipartConditionBuilder().put(Properties.SOUTH, true), outerID.apply(BlockStateModelGenerator.ROTATE_Y_180).apply(BlockStateModelGenerator.UV_LOCK))
+                .with(BlockStateModelGenerator.createMultipartConditionBuilder().put(Properties.WEST, true), outerID.apply(BlockStateModelGenerator.ROTATE_Y_270).apply(BlockStateModelGenerator.UV_LOCK))
+                .with(BlockStateModelGenerator.createMultipartConditionBuilder().put(Properties.UP, true), outerID.apply(BlockStateModelGenerator.ROTATE_X_270).apply(BlockStateModelGenerator.UV_LOCK))
+                .with(BlockStateModelGenerator.createMultipartConditionBuilder().put(Properties.DOWN, true), outerID.apply(BlockStateModelGenerator.ROTATE_X_90).apply(BlockStateModelGenerator.UV_LOCK))
+                .with(BlockStateModelGenerator.createMultipartConditionBuilder().put(Properties.NORTH, false), insideID).with(BlockStateModelGenerator.createMultipartConditionBuilder().put(Properties.EAST, false), insideID.apply(BlockStateModelGenerator.ROTATE_Y_90))
+                .with(BlockStateModelGenerator.createMultipartConditionBuilder().put(Properties.SOUTH, false), insideID.apply(BlockStateModelGenerator.ROTATE_Y_180))
+                .with(BlockStateModelGenerator.createMultipartConditionBuilder().put(Properties.WEST, false), insideID.apply(BlockStateModelGenerator.ROTATE_Y_270))
+                .with(BlockStateModelGenerator.createMultipartConditionBuilder().put(Properties.UP, false), insideID.apply(BlockStateModelGenerator.ROTATE_X_270))
+                .with(BlockStateModelGenerator.createMultipartConditionBuilder().put(Properties.DOWN, false), insideID.apply(BlockStateModelGenerator.ROTATE_X_90))
+        );
         blockStateModelGenerator.registerParentedItemModel(pearBlock, TexturedModel.CUBE_ALL.upload(pearBlock, "_inventory", blockStateModelGenerator.modelCollector));
     }
 

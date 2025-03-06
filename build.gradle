@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.9.+'
+    id 'fabric-loom' version '1.10.+'
     id 'maven-publish'
     id "me.shedaniel.unified-publishing" version "0.1.+"
 }
@@ -31,7 +31,7 @@ dependencies {
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    modApi "maven.modrinth:nears:${project.nears_version}"
+//    modApi "maven.modrinth:nears:${project.nears_version}"
     //compileOnly "maven.modrinth:bountiful-fares:${project.bountifulfares}"
 }
 

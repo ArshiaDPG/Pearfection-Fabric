@@ -64,6 +64,4 @@ public class PearfectionBlockLootTableProvider extends FabricBlockLootTableProvi
         addPottedPlantDrops(flowerPotBlock);
         addDrop(flowerPotBlock.getContent());
     }
-
-
 }
