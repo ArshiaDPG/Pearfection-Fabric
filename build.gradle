@@ -139,7 +139,7 @@ unifiedPublishing {
   <li>Callery Leaves can now only be bonemealed when the block below them is air.</li>
   <li>Growing lampears out of leaves now shows the particles in the correct place.</li>
 </ul> '''
-        releaseType = "beta" // Optional, use "release", "beta" or "alpha"
+        releaseType = "release" // Optional, use "release", "beta" or "alpha"
         gameVersions = ["${project.minecraft_version}"]
         gameLoaders = ["fabric"]
 
