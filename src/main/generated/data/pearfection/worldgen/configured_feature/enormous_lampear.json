@@ -20,17 +20,6 @@
       "entries": [
         {
           "data": {
-            "Name": "pearfection:flowering_callery_leaves",
-            "Properties": {
-              "distance": "7",
-              "persistent": "false",
-              "waterlogged": "false"
-            }
-          },
-          "weight": 1
-        },
-        {
-          "data": {
             "Name": "pearfection:callery_leaves",
             "Properties": {
               "distance": "7",
@@ -39,22 +28,23 @@
             }
           },
           "weight": 2
+        },
+        {
+          "data": {
+            "Name": "pearfection:flowering_callery_leaves",
+            "Properties": {
+              "distance": "7",
+              "persistent": "false",
+              "waterlogged": "false"
+            }
+          },
+          "weight": 1
         }
       ]
     },
     "fruit_provider": {
       "type": "minecraft:weighted_state_provider",
       "entries": [
-        {
-          "data": {
-            "Name": "pearfection:copper_lampear",
-            "Properties": {
-              "hanging": "true",
-              "waterlogged": "false"
-            }
-          },
-          "weight": 1
-        },
         {
           "data": {
             "Name": "pearfection:lampear",
@@ -64,6 +54,16 @@
             }
           },
           "weight": 200
+        },
+        {
+          "data": {
+            "Name": "pearfection:copper_lampear",
+            "Properties": {
+              "hanging": "true",
+              "waterlogged": "false"
+            }
+          },
+          "weight": 1
         }
       ]
     },

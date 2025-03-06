@@ -8,15 +8,13 @@ import net.minecraft.block.BlockState;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.util.collection.Pool;
 import net.minecraft.util.math.intprovider.IntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.ConfiguredFeatures;
 import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class PearConfiguredFeatures {
 
@@ -33,19 +31,18 @@ public class PearConfiguredFeatures {
     }
 
     public static HugeLampearFeatureConfig createDefaultConfig(IntProvider heightProvider){
-        Map<BlockState, Integer> LEAVES = new HashMap<>();
-        LEAVES.put(PearBlocks.CALLERY.getLeaves().getDefaultState(), 2);
-        LEAVES.put(PearBlocks.FLOWERING_CALLERY_LEAVES.getDefaultState(), 1);
-
-        Map<BlockState, Integer> FRUITS = new HashMap<>();
-        FRUITS.put(PearBlocks.LAMPEAR.getDefaultState().with(LampearBlock.HANGING, true), 200);
-        FRUITS.put(PearBlocks.COPPER_LAMPEAR.getDefaultState().with(LampearBlock.HANGING, true), 1);
+        Pool.Builder<BlockState> LEAVES = new Pool.Builder<BlockState>()
+                .add(PearBlocks.CALLERY.getLeaves().getDefaultState(), 2)
+                .add(PearBlocks.FLOWERING_CALLERY_LEAVES.getDefaultState(), 1);
+        Pool.Builder<BlockState> FRUITS = new Pool.Builder<BlockState>()
+                .add(PearBlocks.LAMPEAR.getDefaultState().with(LampearBlock.HANGING, true), 200)
+                .add(PearBlocks.COPPER_LAMPEAR.getDefaultState().with(LampearBlock.HANGING, true), 1);
 
         return new HugeLampearFeatureConfig(
                 SimpleBlockStateProvider.of(PearBlocks.CALLERY.getLog()),
-                HugeLampearFeatureConfig.convertToProvider(LEAVES),
+                new WeightedBlockStateProvider(LEAVES),
                 SimpleBlockStateProvider.of(PearBlocks.LAMPEAR_BLOCK),
-                HugeLampearFeatureConfig.convertToProvider(FRUITS),
+                new WeightedBlockStateProvider(FRUITS),
                 heightProvider
         );
     }
