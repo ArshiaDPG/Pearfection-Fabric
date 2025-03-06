@@ -122,7 +122,7 @@ unifiedPublishing {
     project {
         displayName = "${project.minecraft_version}-${project.mod_version}" // Optional, name of the file
         changelog = '''<ul>
-  <li>Enormous pears can now be grown on pale moss and glowing moss blocks (Biomes O' Plenty) as well.</li>
+  <li>Updated zh_cn translation, thanks to Don-Trueno.</li>
 </ul> '''
         releaseType = "release" // Optional, use "release", "beta" or "alpha"
         gameVersions = ["${project.minecraft_version}"]
