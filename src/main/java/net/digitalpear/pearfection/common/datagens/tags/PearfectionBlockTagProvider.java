@@ -9,6 +9,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -74,7 +75,8 @@ public class PearfectionBlockTagProvider extends FabricTagProvider<Block> {
                 .add(Blocks.FARMLAND);
 
         getOrCreateTagBuilder(PearBlockTags.ENORMOUS_PEAR_GROWABLE_ON)
-                .add(Blocks.MOSS_BLOCK);
+                .add(Blocks.MOSS_BLOCK)
+                .addOptional(Identifier.of("biomesoplenty", "glowing_moss_block"));
 
 
         /*

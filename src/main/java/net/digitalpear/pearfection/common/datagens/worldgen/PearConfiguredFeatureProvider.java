@@ -18,8 +18,8 @@ public class PearConfiguredFeatureProvider extends FabricDynamicRegistryProvider
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup registries, Entries entries) {
-        add(registries, entries, PearConfiguredFeatures.HUGE_PEAR);
-        add(registries, entries, PearConfiguredFeatures.ENORMOUS_PEAR);
+        add(registries, entries, PearConfiguredFeatures.HUGE_LAMPEAR);
+        add(registries, entries, PearConfiguredFeatures.ENORMOUS_LAMPEAR);
     }
     private void add(RegistryWrapper.WrapperLookup registries, Entries entries, RegistryKey<ConfiguredFeature<?, ?>> resourceKey) {
         RegistryWrapper.Impl<ConfiguredFeature<?, ?>> configuredFeatureRegistryLookup = registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE);

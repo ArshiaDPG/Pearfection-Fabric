@@ -1,10 +1,7 @@
 package net.digitalpear.pearfection.init;
 
 import net.digitalpear.pearfection.Pearfection;
-import net.digitalpear.pearfection.common.blocks.CallerySrpoutBlock;
-import net.digitalpear.pearfection.common.blocks.CalleryTwigBlock;
-import net.digitalpear.pearfection.common.blocks.CalleryVineBlock;
-import net.digitalpear.pearfection.common.blocks.LampearBlock;
+import net.digitalpear.pearfection.common.blocks.*;
 import net.digitalpear.pearfection.common.blocks.compat.PicketsBlock;
 import net.digitalpear.pearfection.init.data.PearFoodComponents;
 import net.digitalpear.pearfection.init.data.Woodset;
@@ -69,10 +66,10 @@ public class PearBlocks {
                     .sounds(PearSoundEvents.BLOCK_SOUND_PEAR)), PearFoodComponents.COPPER_LAMPEAR, Rarity.RARE);
 
 
-    public static final Block LAMPEAR_BLOCK = createBlockWithItem("lampear_block", new MushroomBlock(AbstractBlock.Settings.create()
+    public static final Block LAMPEAR_BLOCK = createBlockWithItem("lampear_block", new PearBaseBlock(AbstractBlock.Settings.create()
             .mapColor(state -> state.get(MushroomBlock.UP) ? calleryColor : MapColor.WHITE)
             .sounds(PearSoundEvents.BLOCK_SOUND_PEAR)
-            .strength(0.75f).luminance(state -> 10)));
+            .strength(0.75f).luminance(state -> 12)));
 
 
     public static final Woodset CALLERY = new Woodset("callery", calleryColor, callerySideColor, CALLERY_WOOD_TYPE);

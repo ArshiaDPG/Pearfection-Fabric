@@ -10,7 +10,7 @@
   "block.pearfection.callery_sign": "豆梨木告示牌",
   "block.pearfection.callery_slab": "豆梨木台阶",
   "block.pearfection.callery_sprout": "豆梨芽",
-  "block.pearfection.callery_stairs": "豆梨楼梯",
+  "block.pearfection.callery_stairs": "豆梨木楼梯",
   "block.pearfection.callery_stem": "豆梨茎",
   "block.pearfection.callery_trapdoor": "豆梨木活板门",
   "block.pearfection.callery_twig": "豆梨枝",
@@ -26,6 +26,7 @@
   "block.pearfection.stripped_callery_wood": "去皮豆梨木",
   "item.pearfection.callery_boat": "豆梨木船",
   "item.pearfection.callery_chest_boat": "豆梨木运输船",
+  "item.pearfection.callery_hanging_sign": "悬挂式豆梨木告示牌",
   "item.pearfection.pear_tart": "灯梨馅饼",
   "subtitles.block.pear.step": "脚步声"
 }

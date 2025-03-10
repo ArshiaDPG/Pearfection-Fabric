@@ -35,8 +35,8 @@ public class CalleryVineBlock extends TallPlantBlock implements Fertilizable {
     }
     public CalleryVineBlock(Settings settings) {
         super(settings.ticksRandomly());
-        this.hugePear = PearConfiguredFeatures.HUGE_PEAR;
-        this.enormousPear = PearConfiguredFeatures.ENORMOUS_PEAR;
+        this.hugePear = PearConfiguredFeatures.HUGE_LAMPEAR;
+        this.enormousPear = PearConfiguredFeatures.ENORMOUS_LAMPEAR;
     }
 
 

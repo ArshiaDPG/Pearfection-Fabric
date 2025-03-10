@@ -1,0 +1,87 @@
+{
+  "type": "pearfection:huge_lampear",
+  "config": {
+    "base_block_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "pearfection:lampear_block",
+        "Properties": {
+          "down": "true",
+          "east": "true",
+          "north": "true",
+          "south": "true",
+          "up": "true",
+          "west": "true"
+        }
+      }
+    },
+    "foliage_provider": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "pearfection:callery_leaves",
+            "Properties": {
+              "distance": "7",
+              "persistent": "false",
+              "waterlogged": "false"
+            }
+          },
+          "weight": 2
+        },
+        {
+          "data": {
+            "Name": "pearfection:flowering_callery_leaves",
+            "Properties": {
+              "distance": "7",
+              "persistent": "false",
+              "waterlogged": "false"
+            }
+          },
+          "weight": 1
+        }
+      ]
+    },
+    "fruit_provider": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "pearfection:lampear",
+            "Properties": {
+              "hanging": "true",
+              "waterlogged": "false"
+            }
+          },
+          "weight": 200
+        },
+        {
+          "data": {
+            "Name": "pearfection:copper_lampear",
+            "Properties": {
+              "hanging": "true",
+              "waterlogged": "false"
+            }
+          },
+          "weight": 1
+        }
+      ]
+    },
+    "fruit_spawn_chance": 0.2,
+    "height_provider": {
+      "type": "minecraft:uniform",
+      "max_inclusive": 4,
+      "min_inclusive": 3
+    },
+    "max_grow_through_hardness": 1.4,
+    "stem_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "pearfection:callery_stem",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    }
+  }
+}

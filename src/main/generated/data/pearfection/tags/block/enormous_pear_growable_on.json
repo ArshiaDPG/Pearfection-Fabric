@@ -1,5 +1,9 @@
 {
   "values": [
-    "minecraft:moss_block"
+    "minecraft:moss_block",
+    {
+      "id": "biomesoplenty:glowing_moss_block",
+      "required": false
+    }
   ]
 }

@@ -6,6 +6,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Fertilizable;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.fluid.FluidState;
+import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.server.world.ServerWorld;
@@ -34,6 +35,7 @@ public class CalleryLeavesBlock extends LeavesBlock implements Fertilizable {
     public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         world.setBlockState(pos, updateDistanceFromLogs(state, world, pos), 3);
     }
+
     private static BlockState updateDistanceFromLogs(BlockState state, WorldAccess world, BlockPos pos) {
         int i = 7;
         BlockPos.Mutable mutable = new BlockPos.Mutable();
@@ -49,6 +51,7 @@ public class CalleryLeavesBlock extends LeavesBlock implements Fertilizable {
 
         return state.with(DISTANCE, i);
     }
+
     private static int getDistanceFromLog(BlockState state) {
         return getOptionalDistanceFromLog(state).orElse(7);
     }
@@ -62,12 +65,22 @@ public class CalleryLeavesBlock extends LeavesBlock implements Fertilizable {
     }
 
     @Override
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        return updateDistanceFromLogs(super.getPlacementState(ctx), ctx.getWorld(), ctx.getBlockPos());
+    }
+
+    @Override
     public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state) {
-        return true;
+        return this.bearsFruit && world.getBlockState(pos.down()).isAir();
     }
 
     public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
-        return this.bearsFruit && world.getBlockState(pos.down()).isAir();
+        return true;
+    }
+
+    @Override
+    public BlockPos getFertilizeParticlePos(BlockPos pos) {
+        return pos.down();
     }
 
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {

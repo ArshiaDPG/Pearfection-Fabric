@@ -29,6 +29,10 @@ public class PearData {
         instance.add(PearBlocks.CALLERY_FENCE_GATE, 5, 20);
         instance.add(PearBlocks.CALLERY_LEAVES, 30, 60);
         instance.add(PearBlocks.FLOWERING_CALLERY_LEAVES, 35, 55);
+
+        instance.add(PearBlocks.CALLERY_TWIG, 30, 40);
+        instance.add(PearBlocks.CALLERY_SPROUT, 30, 40);
+        instance.add(PearBlocks.CALLERY_VINE, 30, 40);
     }
 
     public static void registerStrippables(){
@@ -56,7 +60,7 @@ public class PearData {
         CompostingChanceRegistry.INSTANCE.add(PearBlocks.LAMPEAR_BLOCK, 0.85F);
 
         CompostingChanceRegistry.INSTANCE.add(PearBlocks.LAMPEAR, 0.65F);
-        CompostingChanceRegistry.INSTANCE.add(PearBlocks.COPPER_LAMPEAR, 0.65F);
+        CompostingChanceRegistry.INSTANCE.add(PearBlocks.COPPER_LAMPEAR, 1F);
     }
 
 
@@ -73,11 +77,9 @@ public class PearData {
             I'd recommend using this method if you want to add new drops quickly.
          */
         LootTableEvents.MODIFY.register((key, tableBuilder, source) -> {
-            if (source.isBuiltin() && LootTables.SNIFFER_DIGGING_GAMEPLAY.equals(key)) {
+            if (LootTables.SNIFFER_DIGGING_GAMEPLAY.equals(key)) {
                 tableBuilder.modifyPools(builder -> builder.with(ItemEntry.builder(PearBlocks.CALLERY_TWIG)));
             }
         });
-
-
     }
 }

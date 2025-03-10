@@ -126,10 +126,25 @@ unifiedPublishing {
     project {
         displayName = "${project.minecraft_version}-${project.mod_version}" // Optional, name of the file
         changelog = '''<ul>
-  <li>Fixed callery signs replacing the Acacia Wall Sign loot tables.</li>
+  <li>Fixed Callery Twigs not being added to the sniffer loot table if another mod adds seeds using the same method.</li>
+  <li>Enormous pear generation has been changed.</li>
+  <li>Updated zh_cn translation, thanks to Don-Trueno.</li>
+  <li>Renamed Huge Pears to Huge Lampears.</li>
+  <li>Renamed Enormous Pears to Enormous Lampears.</li>
+  <li>Rewrote the generation code to be more intuitive and customizable.</li>
+  <li>Copper Lampears are now better for composting.</li>
+  <li>Copper Lampears will now very rarely generate instead of lampears in features.</li>
+  <li>Callery twigs, sprouts and vines are now flammable.</li>
+  <li>Enormous pear growth will now fail if the 3x10x3 space above it is not air.</li>
+  <li>Added "max_grow_through_hardness" field to pear features to control the max hardness the feature can replace.</li>
+  <li>Fixed Callery Leaves not being properly supported by Lampear Blocks when placed by hand until being updated.</li>
+  <li>Increased luminance of Lampear Block.</li>
+  <li>Lampear Blocks can now be stripped using an axe to peel off the skin of any side.</li>
+  <li>Callery Leaves can now only be bonemealed when the block below them is air.</li>
+  <li>Growing lampears out of leaves now shows the particles in the correct place.</li>
 </ul> '''
         releaseType = "release" // Optional, use "release", "beta" or "alpha"
-        gameVersions = ["${project.minecraft_version}"]
+        gameVersions = ["${project.minecraft_version}", "1.21.1"]
         gameLoaders = ["fabric"]
 
         mainPublication tasks.remapJar // Declares the publicated jar
