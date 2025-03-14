@@ -4,18 +4,22 @@ import net.digitalpear.pearfection.init.PearBlocks;
 import net.digitalpear.pearfection.init.tags.PearBlockTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.hecco.bountifulfares.registry.tags.BFBlockTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
-public class PearfectionBlockTagProvider extends FabricTagProvider<Block> {
+public class PearfectionBlockTagProvider extends FabricTagProvider.BlockTagProvider {
+
+
     public PearfectionBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
-        super(output, Registries.BLOCK.getKey(), registriesFuture);
+        super(output, registriesFuture);
     }
 
     @Override
@@ -78,10 +82,6 @@ public class PearfectionBlockTagProvider extends FabricTagProvider<Block> {
                 .add(Blocks.MOSS_BLOCK)
                 .addOptional(Identifier.of("biomesoplenty", "glowing_moss_block"));
 
-
-        /*
-            COMPAT
-         */
-        getOrCreateTagBuilder(PearBlockTags.PICKETS).add(PearBlocks.CALLERY_PICKETS);
+        getOrCreateTagBuilder(BFBlockTags.PICKETS).addOptional(Registries.BLOCK.getId(PearBlocks.CALLERY_PICKETS));
     }
 }

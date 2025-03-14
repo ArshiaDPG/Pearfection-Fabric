@@ -1,7 +1,6 @@
 package net.digitalpear.pearfection;
 
 import net.digitalpear.pearfection.common.datagens.*;
-import net.digitalpear.pearfection.common.datagens.tags.PearfectionBiomeTagProvider;
 import net.digitalpear.pearfection.common.datagens.tags.PearfectionBlockTagProvider;
 import net.digitalpear.pearfection.common.datagens.tags.PearfectionItemTagProvider;
 import net.digitalpear.pearfection.common.datagens.worldgen.PearConfiguredFeatureProvider;
@@ -24,7 +23,6 @@ public class PearfectionDatagens implements DataGeneratorEntrypoint {
 
         fabricDataGenerator.createPack().addProvider(PearfectionBlockTagProvider::new);
         fabricDataGenerator.createPack().addProvider(PearfectionItemTagProvider::new);
-        fabricDataGenerator.createPack().addProvider(PearfectionBiomeTagProvider::new);
     }
 
     @Override

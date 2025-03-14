@@ -8,6 +8,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
@@ -24,9 +25,13 @@ public class PearfectionClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
-                PearBlocks.LAMPEAR, PearBlocks.COPPER_LAMPEAR, PearBlocks.CALLERY_PICKETS,
+                PearBlocks.LAMPEAR, PearBlocks.COPPER_LAMPEAR,
                 PearBlocks.CALLERY_TWIG, PearBlocks.CALLERY_SPROUT, PearBlocks.CALLERY_VINE,
                 PearBlocks.POTTED_CALLERY_TWIG, PearBlocks.POTTED_CALLERY_SPROUT);
+
+        if (FabricLoader.getInstance().isModLoaded(Pearfection.BOUNTIFUL_FARES_MOD_ID)){
+            BlockRenderLayerMap.INSTANCE.putBlock(PearBlocks.CALLERY_PICKETS, RenderLayer.getCutout());
+        }
 
         TerraformBoatClientHelper.registerModelLayers(Pearfection.id("callery"), false);
     }

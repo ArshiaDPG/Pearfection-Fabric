@@ -5,8 +5,12 @@ import net.digitalpear.pearfection.init.PearItems;
 import net.digitalpear.pearfection.init.tags.PearItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.hecco.bountifulfares.datagen.bountifulfares.BFRecipeProvider;
 import net.minecraft.block.Block;
-import net.minecraft.data.server.recipe.*;
+import net.minecraft.data.server.recipe.RecipeExporter;
+import net.minecraft.data.server.recipe.RecipeProvider;
+import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
@@ -15,7 +19,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
-import java.util.function.Consumer;
 
 public class PearRecipeProvider extends FabricRecipeProvider {
 
@@ -62,12 +65,7 @@ public class PearRecipeProvider extends FabricRecipeProvider {
                 .pattern("LHL")
                 .criterion(hasItem(PearBlocks.CALLERY_PICKETS), conditionsFromItem(PearBlocks.CALLERY_PICKETS)).offerTo(exporter);
 
-//        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, PearBlocks.CALLERY_PICKETS)
-//                .input('S', Items.STICK)
-//                .input('P', PearBlocks.CALLERY_PLANKS)
-//                .pattern("PSP")
-//                .criterion(hasItem(PearBlocks.CALLERY_PICKETS), conditionsFromItem(PearBlocks.CALLERY_PICKETS)).offerTo(exporter);
-
+        BFRecipeProvider.offerPicketsRecipe(exporter, PearBlocks.CALLERY_PICKETS, PearBlocks.CALLERY_PLANKS);
     }
 
     public static void makeRecipes(RecipeExporter exporter, Block planks, Block stairs, Block slab, Block fence, Block fenceGate, Block door, Block trapdoor, Block button, Block pressurePlate, ItemConvertible sign){

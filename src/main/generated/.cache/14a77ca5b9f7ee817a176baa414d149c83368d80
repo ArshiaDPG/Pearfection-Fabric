@@ -1,9 +1,9 @@
-// 1.21	2025-03-09T21:48:28.1548125	Pearfection/Tags for minecraft:block
+// 1.21	2025-03-13T21:06:36.6871848	Pearfection/Tags for minecraft:block
 251a85828e277287b71e1bf03f97a9703e2e0d71 data\minecraft\tags\block\wooden_pressure_plates.json
 e59412c4fda100b5bd8d3b30858c49bd57580e3e data\minecraft\tags\block\wall_signs.json
 a31c90e8857832747224c1474ded3612ec6a95b5 data\pearfection\tags\block\pear_growable_on.json
-0c4fe5195095039143d7c2d08b4fa24d0885893e data\minecraft\tags\block\wall_hanging_signs.json
 34977700b6e07db1cc713b1d4f3d5c5d45fb4e94 data\minecraft\tags\block\ceiling_hanging_signs.json
+0c4fe5195095039143d7c2d08b4fa24d0885893e data\minecraft\tags\block\wall_hanging_signs.json
 19b65b7f983a8ccfed43ebe1a599d9e04b4dd53b data\pearfection\tags\block\enormous_pear_growable_on.json
 c85eac7d64749be3f415c7384e2e18e8572199bc data\minecraft\tags\block\fence_gates.json
 d506a5907facfe5b08a426d9d64038e63136cfbf data\minecraft\tags\block\mineable\hoe.json
@@ -14,7 +14,7 @@ d506a5907facfe5b08a426d9d64038e63136cfbf data\minecraft\tags\block\mineable\hoe.
 7b3672a276a53958a3e60852a042d7257ed666f0 data\pearfection\tags\block\huge_pear_cannot_replace.json
 0af01a60c874a551c607c93ad8f482f6ad295dd8 data\minecraft\tags\block\buttons.json
 0cd899ab06b2a7473b0252a387dd06cb5881e61d data\minecraft\tags\block\leaves.json
-ebe78255e27c4646c26a87664716436a053984a1 data\bountifulfares\tags\block\pickets.json
+61e5aa63c403a3590e20733832fc3e33cf189177 data\bountifulfares\tags\block\pickets.json
 a3939c04a72b23c4b9a02d889d1de65425dfbc45 data\minecraft\tags\block\wooden_slabs.json
 5ecf5c065890c61d92374bd664666433d50e9ccc data\pearfection\tags\block\callery_stems.json
 22000d5f6c318ac9df2868a77280c06d526dfa0f data\minecraft\tags\block\occludes_vibration_signals.json

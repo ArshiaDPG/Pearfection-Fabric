@@ -6,6 +6,7 @@ import net.digitalpear.pearfection.init.PearBlocks;
 import net.digitalpear.pearfection.init.PearItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.hecco.bountifulfares.datagen.bountifulfares.BFTemplateModels;
 import net.minecraft.block.Block;
 import net.minecraft.data.client.*;
 import net.minecraft.registry.Registries;
@@ -57,8 +58,7 @@ public class PearfectionModelProvider extends FabricModelProvider {
         /*
             MOD COMPAT BLOCKS
          */
-        registerPicketsModels(blockStateModelGenerator, PearBlocks.CALLERY_PICKETS);
-
+        BFTemplateModels.registerPicketsModels(blockStateModelGenerator, PearBlocks.CALLERY_PICKETS);
     }
 
     public static void makeStuff(BlockStateModelGenerator blockStateModelGenerator, Block planks, Block stairs, Block slab, Block fence, Block fenceGate, Block button, Block pressurePlate){
@@ -105,51 +105,6 @@ public class PearfectionModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerParentedItemModel(pearBlock, TexturedModel.CUBE_ALL.upload(pearBlock, "_inventory", blockStateModelGenerator.modelCollector));
     }
 
-    public final void registerPicketsModels(BlockStateModelGenerator blockStateModelGenerator, Block picket){
-        Identifier modelID = PICKET_BASE.upload(picket, TextureMap.texture(picket), blockStateModelGenerator.modelCollector);
-        blockStateModelGenerator.blockStateCollector.accept(MultipartBlockStateSupplier.create(picket)
-                .with(When.create().set(PicketsBlock.NORTH, true),
-                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID))
-                .with(When.create()
-                    .set(PicketsBlock.NORTH, false)
-                    .set(PicketsBlock.SOUTH, false)
-                    .set(PicketsBlock.EAST, false)
-                    .set(PicketsBlock.WEST, false),
-                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID))
-
-
-                .with(When.create().set(PicketsBlock.EAST, true),
-                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID).put(VariantSettings.Y, VariantSettings.Rotation.R90))
-                .with(When.create()
-                    .set(PicketsBlock.NORTH, false)
-                    .set(PicketsBlock.SOUTH, false)
-                    .set(PicketsBlock.EAST, false)
-                    .set(PicketsBlock.WEST, false),
-                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID).put(VariantSettings.Y, VariantSettings.Rotation.R90))
-
-
-                .with(When.create().set(PicketsBlock.SOUTH, true),
-                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID).put(VariantSettings.Y, VariantSettings.Rotation.R180))
-                .with(When.create()
-                    .set(PicketsBlock.NORTH, false)
-                    .set(PicketsBlock.SOUTH, false)
-                    .set(PicketsBlock.EAST, false)
-                    .set(PicketsBlock.WEST, false),
-                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID).put(VariantSettings.Y, VariantSettings.Rotation.R180))
-
-
-                .with(When.create().set(PicketsBlock.WEST, true),
-                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID).put(VariantSettings.Y, VariantSettings.Rotation.R270))
-                .with(When.create()
-                    .set(PicketsBlock.NORTH, false)
-                    .set(PicketsBlock.SOUTH, false)
-                    .set(PicketsBlock.EAST, false)
-                    .set(PicketsBlock.WEST, false),
-                        BlockStateVariant.create().put(VariantSettings.MODEL, modelID).put(VariantSettings.Y, VariantSettings.Rotation.R270))
-
-        );
-        Models.GENERATED.upload(ModelIds.getItemModelId(picket.asItem()), TextureMap.layer0(getItemId(picket)), blockStateModelGenerator.modelCollector);
-    }
 
 
 
