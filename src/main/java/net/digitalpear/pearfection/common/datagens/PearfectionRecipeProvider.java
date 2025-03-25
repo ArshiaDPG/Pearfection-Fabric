@@ -58,7 +58,6 @@ public class PearfectionRecipeProvider extends FabricRecipeProvider {
                     .input(Items.BREAD)
                     .criterion(hasItem(PearBlocks.LAMPEAR), conditionsFromItem(PearBlocks.LAMPEAR)).offerTo(exporter);
 
-
             ShapedRecipeJsonBuilder.create(lookup, RecipeCategory.FOOD, PearBlocks.COPPER_LAMPEAR)
                     .input('L', Items.COPPER_BLOCK)
                     .input('P', PearBlocks.LAMPEAR)

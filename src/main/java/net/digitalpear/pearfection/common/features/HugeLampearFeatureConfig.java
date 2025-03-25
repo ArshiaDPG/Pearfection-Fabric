@@ -45,13 +45,4 @@ public class HugeLampearFeatureConfig implements FeatureConfig {
     public HugeLampearFeatureConfig(BlockStateProvider trunkProviders, BlockStateProvider foliageProviders, BlockStateProvider baseBlockProviders, BlockStateProvider fruitProviders, IntProvider height) {
         this(trunkProviders, foliageProviders, baseBlockProviders, fruitProviders, height, ConstantFloatProvider.create(1.4f), ConstantFloatProvider.create(0.2f));
     }
-
-    public static WeightedBlockStateProvider convertToProvider(Map<BlockState, Integer> map){
-        return new WeightedBlockStateProvider(convertToPool(map));
-    }
-    public static Pool<BlockState> convertToPool(Map<BlockState, Integer> map){
-        Pool.Builder<BlockState> pool = Pool.builder();
-        map.forEach(pool::add);
-        return pool.build();
-    }
 }

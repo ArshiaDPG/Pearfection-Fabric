@@ -85,12 +85,7 @@ public class HugeLampearFeature extends Feature<HugeLampearFeatureConfig> {
 
         Direction turnDirection = getRandomHorizontalDirection(random, Direction.UP, Direction.DOWN);
 
-
-
-
         Map<Iterable<BlockPos>, BlockState> PLACEMENTS = new HashMap<>();
-
-
 
         /*
             Collect stems and place foliage

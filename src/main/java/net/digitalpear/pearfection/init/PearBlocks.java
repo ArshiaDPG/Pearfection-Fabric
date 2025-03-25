@@ -42,14 +42,12 @@ public class PearBlocks {
         return AbstractBlock.Settings.create().nonOpaque().strength(0.5f, 0.1f).mapColor(calleryColor).sounds(PearSoundEvents.BLOCK_SOUND_PEAR);
     }
 
-    public static Block createLampear(String name, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings, FoodComponent foodComponent, ConsumableComponent component, Rarity rarity){
+    public static Block createLampear(String name, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings, Item.Settings itemSettings){
         Block block = createLampearWithoutItem(name, factory, settings);
-        createBlockItem(block, new Item.Settings().food(foodComponent, component).rarity(rarity));
+        createBlockItem(block, itemSettings);
         return block;
     }
-    public static Block createLampear(String name, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings, FoodComponent foodComponent, ConsumableComponent component){
-        return createLampear(name, factory, settings, foodComponent, component, Rarity.COMMON);
-    }
+
     public static Block createLampearWithoutItem(String name, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings){
         return Blocks.register(keyOf(name), factory, settings);
     }
@@ -59,7 +57,7 @@ public class PearBlocks {
 
     public static final Block CALLERY_VINE = createBlockWithItem("callery_vine", CalleryVineBlock::new, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING).sounds(BlockSoundGroup.CHERRY_SAPLING).offset(AbstractBlock.OffsetType.XZ).mapColor(MapColor.EMERALD_GREEN));
 
-    public static final Block CALLERY_SPROUT = createBlockWithItem("callery_sprout", CallerySrpoutBlock::new, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING).sounds(BlockSoundGroup.CHERRY_SAPLING).offset(AbstractBlock.OffsetType.XZ).mapColor(MapColor.EMERALD_GREEN));
+    public static final Block CALLERY_SPROUT = createBlockWithItem("callery_sprout", CallerySproutBlock::new, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING).sounds(BlockSoundGroup.CHERRY_SAPLING).offset(AbstractBlock.OffsetType.XZ).mapColor(MapColor.EMERALD_GREEN));
     public static final Block POTTED_CALLERY_SPROUT = createBlockWithoutItem("potted_callery_sprout", settings -> new FlowerPotBlock(CALLERY_SPROUT, settings), AbstractBlock.Settings.copy(Blocks.POTTED_ACACIA_SAPLING));
 
     public static final Block CALLERY_TWIG = createBlockWithItem("callery_twig", CalleryTwigBlock::new, AbstractBlock.Settings.copy(Blocks.DEAD_BUSH).offset(AbstractBlock.OffsetType.XZ).mapColor(MapColor.BROWN));
@@ -67,12 +65,11 @@ public class PearBlocks {
 
     public static final Block LAMPEAR = createLampear("lampear", LampearBlock::new,
             createLampearSettings().luminance((state) -> 8),
-            PearFoodComponents.LAMPEAR, PearConsumableComponents.LAMPEAR);
+            new Item.Settings().food(PearFoodComponents.LAMPEAR, PearConsumableComponents.LAMPEAR));
 
     public static final Block COPPER_LAMPEAR = createLampear("copper_lampear", LampearBlock::new,
             createLampearSettings().luminance((state) -> 14).strength(0.7f, 0.3f).mapColor(Blocks.COPPER_BLOCK.getDefaultMapColor()),
-            PearFoodComponents.COPPER_LAMPEAR, PearConsumableComponents.COPPER_LAMPEAR, Rarity.RARE);
-
+            new Item.Settings().food(PearFoodComponents.COPPER_LAMPEAR, PearConsumableComponents.COPPER_LAMPEAR));
 
     public static final Block LAMPEAR_BLOCK = createBlockWithItem("lampear_block", PearBaseBlock::new, AbstractBlock.Settings.create()
             .mapColor(state -> state.get(MushroomBlock.UP) ? calleryColor : MapColor.WHITE)

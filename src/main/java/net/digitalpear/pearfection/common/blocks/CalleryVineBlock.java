@@ -1,5 +1,6 @@
 package net.digitalpear.pearfection.common.blocks;
 
+import com.mojang.serialization.MapCodec;
 import net.digitalpear.pearfection.init.PearConfiguredFeatures;
 import net.digitalpear.pearfection.init.tags.PearBlockTags;
 import net.minecraft.block.*;
@@ -81,21 +82,18 @@ public class CalleryVineBlock extends TallPlantBlock implements Fertilizable {
                 break;
             }
         }
-
         if (hasSpaceForEnormous && dirt.isIn(PearBlockTags.ENORMOUS_PEAR_GROWABLE_ON)){
-            world.getRegistryManager().getOptional(RegistryKeys.CONFIGURED_FEATURE).flatMap((registry) -> {
-                return registry.getOptional(enormousPear);
-            }).ifPresent((entry) -> {
-                entry.value().generate(world, world.getChunkManager().getChunkGenerator(), random, startingPos);
-            });
+            spawnFeature(enormousPear, world, random, startingPos);
         }
         else{
-            world.getRegistryManager().getOptional(RegistryKeys.CONFIGURED_FEATURE).flatMap((registry) -> {
-                return registry.getOptional(hugePear);
-            }).ifPresent((entry) -> {
-                entry.value().generate(world, world.getChunkManager().getChunkGenerator(), random, startingPos);
-            });
+            spawnFeature(hugePear, world, random, startingPos);
         }
-
+    }
+    private void spawnFeature(RegistryKey<ConfiguredFeature<?, ?>> key, ServerWorld world, Random random, BlockPos startingPos){
+        world.getRegistryManager().getOptional(RegistryKeys.CONFIGURED_FEATURE).flatMap((registry) -> {
+            return registry.getOptional(key);
+        }).ifPresent((entry) -> {
+            entry.value().generate(world, world.getChunkManager().getChunkGenerator(), random, startingPos);
+        });
     }
 }

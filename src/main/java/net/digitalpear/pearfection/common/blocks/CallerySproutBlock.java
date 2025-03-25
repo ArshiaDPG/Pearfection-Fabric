@@ -14,15 +14,15 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 
 
-public class CallerySrpoutBlock extends PlantBlock implements Fertilizable {
+public class CallerySproutBlock extends PlantBlock implements Fertilizable {
 
     protected static final VoxelShape SHAPE = Block.createCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 12.0D, 14.0D);
 
-    public CallerySrpoutBlock(Settings settings) {
+    public CallerySproutBlock(Settings settings) {
         super(settings);
     }
 
-    public static final MapCodec<CallerySrpoutBlock> CODEC = createCodec(CallerySrpoutBlock::new);
+    public static final MapCodec<CallerySproutBlock> CODEC = createCodec(CallerySproutBlock::new);
     @Override
     protected MapCodec<? extends PlantBlock> getCodec() {
         return CODEC;
@@ -43,7 +43,6 @@ public class CallerySrpoutBlock extends PlantBlock implements Fertilizable {
         Vec3d vec3d = state.getModelOffset(pos);
         return SHAPE.offset(vec3d.x, vec3d.y, vec3d.z);
     }
-
 
     @Override
     public boolean canReplace(BlockState state, ItemPlacementContext context) {

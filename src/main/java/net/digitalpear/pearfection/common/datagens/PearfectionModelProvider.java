@@ -7,8 +7,7 @@ import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.block.Block;
 import net.minecraft.client.data.*;
-import net.minecraft.client.render.model.json.MultipartModelConditionBuilder;
-import net.minecraft.client.render.model.json.WeightedUnbakedModel;
+import net.minecraft.client.render.model.json.WeightedVariant;
 import net.minecraft.registry.Registries;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
@@ -21,8 +20,6 @@ public class PearfectionModelProvider extends FabricModelProvider {
      */
     public static final Model LAMPEAR_BASE = block("lampear_base", TextureKey.ALL);
     public static final Model LAMPEAR_HANGING_BASE = block("lampear_hanging_base", TextureKey.ALL);
-
-    public static final Model PICKET_BASE = block(Identifier.of("bountifulfares", "template_pickets"), TextureKey.TEXTURE);
 
     public PearfectionModelProvider(FabricDataOutput output) {
         super(output);
@@ -54,12 +51,6 @@ public class PearfectionModelProvider extends FabricModelProvider {
 
         registerPearBlock(blockStateModelGenerator, PearBlocks.LAMPEAR_BLOCK);
 
-
-        /*
-            MOD COMPAT BLOCKS
-         */
-//        registerPicketsModels(blockStateModelGenerator, PearBlocks.CALLERY_PICKETS);
-
     }
 
     @Override
@@ -71,8 +62,8 @@ public class PearfectionModelProvider extends FabricModelProvider {
         USE BASE MODELS TO GENERATE MODELS
      */
     public static void registerLantern(BlockStateModelGenerator blockStateModelGenerator, Block lantern){
-        WeightedUnbakedModel HANGING = BlockStateModelGenerator.createModel(LAMPEAR_HANGING_BASE.upload(lantern, "_hanging", TextureMap.all(lantern), blockStateModelGenerator.modelCollector));
-        WeightedUnbakedModel STANDING = BlockStateModelGenerator.createModel(LAMPEAR_BASE.upload(lantern, TextureMap.all(lantern), blockStateModelGenerator.modelCollector));
+        WeightedVariant HANGING = BlockStateModelGenerator.createWeightedVariant(LAMPEAR_HANGING_BASE.upload(lantern, "_hanging", TextureMap.all(lantern), blockStateModelGenerator.modelCollector));
+        WeightedVariant STANDING = BlockStateModelGenerator.createWeightedVariant(LAMPEAR_BASE.upload(lantern, TextureMap.all(lantern), blockStateModelGenerator.modelCollector));
 
         blockStateModelGenerator.registerItemModel(lantern.asItem());
         blockStateModelGenerator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(lantern)
@@ -80,8 +71,8 @@ public class PearfectionModelProvider extends FabricModelProvider {
     }
 
     public static void registerPearBlock(BlockStateModelGenerator blockStateModelGenerator, Block pearBlock) {
-        WeightedUnbakedModel outerID = BlockStateModelGenerator.createModel(Models.TEMPLATE_SINGLE_FACE.upload(pearBlock, TextureMap.texture(pearBlock), blockStateModelGenerator.modelCollector));
-        WeightedUnbakedModel insideID = BlockStateModelGenerator.createModel(Models.TEMPLATE_SINGLE_FACE.upload(pearBlock, "_inside", TextureMap.texture(getId(pearBlock, "_inside")), blockStateModelGenerator.modelCollector));
+        WeightedVariant outerID = BlockStateModelGenerator.createWeightedVariant(Models.TEMPLATE_SINGLE_FACE.upload(pearBlock, TextureMap.texture(pearBlock), blockStateModelGenerator.modelCollector));
+        WeightedVariant insideID = BlockStateModelGenerator.createWeightedVariant(Models.TEMPLATE_SINGLE_FACE.upload(pearBlock, "_inside", TextureMap.texture(getId(pearBlock, "_inside")), blockStateModelGenerator.modelCollector));
         blockStateModelGenerator.blockStateCollector.accept(MultipartBlockModelDefinitionCreator.create(pearBlock)
                 .with(BlockStateModelGenerator.createMultipartConditionBuilder().put(Properties.NORTH, true), outerID)
                 .with(BlockStateModelGenerator.createMultipartConditionBuilder().put(Properties.EAST, true), outerID.apply(BlockStateModelGenerator.ROTATE_Y_90).apply(BlockStateModelGenerator.UV_LOCK))
