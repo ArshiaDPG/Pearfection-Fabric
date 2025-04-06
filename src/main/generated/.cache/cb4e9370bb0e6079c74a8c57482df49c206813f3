@@ -1,6 +1,8 @@
-// 1.21.5 Release Candidate 1	-999999999-01-01T00:00:00	Pearfection/Tags for minecraft:item
+// 1.21.5	-999999999-01-01T00:00:00	Pearfection/Tags for minecraft:item
 12068becf09784d6758e05c024b48cbac39616cd data/bountifulfares/tags/item/eatable_on_dish.json
-12068becf09784d6758e05c024b48cbac39616cd data/c/tags/item/fruits/pears.json
+12068becf09784d6758e05c024b48cbac39616cd data/c/tags/item/foods/fruit.json
+ded40eb4adf35c467acbd906ed3ddb9b6d4ce562 data/c/tags/item/stripped_logs.json
+a2cb76ca3d3388125cba8b337b352c12bacac86d data/c/tags/item/stripped_woods.json
 c85eac7d64749be3f415c7384e2e18e8572199bc data/minecraft/tags/item/fence_gates.json
 34977700b6e07db1cc713b1d4f3d5c5d45fb4e94 data/minecraft/tags/item/hanging_signs.json
 0cd899ab06b2a7473b0252a387dd06cb5881e61d data/minecraft/tags/item/leaves.json

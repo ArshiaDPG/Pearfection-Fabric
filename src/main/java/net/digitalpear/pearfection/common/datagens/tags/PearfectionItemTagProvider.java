@@ -4,6 +4,7 @@ import net.digitalpear.pearfection.init.PearBlocks;
 import net.digitalpear.pearfection.init.tags.PearItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryWrapper;
@@ -39,8 +40,11 @@ public class PearfectionItemTagProvider extends FabricTagProvider<Item> {
                 .add(PearBlocks.CALLERY.getLog().asItem()).add(PearBlocks.CALLERY.getStrippedLog().asItem())
                 .add(PearBlocks.CALLERY.getWood().asItem()).add(PearBlocks.CALLERY.getStrippedWood().asItem());
 
+        getOrCreateTagBuilder(ConventionalItemTags.STRIPPED_LOGS).add(PearBlocks.CALLERY.getStrippedLog().asItem());
+        getOrCreateTagBuilder(ConventionalItemTags.STRIPPED_WOODS).add(PearBlocks.CALLERY.getStrippedWood().asItem());
 
-        getOrCreateTagBuilder(PearItemTags.C_FRUITS_PEARS).add(PearBlocks.LAMPEAR.asItem()).add(PearBlocks.COPPER_LAMPEAR.asItem());
+        getOrCreateTagBuilder(ConventionalItemTags.FRUIT_FOODS).add(PearBlocks.LAMPEAR.asItem()).add(PearBlocks.COPPER_LAMPEAR.asItem());
+
         getOrCreateTagBuilder(PearItemTags.EATABLE_ON_DISH).add(PearBlocks.LAMPEAR.asItem()).add(PearBlocks.COPPER_LAMPEAR.asItem());
     }
 }
