@@ -163,7 +163,9 @@ public class Woodset {
         hangingSigns.addSupportedBlock(hangingSign);
         hangingSigns.addSupportedBlock(wallHangingSign);
 
-        registerWoodsetFlammables();
+        if (woodsetSettings.woodPreset != WoodPreset.NETHER){
+            registerWoodsetFlammables();
+        }
         registerFuels();
     }
 

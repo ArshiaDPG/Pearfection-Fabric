@@ -1,6 +1,7 @@
 package net.digitalpear.pearfection.init.data;
 
 import net.digitalpear.pearfection.init.PearBlocks;
+import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
@@ -15,16 +16,6 @@ public class PearData {
         instance.add(PearBlocks.CALLERY_TWIG, 30, 40);
         instance.add(PearBlocks.CALLERY_SPROUT, 30, 40);
         instance.add(PearBlocks.CALLERY_VINE, 30, 40);
-//        instance.add(PearBlocks.CALLERY.getLog(), 5, 5);
-//        instance.add(PearBlocks.CALLERY.getStrippedLog(), 5, 5);
-//        instance.add(PearBlocks.CALLERY.getWood(), 5, 5);
-//        instance.add(PearBlocks.CALLERY.getStrippedWood(), 5, 5);
-//        instance.add(PearBlocks.CALLERY.getPlanks(), 5, 15);
-//        instance.add(PearBlocks.CALLERY.getStairs(), 5, 20);
-//        instance.add(PearBlocks.CALLERY.getSlab(), 5, 20);
-//        instance.add(PearBlocks.CALLERY.getFence(), 5, 20);
-//        instance.add(PearBlocks.CALLERY.getFenceGate(), 5, 20);
-//        instance.add(PearBlocks.CALLERY.getLeaves(), 30, 60);
         instance.add(PearBlocks.FLOWERING_CALLERY_LEAVES, 35, 55);
     }
 
@@ -65,7 +56,7 @@ public class PearData {
             Adds the callery twig to the sniffers loot table (Adds to the existing pool instead of creating a new pool).
             I'd recommend using this method if you want to add new drops quickly.
          */
-        net.fabricmc.fabric.api.loot.v3.LootTableEvents.MODIFY.register((registryKey, builder, lootTableSource, wrapperLookup) -> {
+        LootTableEvents.MODIFY.register((registryKey, builder, lootTableSource, wrapperLookup) -> {
             if (lootTableSource.isBuiltin() && LootTables.SNIFFER_DIGGING_GAMEPLAY.equals(registryKey)) {
                 builder.modifyPools(builder1 -> builder1.with(ItemEntry.builder(PearBlocks.CALLERY_TWIG)));
             }
