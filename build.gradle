@@ -122,7 +122,8 @@ unifiedPublishing {
     project {
         displayName = "${project.minecraft_version}-${project.mod_version}" // Optional, name of the file
         changelog = '''<ul>
-  <li>Fixed broken tag entries.</li>
+  <li>Updated to 1.21.6.</li>
+  <li>Added Russian translation by PlayboyX312.</li>
 </ul> '''
         releaseType = "release" // Optional, use "release", "beta" or "alpha"
         gameVersions = ["${project.minecraft_version}"]
