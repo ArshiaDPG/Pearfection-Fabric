@@ -5,7 +5,6 @@ import net.digitalpear.pearfection.init.PearItems;
 import net.digitalpear.pearfection.init.tags.PearItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.hecco.bountifulfares.datagen.bountifulfares.BFRecipeProvider;
 import net.minecraft.block.Block;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.RecipeProvider;
@@ -63,9 +62,7 @@ public class PearRecipeProvider extends FabricRecipeProvider {
                 .pattern("LLL")
                 .pattern("LPL")
                 .pattern("LHL")
-                .criterion(hasItem(PearBlocks.CALLERY_PICKETS), conditionsFromItem(PearBlocks.CALLERY_PICKETS)).offerTo(exporter);
-
-        BFRecipeProvider.offerPicketsRecipe(exporter, PearBlocks.CALLERY_PICKETS, PearBlocks.CALLERY_PLANKS);
+                .criterion(hasItem(PearBlocks.LAMPEAR), conditionsFromItem(PearBlocks.LAMPEAR)).offerTo(exporter);
     }
 
     public static void makeRecipes(RecipeExporter exporter, Block planks, Block stairs, Block slab, Block fence, Block fenceGate, Block door, Block trapdoor, Block button, Block pressurePlate, ItemConvertible sign){

@@ -29,10 +29,6 @@ public class PearfectionClient implements ClientModInitializer {
                 PearBlocks.CALLERY_TWIG, PearBlocks.CALLERY_SPROUT, PearBlocks.CALLERY_VINE,
                 PearBlocks.POTTED_CALLERY_TWIG, PearBlocks.POTTED_CALLERY_SPROUT);
 
-        if (FabricLoader.getInstance().isModLoaded(Pearfection.BOUNTIFUL_FARES_MOD_ID)){
-            BlockRenderLayerMap.INSTANCE.putBlock(PearBlocks.CALLERY_PICKETS, RenderLayer.getCutout());
-        }
-
         TerraformBoatClientHelper.registerModelLayers(Pearfection.id("callery"), false);
     }
 }

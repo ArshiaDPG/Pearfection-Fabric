@@ -2,15 +2,11 @@ package net.digitalpear.pearfection.init;
 
 import net.digitalpear.pearfection.Pearfection;
 import net.digitalpear.pearfection.common.blocks.*;
-import net.digitalpear.pearfection.common.blocks.compat.PicketsBlock;
 import net.digitalpear.pearfection.init.data.PearFoodComponents;
 import net.digitalpear.pearfection.init.data.Woodset;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
-import net.fabricmc.loader.api.FabricLoader;
-import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.minecraft.block.*;
-import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -104,16 +100,6 @@ public class PearBlocks {
     public static final Block CALLERY_HANGING_SIGN = CALLERY.createHangingSign();
     public static final Block CALLERY_WALL_HANGING_SIGN = CALLERY.createWallHangingSign(CALLERY_HANGING_SIGN);
 
-    public static Block CALLERY_PICKETS;
-
-
     public static void init() {
-        if (FabricLoader.getInstance().isModLoaded(Pearfection.BOUNTIFUL_FARES_MOD_ID)){
-            CALLERY_PICKETS = createBlockWithItem("callery_pickets",
-                    new PicketsBlock(AbstractBlock.Settings.copy(BFBlocks.OAK_PICKETS)
-                            .mapColor(CALLERY.topColor())
-                            .sounds(CALLERY.woodType().soundType())
-                    ));
-        }
     }
 }

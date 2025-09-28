@@ -5,14 +5,9 @@ import net.digitalpear.pearfection.init.tags.PearItemTags;
 import net.digitalpear.pearfection.init.PearItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.hecco.bountifulfares.datagen.bountifulfares.BFBlockTagProvider;
-import net.hecco.bountifulfares.registry.tags.BFBlockTags;
-import net.hecco.bountifulfares.registry.tags.BFItemTags;
-import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -20,7 +15,7 @@ public class PearfectionItemTagProvider extends FabricTagProvider.ItemTagProvide
 
 
     public PearfectionItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture) {
-        super(output, completableFuture, new BFBlockTagProvider(output, completableFuture));
+        super(output, completableFuture, new PearfectionBlockTagProvider(output, completableFuture));
     }
 
     @Override
@@ -45,9 +40,6 @@ public class PearfectionItemTagProvider extends FabricTagProvider.ItemTagProvide
         getOrCreateTagBuilder(PearItemTags.CALLERY_STEMS)
                 .add(PearBlocks.CALLERY_STEM.asItem()).add(PearBlocks.STRIPPED_CALLERY_STEM.asItem())
                 .add(PearBlocks.CALLERY_WOOD.asItem()).add(PearBlocks.STRIPPED_CALLERY_WOOD.asItem());
-
-
-        getOrCreateTagBuilder(BFItemTags.PICKETS).addOptional(Registries.ITEM.getId(PearBlocks.CALLERY_PICKETS.asItem()));
 
         getOrCreateTagBuilder(PearItemTags.C_FRUITS_PEARS).add(PearBlocks.LAMPEAR.asItem()).add(PearBlocks.COPPER_LAMPEAR.asItem());
         getOrCreateTagBuilder(PearItemTags.EATABLE_ON_DISH).add(PearBlocks.LAMPEAR.asItem()).add(PearBlocks.COPPER_LAMPEAR.asItem());

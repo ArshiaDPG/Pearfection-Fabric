@@ -35,8 +35,6 @@ dependencies {
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     modImplementation include("com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}")
-
-    modApi "maven.modrinth:bountiful-fares:${project.bountifulfares}"
 }
 
 processResources {
@@ -126,8 +124,7 @@ unifiedPublishing {
     project {
         displayName = "${project.minecraft_version}-${project.mod_version}" // Optional, name of the file
         changelog = '''<ul>
-  <li>Fixed Callery Pickets recipes not working.</li>
-  <li>Fixed Callery Pickets not being in the pickets item tag.</li>
+  <li>Removed Bountiful Fares compat which was causing issues.</li>
 </ul> '''
         releaseType = "release" // Optional, use "release", "beta" or "alpha"
         gameVersions = ["${project.minecraft_version}", "1.21.1"]

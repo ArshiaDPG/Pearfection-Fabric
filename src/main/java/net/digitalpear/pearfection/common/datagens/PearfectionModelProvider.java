@@ -1,12 +1,10 @@
 package net.digitalpear.pearfection.common.datagens;
 
 import net.digitalpear.pearfection.Pearfection;
-import net.digitalpear.pearfection.common.blocks.compat.PicketsBlock;
 import net.digitalpear.pearfection.init.PearBlocks;
 import net.digitalpear.pearfection.init.PearItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.hecco.bountifulfares.datagen.bountifulfares.BFTemplateModels;
 import net.minecraft.block.Block;
 import net.minecraft.data.client.*;
 import net.minecraft.registry.Registries;
@@ -24,8 +22,6 @@ public class PearfectionModelProvider extends FabricModelProvider {
      */
     public static final Model LAMPEAR_BASE = block("lampear_base", TextureKey.ALL);
     public static final Model LAMPEAR_HANGING_BASE = block("lampear_hanging_base", TextureKey.ALL);
-
-    public static final Model PICKET_BASE = block(Identifier.of("bountifulfares", "template_pickets"), TextureKey.TEXTURE);
 
     private static Model block(String parent, TextureKey... requiredTextureKeys) {
         return new Model(Optional.of(Pearfection.id("block/" + parent)), Optional.empty(), requiredTextureKeys);
@@ -54,11 +50,6 @@ public class PearfectionModelProvider extends FabricModelProvider {
 
         registerPearBlock(blockStateModelGenerator, PearBlocks.LAMPEAR_BLOCK);
 
-
-        /*
-            MOD COMPAT BLOCKS
-         */
-        BFTemplateModels.registerPicketsModels(blockStateModelGenerator, PearBlocks.CALLERY_PICKETS);
     }
 
     public static void makeStuff(BlockStateModelGenerator blockStateModelGenerator, Block planks, Block stairs, Block slab, Block fence, Block fenceGate, Block button, Block pressurePlate){

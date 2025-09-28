@@ -17,7 +17,6 @@ public class PearSoundEvents {
             BLOCK_PEAR_BLOCK_PLACE, BLOCK_PEAR_BLOCK_HIT, BLOCK_PEAR_BLOCK_HIT);
 
 
-
     private static SoundEvent register(String id) {
         return Registry.register(Registries.SOUND_EVENT, Pearfection.id(id), SoundEvent.of(Pearfection.id(id)));
     }

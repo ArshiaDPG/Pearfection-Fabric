@@ -1,10 +1,9 @@
-// 1.21	2025-03-13T21:06:36.6781051	Pearfection/Tags for minecraft:item
+// 1.21	2025-09-28T00:41:54.6058704	Pearfection/Tags for minecraft:item
 f53ee2d2679288303b4e16cf985994c70795e008 data\minecraft\tags\item\planks.json
 23d7330332543780921f00ad202156d1231ce3a1 data\minecraft\tags\item\logs_that_burn.json
 34977700b6e07db1cc713b1d4f3d5c5d45fb4e94 data\minecraft\tags\item\hanging_signs.json
 5ecf5c065890c61d92374bd664666433d50e9ccc data\pearfection\tags\item\callery_stems.json
 12068becf09784d6758e05c024b48cbac39616cd data\c\tags\item\fruits\pears.json
-61e5aa63c403a3590e20733832fc3e33cf189177 data\bountifulfares\tags\item\pickets.json
 281b95c3e1bf02a24d85cc2f9f185789875eaee8 data\minecraft\tags\item\wooden_fences.json
 1bfce6d9cde2689548444f7625c7980861bff7d8 data\minecraft\tags\item\wooden_trapdoors.json
 251a85828e277287b71e1bf03f97a9703e2e0d71 data\minecraft\tags\item\wooden_pressure_plates.json

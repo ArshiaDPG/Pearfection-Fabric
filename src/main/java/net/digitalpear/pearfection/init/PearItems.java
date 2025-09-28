@@ -55,9 +55,6 @@ public class PearItems {
                     PearBlocks.CALLERY_FENCE, PearBlocks.CALLERY_FENCE_GATE, PearBlocks.CALLERY_DOOR,
                     PearBlocks.CALLERY_TRAPDOOR, PearBlocks.CALLERY_PRESSURE_PLATE, PearBlocks.CALLERY_BUTTON
             );
-            if (FabricLoader.getInstance().isModLoaded("bountifulfares")){
-                entries.addAfter(PearBlocks.CALLERY_FENCE_GATE, PearBlocks.CALLERY_PICKETS);
-            }
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
