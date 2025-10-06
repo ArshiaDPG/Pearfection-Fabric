@@ -20,8 +20,8 @@ public class PearfectionModelProvider extends FabricModelProvider {
     /*
         CODE FOR LAMPEAR MODEL GENERATION
      */
-    public static final Model LAMPEAR_BASE = block("lampear_base", TextureKey.ALL);
-    public static final Model LAMPEAR_HANGING_BASE = block("lampear_hanging_base", TextureKey.ALL);
+    public static final Model TEMPLATE_LAMPEAR = block("template_lampear", TextureKey.ALL);
+    public static final Model TEMPLATE_LAMPEAR_HANGING = block("template_lampear_hanging", TextureKey.ALL);
 
     private static Model block(String parent, TextureKey... requiredTextureKeys) {
         return new Model(Optional.of(Pearfection.id("block/" + parent)), Optional.empty(), requiredTextureKeys);
@@ -48,7 +48,7 @@ public class PearfectionModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerFlowerPotPlant(PearBlocks.CALLERY_SPROUT, PearBlocks.POTTED_CALLERY_SPROUT, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(PearBlocks.CALLERY_TWIG, PearBlocks.POTTED_CALLERY_TWIG, BlockStateModelGenerator.TintType.NOT_TINTED);
 
-        registerPearBlock(blockStateModelGenerator, PearBlocks.LAMPEAR_BLOCK);
+        registerPearBlock(blockStateModelGenerator, PearBlocks.LAMPEAR_BASE_BLOCK);
 
     }
 
@@ -81,8 +81,8 @@ public class PearfectionModelProvider extends FabricModelProvider {
         USE BASE MODELS TO GENERATE MODELS
      */
     public final void registerLantern(BlockStateModelGenerator blockStateModelGenerator, Block lantern){
-        Identifier HANGING = LAMPEAR_HANGING_BASE.upload(lantern, "_hanging", TextureMap.all(lantern), blockStateModelGenerator.modelCollector);
-        Identifier STANDING = LAMPEAR_BASE.upload(lantern, TextureMap.all(lantern), blockStateModelGenerator.modelCollector);
+        Identifier HANGING = TEMPLATE_LAMPEAR_HANGING.upload(lantern, "_hanging", TextureMap.all(lantern), blockStateModelGenerator.modelCollector);
+        Identifier STANDING = TEMPLATE_LAMPEAR.upload(lantern, TextureMap.all(lantern), blockStateModelGenerator.modelCollector);
 
         blockStateModelGenerator.registerItemModel(lantern.asItem());
         blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(lantern)

@@ -6,12 +6,10 @@ import com.terraformersmc.terraform.boat.impl.item.TerraformBoatItem;
 import net.digitalpear.pearfection.Pearfection;
 import net.digitalpear.pearfection.init.data.PearFoodComponents;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
 
 
 public class PearItems {
@@ -62,7 +60,7 @@ public class PearItems {
             entries.addAfter(PearBlocks.CALLERY_VINE, PearBlocks.CALLERY_SPROUT);
             entries.addAfter(PearBlocks.CALLERY_SPROUT, PearBlocks.CALLERY_TWIG);
 
-            entries.addAfter(Items.RED_MUSHROOM_BLOCK, PearBlocks.LAMPEAR_BLOCK);
+            entries.addAfter(Items.RED_MUSHROOM_BLOCK, PearBlocks.LAMPEAR_BASE_BLOCK);
             entries.addAfter(Items.MANGROVE_LEAVES, PearBlocks.CALLERY_LEAVES);
             entries.addAfter(PearBlocks.CALLERY_LEAVES, PearBlocks.FLOWERING_CALLERY_LEAVES);
 

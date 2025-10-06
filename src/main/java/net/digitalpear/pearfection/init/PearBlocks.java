@@ -64,7 +64,7 @@ public class PearBlocks {
                     .sounds(PearSoundEvents.BLOCK_SOUND_PEAR)), PearFoodComponents.COPPER_LAMPEAR, Rarity.RARE);
 
 
-    public static final Block LAMPEAR_BLOCK = createBlockWithItem("lampear_block", new PearBaseBlock(AbstractBlock.Settings.create()
+    public static final Block LAMPEAR_BASE_BLOCK = createBlockWithItem("lampear_base_block", new PearBaseBlock(AbstractBlock.Settings.create()
             .mapColor(state -> state.get(MushroomBlock.UP) ? calleryColor : MapColor.WHITE)
             .sounds(PearSoundEvents.BLOCK_SOUND_PEAR)
             .strength(0.75f).luminance(state -> 12)));
@@ -101,5 +101,6 @@ public class PearBlocks {
     public static final Block CALLERY_WALL_HANGING_SIGN = CALLERY.createWallHangingSign(CALLERY_HANGING_SIGN);
 
     public static void init() {
+        Registries.BLOCK.addAlias(Pearfection.id("lampear_block"), Pearfection.id("lampear_base_block"));
     }
 }

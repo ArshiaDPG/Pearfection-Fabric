@@ -23,7 +23,7 @@ public class PearfectionLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(PearBlocks.LAMPEAR, "Lampear");
         translationBuilder.add(PearBlocks.COPPER_LAMPEAR, "Copper Lampear");
 
-        translationBuilder.add(PearBlocks.LAMPEAR_BLOCK, "Lampear Block");
+        translationBuilder.add(PearBlocks.LAMPEAR_BASE_BLOCK, "Lampear Base Block");
 
         /*
             Plants

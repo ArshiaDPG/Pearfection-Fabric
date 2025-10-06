@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:stick_from_callery_twig"
+        "recipe": "pearfection:stick_from_callery_twig"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:stick_from_callery_twig"
+      "pearfection:stick_from_callery_twig"
     ]
   }
 }

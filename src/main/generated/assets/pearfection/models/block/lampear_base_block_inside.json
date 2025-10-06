@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_single_face",
   "textures": {
-    "texture": "pearfection:block/lampear_block"
+    "texture": "pearfection:block/lampear_base_block_inside"
   }
 }

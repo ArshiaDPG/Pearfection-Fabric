@@ -4,14 +4,7 @@ import net.digitalpear.pearfection.init.PearBlocks;
 import net.digitalpear.pearfection.init.PearItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.minecraft.block.Block;
 import net.minecraft.block.FlowerPotBlock;
-import net.minecraft.loot.LootPool;
-import net.minecraft.loot.LootTable;
-import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
-import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
-import net.minecraft.predicate.StatePredicate;
 import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
@@ -37,7 +30,7 @@ public class PearfectionBlockLootTableProvider extends FabricBlockLootTableProvi
         addDrop(PearBlocks.CALLERY_FENCE);
 
 
-        addDrop(PearBlocks.LAMPEAR_BLOCK);
+        addDrop(PearBlocks.LAMPEAR_BASE_BLOCK);
         addDrop(PearBlocks.LAMPEAR);
         addDrop(PearBlocks.COPPER_LAMPEAR);
 

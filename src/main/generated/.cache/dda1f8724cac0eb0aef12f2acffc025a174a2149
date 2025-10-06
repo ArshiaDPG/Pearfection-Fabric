@@ -1,13 +1,13 @@
-// 1.21	2025-09-28T00:41:54.6168694	Pearfection/Block Loot Tables
+// 1.21.1	2025-10-05T23:20:15.4562925	Pearfection/Block Loot Tables
 b9054f8b5e296106433e2aedc3e3e0c85bb61aa5 data\pearfection\loot_table\blocks\callery_twig.json
 6ffda7f6fb1c18559b30107140d52ec705be40a5 data\pearfection\loot_table\blocks\callery_leaves.json
 997052af72216cfa4cbbd6a591e438e57d459cbb data\pearfection\loot_table\blocks\callery_stairs.json
 3d25521ec6362324b18e022b8f6113d2e011bd7c data\pearfection\loot_table\blocks\callery_hanging_sign.json
 81c5ee2736f8d5b2181a9237b36ca6f801665649 data\pearfection\loot_table\blocks\potted_callery_twig.json
 af808fe5fe3ad353dc49565e79a2e1f9e459f5ad data\pearfection\loot_table\blocks\callery_planks.json
-70afaabeb3b97b82c37c176a6c733c7a1a67bcde data\pearfection\loot_table\blocks\lampear_block.json
 83733ed5aeef2ef8c3c3890c03fdb5b1bdf2636e data\pearfection\loot_table\blocks\callery_vine.json
 5f15f965cde58dcc50aa5571280366565bb0eb4e data\pearfection\loot_table\blocks\callery_wood.json
+66f04be86e6979e4c6348bf908bf3022d3fc3b9c data\pearfection\loot_table\blocks\lampear_base_block.json
 3a7bba962bc2830668f0494a7adb15a2a9f28262 data\pearfection\loot_table\blocks\stripped_callery_stem.json
 845df4af2e8c39ad8a4cc057ef98abaafb011229 data\pearfection\loot_table\blocks\lampear.json
 2099c652e181ab9806e12925b0601ae256f3306c data\pearfection\loot_table\blocks\copper_lampear.json

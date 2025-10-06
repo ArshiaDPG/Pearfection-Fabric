@@ -4,17 +4,14 @@ import net.digitalpear.pearfection.Pearfection;
 import net.digitalpear.pearfection.common.blocks.LampearBlock;
 import net.digitalpear.pearfection.common.features.HugeLampearFeatureConfig;
 import net.digitalpear.pearfection.common.features.PearFeatures;
+import net.fabricmc.fabric.api.event.registry.DynamicRegistries;
 import net.minecraft.block.BlockState;
-import net.minecraft.registry.Registerable;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.*;
 import net.minecraft.util.collection.DataPool;
-import net.minecraft.util.collection.Pool;
 import net.minecraft.util.math.intprovider.IntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.ConfiguredFeatures;
-import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
 
@@ -44,7 +41,7 @@ public class PearConfiguredFeatures {
         return new HugeLampearFeatureConfig(
                 SimpleBlockStateProvider.of(PearBlocks.CALLERY_STEM),
                 new WeightedBlockStateProvider(LEAVES),
-                SimpleBlockStateProvider.of(PearBlocks.LAMPEAR_BLOCK),
+                SimpleBlockStateProvider.of(PearBlocks.LAMPEAR_BASE_BLOCK),
                 new WeightedBlockStateProvider(FRUITS),
                 heightProvider
         );

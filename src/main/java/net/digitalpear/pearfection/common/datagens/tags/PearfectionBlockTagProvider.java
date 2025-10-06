@@ -4,10 +4,7 @@ import net.digitalpear.pearfection.init.PearBlocks;
 import net.digitalpear.pearfection.init.tags.PearBlockTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.Identifier;
@@ -27,7 +24,7 @@ public class PearfectionBlockTagProvider extends FabricTagProvider.BlockTagProvi
         /*
             VANILLA
          */
-        getOrCreateTagBuilder(BlockTags.HOE_MINEABLE).add(PearBlocks.LAMPEAR).add(PearBlocks.LAMPEAR_BLOCK).add(PearBlocks.CALLERY_LEAVES);
+        getOrCreateTagBuilder(BlockTags.HOE_MINEABLE).add(PearBlocks.LAMPEAR).add(PearBlocks.LAMPEAR_BASE_BLOCK).add(PearBlocks.CALLERY_LEAVES);
 
         getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN).forceAddTag(PearBlockTags.CALLERY_STEMS);
         getOrCreateTagBuilder(BlockTags.PLANKS).add(PearBlocks.CALLERY_PLANKS);
@@ -53,8 +50,8 @@ public class PearfectionBlockTagProvider extends FabricTagProvider.BlockTagProvi
         /*
             Good idea or no?
          */
-        getOrCreateTagBuilder(BlockTags.DAMPENS_VIBRATIONS).add(PearBlocks.LAMPEAR_BLOCK);
-        getOrCreateTagBuilder(BlockTags.OCCLUDES_VIBRATION_SIGNALS).add(PearBlocks.LAMPEAR_BLOCK);
+        getOrCreateTagBuilder(BlockTags.DAMPENS_VIBRATIONS).add(PearBlocks.LAMPEAR_BASE_BLOCK);
+        getOrCreateTagBuilder(BlockTags.OCCLUDES_VIBRATION_SIGNALS).add(PearBlocks.LAMPEAR_BASE_BLOCK);
 
 
         /*

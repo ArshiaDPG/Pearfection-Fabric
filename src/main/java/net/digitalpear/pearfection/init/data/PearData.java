@@ -8,16 +8,12 @@ import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.loot.LootTables;
 import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.loot.function.SetCountLootFunction;
-import net.minecraft.loot.provider.number.UniformLootNumberProvider;
-
-import java.util.HashMap;
 
 public class PearData {
     public static void registerFlammableBlock(){
         FlammableBlockRegistry instance = FlammableBlockRegistry.getDefaultInstance();
         instance.add(PearBlocks.LAMPEAR, 30, 40);
-        instance.add(PearBlocks.LAMPEAR_BLOCK, 7, 7);
+        instance.add(PearBlocks.LAMPEAR_BASE_BLOCK, 7, 7);
         instance.add(PearBlocks.CALLERY_STEM, 5, 5);
         instance.add(PearBlocks.STRIPPED_CALLERY_STEM, 5, 5);
         instance.add(PearBlocks.CALLERY_WOOD, 5, 5);
@@ -43,7 +39,7 @@ public class PearData {
     public static void registerFuels(){
         FuelRegistry registry = FuelRegistry.INSTANCE;
 
-        registry.add(PearBlocks.LAMPEAR_BLOCK, 2000);
+        registry.add(PearBlocks.LAMPEAR_BASE_BLOCK, 2000);
         registry.add(PearBlocks.CALLERY_VINE, 200);
         registry.add(PearBlocks.CALLERY_SPROUT, 150);
         registry.add(PearBlocks.CALLERY_TWIG, 100);
@@ -57,7 +53,7 @@ public class PearData {
         CompostingChanceRegistry.INSTANCE.add(PearBlocks.CALLERY_SPROUT, 0.4F);
         CompostingChanceRegistry.INSTANCE.add(PearBlocks.CALLERY_VINE, 0.7F);
 
-        CompostingChanceRegistry.INSTANCE.add(PearBlocks.LAMPEAR_BLOCK, 0.85F);
+        CompostingChanceRegistry.INSTANCE.add(PearBlocks.LAMPEAR_BASE_BLOCK, 0.85F);
 
         CompostingChanceRegistry.INSTANCE.add(PearBlocks.LAMPEAR, 0.65F);
         CompostingChanceRegistry.INSTANCE.add(PearBlocks.COPPER_LAMPEAR, 1F);

@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "pearfection:lampear_block"
+          "name": "pearfection:lampear_base_block"
         }
       ],
       "rolls": 1.0
