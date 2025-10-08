@@ -1,15 +1,15 @@
-// 1.21.1	2025-10-05T23:20:15.4102883	Pearfection/Tags for minecraft:item
+// 1.21.1	2025-10-06T16:55:30.559839	Pearfection/Tags for minecraft:item
 f53ee2d2679288303b4e16cf985994c70795e008 data\minecraft\tags\item\planks.json
 23d7330332543780921f00ad202156d1231ce3a1 data\minecraft\tags\item\logs_that_burn.json
 34977700b6e07db1cc713b1d4f3d5c5d45fb4e94 data\minecraft\tags\item\hanging_signs.json
 5ecf5c065890c61d92374bd664666433d50e9ccc data\pearfection\tags\item\callery_stems.json
-12068becf09784d6758e05c024b48cbac39616cd data\c\tags\item\fruits\pears.json
 281b95c3e1bf02a24d85cc2f9f185789875eaee8 data\minecraft\tags\item\wooden_fences.json
 1bfce6d9cde2689548444f7625c7980861bff7d8 data\minecraft\tags\item\wooden_trapdoors.json
 251a85828e277287b71e1bf03f97a9703e2e0d71 data\minecraft\tags\item\wooden_pressure_plates.json
 0f2eabbda0b16118451c1d7a16caf39814134d4d data\minecraft\tags\item\signs.json
 2d5fb3f152f7a01694d58565ebbb3be2b9748fb3 data\minecraft\tags\item\wooden_stairs.json
 12068becf09784d6758e05c024b48cbac39616cd data\bountifulfares\tags\item\eatable_on_dish.json
+12068becf09784d6758e05c024b48cbac39616cd data\c\tags\item\foods\fruit.json
 645f2f13b436d56b7af0ac3d31c8e905787609e3 data\minecraft\tags\item\saplings.json
 d8a8ef35d71d18069c6d98828ed2c035d6128a73 data\minecraft\tags\item\wooden_doors.json
 a3939c04a72b23c4b9a02d889d1de65425dfbc45 data\minecraft\tags\item\wooden_slabs.json

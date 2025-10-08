@@ -8,8 +8,6 @@ import net.minecraft.util.Identifier;
 
 public class PearItemTags {
     public static final TagKey<Item> CALLERY_STEMS = tag("callery_stems");
-    public static final TagKey<Item> C_FRUITS_PEARS = commonTag("fruits/pears");
-
 
     public static final TagKey<Item> EATABLE_ON_DISH = compatTag("bountifulfares", "eatable_on_dish");
 
