@@ -6,14 +6,12 @@ import net.digitalpear.pearfection.init.data.PearConsumableComponents;
 import net.digitalpear.pearfection.init.data.PearFoodComponents;
 import net.digitalpear.pearfection.init.data.Woodset;
 import net.minecraft.block.*;
-import net.minecraft.component.type.ConsumableComponent;
-import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
+import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.Rarity;
 
 import java.util.function.Function;
 
@@ -71,7 +69,7 @@ public class PearBlocks {
             createLampearSettings().luminance((state) -> 14).strength(0.7f, 0.3f).mapColor(Blocks.COPPER_BLOCK.getDefaultMapColor()),
             new Item.Settings().food(PearFoodComponents.COPPER_LAMPEAR, PearConsumableComponents.COPPER_LAMPEAR));
 
-    public static final Block LAMPEAR_BLOCK = createBlockWithItem("lampear_block", PearBaseBlock::new, AbstractBlock.Settings.create()
+    public static final Block LAMPEAR_BASE_BLOCK = createBlockWithItem("lampear_base_block", PearBaseBlock::new, AbstractBlock.Settings.create()
             .mapColor(state -> state.get(MushroomBlock.UP) ? calleryColor : MapColor.WHITE)
             .sounds(PearSoundEvents.BLOCK_SOUND_PEAR)
             .strength(0.75f).luminance(state -> 12)
@@ -82,5 +80,6 @@ public class PearBlocks {
     public static final Block FLOWERING_CALLERY_LEAVES = createBlockWithItem("flowering_callery_leaves", settings -> new CalleryLeavesBlock(0.01F, PearParticleTypes.CALLERY_FLOWER, settings, true), AbstractBlock.Settings.copy(CALLERY.getLeaves()).mapColor(MapColor.PALE_GREEN));
 
     public static void init() {
+        Registries.BLOCK.addAlias(Pearfection.id("lampear_block"), Pearfection.id("lampear_base_block"));
     }
 }

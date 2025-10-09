@@ -4,7 +4,6 @@ import net.digitalpear.pearfection.init.PearBlocks;
 import net.digitalpear.pearfection.init.PearParticleTypes;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Fertilizable;
-import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.UntintedParticleLeavesBlock;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.particle.ParticleEffect;
@@ -58,7 +57,7 @@ public class CalleryLeavesBlock extends UntintedParticleLeavesBlock implements F
     }
 
     public static OptionalInt getOptionalDistanceFromLog(BlockState state) {
-        if (state.isIn(BlockTags.LOGS) || state.isOf(PearBlocks.LAMPEAR_BLOCK)) {
+        if (state.isIn(BlockTags.LOGS) || state.isOf(PearBlocks.LAMPEAR_BASE_BLOCK)) {
             return OptionalInt.of(0);
         } else {
             return state.contains(DISTANCE) ? OptionalInt.of(state.get(DISTANCE)) : OptionalInt.empty();

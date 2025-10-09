@@ -18,8 +18,8 @@ public class PearfectionModelProvider extends FabricModelProvider {
     /*
         CODE FOR LAMPEAR MODEL GENERATION
      */
-    public static final Model LAMPEAR_BASE = block("lampear_base", TextureKey.ALL);
-    public static final Model LAMPEAR_HANGING_BASE = block("lampear_hanging_base", TextureKey.ALL);
+    public static final Model TEMPLATE_LAMPEAR = block("template_lampear", TextureKey.ALL);
+    public static final Model TEMPLATE_LAMPEAR_HANGING = block("template_lampear_hanging", TextureKey.ALL);
 
     public PearfectionModelProvider(FabricDataOutput output) {
         super(output);
@@ -49,7 +49,7 @@ public class PearfectionModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerItemModel(PearBlocks.CALLERY_SPROUT);
         blockStateModelGenerator.registerItemModel(PearBlocks.CALLERY_TWIG);
 
-        registerPearBlock(blockStateModelGenerator, PearBlocks.LAMPEAR_BLOCK);
+        registerPearBlock(blockStateModelGenerator, PearBlocks.LAMPEAR_BASE_BLOCK);
 
     }
 
@@ -62,8 +62,8 @@ public class PearfectionModelProvider extends FabricModelProvider {
         USE BASE MODELS TO GENERATE MODELS
      */
     public static void registerLantern(BlockStateModelGenerator blockStateModelGenerator, Block lantern){
-        WeightedVariant HANGING = BlockStateModelGenerator.createWeightedVariant(LAMPEAR_HANGING_BASE.upload(lantern, "_hanging", TextureMap.all(lantern), blockStateModelGenerator.modelCollector));
-        WeightedVariant STANDING = BlockStateModelGenerator.createWeightedVariant(LAMPEAR_BASE.upload(lantern, TextureMap.all(lantern), blockStateModelGenerator.modelCollector));
+        WeightedVariant HANGING = BlockStateModelGenerator.createWeightedVariant(TEMPLATE_LAMPEAR_HANGING.upload(lantern, "_hanging", TextureMap.all(lantern), blockStateModelGenerator.modelCollector));
+        WeightedVariant STANDING = BlockStateModelGenerator.createWeightedVariant(TEMPLATE_LAMPEAR.upload(lantern, TextureMap.all(lantern), blockStateModelGenerator.modelCollector));
 
         blockStateModelGenerator.registerItemModel(lantern.asItem());
         blockStateModelGenerator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(lantern)

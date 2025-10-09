@@ -1,15 +1,15 @@
-// 1.21.6	-999999999-01-01T00:00:00	Pearfection/Tags for minecraft:block
+// 1.21.10	-999999999-01-01T00:00:00	Pearfection/Tags for minecraft:block
 214840609878ff0d4a3b6124ddaec52f82275839 data/minecraft/tags/block/all_hanging_signs.json
 0af01a60c874a551c607c93ad8f482f6ad295dd8 data/minecraft/tags/block/buttons.json
 34977700b6e07db1cc713b1d4f3d5c5d45fb4e94 data/minecraft/tags/block/ceiling_hanging_signs.json
-22000d5f6c318ac9df2868a77280c06d526dfa0f data/minecraft/tags/block/dampens_vibrations.json
+41a455a9760194ab122b99dc966a0f9c0f0f905e data/minecraft/tags/block/dampens_vibrations.json
 c85eac7d64749be3f415c7384e2e18e8572199bc data/minecraft/tags/block/fence_gates.json
 447d59e2540739c60280414de05cfb2c86f187da data/minecraft/tags/block/flower_pots.json
 e62cfab831f117950d1dd42effbc7af6e1bfd2ed data/minecraft/tags/block/flowers.json
 0cd899ab06b2a7473b0252a387dd06cb5881e61d data/minecraft/tags/block/leaves.json
 23d7330332543780921f00ad202156d1231ce3a1 data/minecraft/tags/block/logs_that_burn.json
-d506a5907facfe5b08a426d9d64038e63136cfbf data/minecraft/tags/block/mineable/hoe.json
-22000d5f6c318ac9df2868a77280c06d526dfa0f data/minecraft/tags/block/occludes_vibration_signals.json
+cb1e4ed79717e3bcc985c2ac437cfc92fd816f06 data/minecraft/tags/block/mineable/hoe.json
+41a455a9760194ab122b99dc966a0f9c0f0f905e data/minecraft/tags/block/occludes_vibration_signals.json
 f53ee2d2679288303b4e16cf985994c70795e008 data/minecraft/tags/block/planks.json
 49f4b8a65098c122032952bef8b3ac9815f3ff25 data/minecraft/tags/block/saplings.json
 49f4b8a65098c122032952bef8b3ac9815f3ff25 data/minecraft/tags/block/small_flowers.json
@@ -19,6 +19,7 @@ e59412c4fda100b5bd8d3b30858c49bd57580e3e data/minecraft/tags/block/wall_signs.js
 d8a8ef35d71d18069c6d98828ed2c035d6128a73 data/minecraft/tags/block/wooden_doors.json
 281b95c3e1bf02a24d85cc2f9f185789875eaee8 data/minecraft/tags/block/wooden_fences.json
 251a85828e277287b71e1bf03f97a9703e2e0d71 data/minecraft/tags/block/wooden_pressure_plates.json
+38e0091e82b5f8e380a42339cd2c65ab37027769 data/minecraft/tags/block/wooden_shelves.json
 a3939c04a72b23c4b9a02d889d1de65425dfbc45 data/minecraft/tags/block/wooden_slabs.json
 2d5fb3f152f7a01694d58565ebbb3be2b9748fb3 data/minecraft/tags/block/wooden_stairs.json
 1bfce6d9cde2689548444f7625c7980861bff7d8 data/minecraft/tags/block/wooden_trapdoors.json

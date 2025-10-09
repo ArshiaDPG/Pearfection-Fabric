@@ -24,7 +24,7 @@ public class PearfectionLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(PearBlocks.LAMPEAR, "Lampear");
         translationBuilder.add(PearBlocks.COPPER_LAMPEAR, "Copper Lampear");
 
-        translationBuilder.add(PearBlocks.LAMPEAR_BLOCK, "Lampear Block");
+        translationBuilder.add(PearBlocks.LAMPEAR_BASE_BLOCK, "Lampear Block");
 
         /*
             Plants
@@ -68,6 +68,8 @@ public class PearfectionLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(PearBlocks.CALLERY.getDoor(), "Callery Door");
         translationBuilder.add(PearBlocks.CALLERY.getTrapDoor(), "Callery Trapdoor");
         translationBuilder.add(PearBlocks.CALLERY.getPressurePlate(), "Callery Pressure Plate");
+
+        translationBuilder.add(PearBlocks.CALLERY.getShelf(), "Callery Shelf");
 
         translationBuilder.add(PearBlocks.CALLERY.getBoatItem(), "Callery Boat");
         translationBuilder.add(PearBlocks.CALLERY.getChestBoatItem(), "Callery Boat with Chest");

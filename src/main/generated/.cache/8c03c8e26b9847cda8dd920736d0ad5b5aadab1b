@@ -1,4 +1,4 @@
-// 1.21.6	-999999999-01-01T00:00:00	Pearfection/recipe
+// 1.21.10	-999999999-01-01T00:00:00	Pearfection/recipe
 e2736fb8c19967568bf0901cbbea92e762d00835 data/pearfection/advancement/recipes/building_blocks/callery_planks.json
 ea6b1dfebaf0506b0cbbd342161c65cd809da279 data/pearfection/advancement/recipes/building_blocks/callery_slab.json
 3d298b9e449759815dbdc3bc7fe0fdb08a8da7aa data/pearfection/advancement/recipes/building_blocks/callery_stairs.json
@@ -6,6 +6,7 @@ ea6b1dfebaf0506b0cbbd342161c65cd809da279 data/pearfection/advancement/recipes/bu
 52eda65515f8e15b0e42030c76dd3ac1ef92ae2a data/pearfection/advancement/recipes/building_blocks/stripped_callery_wood.json
 a74f94df4a3028bfe276b038fb4f0c42e6250222 data/pearfection/advancement/recipes/decorations/callery_fence.json
 19c80c31eebe0c1c5003e82c5626e54470aaf5b1 data/pearfection/advancement/recipes/decorations/callery_hanging_sign.json
+fcd9fcd2ff16d77d703d6a8d1ff9563d4a81dc65 data/pearfection/advancement/recipes/decorations/callery_shelf.json
 241e55844b959cf1eaf0917691786963f6aa2cd7 data/pearfection/advancement/recipes/decorations/callery_sign.json
 cf486a87cbd37ee96545e2ef978aa4277b6e4ed2 data/pearfection/advancement/recipes/food/copper_lampear.json
 6761c67008a2fc48c1f0f536231f9be99a9d2545 data/pearfection/advancement/recipes/food/pear_tart.json
@@ -20,8 +21,9 @@ ed48a6dd2ed81e59c9c4ac9c376b7297584a96cf data/pearfection/recipe/callery_chest_b
 dec263c50fbf63732d0d86099b1d9685f9d6b006 data/pearfection/recipe/callery_door.json
 ba620e52637db32a9e9b752f0e0d7eb27b616df5 data/pearfection/recipe/callery_fence.json
 9f09089e16c325bf9293e69fb881d313529e045d data/pearfection/recipe/callery_fence_gate.json
-c68a1d9d1dc6c24617d2f22958d7e76fb2741ac9 data/pearfection/recipe/callery_hanging_sign.json
+128f0dacffe8870f2711ed176fd7c140cef552c3 data/pearfection/recipe/callery_hanging_sign.json
 f77ef3d8648f0c106734b6392c5381863b6eee4f data/pearfection/recipe/callery_planks.json
+b766258890c752cbd07cdfcab9153b004e2d8d70 data/pearfection/recipe/callery_shelf.json
 7a59600a8fc9255bdb2c51268edf7781bf4c977f data/pearfection/recipe/callery_sign.json
 8e2f0ff396a56482ae966238aeb73c43ae1df40d data/pearfection/recipe/callery_slab.json
 1d9f7703a0ce7c142e39b4bf4718c530de65dc75 data/pearfection/recipe/callery_stairs.json

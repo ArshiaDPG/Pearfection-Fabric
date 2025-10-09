@@ -1,4 +1,4 @@
-// 1.21.6	-999999999-01-01T00:00:00	Pearfection/Tags for minecraft:item
+// 1.21.10	-999999999-01-01T00:00:00	Pearfection/Tags for minecraft:item
 12068becf09784d6758e05c024b48cbac39616cd data/bountifulfares/tags/item/eatable_on_dish.json
 12068becf09784d6758e05c024b48cbac39616cd data/c/tags/item/foods/fruit.json
 ded40eb4adf35c467acbd906ed3ddb9b6d4ce562 data/c/tags/item/stripped_logs.json
@@ -14,6 +14,7 @@ f53ee2d2679288303b4e16cf985994c70795e008 data/minecraft/tags/item/planks.json
 d8a8ef35d71d18069c6d98828ed2c035d6128a73 data/minecraft/tags/item/wooden_doors.json
 281b95c3e1bf02a24d85cc2f9f185789875eaee8 data/minecraft/tags/item/wooden_fences.json
 251a85828e277287b71e1bf03f97a9703e2e0d71 data/minecraft/tags/item/wooden_pressure_plates.json
+38e0091e82b5f8e380a42339cd2c65ab37027769 data/minecraft/tags/item/wooden_shelves.json
 a3939c04a72b23c4b9a02d889d1de65425dfbc45 data/minecraft/tags/item/wooden_slabs.json
 2d5fb3f152f7a01694d58565ebbb3be2b9748fb3 data/minecraft/tags/item/wooden_stairs.json
 1bfce6d9cde2689548444f7625c7980861bff7d8 data/minecraft/tags/item/wooden_trapdoors.json

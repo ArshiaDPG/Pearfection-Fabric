@@ -20,7 +20,7 @@ public class PearfectionBlockLootTableProvider extends FabricBlockLootTableProvi
     public void generate() {
         makeWoodLoot(PearBlocks.CALLERY, PearBlocks.CALLERY_TWIG);
 
-        addDrop(PearBlocks.LAMPEAR_BLOCK);
+        addDrop(PearBlocks.LAMPEAR_BASE_BLOCK);
         addDrop(PearBlocks.LAMPEAR);
         addDrop(PearBlocks.COPPER_LAMPEAR);
 
@@ -59,6 +59,8 @@ public class PearfectionBlockLootTableProvider extends FabricBlockLootTableProvi
         }
         addDrop(woodset.getSign());
         addDrop(woodset.getHangingSign());
+
+        addDrop(woodset.getShelf());
     }
     public void makePottedLootTable(FlowerPotBlock flowerPotBlock){
         addPottedPlantDrops(flowerPotBlock);

@@ -1,6 +1,7 @@
 {
   "values": [
     "pearfection:lampear",
-    "pearfection:lampear_block"
+    "pearfection:lampear_base_block",
+    "pearfection:callery_leaves"
   ]
 }

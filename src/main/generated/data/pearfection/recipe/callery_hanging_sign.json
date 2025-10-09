@@ -4,7 +4,7 @@
   "group": "hanging_sign",
   "key": {
     "#": "pearfection:stripped_callery_stem",
-    "X": "minecraft:chain"
+    "X": "minecraft:iron_chain"
   },
   "pattern": [
     "X X",

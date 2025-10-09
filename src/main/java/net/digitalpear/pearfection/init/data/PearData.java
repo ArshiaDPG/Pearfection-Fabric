@@ -12,7 +12,7 @@ public class PearData {
     public static void registerFlammableBlock(){
         FlammableBlockRegistry instance = FlammableBlockRegistry.getDefaultInstance();
         instance.add(PearBlocks.LAMPEAR, 30, 40);
-        instance.add(PearBlocks.LAMPEAR_BLOCK, 7, 7);
+        instance.add(PearBlocks.LAMPEAR_BASE_BLOCK, 7, 7);
         instance.add(PearBlocks.CALLERY_TWIG, 30, 40);
         instance.add(PearBlocks.CALLERY_SPROUT, 30, 40);
         instance.add(PearBlocks.CALLERY_VINE, 30, 40);
@@ -24,7 +24,7 @@ public class PearData {
 
     public static void registerFuels(){
         FuelRegistryEvents.BUILD.register((builder, context) -> {
-            builder.add(PearBlocks.LAMPEAR_BLOCK, 2000);
+            builder.add(PearBlocks.LAMPEAR_BASE_BLOCK, 2000);
             builder.add(PearBlocks.CALLERY_VINE, 200);
             builder.add(PearBlocks.CALLERY_SPROUT, 150);
             builder.add(PearBlocks.CALLERY_TWIG, 100);
@@ -40,7 +40,7 @@ public class PearData {
         registry.add(PearBlocks.CALLERY_SPROUT, 0.4F);
         registry.add(PearBlocks.CALLERY_VINE, 0.7F);
 
-        registry.add(PearBlocks.LAMPEAR_BLOCK, 0.85F);
+        registry.add(PearBlocks.LAMPEAR_BASE_BLOCK, 0.85F);
 
         registry.add(PearBlocks.LAMPEAR, 0.65F);
         registry.add(PearBlocks.COPPER_LAMPEAR, 1F);

@@ -41,7 +41,7 @@ public class PearConfiguredFeatures {
         return new HugeLampearFeatureConfig(
                 SimpleBlockStateProvider.of(PearBlocks.CALLERY.getLog()),
                 new WeightedBlockStateProvider(LEAVES),
-                SimpleBlockStateProvider.of(PearBlocks.LAMPEAR_BLOCK),
+                SimpleBlockStateProvider.of(PearBlocks.LAMPEAR_BASE_BLOCK),
                 new WeightedBlockStateProvider(FRUITS),
                 heightProvider
         );

@@ -75,6 +75,7 @@ public class Woodset {
     private Block wallSign;
     private Block hangingSign;
     private Block wallHangingSign;
+    private Block shelf;
 
     private Item signItem;
     private Item hangingSignItem;
@@ -122,6 +123,8 @@ public class Woodset {
         wallSign = createWallSign();
         hangingSign = createHangingSign();
         wallHangingSign = createWallHangingSign();
+        shelf = createShelf();
+
         signItem = createSignItem();
         hangingSignItem = createHangingSignItem();
 
@@ -148,7 +151,6 @@ public class Woodset {
         blockFamily.button(button);
         blockFamily.pressurePlate(pressurePlate);
 
-
         signBlocks.add(sign);
         signBlocks.add(wallSign);
 
@@ -162,6 +164,9 @@ public class Woodset {
         var hangingSigns = (FabricBlockEntityType) BlockEntityType.HANGING_SIGN;
         hangingSigns.addSupportedBlock(hangingSign);
         hangingSigns.addSupportedBlock(wallHangingSign);
+
+        var shelves = (FabricBlockEntityType) BlockEntityType.SHELF;
+        shelves.addSupportedBlock(shelf);
 
         if (woodsetSettings.woodPreset != WoodPreset.NETHER){
             registerWoodsetFlammables();
@@ -394,6 +399,10 @@ public class Woodset {
         return hangingSignBlocks;
     }
 
+    public Block getShelf() {
+        return shelf;
+    }
+
     public BlockFamily getBlockFamily() {
         return blockFamily.build();
     }
@@ -468,6 +477,10 @@ public class Woodset {
         return createBlockWithoutItem(this.getName() + "_wall_hanging_sign", settings -> new WallHangingSignBlock(
                         this.woodType, settings),
                 AbstractBlock.Settings.copy(getHangingSignBase()).mapColor(this.getTopColor()).lootTable(hangingSign.getLootTableKey()));
+    }
+
+    private Block createShelf(){
+        return createBlockWithItem(this.getName() + "_shelf", ShelfBlock::new, AbstractBlock.Settings.copy(Blocks.CHERRY_SHELF).mapColor(topColor));
     }
 
     private Item createSignItem(){
@@ -572,6 +585,8 @@ public class Woodset {
 
         blockStateModelGenerator.registerItemModel(getBoatItem());
         blockStateModelGenerator.registerItemModel(getChestBoatItem());
+
+        blockStateModelGenerator.registerShelf(this.getShelf(), this.getStrippedLog());
     }
 
     private Block getBase(){
@@ -643,19 +658,19 @@ public class Woodset {
 
 
 
-    public static void addToBuildingTab(Item proceedingItem, Woodset woodset){
+    public static void addToBuildingTab(Item preceedingItem, Woodset woodset){
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
-            entries.addAfter(proceedingItem, woodset.getPlanks(), woodset.getStairs(), woodset.getSlab(),
+            entries.addAfter(preceedingItem, woodset.getPlanks(), woodset.getStairs(), woodset.getSlab(),
                     woodset.getFence(), woodset.getFenceGate(),
                     woodset.getDoor(), woodset.getTrapDoor(),
                     woodset.getPressurePlate(), woodset.getButton());
             if (woodset.notBambooVariant()){
-                entries.addAfter(proceedingItem, woodset.getWood(), woodset.getStrippedWood());
+                entries.addAfter(preceedingItem, woodset.getWood(), woodset.getStrippedWood());
             }
             if (woodset.getWoodsetSettings().hasMosaic()){
-                entries.addAfter(proceedingItem, woodset.getMosaic(), woodset.getMosaicStairs(), woodset.getMosaicSlab());
+                entries.addAfter(preceedingItem, woodset.getMosaic(), woodset.getMosaicStairs(), woodset.getMosaicSlab());
             }
-            entries.addAfter(proceedingItem, woodset.getLog(), woodset.getStrippedLog());
+            entries.addAfter(preceedingItem, woodset.getLog(), woodset.getStrippedLog());
         });
     }
     private String hasPlanks(){
@@ -686,6 +701,8 @@ public class Woodset {
 
         recipeGenerator.offerBoatRecipe(getBoatItem(), getPlanks());
         recipeGenerator.offerChestBoatRecipe(getChestBoatItem(), getBoatItem());
+
+        recipeGenerator.offerShelfRecipe(getShelf(), getStrippedLog());
     }
 
     public enum WoodPreset {

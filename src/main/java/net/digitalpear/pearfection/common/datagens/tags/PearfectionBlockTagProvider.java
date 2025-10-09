@@ -26,7 +26,7 @@ public class PearfectionBlockTagProvider extends FabricTagProvider.BlockTagProvi
         /*
             VANILLA
          */
-        valueLookupBuilder(BlockTags.HOE_MINEABLE).add(PearBlocks.LAMPEAR).add(PearBlocks.LAMPEAR_BLOCK).add(PearBlocks.CALLERY.getLeaves());
+        valueLookupBuilder(BlockTags.HOE_MINEABLE).add(PearBlocks.LAMPEAR).add(PearBlocks.LAMPEAR_BASE_BLOCK).add(PearBlocks.CALLERY.getLeaves());
 
         valueLookupBuilder(BlockTags.LOGS_THAT_BURN).forceAddTag(PearBlockTags.CALLERY_STEMS);
         valueLookupBuilder(BlockTags.PLANKS).add(PearBlocks.CALLERY.getPlanks());
@@ -48,12 +48,13 @@ public class PearfectionBlockTagProvider extends FabricTagProvider.BlockTagProvi
         valueLookupBuilder(BlockTags.FLOWER_POTS).add(PearBlocks.POTTED_CALLERY_TWIG).add(PearBlocks.POTTED_CALLERY_SPROUT);
         valueLookupBuilder(BlockTags.SMALL_FLOWERS).add(PearBlocks.CALLERY_SPROUT);
         valueLookupBuilder(BlockTags.FLOWERS).add(PearBlocks.CALLERY_VINE);
+        valueLookupBuilder(BlockTags.WOODEN_SHELVES).add(PearBlocks.CALLERY.getShelf());
 
         /*
             Good idea or no?
          */
-        valueLookupBuilder(BlockTags.DAMPENS_VIBRATIONS).add(PearBlocks.LAMPEAR_BLOCK);
-        valueLookupBuilder(BlockTags.OCCLUDES_VIBRATION_SIGNALS).add(PearBlocks.LAMPEAR_BLOCK);
+        valueLookupBuilder(BlockTags.DAMPENS_VIBRATIONS).add(PearBlocks.LAMPEAR_BASE_BLOCK);
+        valueLookupBuilder(BlockTags.OCCLUDES_VIBRATION_SIGNALS).add(PearBlocks.LAMPEAR_BASE_BLOCK);
 
 
         /*

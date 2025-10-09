@@ -32,7 +32,7 @@ public class PearfectionItemTagProvider extends FabricTagProvider.ItemTagProvide
         valueLookupBuilder(ItemTags.SIGNS).add(PearBlocks.CALLERY.getSignItem().asItem());
         valueLookupBuilder(ItemTags.HANGING_SIGNS).add(PearBlocks.CALLERY.getHangingSignItem().asItem());
         valueLookupBuilder(ItemTags.SAPLINGS).add(PearBlocks.CALLERY_TWIG.asItem());
-
+        valueLookupBuilder(ItemTags.WOODEN_SHELVES).add(PearBlocks.CALLERY.getShelf().asItem());
 
         valueLookupBuilder(PearItemTags.CALLERY_STEMS)
                 .add(PearBlocks.CALLERY.getLog().asItem()).add(PearBlocks.CALLERY.getStrippedLog().asItem())

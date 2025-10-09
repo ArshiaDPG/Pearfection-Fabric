@@ -32,7 +32,7 @@ public class Pearfection implements ModInitializer {
         PearData.init();
 
         ServerLivingEntityEvents.ALLOW_DEATH.register((entity, damageSource, damageAmount) -> {
-            if (entity instanceof PlayerEntity player && !player.isCreative() && player.getDisplayName().getString().contains("DigitalPear") && player.getServer().getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
+            if (entity instanceof PlayerEntity player && !player.isCreative() && player.getDisplayName().getString().contains("DigitalPear") && player.getEntityWorld().getServer().getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
                 player.dropItem(new ItemStack(PearBlocks.LAMPEAR), false);
             }
             return true;
