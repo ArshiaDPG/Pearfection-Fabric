@@ -37,7 +37,7 @@ public class PearItems {
             entries.addAfter(Items.PUMPKIN_PIE, PEAR_TART);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> {
-            entries.addAfter(Items.MANGROVE_SHELF, PearBlocks.CALLERY.getShelf());
+            entries.addAfter(Items.CHERRY_SHELF, PearBlocks.CALLERY.getShelf());
             entries.addAfter(Items.SOUL_LANTERN, PearBlocks.LAMPEAR);
             entries.addAfter(PearBlocks.LAMPEAR, PearBlocks.COPPER_LAMPEAR);
 

@@ -4,6 +4,7 @@ import net.digitalpear.pearfection.init.PearBlocks;
 import net.digitalpear.pearfection.init.tags.PearBlockTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registries;
@@ -80,9 +81,12 @@ public class PearfectionBlockTagProvider extends FabricTagProvider.BlockTagProvi
         getTagBuilder(PearBlockTags.ENORMOUS_PEAR_GROWABLE_ON)
                 .add(getId(Blocks.MOSS_BLOCK))
                 .add(getId(Blocks.PALE_MOSS_BLOCK))
-                .addOptional(Identifier.of("biomesoplenty", "glowing_moss_block"))
-        ;
+                .addOptional(Identifier.of("biomesoplenty", "glowing_moss_block"));
 
+        valueLookupBuilder(ConventionalBlockTags.STRIPPED_LOGS).add(PearBlocks.CALLERY.getStrippedLog());
+        valueLookupBuilder(ConventionalBlockTags.STRIPPED_WOODS).add(PearBlocks.CALLERY.getStrippedWood());
+        valueLookupBuilder(ConventionalBlockTags.SMALL_FLOWERS).add(PearBlocks.CALLERY_SPROUT);
+        valueLookupBuilder(ConventionalBlockTags.TALL_FLOWERS).add(PearBlocks.CALLERY_VINE);
     }
     public static TagEntry getId(Block block){
         return TagEntry.create(Registries.BLOCK.getId(block));
