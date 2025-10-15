@@ -23,9 +23,6 @@ public class PearBlocks {
         return RegistryKey.of(RegistryKeys.BLOCK, Pearfection.id(name));
     }
 
-    public static Item createBlockItem(Block block, Item.Settings item){
-        return Items.register(block, item);
-    }
 
     public static Block createBlockWithItem(String blockID, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings){
         Block block = Blocks.register(keyOf(blockID), factory, settings);
@@ -42,7 +39,7 @@ public class PearBlocks {
 
     public static Block createLampear(String name, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings, Item.Settings itemSettings){
         Block block = createLampearWithoutItem(name, factory, settings);
-        createBlockItem(block, itemSettings);
+        Items.register(block, itemSettings);
         return block;
     }
 
